@@ -18,5 +18,10 @@ namespace BayViewBookings
         {
             InitializeComponent();
         }
+
+        private void lbl_random_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
