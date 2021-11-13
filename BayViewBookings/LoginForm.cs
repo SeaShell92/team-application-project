@@ -19,9 +19,21 @@ namespace BayViewBookings
             InitializeComponent();
         }
 
-        private void lbl_random_Click(object sender, EventArgs e)
-        {
+        SQLiteConnection dbCon = new SQLiteConnection();
 
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                // Takes the current directory of the application and adds on the relative location of the database file.
+                string filepath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Database\bookings.db");
+                string conString = @"Data source = " + filepath;
+                dbCon.ConnectionString = conString;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

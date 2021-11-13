@@ -43,7 +43,6 @@ namespace BayViewBookings
             this.lbl_login.TabIndex = 0;
             this.lbl_login.Text = "Login";
             this.lbl_login.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lbl_login.Click += new System.EventHandler(this.lbl_random_Click);
             // 
             // LoginForm
             // 
@@ -55,6 +54,7 @@ namespace BayViewBookings
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "LoginForm";
             this.Text = "Log In Form";
+            this.Load += new System.EventHandler(this.LoginForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
