@@ -65,31 +65,140 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LoginForm.cs">
+    <Compile Include="frm_GuestDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <Compile Include="frm_GuestDetails.Designer.cs">
+      <DependentUpon>frm_GuestDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_login.Designer.cs">
+      <DependentUpon>frm_login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Manager_Homepage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Manager_Homepage.Designer.cs">
+      <DependentUpon>frm_Manager_Homepage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_newBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_newBooking.Designer.cs">
+      <DependentUpon>frm_newBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Reports.Designer.cs">
+      <DependentUpon>frm_Reports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_RoomAvailability.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_RoomAvailability.Designer.cs">
+      <DependentUpon>frm_RoomAvailability.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_RoomDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_RoomDetails.Designer.cs">
+      <DependentUpon>frm_RoomDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_SplashScreen.Designer.cs">
+      <DependentUpon>frm_SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_StaffDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_StaffDetails.Designer.cs">
+      <DependentUpon>frm_StaffDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Staff_Homepage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Staff_Homepage.Designer.cs">
+      <DependentUpon>frm_Staff_Homepage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_TransactionDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_TransactionDetails.Designer.cs">
+      <DependentUpon>frm_TransactionDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_ViewBookings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ViewBookings.Designer.cs">
+      <DependentUpon>frm_ViewBookings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_ViewReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ViewReports.Designer.cs">
+      <DependentUpon>frm_ViewReports.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="LoginForm.resx">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <EmbeddedResource Include="frm_GuestDetails.resx">
+      <DependentUpon>frm_GuestDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_login.resx">
+      <DependentUpon>frm_login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Manager_Homepage.resx">
+      <DependentUpon>frm_Manager_Homepage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_newBooking.resx">
+      <DependentUpon>frm_newBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Reports.resx">
+      <DependentUpon>frm_Reports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_RoomAvailability.resx">
+      <DependentUpon>frm_RoomAvailability.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_RoomDetails.resx">
+      <DependentUpon>frm_RoomDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_SplashScreen.resx">
+      <DependentUpon>frm_SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_StaffDetails.resx">
+      <DependentUpon>frm_StaffDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Staff_Homepage.resx">
+      <DependentUpon>frm_Staff_Homepage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_TransactionDetails.resx">
+      <DependentUpon>frm_TransactionDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_ViewBookings.resx">
+      <DependentUpon>frm_ViewBookings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_ViewReports.resx">
+      <DependentUpon>frm_ViewReports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -98,6 +207,79 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\12312.jpg_fit=scale" />
+    <None Include="Resources\419269.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\57-572052_2560x1440-nature-snowy-mountains-wallpaper-data-snowy-mountain.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mountain.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blue.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\m8lyqsV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bayviewlogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4192691.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\171995.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\environ12.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bayviewlogo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pexels-photo-572897.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pexels-photo-5728971.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\83816884-bird-s-eye-view-office-image.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blue-gradient-waves-background_125540-818 %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blue1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7b34d33a578812832573513ae9909cba.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\340554.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2232.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blue-gradient-waves-background_125540-818 %281%291.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kw524shwjmi41.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2690782.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SH_0017__DH_1103-HDR.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HEADER-1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hotel.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

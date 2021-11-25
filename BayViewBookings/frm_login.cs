@@ -12,9 +12,9 @@ using System.IO;
 
 namespace BayViewBookings
 {
-    public partial class LoginForm : Form
+    public partial class frm_login : Form
     {
-        public LoginForm()
+        public frm_login()
         {
             InitializeComponent();
         }
@@ -34,6 +34,20 @@ namespace BayViewBookings
             {
                 MessageBox.Show(ex.Message);
             }
+          //  panel1.BackColor = Color.FromArgb(200, Color.White);
+          //  btn_login.BackColor = Color.FromArgb(255, 149, 3, 65);
+            pnl_login.Location = new Point(
+    this.ClientSize.Width / 2 - pnl_login.Size.Width / 2,
+    this.ClientSize.Height / 2 - pnl_login.Size.Height / 2);
+            pnl_login.Anchor = AnchorStyles.None;
+        }
+
+
+             private void btn_login_Click(object sender, EventArgs e)
+        {
+            frm_Manager_Homepage f2 = new frm_Manager_Homepage();
+            f2.ShowDialog(); // Shows Form2
+            this.Close();
         }
     }
 }
