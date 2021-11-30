@@ -16,5 +16,15 @@ namespace BayViewBookings
         {
             InitializeComponent();
         }
+
+        private void txt_EmployeeID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_AmountDue_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -16,5 +16,15 @@ namespace BayViewBookings
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_Make_Amendments_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
