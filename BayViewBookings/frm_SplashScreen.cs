@@ -16,5 +16,19 @@ namespace BayViewBookings
         {
             InitializeComponent();
         }
+
+        private void tmr_splash_Tick(object sender, EventArgs e)
+        {
+            pnl_loading.Width += 5;
+            if (pnl_loading.Width >= 971)
+            {
+                tmr_splash.Start();
+                tmr_splash.Stop();
+                this.Hide();
+                var frm_login = new frm_login();
+                frm_login.Closed += (s, args) => this.Close();
+                frm_login.Show();
+            }
+        }
     }
 }

@@ -59,5 +59,14 @@ namespace BayViewBookings
         {
 
         }
+
+        private void btn_exitmgr_Click(object sender, EventArgs e)
+        {
+            DialogResult dialog = dialog = MessageBox.Show("Do you really want to close the program?", "exit", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
 }
