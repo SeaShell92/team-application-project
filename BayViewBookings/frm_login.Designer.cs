@@ -145,10 +145,10 @@ namespace BayViewBookings
             this.ClientSize = new System.Drawing.Size(1653, 932);
             this.Controls.Add(this.pnl_login);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "frm_login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Log In Form";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.LoginForm_Load);
             this.pnl_login.ResumeLayout(false);
             this.pnl_login.PerformLayout();
