@@ -54,7 +54,7 @@ namespace BayViewBookings
             this.panel1.Controls.Add(this.button5);
             this.panel1.Location = new System.Drawing.Point(-4, 46);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(154, 962);
+            this.panel1.Size = new System.Drawing.Size(154, 611);
             this.panel1.TabIndex = 15;
             // 
             // button4
@@ -62,7 +62,7 @@ namespace BayViewBookings
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(-3, 861);
+            this.button4.Location = new System.Drawing.Point(-3, 510);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(157, 101);
             this.button4.TabIndex = 7;
@@ -74,7 +74,7 @@ namespace BayViewBookings
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(0, 764);
+            this.button5.Location = new System.Drawing.Point(0, 403);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(154, 101);
             this.button5.TabIndex = 6;
@@ -84,7 +84,7 @@ namespace BayViewBookings
             // lb_ViewReports
             // 
             this.lb_ViewReports.FormattingEnabled = true;
-            this.lb_ViewReports.Location = new System.Drawing.Point(557, 117);
+            this.lb_ViewReports.Location = new System.Drawing.Point(169, 67);
             this.lb_ViewReports.Name = "lb_ViewReports";
             this.lb_ViewReports.Size = new System.Drawing.Size(915, 550);
             this.lb_ViewReports.TabIndex = 16;
@@ -95,7 +95,7 @@ namespace BayViewBookings
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button11.ForeColor = System.Drawing.Color.Black;
-            this.button11.Location = new System.Drawing.Point(1337, 673);
+            this.button11.Location = new System.Drawing.Point(947, 621);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(135, 36);
             this.button11.TabIndex = 25;
@@ -108,7 +108,7 @@ namespace BayViewBookings
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button10.ForeColor = System.Drawing.Color.Black;
-            this.button10.Location = new System.Drawing.Point(1196, 673);
+            this.button10.Location = new System.Drawing.Point(806, 621);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(135, 36);
             this.button10.TabIndex = 24;
@@ -121,7 +121,7 @@ namespace BayViewBookings
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button12.ForeColor = System.Drawing.Color.Black;
-            this.button12.Location = new System.Drawing.Point(1055, 673);
+            this.button12.Location = new System.Drawing.Point(665, 621);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(135, 36);
             this.button12.TabIndex = 26;
@@ -140,7 +140,7 @@ namespace BayViewBookings
             this.pnl_Manager2.ForeColor = System.Drawing.Color.White;
             this.pnl_Manager2.Location = new System.Drawing.Point(0, 0);
             this.pnl_Manager2.Name = "pnl_Manager2";
-            this.pnl_Manager2.Size = new System.Drawing.Size(1924, 48);
+            this.pnl_Manager2.Size = new System.Drawing.Size(1109, 48);
             this.pnl_Manager2.TabIndex = 27;
             // 
             // btn_logout
@@ -149,7 +149,7 @@ namespace BayViewBookings
             this.btn_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_logout.ForeColor = System.Drawing.Color.White;
-            this.btn_logout.Location = new System.Drawing.Point(1800, 12);
+            this.btn_logout.Location = new System.Drawing.Point(980, 8);
             this.btn_logout.Name = "btn_logout";
             this.btn_logout.Size = new System.Drawing.Size(75, 28);
             this.btn_logout.TabIndex = 7;
@@ -162,7 +162,7 @@ namespace BayViewBookings
             this.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_exit.ForeColor = System.Drawing.Color.White;
-            this.btn_exit.Location = new System.Drawing.Point(1874, 12);
+            this.btn_exit.Location = new System.Drawing.Point(1061, 8);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(33, 28);
             this.btn_exit.TabIndex = 6;
@@ -214,7 +214,7 @@ namespace BayViewBookings
             this.lbl_Welcome_Msg.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Welcome_Msg.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Welcome_Msg.ForeColor = System.Drawing.Color.White;
-            this.lbl_Welcome_Msg.Location = new System.Drawing.Point(988, 8);
+            this.lbl_Welcome_Msg.Location = new System.Drawing.Point(720, 9);
             this.lbl_Welcome_Msg.Name = "lbl_Welcome_Msg";
             this.lbl_Welcome_Msg.Size = new System.Drawing.Size(143, 30);
             this.lbl_Welcome_Msg.TabIndex = 0;
@@ -224,16 +224,17 @@ namespace BayViewBookings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 1023);
+            this.ClientSize = new System.Drawing.Size(1106, 657);
             this.Controls.Add(this.pnl_Manager2);
             this.Controls.Add(this.button12);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.lb_ViewReports);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "frm_ViewReports";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_ViewReports";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.pnl_Manager2.ResumeLayout(false);
             this.pnl_Manager2.PerformLayout();

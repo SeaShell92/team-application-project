@@ -67,7 +67,7 @@ namespace BayViewBookings
             this.pnl_Reports2.Controls.Add(this.button5);
             this.pnl_Reports2.Location = new System.Drawing.Point(-4, 46);
             this.pnl_Reports2.Name = "pnl_Reports2";
-            this.pnl_Reports2.Size = new System.Drawing.Size(154, 962);
+            this.pnl_Reports2.Size = new System.Drawing.Size(154, 640);
             this.pnl_Reports2.TabIndex = 15;
             // 
             // button4
@@ -75,7 +75,7 @@ namespace BayViewBookings
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(-3, 861);
+            this.button4.Location = new System.Drawing.Point(-3, 536);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(157, 101);
             this.button4.TabIndex = 7;
@@ -87,7 +87,7 @@ namespace BayViewBookings
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(0, 764);
+            this.button5.Location = new System.Drawing.Point(0, 429);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(154, 101);
             this.button5.TabIndex = 6;
@@ -99,9 +99,9 @@ namespace BayViewBookings
             this.panel3.Controls.Add(this.btn_view1);
             this.panel3.Controls.Add(this.txt_filter2);
             this.panel3.Controls.Add(this.txt_filter1);
-            this.panel3.Location = new System.Drawing.Point(629, 134);
+            this.panel3.Location = new System.Drawing.Point(250, 80);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(895, 176);
+            this.panel3.Size = new System.Drawing.Size(895, 126);
             this.panel3.TabIndex = 18;
             // 
             // btn_view1
@@ -110,7 +110,7 @@ namespace BayViewBookings
             this.btn_view1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_view1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_view1.ForeColor = System.Drawing.Color.Black;
-            this.btn_view1.Location = new System.Drawing.Point(704, 58);
+            this.btn_view1.Location = new System.Drawing.Point(704, 45);
             this.btn_view1.Name = "btn_view1";
             this.btn_view1.Size = new System.Drawing.Size(135, 36);
             this.btn_view1.TabIndex = 23;
@@ -120,7 +120,7 @@ namespace BayViewBookings
             // txt_filter2
             // 
             this.txt_filter2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_filter2.Location = new System.Drawing.Point(32, 103);
+            this.txt_filter2.Location = new System.Drawing.Point(32, 85);
             this.txt_filter2.Name = "txt_filter2";
             this.txt_filter2.Size = new System.Drawing.Size(200, 24);
             this.txt_filter2.TabIndex = 1;
@@ -128,7 +128,7 @@ namespace BayViewBookings
             // txt_filter1
             // 
             this.txt_filter1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_filter1.Location = new System.Drawing.Point(32, 35);
+            this.txt_filter1.Location = new System.Drawing.Point(32, 17);
             this.txt_filter1.Name = "txt_filter1";
             this.txt_filter1.Size = new System.Drawing.Size(200, 24);
             this.txt_filter1.TabIndex = 0;
@@ -138,9 +138,9 @@ namespace BayViewBookings
             this.panel4.Controls.Add(this.btn_view2);
             this.panel4.Controls.Add(this.txt_filter4);
             this.panel4.Controls.Add(this.txt_filter3);
-            this.panel4.Location = new System.Drawing.Point(629, 370);
+            this.panel4.Location = new System.Drawing.Point(250, 287);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(895, 176);
+            this.panel4.Size = new System.Drawing.Size(895, 126);
             this.panel4.TabIndex = 24;
             // 
             // btn_view2
@@ -149,7 +149,7 @@ namespace BayViewBookings
             this.btn_view2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_view2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_view2.ForeColor = System.Drawing.Color.Black;
-            this.btn_view2.Location = new System.Drawing.Point(704, 58);
+            this.btn_view2.Location = new System.Drawing.Point(704, 45);
             this.btn_view2.Name = "btn_view2";
             this.btn_view2.Size = new System.Drawing.Size(135, 36);
             this.btn_view2.TabIndex = 23;
@@ -159,7 +159,7 @@ namespace BayViewBookings
             // txt_filter4
             // 
             this.txt_filter4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_filter4.Location = new System.Drawing.Point(32, 103);
+            this.txt_filter4.Location = new System.Drawing.Point(32, 85);
             this.txt_filter4.Name = "txt_filter4";
             this.txt_filter4.Size = new System.Drawing.Size(200, 24);
             this.txt_filter4.TabIndex = 1;
@@ -167,7 +167,7 @@ namespace BayViewBookings
             // txt_filter3
             // 
             this.txt_filter3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_filter3.Location = new System.Drawing.Point(32, 35);
+            this.txt_filter3.Location = new System.Drawing.Point(32, 17);
             this.txt_filter3.Name = "txt_filter3";
             this.txt_filter3.Size = new System.Drawing.Size(200, 24);
             this.txt_filter3.TabIndex = 0;
@@ -177,9 +177,9 @@ namespace BayViewBookings
             this.panel5.Controls.Add(this.btn_view3);
             this.panel5.Controls.Add(this.txt_filter6);
             this.panel5.Controls.Add(this.txt_filter5);
-            this.panel5.Location = new System.Drawing.Point(629, 609);
+            this.panel5.Location = new System.Drawing.Point(250, 494);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(895, 176);
+            this.panel5.Size = new System.Drawing.Size(895, 130);
             this.panel5.TabIndex = 24;
             // 
             // btn_view3
@@ -188,7 +188,7 @@ namespace BayViewBookings
             this.btn_view3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_view3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_view3.ForeColor = System.Drawing.Color.Black;
-            this.btn_view3.Location = new System.Drawing.Point(704, 58);
+            this.btn_view3.Location = new System.Drawing.Point(704, 47);
             this.btn_view3.Name = "btn_view3";
             this.btn_view3.Size = new System.Drawing.Size(135, 36);
             this.btn_view3.TabIndex = 23;
@@ -198,7 +198,7 @@ namespace BayViewBookings
             // txt_filter6
             // 
             this.txt_filter6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_filter6.Location = new System.Drawing.Point(32, 103);
+            this.txt_filter6.Location = new System.Drawing.Point(32, 87);
             this.txt_filter6.Name = "txt_filter6";
             this.txt_filter6.Size = new System.Drawing.Size(200, 24);
             this.txt_filter6.TabIndex = 1;
@@ -206,7 +206,7 @@ namespace BayViewBookings
             // txt_filter5
             // 
             this.txt_filter5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_filter5.Location = new System.Drawing.Point(32, 35);
+            this.txt_filter5.Location = new System.Drawing.Point(32, 19);
             this.txt_filter5.Name = "txt_filter5";
             this.txt_filter5.Size = new System.Drawing.Size(200, 24);
             this.txt_filter5.TabIndex = 0;
@@ -214,17 +214,17 @@ namespace BayViewBookings
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.Silver;
-            this.panel6.Location = new System.Drawing.Point(535, 338);
+            this.panel6.Location = new System.Drawing.Point(250, 246);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1137, 1);
+            this.panel6.Size = new System.Drawing.Size(895, 1);
             this.panel6.TabIndex = 25;
             // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.Silver;
-            this.panel7.Location = new System.Drawing.Point(535, 578);
+            this.panel7.Location = new System.Drawing.Point(250, 453);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1137, 1);
+            this.panel7.Size = new System.Drawing.Size(895, 1);
             this.panel7.TabIndex = 26;
             // 
             // pnl_ReportsHeader
@@ -239,7 +239,7 @@ namespace BayViewBookings
             this.pnl_ReportsHeader.ForeColor = System.Drawing.Color.White;
             this.pnl_ReportsHeader.Location = new System.Drawing.Point(0, 0);
             this.pnl_ReportsHeader.Name = "pnl_ReportsHeader";
-            this.pnl_ReportsHeader.Size = new System.Drawing.Size(1924, 48);
+            this.pnl_ReportsHeader.Size = new System.Drawing.Size(1237, 48);
             this.pnl_ReportsHeader.TabIndex = 13;
             // 
             // btn_logout
@@ -248,7 +248,7 @@ namespace BayViewBookings
             this.btn_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_logout.ForeColor = System.Drawing.Color.White;
-            this.btn_logout.Location = new System.Drawing.Point(1800, 12);
+            this.btn_logout.Location = new System.Drawing.Point(1114, 9);
             this.btn_logout.Name = "btn_logout";
             this.btn_logout.Size = new System.Drawing.Size(75, 28);
             this.btn_logout.TabIndex = 7;
@@ -261,7 +261,7 @@ namespace BayViewBookings
             this.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_exit.ForeColor = System.Drawing.Color.White;
-            this.btn_exit.Location = new System.Drawing.Point(1874, 12);
+            this.btn_exit.Location = new System.Drawing.Point(1195, 9);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(33, 28);
             this.btn_exit.TabIndex = 6;
@@ -313,7 +313,7 @@ namespace BayViewBookings
             this.lbl_Reports.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Reports.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Reports.ForeColor = System.Drawing.Color.White;
-            this.lbl_Reports.Location = new System.Drawing.Point(988, 8);
+            this.lbl_Reports.Location = new System.Drawing.Point(812, 9);
             this.lbl_Reports.Name = "lbl_Reports";
             this.lbl_Reports.Size = new System.Drawing.Size(89, 30);
             this.lbl_Reports.TabIndex = 0;
@@ -323,7 +323,7 @@ namespace BayViewBookings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 1023);
+            this.ClientSize = new System.Drawing.Size(1236, 677);
             this.Controls.Add(this.pnl_ReportsHeader);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
@@ -331,9 +331,10 @@ namespace BayViewBookings
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.pnl_Reports2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "frm_Reports";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_Reports";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.pnl_Reports2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();

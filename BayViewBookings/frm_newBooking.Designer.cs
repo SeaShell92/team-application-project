@@ -89,7 +89,7 @@ namespace BayViewBookings
             this.pnl_NewBooking.Controls.Add(this.button5);
             this.pnl_NewBooking.Location = new System.Drawing.Point(-4, 46);
             this.pnl_NewBooking.Name = "pnl_NewBooking";
-            this.pnl_NewBooking.Size = new System.Drawing.Size(152, 965);
+            this.pnl_NewBooking.Size = new System.Drawing.Size(152, 666);
             this.pnl_NewBooking.TabIndex = 5;
             // 
             // button4
@@ -97,7 +97,7 @@ namespace BayViewBookings
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(-3, 861);
+            this.button4.Location = new System.Drawing.Point(-5, 562);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(157, 101);
             this.button4.TabIndex = 7;
@@ -109,7 +109,7 @@ namespace BayViewBookings
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(0, 764);
+            this.button5.Location = new System.Drawing.Point(-2, 455);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(154, 101);
             this.button5.TabIndex = 6;
@@ -147,9 +147,9 @@ namespace BayViewBookings
             this.pnl_GuestDetails.Controls.Add(this.txt_GuestsID);
             this.pnl_GuestDetails.Controls.Add(this.lbl_GuestDetails);
             this.pnl_GuestDetails.Controls.Add(this.lbl_GuestID);
-            this.pnl_GuestDetails.Location = new System.Drawing.Point(421, 86);
+            this.pnl_GuestDetails.Location = new System.Drawing.Point(154, 57);
             this.pnl_GuestDetails.Name = "pnl_GuestDetails";
-            this.pnl_GuestDetails.Size = new System.Drawing.Size(1241, 370);
+            this.pnl_GuestDetails.Size = new System.Drawing.Size(1241, 208);
             this.pnl_GuestDetails.TabIndex = 8;
             // 
             // txt_EmailAddress
@@ -254,7 +254,7 @@ namespace BayViewBookings
             // 
             this.lbl_GuestDetails.AutoSize = true;
             this.lbl_GuestDetails.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_GuestDetails.Location = new System.Drawing.Point(501, 21);
+            this.lbl_GuestDetails.Location = new System.Drawing.Point(538, 21);
             this.lbl_GuestDetails.Name = "lbl_GuestDetails";
             this.lbl_GuestDetails.Size = new System.Drawing.Size(165, 31);
             this.lbl_GuestDetails.TabIndex = 8;
@@ -281,7 +281,7 @@ namespace BayViewBookings
             this.pnl_Booking.Controls.Add(this.txt_BookingID);
             this.pnl_Booking.Controls.Add(this.lbl_BookingDetails);
             this.pnl_Booking.Controls.Add(this.lbl_BookingID);
-            this.pnl_Booking.Location = new System.Drawing.Point(421, 478);
+            this.pnl_Booking.Location = new System.Drawing.Point(154, 287);
             this.pnl_Booking.Name = "pnl_Booking";
             this.pnl_Booking.Size = new System.Drawing.Size(1241, 370);
             this.pnl_Booking.TabIndex = 20;
@@ -436,7 +436,7 @@ namespace BayViewBookings
             // 
             this.lbl_BookingDetails.AutoSize = true;
             this.lbl_BookingDetails.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_BookingDetails.Location = new System.Drawing.Point(501, 20);
+            this.lbl_BookingDetails.Location = new System.Drawing.Point(521, 20);
             this.lbl_BookingDetails.Name = "lbl_BookingDetails";
             this.lbl_BookingDetails.Size = new System.Drawing.Size(198, 31);
             this.lbl_BookingDetails.TabIndex = 8;
@@ -455,9 +455,9 @@ namespace BayViewBookings
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.panel5.Location = new System.Drawing.Point(316, 462);
+            this.panel5.Location = new System.Drawing.Point(154, 271);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1405, 1);
+            this.panel5.Size = new System.Drawing.Size(1241, 10);
             this.panel5.TabIndex = 21;
             // 
             // btn_submit
@@ -466,7 +466,7 @@ namespace BayViewBookings
             this.btn_submit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_submit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_submit.ForeColor = System.Drawing.Color.Black;
-            this.btn_submit.Location = new System.Drawing.Point(1386, 854);
+            this.btn_submit.Location = new System.Drawing.Point(1118, 663);
             this.btn_submit.Name = "btn_submit";
             this.btn_submit.Size = new System.Drawing.Size(135, 36);
             this.btn_submit.TabIndex = 22;
@@ -479,7 +479,7 @@ namespace BayViewBookings
             this.btn_viewBookings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_viewBookings.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_viewBookings.ForeColor = System.Drawing.Color.Black;
-            this.btn_viewBookings.Location = new System.Drawing.Point(1527, 854);
+            this.btn_viewBookings.Location = new System.Drawing.Point(1259, 663);
             this.btn_viewBookings.Name = "btn_viewBookings";
             this.btn_viewBookings.Size = new System.Drawing.Size(135, 36);
             this.btn_viewBookings.TabIndex = 23;
@@ -499,7 +499,7 @@ namespace BayViewBookings
             this.pnl_NewBookingHeader.ForeColor = System.Drawing.Color.White;
             this.pnl_NewBookingHeader.Location = new System.Drawing.Point(0, 0);
             this.pnl_NewBookingHeader.Name = "pnl_NewBookingHeader";
-            this.pnl_NewBookingHeader.Size = new System.Drawing.Size(1924, 48);
+            this.pnl_NewBookingHeader.Size = new System.Drawing.Size(1406, 48);
             this.pnl_NewBookingHeader.TabIndex = 24;
             // 
             // btn_logout
@@ -573,7 +573,7 @@ namespace BayViewBookings
             this.lbl_NewBooking.BackColor = System.Drawing.Color.Transparent;
             this.lbl_NewBooking.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_NewBooking.ForeColor = System.Drawing.Color.White;
-            this.lbl_NewBooking.Location = new System.Drawing.Point(988, 8);
+            this.lbl_NewBooking.Location = new System.Drawing.Point(889, 8);
             this.lbl_NewBooking.Name = "lbl_NewBooking";
             this.lbl_NewBooking.Size = new System.Drawing.Size(147, 30);
             this.lbl_NewBooking.TabIndex = 0;
@@ -583,7 +583,7 @@ namespace BayViewBookings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 1023);
+            this.ClientSize = new System.Drawing.Size(1407, 704);
             this.Controls.Add(this.pnl_NewBookingHeader);
             this.Controls.Add(this.btn_viewBookings);
             this.Controls.Add(this.btn_submit);
@@ -591,9 +591,10 @@ namespace BayViewBookings
             this.Controls.Add(this.pnl_Booking);
             this.Controls.Add(this.pnl_GuestDetails);
             this.Controls.Add(this.pnl_NewBooking);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "frm_newBooking";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_newBooking";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.pnl_NewBooking.ResumeLayout(false);
             this.pnl_GuestDetails.ResumeLayout(false);
             this.pnl_GuestDetails.PerformLayout();
