@@ -16,5 +16,11 @@ namespace BayViewBookings
         {
             InitializeComponent();
         }
+
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            new frm_Manager_Homepage().Show();
+            Close();
+        }
     }
 }

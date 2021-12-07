@@ -45,9 +45,10 @@ namespace BayViewBookings
 
              private void btn_login_Click(object sender, EventArgs e)
         {
-            frm_Manager_Homepage f2 = new frm_Manager_Homepage();
-            f2.ShowDialog(); // Shows Form2
-            this.Close();
+            this.Hide();
+            var frm_Manager_Homepage = new frm_Manager_Homepage();
+            frm_Manager_Homepage.Closed += (s, args) => this.Close();
+            frm_Manager_Homepage.Show();
         }
     }
 }

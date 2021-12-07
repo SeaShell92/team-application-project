@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace BayViewBookings
 {
@@ -15,6 +17,12 @@ namespace BayViewBookings
         public frm_RoomDetails()
         {
             InitializeComponent();
+        }
+
+        private void btn_exitroomd_Click(object sender, EventArgs e)
+        {
+            new frm_Manager_Homepage().Show();
+            Close();
         }
     }
 }
