@@ -31,7 +31,7 @@ namespace BayViewBookings
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btn_exitroomd = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btn_filter3 = new System.Windows.Forms.Button();
             this.txt_filter3 = new System.Windows.Forms.TextBox();
@@ -73,7 +73,7 @@ namespace BayViewBookings
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button5);
+            this.panel1.Controls.Add(this.btn_exitroomd);
             this.panel1.Location = new System.Drawing.Point(-4, 46);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(154, 640);
@@ -91,17 +91,18 @@ namespace BayViewBookings
             this.button4.Text = "button";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btn_exitroomd
             // 
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(0, 536);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(154, 101);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "button";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btn_exitroomd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_exitroomd.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_exitroomd.ForeColor = System.Drawing.Color.White;
+            this.btn_exitroomd.Location = new System.Drawing.Point(0, 536);
+            this.btn_exitroomd.Name = "btn_exitroomd";
+            this.btn_exitroomd.Size = new System.Drawing.Size(154, 101);
+            this.btn_exitroomd.TabIndex = 6;
+            this.btn_exitroomd.Text = "Exit";
+            this.btn_exitroomd.UseVisualStyleBackColor = true;
+            this.btn_exitroomd.Click += new System.EventHandler(this.btn_exitroomd_Click);
             // 
             // panel3
             // 
@@ -241,6 +242,7 @@ namespace BayViewBookings
             this.btn_Bookings.TabIndex = 2;
             this.btn_Bookings.Text = "Bookings";
             this.btn_Bookings.UseVisualStyleBackColor = false;
+            this.btn_Bookings.Click += new System.EventHandler(this.btn_Bookings_Click);
             // 
             // btn_Guests
             // 
@@ -254,6 +256,7 @@ namespace BayViewBookings
             this.btn_Guests.TabIndex = 1;
             this.btn_Guests.Text = "Guests";
             this.btn_Guests.UseVisualStyleBackColor = false;
+            this.btn_Guests.Click += new System.EventHandler(this.btn_Guests_Click);
             // 
             // lbl_RoomDetails
             // 
@@ -433,7 +436,7 @@ namespace BayViewBookings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1236, 677);
+            this.ClientSize = new System.Drawing.Size(1243, 677);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnl_Manager2);
             this.Controls.Add(this.panel3);
@@ -457,7 +460,7 @@ namespace BayViewBookings
         #endregion
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btn_exitroomd;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btn_filter3;
         private System.Windows.Forms.TextBox txt_filter3;

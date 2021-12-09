@@ -30,7 +30,7 @@ namespace BayViewBookings
         private void InitializeComponent()
         {
             this.pnl_Reports2 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btn_exitreports = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btn_view1 = new System.Windows.Forms.Button();
@@ -63,24 +63,25 @@ namespace BayViewBookings
             // pnl_Reports2
             // 
             this.pnl_Reports2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pnl_Reports2.Controls.Add(this.button4);
+            this.pnl_Reports2.Controls.Add(this.btn_exitreports);
             this.pnl_Reports2.Controls.Add(this.button5);
             this.pnl_Reports2.Location = new System.Drawing.Point(-4, 46);
             this.pnl_Reports2.Name = "pnl_Reports2";
             this.pnl_Reports2.Size = new System.Drawing.Size(154, 640);
             this.pnl_Reports2.TabIndex = 15;
             // 
-            // button4
+            // btn_exitreports
             // 
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(-3, 536);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(157, 101);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "button";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn_exitreports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_exitreports.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_exitreports.ForeColor = System.Drawing.Color.White;
+            this.btn_exitreports.Location = new System.Drawing.Point(-3, 536);
+            this.btn_exitreports.Name = "btn_exitreports";
+            this.btn_exitreports.Size = new System.Drawing.Size(157, 101);
+            this.btn_exitreports.TabIndex = 7;
+            this.btn_exitreports.Text = "Exit";
+            this.btn_exitreports.UseVisualStyleBackColor = true;
+            this.btn_exitreports.Click += new System.EventHandler(this.btn_exitreports_Click);
             // 
             // button5
             // 
@@ -267,6 +268,7 @@ namespace BayViewBookings
             this.btn_exit.TabIndex = 6;
             this.btn_exit.Text = "x";
             this.btn_exit.UseVisualStyleBackColor = false;
+            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
             // btn_Rooms
             // 
@@ -280,6 +282,7 @@ namespace BayViewBookings
             this.btn_Rooms.TabIndex = 3;
             this.btn_Rooms.Text = "Rooms";
             this.btn_Rooms.UseVisualStyleBackColor = false;
+            this.btn_Rooms.Click += new System.EventHandler(this.btn_Rooms_Click);
             // 
             // btn_Bookings
             // 
@@ -293,6 +296,7 @@ namespace BayViewBookings
             this.btn_Bookings.TabIndex = 2;
             this.btn_Bookings.Text = "Bookings";
             this.btn_Bookings.UseVisualStyleBackColor = false;
+            this.btn_Bookings.Click += new System.EventHandler(this.btn_Bookings_Click);
             // 
             // btn_Guests
             // 
@@ -306,6 +310,7 @@ namespace BayViewBookings
             this.btn_Guests.TabIndex = 1;
             this.btn_Guests.Text = "Guests";
             this.btn_Guests.UseVisualStyleBackColor = false;
+            this.btn_Guests.Click += new System.EventHandler(this.btn_Guests_Click);
             // 
             // lbl_Reports
             // 
@@ -350,7 +355,7 @@ namespace BayViewBookings
 
         #endregion
         private System.Windows.Forms.Panel pnl_Reports2;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btn_exitreports;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox txt_filter2;

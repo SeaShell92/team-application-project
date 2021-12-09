@@ -30,7 +30,7 @@ namespace BayViewBookings
         private void InitializeComponent()
         {
             this.pnl_NewBooking = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btn_exitbook = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.cldr_Booking = new System.Windows.Forms.MonthCalendar();
             this.lbl_GuestID = new System.Windows.Forms.Label();
@@ -85,24 +85,25 @@ namespace BayViewBookings
             // pnl_NewBooking
             // 
             this.pnl_NewBooking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pnl_NewBooking.Controls.Add(this.button4);
+            this.pnl_NewBooking.Controls.Add(this.btn_exitbook);
             this.pnl_NewBooking.Controls.Add(this.button5);
             this.pnl_NewBooking.Location = new System.Drawing.Point(-4, 46);
             this.pnl_NewBooking.Name = "pnl_NewBooking";
             this.pnl_NewBooking.Size = new System.Drawing.Size(152, 666);
             this.pnl_NewBooking.TabIndex = 5;
             // 
-            // button4
+            // btn_exitbook
             // 
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(-5, 562);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(157, 101);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "button";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn_exitbook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_exitbook.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_exitbook.ForeColor = System.Drawing.Color.White;
+            this.btn_exitbook.Location = new System.Drawing.Point(-5, 562);
+            this.btn_exitbook.Name = "btn_exitbook";
+            this.btn_exitbook.Size = new System.Drawing.Size(157, 101);
+            this.btn_exitbook.TabIndex = 7;
+            this.btn_exitbook.Text = "Exit";
+            this.btn_exitbook.UseVisualStyleBackColor = true;
+            this.btn_exitbook.Click += new System.EventHandler(this.btn_exitbook_Click);
             // 
             // button5
             // 
@@ -540,6 +541,7 @@ namespace BayViewBookings
             this.btn_Rooms.TabIndex = 3;
             this.btn_Rooms.Text = "Rooms";
             this.btn_Rooms.UseVisualStyleBackColor = false;
+            this.btn_Rooms.Click += new System.EventHandler(this.btn_Rooms_Click);
             // 
             // btn_Bookings
             // 
@@ -566,6 +568,7 @@ namespace BayViewBookings
             this.btn_Guests.TabIndex = 1;
             this.btn_Guests.Text = "Guests";
             this.btn_Guests.UseVisualStyleBackColor = false;
+            this.btn_Guests.Click += new System.EventHandler(this.btn_Guests_Click);
             // 
             // lbl_NewBooking
             // 
@@ -583,7 +586,7 @@ namespace BayViewBookings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1407, 704);
+            this.ClientSize = new System.Drawing.Size(1402, 700);
             this.Controls.Add(this.pnl_NewBookingHeader);
             this.Controls.Add(this.btn_viewBookings);
             this.Controls.Add(this.btn_submit);
@@ -595,6 +598,7 @@ namespace BayViewBookings
             this.Name = "frm_newBooking";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_newBooking";
+            this.Load += new System.EventHandler(this.frm_newBooking_Load);
             this.pnl_NewBooking.ResumeLayout(false);
             this.pnl_GuestDetails.ResumeLayout(false);
             this.pnl_GuestDetails.PerformLayout();
@@ -608,7 +612,7 @@ namespace BayViewBookings
 
         #endregion
         private System.Windows.Forms.Panel pnl_NewBooking;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btn_exitbook;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.MonthCalendar cldr_Booking;
         private System.Windows.Forms.Label lbl_GuestID;

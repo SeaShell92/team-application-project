@@ -24,5 +24,17 @@ namespace BayViewBookings
             new frm_Manager_Homepage().Show();
             Close();
         }
+
+        private void btn_Guests_Click(object sender, EventArgs e)
+        {
+            new frm_GuestDetails().Show();
+            Close();
+        }
+
+        private void btn_Bookings_Click(object sender, EventArgs e)
+        {
+            new frm_newBooking().Show();
+            Close();
+        }
     }
 }

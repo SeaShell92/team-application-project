@@ -47,6 +47,7 @@ namespace BayViewBookings
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.pnl_GuestDetails2 = new System.Windows.Forms.Panel();
+            this.btn_exitguest = new System.Windows.Forms.Button();
             this.panelGuest = new System.Windows.Forms.Panel();
             this.lbl_Make_Amendments = new System.Windows.Forms.Label();
             this.btn_Cancel = new System.Windows.Forms.Button();
@@ -194,6 +195,7 @@ namespace BayViewBookings
             this.btn_Rooms.TabIndex = 3;
             this.btn_Rooms.Text = "Rooms";
             this.btn_Rooms.UseVisualStyleBackColor = false;
+            this.btn_Rooms.Click += new System.EventHandler(this.btn_Rooms_Click);
             // 
             // btn_Bookings
             // 
@@ -207,6 +209,7 @@ namespace BayViewBookings
             this.btn_Bookings.TabIndex = 2;
             this.btn_Bookings.Text = "Bookings";
             this.btn_Bookings.UseVisualStyleBackColor = false;
+            this.btn_Bookings.Click += new System.EventHandler(this.btn_Bookings_Click);
             // 
             // btn_Guests
             // 
@@ -260,12 +263,27 @@ namespace BayViewBookings
             // pnl_GuestDetails2
             // 
             this.pnl_GuestDetails2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pnl_GuestDetails2.Controls.Add(this.btn_exitguest);
             this.pnl_GuestDetails2.Controls.Add(this.button4);
             this.pnl_GuestDetails2.Controls.Add(this.button5);
             this.pnl_GuestDetails2.Location = new System.Drawing.Point(0, 48);
             this.pnl_GuestDetails2.Name = "pnl_GuestDetails2";
             this.pnl_GuestDetails2.Size = new System.Drawing.Size(149, 640);
             this.pnl_GuestDetails2.TabIndex = 11;
+            // 
+            // btn_exitguest
+            // 
+            this.btn_exitguest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_exitguest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_exitguest.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_exitguest.ForeColor = System.Drawing.Color.White;
+            this.btn_exitguest.Location = new System.Drawing.Point(-8, 580);
+            this.btn_exitguest.Name = "btn_exitguest";
+            this.btn_exitguest.Size = new System.Drawing.Size(157, 48);
+            this.btn_exitguest.TabIndex = 8;
+            this.btn_exitguest.Text = "Exit";
+            this.btn_exitguest.UseVisualStyleBackColor = false;
+            this.btn_exitguest.Click += new System.EventHandler(this.btn_exitguest_Click);
             // 
             // panelGuest
             // 
@@ -434,7 +452,7 @@ namespace BayViewBookings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1236, 677);
+            this.ClientSize = new System.Drawing.Size(1254, 678);
             this.Controls.Add(this.pnl_GuestDetails2);
             this.Controls.Add(this.panelGuest);
             this.Controls.Add(this.pnl_Manager2);
@@ -490,5 +508,6 @@ namespace BayViewBookings
         private System.Windows.Forms.Label lbl_Make_Amendments;
         private System.Windows.Forms.Button btn_Cancel;
         private System.Windows.Forms.Button btn_Enter;
+        private System.Windows.Forms.Button btn_exitguest;
     }
 }

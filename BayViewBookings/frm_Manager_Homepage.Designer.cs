@@ -29,6 +29,7 @@ namespace BayViewBookings
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Manager_Homepage));
             this.pnl_Manager2 = new System.Windows.Forms.Panel();
             this.btn_Logout = new System.Windows.Forms.Button();
             this.btn_X = new System.Windows.Forms.Button();
@@ -71,6 +72,7 @@ namespace BayViewBookings
             this.btn_Logout.TabIndex = 7;
             this.btn_Logout.Text = "Logout";
             this.btn_Logout.UseVisualStyleBackColor = false;
+            this.btn_Logout.Click += new System.EventHandler(this.btn_Logout_Click);
             // 
             // btn_X
             // 
@@ -197,9 +199,9 @@ namespace BayViewBookings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::BayViewBookings.Properties.Resources.HEADER_1;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1236, 677);
+            this.ClientSize = new System.Drawing.Size(1239, 677);
             this.ControlBox = false;
             this.Controls.Add(this.pnl_Manager);
             this.Controls.Add(this.pnl_Manager2);

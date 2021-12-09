@@ -16,5 +16,10 @@ namespace BayViewBookings
         {
             InitializeComponent();
         }
+
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

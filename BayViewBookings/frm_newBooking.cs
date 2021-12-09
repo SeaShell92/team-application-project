@@ -21,7 +21,6 @@ namespace BayViewBookings
         {
             frm_ViewBookings f2 = new frm_ViewBookings();
             f2.ShowDialog(); // Shows Form2
-            this.Close();
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -77,6 +76,23 @@ namespace BayViewBookings
         private void btn_exitbook_Click(object sender, EventArgs e)
         {
             new frm_Manager_Homepage().Show();
+            Close();
+        }
+
+        private void frm_newBooking_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Guests_Click(object sender, EventArgs e)
+        {
+            new frm_GuestDetails().Show();
+            Close();
+        }
+
+        private void btn_Rooms_Click(object sender, EventArgs e)
+        {
+            new frm_RoomDetails().Show();
             Close();
         }
     }
