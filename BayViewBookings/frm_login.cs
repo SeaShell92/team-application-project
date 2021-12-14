@@ -29,16 +29,18 @@ namespace BayViewBookings
                 string filepath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Database\bookings.db");
                 string conString = @"Data source = " + filepath;
                 dbCon.ConnectionString = conString;
+                dbCon.Open();
+                MessageBox.Show("Connected");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-          //  panel1.BackColor = Color.FromArgb(200, Color.White);
-          //  btn_login.BackColor = Color.FromArgb(255, 149, 3, 65);
+       
+
             pnl_login.Location = new Point(
-    this.ClientSize.Width / 2 - pnl_login.Size.Width / 2,
-    this.ClientSize.Height / 2 - pnl_login.Size.Height / 2);
+            this.ClientSize.Width / 2 - pnl_login.Size.Width / 2,
+            this.ClientSize.Height / 2 - pnl_login.Size.Height / 2);
             pnl_login.Anchor = AnchorStyles.None;
         }
 

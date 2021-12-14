@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Data.OleDb;
+using System.Data.SQLite;
 
 namespace BayViewBookings
 {
@@ -16,11 +19,16 @@ namespace BayViewBookings
         {
             InitializeComponent();
         }
-
+        SQLiteConnection dbCon = new SQLiteConnection();
+        SQLiteCommand dbcmd = new SQLiteCommand();
+        const string details = @"Data Source = ..\..\Database\bookings.db";
         private void button11_Click(object sender, EventArgs e)
         {
-            frm_ViewBookings f2 = new frm_ViewBookings();
-            f2.ShowDialog(); // Shows Form2
+           
+            frm_ViewBookings f2 = new frm_ViewBookings(details);
+            f2.ShowDialog();
+            this.Hide();
+
         }
 
         private void label5_Click(object sender, EventArgs e)
