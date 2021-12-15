@@ -46,7 +46,9 @@ namespace BayViewBookings
                     String sName = dbreader.GetString(1);
                    lb_viewBookings.Items.Add(sName);
              }
-        }
+                cmdDataBase.Dispose();
+                dbreader.Close();
+            }
            catch (Exception ex)
             {
               MessageBox.Show(ex.Message);

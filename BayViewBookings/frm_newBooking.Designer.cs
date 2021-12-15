@@ -176,7 +176,6 @@ namespace BayViewBookings
             this.txt_Telephone.Name = "txt_Telephone";
             this.txt_Telephone.Size = new System.Drawing.Size(136, 20);
             this.txt_Telephone.TabIndex = 17;
-            this.txt_Telephone.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // lbl_Telephone
             // 
@@ -187,7 +186,6 @@ namespace BayViewBookings
             this.lbl_Telephone.Size = new System.Drawing.Size(94, 21);
             this.lbl_Telephone.TabIndex = 16;
             this.lbl_Telephone.Text = "Telephone:";
-            this.lbl_Telephone.Click += new System.EventHandler(this.lbl_Telephone_Click);
             // 
             // txt_Surname
             // 
@@ -195,7 +193,6 @@ namespace BayViewBookings
             this.txt_Surname.Name = "txt_Surname";
             this.txt_Surname.Size = new System.Drawing.Size(136, 20);
             this.txt_Surname.TabIndex = 15;
-            this.txt_Surname.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // lbl_Surname
             // 
@@ -206,7 +203,6 @@ namespace BayViewBookings
             this.lbl_Surname.Size = new System.Drawing.Size(82, 21);
             this.lbl_Surname.TabIndex = 14;
             this.lbl_Surname.Text = "Surname:";
-            this.lbl_Surname.Click += new System.EventHandler(this.lbl_Surname_Click);
             // 
             // txt_FirstName
             // 
@@ -214,7 +210,6 @@ namespace BayViewBookings
             this.txt_FirstName.Name = "txt_FirstName";
             this.txt_FirstName.Size = new System.Drawing.Size(136, 20);
             this.txt_FirstName.TabIndex = 13;
-            this.txt_FirstName.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // lbl_FirstName
             // 
@@ -225,7 +220,6 @@ namespace BayViewBookings
             this.lbl_FirstName.Size = new System.Drawing.Size(97, 21);
             this.lbl_FirstName.TabIndex = 12;
             this.lbl_FirstName.Text = "First Name:";
-            this.lbl_FirstName.Click += new System.EventHandler(this.lbl_FirstName_Click);
             // 
             // txt_Title
             // 
@@ -325,7 +319,6 @@ namespace BayViewBookings
             this.txt_TtlBreakfasts.Name = "txt_TtlBreakfasts";
             this.txt_TtlBreakfasts.Size = new System.Drawing.Size(98, 20);
             this.txt_TtlBreakfasts.TabIndex = 29;
-            this.txt_TtlBreakfasts.TextChanged += new System.EventHandler(this.textBox17_TextChanged);
             // 
             // lbl_TtlBreakfasts
             // 
@@ -336,7 +329,6 @@ namespace BayViewBookings
             this.lbl_TtlBreakfasts.Size = new System.Drawing.Size(135, 21);
             this.lbl_TtlBreakfasts.TabIndex = 28;
             this.lbl_TtlBreakfasts.Text = "Total Breakfasts:";
-            this.lbl_TtlBreakfasts.Click += new System.EventHandler(this.label6_Click);
             // 
             // txt_TotalGuests
             // 
@@ -344,7 +336,6 @@ namespace BayViewBookings
             this.txt_TotalGuests.Name = "txt_TotalGuests";
             this.txt_TotalGuests.Size = new System.Drawing.Size(98, 20);
             this.txt_TotalGuests.TabIndex = 27;
-            this.txt_TotalGuests.TextChanged += new System.EventHandler(this.textBox16_TextChanged);
             // 
             // lbl_TotalGuests
             // 
@@ -355,7 +346,6 @@ namespace BayViewBookings
             this.lbl_TotalGuests.Size = new System.Drawing.Size(108, 21);
             this.lbl_TotalGuests.TabIndex = 26;
             this.lbl_TotalGuests.Text = "Total Guests:";
-            this.lbl_TotalGuests.Click += new System.EventHandler(this.label5_Click);
             // 
             // txt_NoOfNights
             // 
@@ -473,6 +463,7 @@ namespace BayViewBookings
             this.btn_submit.TabIndex = 22;
             this.btn_submit.Text = "Submit";
             this.btn_submit.UseVisualStyleBackColor = false;
+            this.btn_submit.Click += new System.EventHandler(this.btn_submit_Click);
             // 
             // btn_viewBookings
             // 

@@ -31,55 +31,6 @@ namespace BayViewBookings
 
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox16_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox17_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_Telephone_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_Surname_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_FirstName_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btn_exitbook_Click(object sender, EventArgs e)
         {
@@ -102,6 +53,54 @@ namespace BayViewBookings
         {
             new frm_RoomDetails().Show();
             Close();
+        }
+
+        private void btn_submit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+               
+                    using (SQLiteCommand cmd = dbCon.CreateCommand())
+                    {
+                
+                        //allows users to add record
+
+
+                        dbCon.ConnectionString = details; //declares connection string
+                            cmd.CommandText = @"Insert into Booking(Booking_ID) Values (@Booking_ID)";
+                            cmd.Parameters.AddWithValue("Booking_ID", txt_BookingID.Text);
+                           //cmd.Parameters.AddWithValue("Emplyee_ID", txt_EmployeeID.Text);
+                           // cmd.Parameters.AddWithValue("Guest_ID", txt_GuestsID.Text);
+                          //  cmd.Parameters.AddWithValue("Booking_Date", txt_BookingID.Text);
+                         //   cmd.Parameters.AddWithValue("Check_In", txt_CheckIn.Text);
+                         //   cmd.Parameters.AddWithValue("Check_Out", txt_CheckOut.Text);
+                        //    cmd.Parameters.AddWithValue("No_Of_Nights", txt_NoOfNights.Text);
+                       //     cmd.Parameters.AddWithValue("Total_Guests", txt_TotalGuests.Text);
+                       //     cmd.Parameters.AddWithValue("Total_Breakfasts", txt_TtlBreakfasts.Text);
+                //        cmd.Parameters.AddWithValue("Has_Paid", txt_al.Text);
+                        //adds the new record details
+                        dbCon.Open();
+
+                            int recordsChanged = cmd.ExecuteNonQuery();
+                            MessageBox.Show(recordsChanged.ToString() + " Records Added"); //message to notify the user that they have added the records
+                            dbCon.Close();
+                       
+
+
+
+                    }
+
+                
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.Message);
+            }
         }
     }
 }
