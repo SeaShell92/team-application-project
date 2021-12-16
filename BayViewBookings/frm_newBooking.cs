@@ -24,7 +24,7 @@ namespace BayViewBookings
         SQLiteCommand dbcmd = new SQLiteCommand();
         const string details = @"Data Source = ..\..\Database\bookings.db";
         int Has_Paid = 0;
-        string Has_Paid1 = "Yes";
+        //string Has_Paid1 = "Yes";
         private void button11_Click(object sender, EventArgs e)
         {
            

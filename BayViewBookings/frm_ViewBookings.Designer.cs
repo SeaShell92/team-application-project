@@ -30,7 +30,6 @@ namespace BayViewBookings
         private void InitializeComponent()
         {
             this.pnl_viewbookings = new System.Windows.Forms.Panel();
-            this.lb_viewBookings = new System.Windows.Forms.ListBox();
             this.pnl_filters = new System.Windows.Forms.Panel();
             this.btn_filter3 = new System.Windows.Forms.Button();
             this.txt_filter3 = new System.Windows.Forms.TextBox();
@@ -45,8 +44,10 @@ namespace BayViewBookings
             this.btn_bookings = new System.Windows.Forms.Button();
             this.btn_guests = new System.Windows.Forms.Button();
             this.lbl_viewbookings = new System.Windows.Forms.Label();
+            this.dgv_ViewBookings = new System.Windows.Forms.DataGridView();
             this.pnl_filters.SuspendLayout();
             this.pnl_viewbookingsheader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ViewBookings)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_viewbookings
@@ -56,16 +57,6 @@ namespace BayViewBookings
             this.pnl_viewbookings.Name = "pnl_viewbookings";
             this.pnl_viewbookings.Size = new System.Drawing.Size(154, 640);
             this.pnl_viewbookings.TabIndex = 6;
-            // 
-            // lb_viewBookings
-            // 
-            this.lb_viewBookings.FormattingEnabled = true;
-            this.lb_viewBookings.HorizontalExtent = 100;
-            this.lb_viewBookings.HorizontalScrollbar = true;
-            this.lb_viewBookings.Location = new System.Drawing.Point(169, 67);
-            this.lb_viewBookings.Name = "lb_viewBookings";
-            this.lb_viewBookings.Size = new System.Drawing.Size(862, 602);
-            this.lb_viewBookings.TabIndex = 7;
             // 
             // pnl_filters
             // 
@@ -224,14 +215,24 @@ namespace BayViewBookings
             this.lbl_viewbookings.TabIndex = 0;
             this.lbl_viewbookings.Text = "View Bookings";
             // 
+            // dgv_ViewBookings
+            // 
+            this.dgv_ViewBookings.AllowUserToOrderColumns = true;
+            this.dgv_ViewBookings.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_ViewBookings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_ViewBookings.Location = new System.Drawing.Point(171, 78);
+            this.dgv_ViewBookings.Name = "dgv_ViewBookings";
+            this.dgv_ViewBookings.Size = new System.Drawing.Size(860, 587);
+            this.dgv_ViewBookings.TabIndex = 10;
+            // 
             // frm_ViewBookings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1236, 677);
+            this.Controls.Add(this.dgv_ViewBookings);
             this.Controls.Add(this.pnl_viewbookingsheader);
             this.Controls.Add(this.pnl_filters);
-            this.Controls.Add(this.lb_viewBookings);
             this.Controls.Add(this.pnl_viewbookings);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "frm_ViewBookings";
@@ -242,13 +243,13 @@ namespace BayViewBookings
             this.pnl_filters.PerformLayout();
             this.pnl_viewbookingsheader.ResumeLayout(false);
             this.pnl_viewbookingsheader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ViewBookings)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Panel pnl_viewbookings;
-        private System.Windows.Forms.ListBox lb_viewBookings;
         private System.Windows.Forms.Panel pnl_filters;
         private System.Windows.Forms.Button btn_filter3;
         private System.Windows.Forms.TextBox txt_filter3;
@@ -263,5 +264,6 @@ namespace BayViewBookings
         private System.Windows.Forms.Button btn_bookings;
         private System.Windows.Forms.Button btn_guests;
         private System.Windows.Forms.Label lbl_viewbookings;
+        private System.Windows.Forms.DataGridView dgv_ViewBookings;
     }
 }
