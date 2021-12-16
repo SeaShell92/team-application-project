@@ -60,6 +60,8 @@ namespace BayViewBookings
             // lb_viewBookings
             // 
             this.lb_viewBookings.FormattingEnabled = true;
+            this.lb_viewBookings.HorizontalExtent = 100;
+            this.lb_viewBookings.HorizontalScrollbar = true;
             this.lb_viewBookings.Location = new System.Drawing.Point(169, 67);
             this.lb_viewBookings.Name = "lb_viewBookings";
             this.lb_viewBookings.Size = new System.Drawing.Size(862, 602);
