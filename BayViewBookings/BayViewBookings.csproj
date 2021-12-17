@@ -281,6 +281,18 @@
   <ItemGroup>
     <None Include="Resources\hotel.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bayviewletter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bayview2-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bayview3.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bayviewBookings.PNG" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
