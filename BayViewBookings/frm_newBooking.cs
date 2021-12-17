@@ -27,10 +27,11 @@ namespace BayViewBookings
         //string Has_Paid1 = "Yes";
         private void button11_Click(object sender, EventArgs e)
         {
-           
+         
             frm_ViewBookings f2 = new frm_ViewBookings(details);
             f2.ShowDialog();
-            this.Hide();
+            this.Show();
+         
 
         }
 
@@ -117,6 +118,9 @@ namespace BayViewBookings
 
         }
 
-       
+        private void btn_Bookings_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

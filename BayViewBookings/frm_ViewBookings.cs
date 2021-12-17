@@ -27,7 +27,9 @@ namespace BayViewBookings
       
         private void btn_exit_Click(object sender, EventArgs e)
         {
-            this.Hide();
+
+            //   new frm_newBooking().Show();
+            this.DialogResult = DialogResult.OK;
         }
         void fill_listbox() 
         {
@@ -58,6 +60,18 @@ namespace BayViewBookings
         private void frm_ViewBookings_Load(object sender, EventArgs e)
         {
           
+        }
+
+        private void btn_guests_Click(object sender, EventArgs e)
+        {
+            new frm_GuestDetails().Show();
+            Close();
+        }
+
+        private void btn_rooms_Click(object sender, EventArgs e)
+        {
+            new frm_RoomDetails().Show();
+            Close();
         }
     }
 }

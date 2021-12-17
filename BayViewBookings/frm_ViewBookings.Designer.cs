@@ -176,6 +176,7 @@ namespace BayViewBookings
             this.btn_rooms.TabIndex = 3;
             this.btn_rooms.Text = "Rooms";
             this.btn_rooms.UseVisualStyleBackColor = false;
+            this.btn_rooms.Click += new System.EventHandler(this.btn_rooms_Click);
             // 
             // btn_bookings
             // 
@@ -202,6 +203,7 @@ namespace BayViewBookings
             this.btn_guests.TabIndex = 1;
             this.btn_guests.Text = "Guests";
             this.btn_guests.UseVisualStyleBackColor = false;
+            this.btn_guests.Click += new System.EventHandler(this.btn_guests_Click);
             // 
             // lbl_viewbookings
             // 
