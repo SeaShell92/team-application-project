@@ -132,6 +132,7 @@ namespace BayViewBookings
             this.btn_Logout.TabIndex = 7;
             this.btn_Logout.Text = "Logout";
             this.btn_Logout.UseVisualStyleBackColor = false;
+            this.btn_Logout.Click += new System.EventHandler(this.btn_Logout_Click);
             // 
             // btn_X
             // 

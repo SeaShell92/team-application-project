@@ -33,7 +33,7 @@ namespace BayViewBookings
         }
         void fill_listbox() 
         {
-            string Query = "Select * From Booking"; //sql code
+            string Query = "Select * From Employee"; //sql code
             SQLiteConnection dbCon = new SQLiteConnection(details);
             SQLiteCommand cmdDataBase = new SQLiteCommand(Query, dbCon);
             SQLiteDataReader dbreader;

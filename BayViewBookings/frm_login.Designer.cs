@@ -37,6 +37,8 @@ namespace BayViewBookings
             this.txt_password = new System.Windows.Forms.TextBox();
             this.txt_username = new System.Windows.Forms.TextBox();
             this.pb_logo = new System.Windows.Forms.PictureBox();
+            this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
+            this.lbl_managed_by = new System.Windows.Forms.Label();
             this.pnl_login.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_logo)).BeginInit();
             this.SuspendLayout();
@@ -123,6 +125,7 @@ namespace BayViewBookings
             this.txt_username.Name = "txt_username";
             this.txt_username.Size = new System.Drawing.Size(284, 34);
             this.txt_username.TabIndex = 2;
+            this.txt_username.TextChanged += new System.EventHandler(this.txt_username_TextChanged);
             // 
             // pb_logo
             // 
@@ -135,6 +138,24 @@ namespace BayViewBookings
             this.pb_logo.TabIndex = 7;
             this.pb_logo.TabStop = false;
             // 
+            // entityCommand1
+            // 
+            this.entityCommand1.CommandTimeout = 0;
+            this.entityCommand1.CommandTree = null;
+            this.entityCommand1.Connection = null;
+            this.entityCommand1.EnablePlanCaching = true;
+            this.entityCommand1.Transaction = null;
+            // 
+            // lbl_managed_by
+            // 
+            this.lbl_managed_by.AutoSize = true;
+            this.lbl_managed_by.Location = new System.Drawing.Point(198, 537);
+            this.lbl_managed_by.Name = "lbl_managed_by";
+            this.lbl_managed_by.Size = new System.Drawing.Size(35, 13);
+            this.lbl_managed_by.TabIndex = 2;
+            this.lbl_managed_by.Text = "label1";
+            this.lbl_managed_by.Visible = false;
+            // 
             // frm_login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -143,6 +164,7 @@ namespace BayViewBookings
             this.BackgroundImage = global::BayViewBookings.Properties.Resources._12312;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1653, 932);
+            this.Controls.Add(this.lbl_managed_by);
             this.Controls.Add(this.pnl_login);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -154,6 +176,7 @@ namespace BayViewBookings
             this.pnl_login.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_logo)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -167,6 +190,8 @@ namespace BayViewBookings
         private System.Windows.Forms.Label lbl_password;
         private System.Windows.Forms.Label lbl_username;
         private System.Windows.Forms.PictureBox pb_logo;
+        private System.Data.Entity.Core.EntityClient.EntityCommand entityCommand1;
+        private System.Windows.Forms.Label lbl_managed_by;
     }
 }
 

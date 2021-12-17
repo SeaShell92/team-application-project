@@ -19,8 +19,12 @@ namespace BayViewBookings
         {
             InitializeComponent();
         }
-
+       // SQLiteConnection connectionstring;
+        
         SQLiteConnection dbCon = new SQLiteConnection();
+        SQLiteCommand dbcmd = new SQLiteCommand();
+        const string details = @"Data Source = ..\..\Database\bookings.db";
+
         void fadeIn(object sender, EventArgs e)
         {
             if (Opacity >= 1)
@@ -30,27 +34,28 @@ namespace BayViewBookings
         }
         private void LoginForm_Load(object sender, EventArgs e)
         {
+            lbl_managed_by.Text = null;
             this.Visible = false;
-            Opacity = 0;      //first the opacity is 0
+            Opacity = 0;     
 
-            t1.Interval = 10;  //we'll increase the opacity every 10ms
-            t1.Tick += new EventHandler(fadeIn);  //this calls the function that changes opacity 
+            t1.Interval = 10;  
+            t1.Tick += new EventHandler(fadeIn); 
             t1.Start();
+            this.AcceptButton = btn_login; //this makes it so that when enter is pressed the login button will be executed
 
             try
             {
                 // Takes the current directory of the application and adds on the relative location of the database file.
-                string filepath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Database\bookings.db");
-                string conString = @"Data source = " + filepath;
-                dbCon.ConnectionString = conString;
+                const string details = @"Data Source = ..\..\Database\bookings.db";
+                dbCon.ConnectionString = details;
                 dbCon.Open();
-            //    MessageBox.Show("Connected");
+                //    MessageBox.Show("Connected");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-       
+
 
             pnl_login.Location = new Point(
             this.ClientSize.Width / 2 - pnl_login.Size.Width / 2,
@@ -59,12 +64,93 @@ namespace BayViewBookings
         }
 
 
-             private void btn_login_Click(object sender, EventArgs e)
+        private void btn_login_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            var frm_Manager_Homepage = new frm_Manager_Homepage();
-            frm_Manager_Homepage.Closed += (s, args) => this.Close();
-            frm_Manager_Homepage.Show();
+      
+            
+
+            try
+            {
+                using (var dbCon = new SQLiteConnection(@"Data Source = ..\..\Database\bookings.db"))
+                {
+                    dbCon.Open();
+                    
+                    using (var dbcmd = new SQLiteCommand("SELECT Username, Password FROM Employee WHERE Username=@Username AND Password=@Password", dbCon))
+                    {
+                        dbcmd.Parameters.AddWithValue("@Username", txt_username.Text);
+                        dbcmd.Parameters.AddWithValue("@Password", txt_password.Text);
+                        using (var reader = dbcmd.ExecuteReader())
+                        {
+                            var count = 0;
+                            while (reader.Read())
+                            {
+                                count = count + 1;
+                            }
+                            if (count == 1)
+                            {
+                                if(lbl_managed_by.Text == "1") //lbl_managed_by 1 takes the "managed_by" field from Employee table, and if its 1 then their managed by someone therefore staff, 0 will be inputed if their managers
+                                {
+                                    MessageBox.Show("Staff");
+                                    this.Hide();
+                                    var frm_staff_homepage = new frm_Staff_Homepage(); //navigates to staff homepage
+                                    frm_staff_homepage.Closed += (s, args) => this.Close();
+                                    frm_staff_homepage.Show();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Mngr");
+                                    this.Hide();
+                                    var frm_Manager_Homepage = new frm_Manager_Homepage();
+                                    frm_Manager_Homepage.Closed += (s, args) => this.Close(); //navigates to manager homepage
+                                    frm_Manager_Homepage.Show();
+                                }
+                            }
+                            else if (count == 0)
+                            {
+                                MessageBox.Show("Please recheck your details");
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+               MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void txt_username_TextChanged(object sender, EventArgs e)
+        {
+            lbl_managed_by.Text = "";
+            string Query = "Select * From Employee Where Username='" + txt_username.Text + "' ;";
+            SQLiteConnection myConn = new SQLiteConnection(details);
+            SQLiteCommand cmdDataBase = new SQLiteCommand(Query, myConn);
+            SQLiteDataReader dbreader;
+            try
+            {
+                myConn.Open();
+                dbreader = cmdDataBase.ExecuteReader();
+
+                while (dbreader.Read())
+                {
+
+                    int myInt = 0;
+               
+
+                    myInt = dbreader.GetInt32(7); //managed by
+
+                    
+
+                    lbl_managed_by.Text = myInt.ToString();
+                  
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
-}
+ }
+
