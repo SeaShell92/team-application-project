@@ -121,12 +121,6 @@
   <data name="12312" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\12312.jpg_fit=scale;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bayview2-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bayview2-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bayview3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bayview3.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="2690782" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2690782.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -201,8 +195,5 @@
   </data>
   <data name="bayviewlogo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bayviewlogo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bayviewBookings" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bayviewBookings.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

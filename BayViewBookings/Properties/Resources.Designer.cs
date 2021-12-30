@@ -173,36 +173,6 @@ namespace BayViewBookings.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bayview2_removebg_preview {
-            get {
-                object obj = ResourceManager.GetObject("bayview2-removebg-preview", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap bayview3 {
-            get {
-                object obj = ResourceManager.GetObject("bayview3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap bayviewBookings {
-            get {
-                object obj = ResourceManager.GetObject("bayviewBookings", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap bayviewletter {
             get {
                 object obj = ResourceManager.GetObject("bayviewletter", resourceCulture);
