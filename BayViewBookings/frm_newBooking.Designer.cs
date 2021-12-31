@@ -155,6 +155,7 @@ namespace BayViewBookings
             this.pnl_GuestDetails.Name = "pnl_GuestDetails";
             this.pnl_GuestDetails.Size = new System.Drawing.Size(1241, 208);
             this.pnl_GuestDetails.TabIndex = 8;
+            this.pnl_GuestDetails.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_GuestDetails_Paint);
             // 
             // lbl_time
             // 

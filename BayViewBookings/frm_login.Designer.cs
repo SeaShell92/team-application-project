@@ -154,7 +154,6 @@ namespace BayViewBookings
             this.lbl_managed_by.Size = new System.Drawing.Size(35, 13);
             this.lbl_managed_by.TabIndex = 2;
             this.lbl_managed_by.Text = "label1";
-            this.lbl_managed_by.Visible = false;
             // 
             // frm_login
             // 

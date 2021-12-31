@@ -122,5 +122,10 @@ namespace BayViewBookings
         {
 
         }
+
+        private void pnl_GuestDetails_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

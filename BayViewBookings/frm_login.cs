@@ -88,21 +88,22 @@ namespace BayViewBookings
                             }
                             if (count == 1)
                             {
-                                if(lbl_managed_by.Text == "1") //lbl_managed_by 1 takes the "managed_by" field from Employee table, and if its 1 then their managed by someone therefore staff, 0 will be inputed if their managers
-                                {
-                                    MessageBox.Show("Staff");
-                                    this.Hide();
-                                    var frm_staff_homepage = new frm_Staff_Homepage(); //navigates to staff homepage
-                                    frm_staff_homepage.Closed += (s, args) => this.Close();
-                                    frm_staff_homepage.Show();
-                                }
-                                else
+                                if(lbl_managed_by.Text == "Manager") //lbl_managed_by 1 takes the "managed_by" field from Employee table, and if its 1 then their managed by someone therefore staff, 0 will be inputed if their managers
                                 {
                                     MessageBox.Show("Mngr");
                                     this.Hide();
                                     var frm_Manager_Homepage = new frm_Manager_Homepage();
                                     frm_Manager_Homepage.Closed += (s, args) => this.Close(); //navigates to manager homepage
                                     frm_Manager_Homepage.Show();
+
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Staff");
+                                    this.Hide();
+                                    var frm_staff_homepage = new frm_Staff_Homepage(); //navigates to staff homepage
+                                    frm_staff_homepage.Closed += (s, args) => this.Close();
+                                    frm_staff_homepage.Show();
                                 }
                             }
                             else if (count == 0)
@@ -134,15 +135,9 @@ namespace BayViewBookings
                 while (dbreader.Read())
                 {
 
-                    int myInt = 0;
-               
-
-                    myInt = dbreader.GetInt32(7); //managed by
-
-                    
-
-                    lbl_managed_by.Text = myInt.ToString();
-                  
+                    string role = dbreader.GetString(6);
+                    lbl_managed_by.Text = role; //gets role to depend on username and whether staff/mannager login
+                 
 
                 }
             }
