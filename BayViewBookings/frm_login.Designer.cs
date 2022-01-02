@@ -39,6 +39,7 @@ namespace BayViewBookings
             this.pb_logo = new System.Windows.Forms.PictureBox();
             this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
             this.lbl_managed_by = new System.Windows.Forms.Label();
+            this.lbl_firstname = new System.Windows.Forms.Label();
             this.pnl_login.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_logo)).BeginInit();
             this.SuspendLayout();
@@ -154,6 +155,17 @@ namespace BayViewBookings
             this.lbl_managed_by.Size = new System.Drawing.Size(35, 13);
             this.lbl_managed_by.TabIndex = 2;
             this.lbl_managed_by.Text = "label1";
+            this.lbl_managed_by.Visible = false;
+            // 
+            // lbl_firstname
+            // 
+            this.lbl_firstname.AutoSize = true;
+            this.lbl_firstname.Location = new System.Drawing.Point(411, 607);
+            this.lbl_firstname.Name = "lbl_firstname";
+            this.lbl_firstname.Size = new System.Drawing.Size(35, 13);
+            this.lbl_firstname.TabIndex = 5;
+            this.lbl_firstname.Text = "label3";
+            this.lbl_firstname.Visible = false;
             // 
             // frm_login
             // 
@@ -163,6 +175,7 @@ namespace BayViewBookings
             this.BackgroundImage = global::BayViewBookings.Properties.Resources._12312;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1653, 932);
+            this.Controls.Add(this.lbl_firstname);
             this.Controls.Add(this.lbl_managed_by);
             this.Controls.Add(this.pnl_login);
             this.DoubleBuffered = true;
@@ -191,6 +204,7 @@ namespace BayViewBookings
         private System.Windows.Forms.PictureBox pb_logo;
         private System.Data.Entity.Core.EntityClient.EntityCommand entityCommand1;
         private System.Windows.Forms.Label lbl_managed_by;
+        private System.Windows.Forms.Label lbl_firstname;
     }
 }
 

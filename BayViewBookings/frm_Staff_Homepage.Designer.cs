@@ -40,7 +40,7 @@ namespace BayViewBookings
             this.btn_Staff_Rooms = new System.Windows.Forms.Button();
             this.btn_Staff_Bookings = new System.Windows.Forms.Button();
             this.btn_Staff_Guests = new System.Windows.Forms.Button();
-            this.lbl_staff = new System.Windows.Forms.Label();
+            this.lbl_Welcome_Msg = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.pnl_staff.SuspendLayout();
             this.SuspendLayout();
@@ -113,7 +113,7 @@ namespace BayViewBookings
             this.pnl_staff.Controls.Add(this.btn_Staff_Rooms);
             this.pnl_staff.Controls.Add(this.btn_Staff_Bookings);
             this.pnl_staff.Controls.Add(this.btn_Staff_Guests);
-            this.pnl_staff.Controls.Add(this.lbl_staff);
+            this.pnl_staff.Controls.Add(this.lbl_Welcome_Msg);
             this.pnl_staff.ForeColor = System.Drawing.Color.White;
             this.pnl_staff.Location = new System.Drawing.Point(0, 0);
             this.pnl_staff.Name = "pnl_staff";
@@ -146,6 +146,7 @@ namespace BayViewBookings
             this.btn_X.TabIndex = 6;
             this.btn_X.Text = "x";
             this.btn_X.UseVisualStyleBackColor = false;
+            this.btn_X.Click += new System.EventHandler(this.btn_X_Click);
             // 
             // btn_Staff_Rooms
             // 
@@ -159,6 +160,7 @@ namespace BayViewBookings
             this.btn_Staff_Rooms.TabIndex = 3;
             this.btn_Staff_Rooms.Text = "Rooms";
             this.btn_Staff_Rooms.UseVisualStyleBackColor = false;
+            this.btn_Staff_Rooms.Click += new System.EventHandler(this.btn_Staff_Rooms_Click);
             // 
             // btn_Staff_Bookings
             // 
@@ -172,6 +174,7 @@ namespace BayViewBookings
             this.btn_Staff_Bookings.TabIndex = 2;
             this.btn_Staff_Bookings.Text = "Bookings";
             this.btn_Staff_Bookings.UseVisualStyleBackColor = false;
+            this.btn_Staff_Bookings.Click += new System.EventHandler(this.btn_Staff_Bookings_Click);
             // 
             // btn_Staff_Guests
             // 
@@ -185,18 +188,19 @@ namespace BayViewBookings
             this.btn_Staff_Guests.TabIndex = 1;
             this.btn_Staff_Guests.Text = "Guests";
             this.btn_Staff_Guests.UseVisualStyleBackColor = false;
+            this.btn_Staff_Guests.Click += new System.EventHandler(this.btn_Staff_Guests_Click);
             // 
-            // lbl_staff
+            // lbl_Welcome_Msg
             // 
-            this.lbl_staff.AutoSize = true;
-            this.lbl_staff.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_staff.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_staff.ForeColor = System.Drawing.Color.White;
-            this.lbl_staff.Location = new System.Drawing.Point(699, 9);
-            this.lbl_staff.Name = "lbl_staff";
-            this.lbl_staff.Size = new System.Drawing.Size(278, 30);
-            this.lbl_staff.TabIndex = 0;
-            this.lbl_staff.Text = "Good Afternoon, Charlotte";
+            this.lbl_Welcome_Msg.AutoSize = true;
+            this.lbl_Welcome_Msg.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Welcome_Msg.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Welcome_Msg.ForeColor = System.Drawing.Color.White;
+            this.lbl_Welcome_Msg.Location = new System.Drawing.Point(699, 9);
+            this.lbl_Welcome_Msg.Name = "lbl_Welcome_Msg";
+            this.lbl_Welcome_Msg.Size = new System.Drawing.Size(278, 30);
+            this.lbl_Welcome_Msg.TabIndex = 0;
+            this.lbl_Welcome_Msg.Text = "Good Afternoon, Charlotte";
             // 
             // frm_Staff_Homepage
             // 
@@ -231,6 +235,6 @@ namespace BayViewBookings
         private System.Windows.Forms.Button btn_Staff_Rooms;
         private System.Windows.Forms.Button btn_Staff_Bookings;
         private System.Windows.Forms.Button btn_Staff_Guests;
-        private System.Windows.Forms.Label lbl_staff;
+        private System.Windows.Forms.Label lbl_Welcome_Msg;
     }
 }

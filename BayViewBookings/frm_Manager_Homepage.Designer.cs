@@ -222,7 +222,6 @@ namespace BayViewBookings
         private System.Windows.Forms.Panel pnl_Manager2;
         private System.Windows.Forms.Button btn_Bookings;
         private System.Windows.Forms.Button btn_Guests;
-        private System.Windows.Forms.Label lbl_Welcome_Msg;
         private System.Windows.Forms.Button btn_Rooms;
         private System.Windows.Forms.Button btn_X;
         private System.Windows.Forms.Button btn_Logout;
@@ -230,5 +229,6 @@ namespace BayViewBookings
         private System.Windows.Forms.Button btn_Staff;
         private System.Windows.Forms.Panel pnl_Manager;
         private System.Windows.Forms.Button btn_exitmgr;
+        public System.Windows.Forms.Label lbl_Welcome_Msg;
     }
 }

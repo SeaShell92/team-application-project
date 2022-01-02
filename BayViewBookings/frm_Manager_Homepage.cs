@@ -13,11 +13,15 @@ namespace BayViewBookings
 {
     public partial class frm_Manager_Homepage : Form
     {
+        DateTime timeOfDayGreeting = DateTime.Now;
+        public string username { get; set; }
+
         public frm_Manager_Homepage()
         {
             InitializeComponent();
+            
         }
-
+    
         private void button8_Click(object sender, EventArgs e)
         {
             frm_RoomDetails f2 = new frm_RoomDetails();
@@ -64,6 +68,23 @@ namespace BayViewBookings
 
         private void frm_Manager_Homepage_Load(object sender, EventArgs e)
         {
+
+            if (timeOfDayGreeting.Hour >= 5 && timeOfDayGreeting.Hour < 12)
+            {
+                lbl_Welcome_Msg.Text = "Good morning, " + username + "!";
+            }
+            else if (timeOfDayGreeting.Hour >= 12 && timeOfDayGreeting.Hour < 16)
+            {
+                lbl_Welcome_Msg.Text= "Good Afternoon, " + username + "!";
+            }
+            else if (timeOfDayGreeting.Hour >= 16 && timeOfDayGreeting.Hour < 19)
+            {
+                lbl_Welcome_Msg.Text = "Good Evening, " + username + "!";
+            }
+            else
+            {
+                lbl_Welcome_Msg.Text = "Good Night, " + username + "!";
+            }
 
         }
 

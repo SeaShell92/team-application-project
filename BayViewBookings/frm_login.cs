@@ -14,6 +14,8 @@ namespace BayViewBookings
 {
     public partial class frm_login : Form
     {
+       // public string username { get; set; }
+
         Timer t1 = new Timer();
         public frm_login()
         {
@@ -61,6 +63,9 @@ namespace BayViewBookings
             this.ClientSize.Width / 2 - pnl_login.Size.Width / 2,
             this.ClientSize.Height / 2 - pnl_login.Size.Height / 2);
             pnl_login.Anchor = AnchorStyles.None;
+
+
+
         }
 
 
@@ -90,20 +95,22 @@ namespace BayViewBookings
                             {
                                 if(lbl_managed_by.Text == "Manager") //lbl_managed_by 1 takes the "managed_by" field from Employee table, and if its 1 then their managed by someone therefore staff, 0 will be inputed if their managers
                                 {
-                                    MessageBox.Show("Mngr");
+                                   
+                                    string username = lbl_firstname.Text;
+                                    frm_Manager_Homepage frm2 = new frm_Manager_Homepage();
+                                    frm2.username = username;
+                                    frm2.Show();
                                     this.Hide();
-                                    var frm_Manager_Homepage = new frm_Manager_Homepage();
-                                    frm_Manager_Homepage.Closed += (s, args) => this.Close(); //navigates to manager homepage
-                                    frm_Manager_Homepage.Show();
-
                                 }
                                 else
                                 {
                                     MessageBox.Show("Staff");
+
+                                    string username = lbl_firstname.Text;
+                                    frm_Staff_Homepage frm3 = new frm_Staff_Homepage();
+                                    frm3.username = username;
+                                    frm3.Show();
                                     this.Hide();
-                                    var frm_staff_homepage = new frm_Staff_Homepage(); //navigates to staff homepage
-                                    frm_staff_homepage.Closed += (s, args) => this.Close();
-                                    frm_staff_homepage.Show();
                                 }
                             }
                             else if (count == 0)
@@ -118,6 +125,7 @@ namespace BayViewBookings
             {
                MessageBox.Show(ex.Message);
             }
+           
         }
 
         private void txt_username_TextChanged(object sender, EventArgs e)
@@ -136,8 +144,9 @@ namespace BayViewBookings
                 {
 
                     string role = dbreader.GetString(6);
-                    lbl_managed_by.Text = role; //gets role to depend on username and whether staff/mannager login
-                 
+                    string firstName = dbreader.GetString(1);
+                    lbl_managed_by.Text = role; //gets role to depend on username and whether staff/manager login
+                    lbl_firstname.Text = firstName;
 
                 }
             }
