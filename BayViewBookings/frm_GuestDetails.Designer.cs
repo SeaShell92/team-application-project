@@ -81,7 +81,7 @@ namespace BayViewBookings
             this.pnl_GuestDetails.Controls.Add(this.txt_filter2);
             this.pnl_GuestDetails.Controls.Add(this.btn_filter1);
             this.pnl_GuestDetails.Controls.Add(this.txt_filter1);
-            this.pnl_GuestDetails.Location = new System.Drawing.Point(1340, 69);
+            this.pnl_GuestDetails.Location = new System.Drawing.Point(1203, 59);
             this.pnl_GuestDetails.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_GuestDetails.Name = "pnl_GuestDetails";
             this.pnl_GuestDetails.Size = new System.Drawing.Size(255, 577);
