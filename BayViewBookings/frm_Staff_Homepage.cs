@@ -62,7 +62,7 @@ namespace BayViewBookings
 
         private void btn_Staff_Rooms_Click(object sender, EventArgs e)
         {
-            new frm_RoomDetails().ShowDialog(); // Shows Room Details form on top of original form
+            new frm_RoomDetails().ShowDialog(this); // Shows Room Details form on top of original form
         }
 
         private void btn_X_Click(object sender, EventArgs e)
@@ -77,6 +77,21 @@ namespace BayViewBookings
             {
                 Application.Exit();
             }
+        }
+
+        private void btn_Transactions_Click(object sender, EventArgs e)
+        {
+            new frm_TransactionDetails().ShowDialog(this);
+        }
+
+        private void btn_RoomAvail_Click(object sender, EventArgs e)
+        {
+            new frm_RoomAvailability().ShowDialog(this);
+        }
+
+        private void btn_viewBookings_Click(object sender, EventArgs e)
+        {
+            new frm_ViewBookings().ShowDialog(this);
         }
     }
 }

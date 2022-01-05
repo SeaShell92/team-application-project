@@ -30,9 +30,9 @@ namespace BayViewBookings
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_viewBookings = new System.Windows.Forms.Button();
+            this.btn_RoomAvail = new System.Windows.Forms.Button();
+            this.btn_Transactions = new System.Windows.Forms.Button();
             this.btn_exitStaff = new System.Windows.Forms.Button();
             this.pnl_staff = new System.Windows.Forms.Panel();
             this.btn_Logout = new System.Windows.Forms.Button();
@@ -48,50 +48,53 @@ namespace BayViewBookings
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.btn_viewBookings);
+            this.panel1.Controls.Add(this.btn_RoomAvail);
+            this.panel1.Controls.Add(this.btn_Transactions);
             this.panel1.Controls.Add(this.btn_exitStaff);
             this.panel1.Location = new System.Drawing.Point(0, 578);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1240, 102);
             this.panel1.TabIndex = 1;
             // 
-            // button5
+            // btn_viewBookings
             // 
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(264, 10);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(120, 82);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "button";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btn_viewBookings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_viewBookings.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_viewBookings.ForeColor = System.Drawing.Color.White;
+            this.btn_viewBookings.Location = new System.Drawing.Point(264, 10);
+            this.btn_viewBookings.Name = "btn_viewBookings";
+            this.btn_viewBookings.Size = new System.Drawing.Size(120, 82);
+            this.btn_viewBookings.TabIndex = 4;
+            this.btn_viewBookings.Text = "View Bookings";
+            this.btn_viewBookings.UseVisualStyleBackColor = true;
+            this.btn_viewBookings.Click += new System.EventHandler(this.btn_viewBookings_Click);
             // 
-            // button4
+            // btn_RoomAvail
             // 
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(138, 10);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(120, 82);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn_RoomAvail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_RoomAvail.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_RoomAvail.ForeColor = System.Drawing.Color.White;
+            this.btn_RoomAvail.Location = new System.Drawing.Point(138, 10);
+            this.btn_RoomAvail.Name = "btn_RoomAvail";
+            this.btn_RoomAvail.Size = new System.Drawing.Size(120, 82);
+            this.btn_RoomAvail.TabIndex = 3;
+            this.btn_RoomAvail.Text = "Room Availability";
+            this.btn_RoomAvail.UseVisualStyleBackColor = true;
+            this.btn_RoomAvail.Click += new System.EventHandler(this.btn_RoomAvail_Click);
             // 
-            // button3
+            // btn_Transactions
             // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(12, 10);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(120, 82);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_Transactions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Transactions.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Transactions.ForeColor = System.Drawing.Color.White;
+            this.btn_Transactions.Location = new System.Drawing.Point(12, 10);
+            this.btn_Transactions.Name = "btn_Transactions";
+            this.btn_Transactions.Size = new System.Drawing.Size(120, 82);
+            this.btn_Transactions.TabIndex = 2;
+            this.btn_Transactions.Text = "Transactions";
+            this.btn_Transactions.UseVisualStyleBackColor = true;
+            this.btn_Transactions.Click += new System.EventHandler(this.btn_Transactions_Click);
             // 
             // btn_exitStaff
             // 
@@ -159,7 +162,7 @@ namespace BayViewBookings
             this.btn_Staff_Rooms.Name = "btn_Staff_Rooms";
             this.btn_Staff_Rooms.Size = new System.Drawing.Size(150, 54);
             this.btn_Staff_Rooms.TabIndex = 3;
-            this.btn_Staff_Rooms.Text = "Rooms";
+            this.btn_Staff_Rooms.Text = "View Rooms";
             this.btn_Staff_Rooms.UseVisualStyleBackColor = false;
             this.btn_Staff_Rooms.Click += new System.EventHandler(this.btn_Staff_Rooms_Click);
             // 
@@ -173,7 +176,7 @@ namespace BayViewBookings
             this.btn_Staff_Bookings.Name = "btn_Staff_Bookings";
             this.btn_Staff_Bookings.Size = new System.Drawing.Size(150, 54);
             this.btn_Staff_Bookings.TabIndex = 2;
-            this.btn_Staff_Bookings.Text = "Bookings";
+            this.btn_Staff_Bookings.Text = "New Booking";
             this.btn_Staff_Bookings.UseVisualStyleBackColor = false;
             this.btn_Staff_Bookings.Click += new System.EventHandler(this.btn_Staff_Bookings_Click);
             // 
@@ -187,7 +190,7 @@ namespace BayViewBookings
             this.btn_Staff_Guests.Name = "btn_Staff_Guests";
             this.btn_Staff_Guests.Size = new System.Drawing.Size(150, 54);
             this.btn_Staff_Guests.TabIndex = 1;
-            this.btn_Staff_Guests.Text = "Guests";
+            this.btn_Staff_Guests.Text = "View Guests";
             this.btn_Staff_Guests.UseVisualStyleBackColor = false;
             this.btn_Staff_Guests.Click += new System.EventHandler(this.btn_Staff_Guests_Click);
             // 
@@ -228,9 +231,9 @@ namespace BayViewBookings
         #endregion
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_exitStaff;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_viewBookings;
+        private System.Windows.Forms.Button btn_RoomAvail;
+        private System.Windows.Forms.Button btn_Transactions;
         private System.Windows.Forms.Panel pnl_staff;
         private System.Windows.Forms.Button btn_Logout;
         private System.Windows.Forms.Button btn_X;

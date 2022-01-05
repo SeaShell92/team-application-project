@@ -21,53 +21,35 @@ namespace BayViewBookings
             InitializeComponent();
             fill_listbox();
         }
-        SQLiteConnection dbCon = new SQLiteConnection();
-        SQLiteCommand dbcmd = new SQLiteCommand();
+
         const string details = @"Data Source = ..\..\Database\bookings.db";
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
         void fill_listbox()
         {
-            string Query = "Select * From Guest"; //sql code
-            SQLiteConnection dbCon = new SQLiteConnection(details);
-            SQLiteCommand cmdDataBase = new SQLiteCommand(Query, dbCon);
-            SQLiteDataReader dbreader;
-            SQLiteDataAdapter dbadapter;
-            DataTable dtBookings = new DataTable();
+            SQLiteConnection dbCon;
+            SQLiteDataAdapter dbAdapter;
+            DataTable dtGuest = new DataTable();
 
             try
             {
-                dbCon.Open();
-                dbreader = cmdDataBase.ExecuteReader();
+                using (dbCon = new SQLiteConnection(details))
+                {
+                    string Query = "Select * From Guest"; //sql code
 
+                    dbAdapter = new SQLiteDataAdapter(Query, dbCon);
+                    dbAdapter.Fill(dtGuest);
 
-                dbadapter = new SQLiteDataAdapter(Query, dbCon);
-                dbadapter.Fill(dtBookings);
-                dgv_GuestList.DataSource = dtBookings;
-
-
+                    dgv_GuestList.DataSource = dtGuest;
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-        private void frm_ViewBookings_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_Make_Amendments_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btn_exitguest_Click(object sender, EventArgs e)
         {
-            new frm_Manager_Homepage().Show();
             Close();
         }
 
@@ -83,11 +65,6 @@ namespace BayViewBookings
             Close();
         }
 
-        private void lb_GuestDetails_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_AmendGuest_Click(object sender, EventArgs e)
         {
             panelGuest.Show();
@@ -97,6 +74,11 @@ namespace BayViewBookings
         private void btn_Cancel_Click(object sender, EventArgs e)
         {
             panelGuest.Hide();
+        }
+
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -47,7 +47,6 @@ namespace BayViewBookings
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.pnl_ReportsHeader = new System.Windows.Forms.Panel();
-            this.btn_logout = new System.Windows.Forms.Button();
             this.btn_exit = new System.Windows.Forms.Button();
             this.btn_Rooms = new System.Windows.Forms.Button();
             this.btn_Bookings = new System.Windows.Forms.Button();
@@ -115,8 +114,9 @@ namespace BayViewBookings
             this.btn_view1.Name = "btn_view1";
             this.btn_view1.Size = new System.Drawing.Size(135, 36);
             this.btn_view1.TabIndex = 23;
-            this.btn_view1.Text = "Button";
+            this.btn_view1.Text = "View Report";
             this.btn_view1.UseVisualStyleBackColor = false;
+            this.btn_view1.Click += new System.EventHandler(this.btn_view1_Click);
             // 
             // txt_filter2
             // 
@@ -154,7 +154,7 @@ namespace BayViewBookings
             this.btn_view2.Name = "btn_view2";
             this.btn_view2.Size = new System.Drawing.Size(135, 36);
             this.btn_view2.TabIndex = 23;
-            this.btn_view2.Text = "Button";
+            this.btn_view2.Text = "View Report";
             this.btn_view2.UseVisualStyleBackColor = false;
             // 
             // txt_filter4
@@ -193,7 +193,7 @@ namespace BayViewBookings
             this.btn_view3.Name = "btn_view3";
             this.btn_view3.Size = new System.Drawing.Size(135, 36);
             this.btn_view3.TabIndex = 23;
-            this.btn_view3.Text = "Button";
+            this.btn_view3.Text = "View Report";
             this.btn_view3.UseVisualStyleBackColor = false;
             // 
             // txt_filter6
@@ -231,7 +231,6 @@ namespace BayViewBookings
             // pnl_ReportsHeader
             // 
             this.pnl_ReportsHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pnl_ReportsHeader.Controls.Add(this.btn_logout);
             this.pnl_ReportsHeader.Controls.Add(this.btn_exit);
             this.pnl_ReportsHeader.Controls.Add(this.btn_Rooms);
             this.pnl_ReportsHeader.Controls.Add(this.btn_Bookings);
@@ -242,19 +241,6 @@ namespace BayViewBookings
             this.pnl_ReportsHeader.Name = "pnl_ReportsHeader";
             this.pnl_ReportsHeader.Size = new System.Drawing.Size(1237, 48);
             this.pnl_ReportsHeader.TabIndex = 13;
-            // 
-            // btn_logout
-            // 
-            this.btn_logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_logout.ForeColor = System.Drawing.Color.White;
-            this.btn_logout.Location = new System.Drawing.Point(1114, 9);
-            this.btn_logout.Name = "btn_logout";
-            this.btn_logout.Size = new System.Drawing.Size(75, 28);
-            this.btn_logout.TabIndex = 7;
-            this.btn_logout.Text = "Logout";
-            this.btn_logout.UseVisualStyleBackColor = false;
             // 
             // btn_exit
             // 
@@ -329,6 +315,7 @@ namespace BayViewBookings
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1236, 677);
+            this.ControlBox = false;
             this.Controls.Add(this.pnl_ReportsHeader);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
@@ -339,7 +326,7 @@ namespace BayViewBookings
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "frm_Reports";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_Reports";
+            this.Text = "Reports";
             this.pnl_Reports2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -372,7 +359,6 @@ namespace BayViewBookings
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel pnl_ReportsHeader;
-        private System.Windows.Forms.Button btn_logout;
         private System.Windows.Forms.Button btn_exit;
         private System.Windows.Forms.Button btn_Rooms;
         private System.Windows.Forms.Button btn_Bookings;

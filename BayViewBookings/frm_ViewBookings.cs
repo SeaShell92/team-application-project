@@ -15,61 +15,65 @@ namespace BayViewBookings
 {
     public partial class frm_ViewBookings : Form
     {
-        public frm_ViewBookings(string inString)
+        public frm_ViewBookings()
         {
             InitializeComponent();
             fill_listbox();
         }
 
-        SQLiteConnection dbCon = new SQLiteConnection();
-        SQLiteCommand dbcmd = new SQLiteCommand();
         const string details = @"Data Source = ..\..\Database\bookings.db";
       
-        private void btn_exit_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         void fill_listbox() 
         {
-            string Query = "Select * From Booking"; //sql code
-            SQLiteConnection dbCon = new SQLiteConnection(details);
-            SQLiteCommand cmdDataBase = new SQLiteCommand(Query, dbCon);
-            SQLiteDataReader dbreader;
-            SQLiteDataAdapter dbadapter;
+            SQLiteConnection dbCon;
+            SQLiteDataAdapter dbAdapter;
             DataTable dtBookings = new DataTable();
 
             try
             {
-               dbCon.Open();
-              dbreader = cmdDataBase.ExecuteReader();
+                using(dbCon = new SQLiteConnection(details))
+                {
+                    string Query = "Select * From Booking"; //sql code
 
-                  
-                    dbadapter = new SQLiteDataAdapter(Query, dbCon);
-                    dbadapter.Fill(dtBookings);
+                    dbAdapter = new SQLiteDataAdapter(Query, dbCon);
+                    dbAdapter.Fill(dtBookings);
+
                     dgv_ViewBookings.DataSource = dtBookings;
-                   
-                   
+                }              
             }
            catch (Exception ex)
             {
               MessageBox.Show(ex.Message);
            }
         }
-        private void frm_ViewBookings_Load(object sender, EventArgs e)
+
+        private void btn_exit_Click(object sender, EventArgs e)
         {
-          
+            Close();
         }
 
         private void btn_guests_Click(object sender, EventArgs e)
         {
-            new frm_GuestDetails().Show();
-            Close();
+            new frm_GuestDetails().Show(this);
+            //Close();
+            // Keep the view bookings form open and have a series of nested forms
+            // This allows the user to go back to the original new booking form
         }
 
         private void btn_rooms_Click(object sender, EventArgs e)
         {
-            new frm_RoomDetails().Show();
+            new frm_RoomDetails().Show(this);
+            //Close();
+        }
+
+        private void btn_Transactions_Click(object sender, EventArgs e)
+        {
+            new frm_TransactionDetails().Show(this);
+            //Close();
+        }
+
+        private void btn_exitViewBook_Click(object sender, EventArgs e)
+        {
             Close();
         }
     }

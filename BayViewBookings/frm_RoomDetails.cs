@@ -35,5 +35,10 @@ namespace BayViewBookings
             new frm_newBooking().Show();
             Close();
         }
+
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

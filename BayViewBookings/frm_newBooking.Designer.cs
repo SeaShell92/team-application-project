@@ -31,7 +31,7 @@ namespace BayViewBookings
         {
             this.pnl_NewBooking = new System.Windows.Forms.Panel();
             this.btn_exitbook = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btn_ClearBooking = new System.Windows.Forms.Button();
             this.cldr_Booking = new System.Windows.Forms.MonthCalendar();
             this.lbl_GuestID = new System.Windows.Forms.Label();
             this.pnl_GuestDetails = new System.Windows.Forms.Panel();
@@ -49,7 +49,6 @@ namespace BayViewBookings
             this.txt_GuestsID = new System.Windows.Forms.TextBox();
             this.lbl_GuestDetails = new System.Windows.Forms.Label();
             this.pnl_Booking = new System.Windows.Forms.Panel();
-            this.txt_test = new System.Windows.Forms.TextBox();
             this.rb_no = new System.Windows.Forms.RadioButton();
             this.rb_yes = new System.Windows.Forms.RadioButton();
             this.lbl_HasPaid = new System.Windows.Forms.Label();
@@ -88,7 +87,7 @@ namespace BayViewBookings
             // 
             this.pnl_NewBooking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.pnl_NewBooking.Controls.Add(this.btn_exitbook);
-            this.pnl_NewBooking.Controls.Add(this.button5);
+            this.pnl_NewBooking.Controls.Add(this.btn_ClearBooking);
             this.pnl_NewBooking.Location = new System.Drawing.Point(-4, 46);
             this.pnl_NewBooking.Name = "pnl_NewBooking";
             this.pnl_NewBooking.Size = new System.Drawing.Size(152, 666);
@@ -107,17 +106,17 @@ namespace BayViewBookings
             this.btn_exitbook.UseVisualStyleBackColor = true;
             this.btn_exitbook.Click += new System.EventHandler(this.btn_exitbook_Click);
             // 
-            // button5
+            // btn_ClearBooking
             // 
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(-2, 455);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(154, 101);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "button";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btn_ClearBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ClearBooking.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ClearBooking.ForeColor = System.Drawing.Color.White;
+            this.btn_ClearBooking.Location = new System.Drawing.Point(-2, 455);
+            this.btn_ClearBooking.Name = "btn_ClearBooking";
+            this.btn_ClearBooking.Size = new System.Drawing.Size(154, 101);
+            this.btn_ClearBooking.TabIndex = 6;
+            this.btn_ClearBooking.Text = "Reset Form";
+            this.btn_ClearBooking.UseVisualStyleBackColor = true;
             // 
             // cldr_Booking
             // 
@@ -155,7 +154,6 @@ namespace BayViewBookings
             this.pnl_GuestDetails.Name = "pnl_GuestDetails";
             this.pnl_GuestDetails.Size = new System.Drawing.Size(1241, 208);
             this.pnl_GuestDetails.TabIndex = 8;
-            this.pnl_GuestDetails.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_GuestDetails_Paint);
             // 
             // lbl_time
             // 
@@ -270,7 +268,6 @@ namespace BayViewBookings
             // 
             // pnl_Booking
             // 
-            this.pnl_Booking.Controls.Add(this.txt_test);
             this.pnl_Booking.Controls.Add(this.rb_no);
             this.pnl_Booking.Controls.Add(this.rb_yes);
             this.pnl_Booking.Controls.Add(this.lbl_HasPaid);
@@ -294,14 +291,6 @@ namespace BayViewBookings
             this.pnl_Booking.Name = "pnl_Booking";
             this.pnl_Booking.Size = new System.Drawing.Size(1241, 370);
             this.pnl_Booking.TabIndex = 20;
-            this.pnl_Booking.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Booking_Paint);
-            // 
-            // txt_test
-            // 
-            this.txt_test.Location = new System.Drawing.Point(1026, 199);
-            this.txt_test.Name = "txt_test";
-            this.txt_test.Size = new System.Drawing.Size(98, 20);
-            this.txt_test.TabIndex = 34;
             // 
             // rb_no
             // 
@@ -441,6 +430,7 @@ namespace BayViewBookings
             // 
             this.txt_BookingID.Location = new System.Drawing.Point(182, 94);
             this.txt_BookingID.Name = "txt_BookingID";
+            this.txt_BookingID.ReadOnly = true;
             this.txt_BookingID.Size = new System.Drawing.Size(58, 20);
             this.txt_BookingID.TabIndex = 9;
             // 
@@ -450,9 +440,9 @@ namespace BayViewBookings
             this.lbl_BookingDetails.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_BookingDetails.Location = new System.Drawing.Point(521, 20);
             this.lbl_BookingDetails.Name = "lbl_BookingDetails";
-            this.lbl_BookingDetails.Size = new System.Drawing.Size(198, 31);
+            this.lbl_BookingDetails.Size = new System.Drawing.Size(192, 31);
             this.lbl_BookingDetails.TabIndex = 8;
-            this.lbl_BookingDetails.Text = "Booking Details:";
+            this.lbl_BookingDetails.Text = "Booking Details";
             // 
             // lbl_BookingID
             // 
@@ -498,7 +488,7 @@ namespace BayViewBookings
             this.btn_viewBookings.TabIndex = 23;
             this.btn_viewBookings.Text = "View Bookings";
             this.btn_viewBookings.UseVisualStyleBackColor = false;
-            this.btn_viewBookings.Click += new System.EventHandler(this.button11_Click);
+            this.btn_viewBookings.Click += new System.EventHandler(this.btn_viewBookings_Click);
             // 
             // pnl_NewBookingHeader
             // 
@@ -557,9 +547,10 @@ namespace BayViewBookings
             // 
             // btn_Bookings
             // 
-            this.btn_Bookings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_Bookings.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_Bookings.Enabled = false;
             this.btn_Bookings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Bookings.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Bookings.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Bookings.ForeColor = System.Drawing.Color.White;
             this.btn_Bookings.Location = new System.Drawing.Point(296, -3);
             this.btn_Bookings.Name = "btn_Bookings";
@@ -567,7 +558,6 @@ namespace BayViewBookings
             this.btn_Bookings.TabIndex = 2;
             this.btn_Bookings.Text = "Bookings";
             this.btn_Bookings.UseVisualStyleBackColor = false;
-            this.btn_Bookings.Click += new System.EventHandler(this.btn_Bookings_Click);
             // 
             // btn_Guests
             // 
@@ -626,7 +616,7 @@ namespace BayViewBookings
         #endregion
         private System.Windows.Forms.Panel pnl_NewBooking;
         private System.Windows.Forms.Button btn_exitbook;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btn_ClearBooking;
         private System.Windows.Forms.MonthCalendar cldr_Booking;
         private System.Windows.Forms.Label lbl_GuestID;
         private System.Windows.Forms.Panel pnl_GuestDetails;
@@ -672,6 +662,5 @@ namespace BayViewBookings
         private System.Windows.Forms.Button btn_Guests;
         private System.Windows.Forms.Label lbl_NewBooking;
         private System.Windows.Forms.Label lbl_time;
-        private System.Windows.Forms.TextBox txt_test;
     }
 }

@@ -38,7 +38,6 @@ namespace BayViewBookings
             this.btn_filter1 = new System.Windows.Forms.Button();
             this.txt_filter1 = new System.Windows.Forms.TextBox();
             this.pnl_Manager2 = new System.Windows.Forms.Panel();
-            this.btn_logout = new System.Windows.Forms.Button();
             this.btn_exit = new System.Windows.Forms.Button();
             this.btn_Rooms = new System.Windows.Forms.Button();
             this.btn_Bookings = new System.Windows.Forms.Button();
@@ -81,18 +80,18 @@ namespace BayViewBookings
             this.pnl_GuestDetails.Controls.Add(this.txt_filter2);
             this.pnl_GuestDetails.Controls.Add(this.btn_filter1);
             this.pnl_GuestDetails.Controls.Add(this.txt_filter1);
-            this.pnl_GuestDetails.Location = new System.Drawing.Point(1203, 59);
-            this.pnl_GuestDetails.Margin = new System.Windows.Forms.Padding(4);
+            this.pnl_GuestDetails.Location = new System.Drawing.Point(950, 56);
             this.pnl_GuestDetails.Name = "pnl_GuestDetails";
-            this.pnl_GuestDetails.Size = new System.Drawing.Size(255, 577);
+            this.pnl_GuestDetails.Size = new System.Drawing.Size(191, 469);
             this.pnl_GuestDetails.TabIndex = 10;
             // 
             // btn_AmendGuest
             // 
             this.btn_AmendGuest.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_AmendGuest.Location = new System.Drawing.Point(67, 414);
+            this.btn_AmendGuest.Location = new System.Drawing.Point(50, 336);
+            this.btn_AmendGuest.Margin = new System.Windows.Forms.Padding(2);
             this.btn_AmendGuest.Name = "btn_AmendGuest";
-            this.btn_AmendGuest.Size = new System.Drawing.Size(125, 39);
+            this.btn_AmendGuest.Size = new System.Drawing.Size(94, 32);
             this.btn_AmendGuest.TabIndex = 6;
             this.btn_AmendGuest.Text = "Amend Guest";
             this.btn_AmendGuest.UseVisualStyleBackColor = true;
@@ -101,64 +100,57 @@ namespace BayViewBookings
             // btn_filter3
             // 
             this.btn_filter3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_filter3.Location = new System.Drawing.Point(96, 287);
-            this.btn_filter3.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_filter3.Location = new System.Drawing.Point(72, 233);
             this.btn_filter3.Name = "btn_filter3";
-            this.btn_filter3.Size = new System.Drawing.Size(116, 28);
+            this.btn_filter3.Size = new System.Drawing.Size(87, 23);
             this.btn_filter3.TabIndex = 5;
             this.btn_filter3.Text = "filter 3";
             this.btn_filter3.UseVisualStyleBackColor = true;
             // 
             // txt_filter3
             // 
-            this.txt_filter3.Location = new System.Drawing.Point(32, 254);
-            this.txt_filter3.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_filter3.Location = new System.Drawing.Point(24, 206);
             this.txt_filter3.Name = "txt_filter3";
-            this.txt_filter3.Size = new System.Drawing.Size(179, 22);
+            this.txt_filter3.Size = new System.Drawing.Size(135, 20);
             this.txt_filter3.TabIndex = 4;
             // 
             // btn_filter2
             // 
             this.btn_filter2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_filter2.Location = new System.Drawing.Point(96, 183);
-            this.btn_filter2.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_filter2.Location = new System.Drawing.Point(72, 149);
             this.btn_filter2.Name = "btn_filter2";
-            this.btn_filter2.Size = new System.Drawing.Size(116, 28);
+            this.btn_filter2.Size = new System.Drawing.Size(87, 23);
             this.btn_filter2.TabIndex = 3;
             this.btn_filter2.Text = "filter 2";
             this.btn_filter2.UseVisualStyleBackColor = true;
             // 
             // txt_filter2
             // 
-            this.txt_filter2.Location = new System.Drawing.Point(32, 150);
-            this.txt_filter2.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_filter2.Location = new System.Drawing.Point(24, 122);
             this.txt_filter2.Name = "txt_filter2";
-            this.txt_filter2.Size = new System.Drawing.Size(179, 22);
+            this.txt_filter2.Size = new System.Drawing.Size(135, 20);
             this.txt_filter2.TabIndex = 2;
             // 
             // btn_filter1
             // 
             this.btn_filter1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_filter1.Location = new System.Drawing.Point(96, 84);
-            this.btn_filter1.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_filter1.Location = new System.Drawing.Point(72, 68);
             this.btn_filter1.Name = "btn_filter1";
-            this.btn_filter1.Size = new System.Drawing.Size(116, 28);
+            this.btn_filter1.Size = new System.Drawing.Size(87, 23);
             this.btn_filter1.TabIndex = 1;
             this.btn_filter1.Text = "filter 1";
             this.btn_filter1.UseVisualStyleBackColor = true;
             // 
             // txt_filter1
             // 
-            this.txt_filter1.Location = new System.Drawing.Point(32, 50);
-            this.txt_filter1.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_filter1.Location = new System.Drawing.Point(24, 41);
             this.txt_filter1.Name = "txt_filter1";
-            this.txt_filter1.Size = new System.Drawing.Size(179, 22);
+            this.txt_filter1.Size = new System.Drawing.Size(135, 20);
             this.txt_filter1.TabIndex = 0;
             // 
             // pnl_Manager2
             // 
             this.pnl_Manager2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pnl_Manager2.Controls.Add(this.btn_logout);
             this.pnl_Manager2.Controls.Add(this.btn_exit);
             this.pnl_Manager2.Controls.Add(this.btn_Rooms);
             this.pnl_Manager2.Controls.Add(this.btn_Bookings);
@@ -166,24 +158,9 @@ namespace BayViewBookings
             this.pnl_Manager2.Controls.Add(this.lbl_GuestDetails);
             this.pnl_Manager2.ForeColor = System.Drawing.Color.White;
             this.pnl_Manager2.Location = new System.Drawing.Point(0, 0);
-            this.pnl_Manager2.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_Manager2.Name = "pnl_Manager2";
-            this.pnl_Manager2.Size = new System.Drawing.Size(1653, 59);
+            this.pnl_Manager2.Size = new System.Drawing.Size(1258, 48);
             this.pnl_Manager2.TabIndex = 12;
-            // 
-            // btn_logout
-            // 
-            this.btn_logout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_logout.ForeColor = System.Drawing.Color.White;
-            this.btn_logout.Location = new System.Drawing.Point(2400, 15);
-            this.btn_logout.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_logout.Name = "btn_logout";
-            this.btn_logout.Size = new System.Drawing.Size(100, 34);
-            this.btn_logout.TabIndex = 7;
-            this.btn_logout.Text = "Logout";
-            this.btn_logout.UseVisualStyleBackColor = false;
             // 
             // btn_exit
             // 
@@ -191,13 +168,13 @@ namespace BayViewBookings
             this.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_exit.ForeColor = System.Drawing.Color.White;
-            this.btn_exit.Location = new System.Drawing.Point(2499, 15);
-            this.btn_exit.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_exit.Location = new System.Drawing.Point(1209, 11);
             this.btn_exit.Name = "btn_exit";
-            this.btn_exit.Size = new System.Drawing.Size(44, 34);
+            this.btn_exit.Size = new System.Drawing.Size(33, 28);
             this.btn_exit.TabIndex = 6;
             this.btn_exit.Text = "x";
             this.btn_exit.UseVisualStyleBackColor = false;
+            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
             // btn_Rooms
             // 
@@ -205,10 +182,9 @@ namespace BayViewBookings
             this.btn_Rooms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Rooms.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Rooms.ForeColor = System.Drawing.Color.White;
-            this.btn_Rooms.Location = new System.Drawing.Point(591, -4);
-            this.btn_Rooms.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Rooms.Location = new System.Drawing.Point(443, -3);
             this.btn_Rooms.Name = "btn_Rooms";
-            this.btn_Rooms.Size = new System.Drawing.Size(200, 66);
+            this.btn_Rooms.Size = new System.Drawing.Size(150, 54);
             this.btn_Rooms.TabIndex = 3;
             this.btn_Rooms.Text = "Rooms";
             this.btn_Rooms.UseVisualStyleBackColor = false;
@@ -220,10 +196,9 @@ namespace BayViewBookings
             this.btn_Bookings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Bookings.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Bookings.ForeColor = System.Drawing.Color.White;
-            this.btn_Bookings.Location = new System.Drawing.Point(395, -4);
-            this.btn_Bookings.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Bookings.Location = new System.Drawing.Point(296, -3);
             this.btn_Bookings.Name = "btn_Bookings";
-            this.btn_Bookings.Size = new System.Drawing.Size(200, 66);
+            this.btn_Bookings.Size = new System.Drawing.Size(150, 54);
             this.btn_Bookings.TabIndex = 2;
             this.btn_Bookings.Text = "Bookings";
             this.btn_Bookings.UseVisualStyleBackColor = false;
@@ -231,14 +206,14 @@ namespace BayViewBookings
             // 
             // btn_Guests
             // 
-            this.btn_Guests.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_Guests.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_Guests.Enabled = false;
             this.btn_Guests.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Guests.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Guests.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Guests.ForeColor = System.Drawing.Color.White;
-            this.btn_Guests.Location = new System.Drawing.Point(199, -4);
-            this.btn_Guests.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_Guests.Location = new System.Drawing.Point(149, -3);
             this.btn_Guests.Name = "btn_Guests";
-            this.btn_Guests.Size = new System.Drawing.Size(200, 66);
+            this.btn_Guests.Size = new System.Drawing.Size(150, 54);
             this.btn_Guests.TabIndex = 1;
             this.btn_Guests.Text = "Guests";
             this.btn_Guests.UseVisualStyleBackColor = false;
@@ -249,10 +224,9 @@ namespace BayViewBookings
             this.lbl_GuestDetails.BackColor = System.Drawing.Color.Transparent;
             this.lbl_GuestDetails.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_GuestDetails.ForeColor = System.Drawing.Color.White;
-            this.lbl_GuestDetails.Location = new System.Drawing.Point(1083, 11);
-            this.lbl_GuestDetails.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_GuestDetails.Location = new System.Drawing.Point(812, 9);
             this.lbl_GuestDetails.Name = "lbl_GuestDetails";
-            this.lbl_GuestDetails.Size = new System.Drawing.Size(186, 37);
+            this.lbl_GuestDetails.Size = new System.Drawing.Size(141, 30);
             this.lbl_GuestDetails.TabIndex = 0;
             this.lbl_GuestDetails.Text = "Guest Details";
             // 
@@ -261,10 +235,9 @@ namespace BayViewBookings
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(-3, 986);
-            this.button5.Margin = new System.Windows.Forms.Padding(4);
+            this.button5.Location = new System.Drawing.Point(-2, 801);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(205, 124);
+            this.button5.Size = new System.Drawing.Size(154, 101);
             this.button5.TabIndex = 6;
             this.button5.Text = "button";
             this.button5.UseVisualStyleBackColor = true;
@@ -274,10 +247,9 @@ namespace BayViewBookings
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(-7, 1105);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
+            this.button4.Location = new System.Drawing.Point(-5, 898);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(209, 124);
+            this.button4.Size = new System.Drawing.Size(157, 101);
             this.button4.TabIndex = 7;
             this.button4.Text = "button";
             this.button4.UseVisualStyleBackColor = true;
@@ -288,10 +260,9 @@ namespace BayViewBookings
             this.pnl_GuestDetails2.Controls.Add(this.btn_exitguest);
             this.pnl_GuestDetails2.Controls.Add(this.button4);
             this.pnl_GuestDetails2.Controls.Add(this.button5);
-            this.pnl_GuestDetails2.Location = new System.Drawing.Point(0, 59);
-            this.pnl_GuestDetails2.Margin = new System.Windows.Forms.Padding(4);
+            this.pnl_GuestDetails2.Location = new System.Drawing.Point(0, 48);
             this.pnl_GuestDetails2.Name = "pnl_GuestDetails2";
-            this.pnl_GuestDetails2.Size = new System.Drawing.Size(199, 788);
+            this.pnl_GuestDetails2.Size = new System.Drawing.Size(149, 640);
             this.pnl_GuestDetails2.TabIndex = 11;
             // 
             // btn_exitguest
@@ -300,10 +271,9 @@ namespace BayViewBookings
             this.btn_exitguest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_exitguest.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_exitguest.ForeColor = System.Drawing.Color.White;
-            this.btn_exitguest.Location = new System.Drawing.Point(-11, 714);
-            this.btn_exitguest.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_exitguest.Location = new System.Drawing.Point(-8, 580);
             this.btn_exitguest.Name = "btn_exitguest";
-            this.btn_exitguest.Size = new System.Drawing.Size(209, 59);
+            this.btn_exitguest.Size = new System.Drawing.Size(157, 48);
             this.btn_exitguest.TabIndex = 8;
             this.btn_exitguest.Text = "Exit";
             this.btn_exitguest.UseVisualStyleBackColor = false;
@@ -326,29 +296,29 @@ namespace BayViewBookings
             this.panelGuest.Controls.Add(this.txt_FirstName);
             this.panelGuest.Controls.Add(this.txt_Title);
             this.panelGuest.Controls.Add(this.txt_GuestID);
-            this.panelGuest.Location = new System.Drawing.Point(591, 68);
-            this.panelGuest.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelGuest.Location = new System.Drawing.Point(443, 55);
+            this.panelGuest.Margin = new System.Windows.Forms.Padding(2);
             this.panelGuest.Name = "panelGuest";
-            this.panelGuest.Size = new System.Drawing.Size(396, 706);
+            this.panelGuest.Size = new System.Drawing.Size(297, 574);
             this.panelGuest.TabIndex = 13;
             this.panelGuest.Visible = false;
             // 
             // lbl_Make_Amendments
             // 
             this.lbl_Make_Amendments.AutoSize = true;
-            this.lbl_Make_Amendments.Location = new System.Drawing.Point(128, 34);
+            this.lbl_Make_Amendments.Location = new System.Drawing.Point(96, 28);
+            this.lbl_Make_Amendments.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Make_Amendments.Name = "lbl_Make_Amendments";
-            this.lbl_Make_Amendments.Size = new System.Drawing.Size(141, 17);
+            this.lbl_Make_Amendments.Size = new System.Drawing.Size(105, 13);
             this.lbl_Make_Amendments.TabIndex = 20;
             this.lbl_Make_Amendments.Text = "Guest - Amendments";
-            this.lbl_Make_Amendments.Click += new System.EventHandler(this.lbl_Make_Amendments_Click);
             // 
             // btn_Cancel
             // 
-            this.btn_Cancel.Location = new System.Drawing.Point(240, 612);
-            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Cancel.Location = new System.Drawing.Point(180, 497);
+            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Cancel.Name = "btn_Cancel";
-            this.btn_Cancel.Size = new System.Drawing.Size(96, 65);
+            this.btn_Cancel.Size = new System.Drawing.Size(72, 53);
             this.btn_Cancel.TabIndex = 19;
             this.btn_Cancel.Text = "Cancel";
             this.btn_Cancel.UseVisualStyleBackColor = true;
@@ -356,10 +326,10 @@ namespace BayViewBookings
             // 
             // btn_Enter
             // 
-            this.btn_Enter.Location = new System.Drawing.Point(77, 612);
-            this.btn_Enter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Enter.Location = new System.Drawing.Point(58, 497);
+            this.btn_Enter.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Enter.Name = "btn_Enter";
-            this.btn_Enter.Size = new System.Drawing.Size(96, 65);
+            this.btn_Enter.Size = new System.Drawing.Size(72, 53);
             this.btn_Enter.TabIndex = 18;
             this.btn_Enter.Text = "Enter";
             this.btn_Enter.UseVisualStyleBackColor = true;
@@ -367,131 +337,138 @@ namespace BayViewBookings
             // EmailLabel
             // 
             this.EmailLabel.AutoSize = true;
-            this.EmailLabel.Location = new System.Drawing.Point(68, 462);
+            this.EmailLabel.Location = new System.Drawing.Point(51, 375);
+            this.EmailLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.EmailLabel.Name = "EmailLabel";
-            this.EmailLabel.Size = new System.Drawing.Size(98, 17);
+            this.EmailLabel.Size = new System.Drawing.Size(73, 13);
             this.EmailLabel.TabIndex = 17;
             this.EmailLabel.Text = "Email Address";
             // 
             // labelTelephone
             // 
             this.labelTelephone.AutoSize = true;
-            this.labelTelephone.Location = new System.Drawing.Point(68, 386);
+            this.labelTelephone.Location = new System.Drawing.Point(51, 314);
+            this.labelTelephone.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTelephone.Name = "labelTelephone";
-            this.labelTelephone.Size = new System.Drawing.Size(76, 17);
+            this.labelTelephone.Size = new System.Drawing.Size(58, 13);
             this.labelTelephone.TabIndex = 16;
             this.labelTelephone.Text = "Telephone";
             // 
             // SurnameLabel
             // 
             this.SurnameLabel.AutoSize = true;
-            this.SurnameLabel.Location = new System.Drawing.Point(68, 316);
+            this.SurnameLabel.Location = new System.Drawing.Point(51, 257);
+            this.SurnameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.SurnameLabel.Name = "SurnameLabel";
-            this.SurnameLabel.Size = new System.Drawing.Size(65, 17);
+            this.SurnameLabel.Size = new System.Drawing.Size(49, 13);
             this.SurnameLabel.TabIndex = 16;
             this.SurnameLabel.Text = "Surname";
-            this.SurnameLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // FirstNameLabel
             // 
             this.FirstNameLabel.AutoSize = true;
-            this.FirstNameLabel.Location = new System.Drawing.Point(68, 255);
+            this.FirstNameLabel.Location = new System.Drawing.Point(51, 207);
+            this.FirstNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.FirstNameLabel.Name = "FirstNameLabel";
-            this.FirstNameLabel.Size = new System.Drawing.Size(76, 17);
+            this.FirstNameLabel.Size = new System.Drawing.Size(57, 13);
             this.FirstNameLabel.TabIndex = 15;
             this.FirstNameLabel.Text = "First Name";
             // 
             // TitleLabel
             // 
             this.TitleLabel.AutoSize = true;
-            this.TitleLabel.Location = new System.Drawing.Point(68, 190);
+            this.TitleLabel.Location = new System.Drawing.Point(51, 154);
+            this.TitleLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TitleLabel.Name = "TitleLabel";
-            this.TitleLabel.Size = new System.Drawing.Size(35, 17);
+            this.TitleLabel.Size = new System.Drawing.Size(27, 13);
             this.TitleLabel.TabIndex = 14;
             this.TitleLabel.Text = "Title";
             // 
             // GuestIDLabel
             // 
             this.GuestIDLabel.AutoSize = true;
-            this.GuestIDLabel.Location = new System.Drawing.Point(68, 126);
+            this.GuestIDLabel.Location = new System.Drawing.Point(51, 102);
+            this.GuestIDLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.GuestIDLabel.Name = "GuestIDLabel";
-            this.GuestIDLabel.Size = new System.Drawing.Size(63, 17);
+            this.GuestIDLabel.Size = new System.Drawing.Size(49, 13);
             this.GuestIDLabel.TabIndex = 6;
             this.GuestIDLabel.Text = "Guest ID";
             // 
             // txt_Email
             // 
-            this.txt_Email.Location = new System.Drawing.Point(71, 491);
-            this.txt_Email.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_Email.Location = new System.Drawing.Point(53, 399);
+            this.txt_Email.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Email.Name = "txt_Email";
-            this.txt_Email.Size = new System.Drawing.Size(256, 22);
+            this.txt_Email.Size = new System.Drawing.Size(193, 20);
             this.txt_Email.TabIndex = 5;
             // 
             // txt_Surname
             // 
-            this.txt_Surname.Location = new System.Drawing.Point(71, 345);
-            this.txt_Surname.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_Surname.Location = new System.Drawing.Point(53, 280);
+            this.txt_Surname.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Surname.Name = "txt_Surname";
-            this.txt_Surname.Size = new System.Drawing.Size(256, 22);
+            this.txt_Surname.Size = new System.Drawing.Size(193, 20);
             this.txt_Surname.TabIndex = 4;
             // 
             // txt_Telephone
             // 
-            this.txt_Telephone.Location = new System.Drawing.Point(71, 416);
-            this.txt_Telephone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_Telephone.Location = new System.Drawing.Point(53, 338);
+            this.txt_Telephone.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Telephone.Name = "txt_Telephone";
-            this.txt_Telephone.Size = new System.Drawing.Size(256, 22);
+            this.txt_Telephone.Size = new System.Drawing.Size(193, 20);
             this.txt_Telephone.TabIndex = 3;
             // 
             // txt_FirstName
             // 
-            this.txt_FirstName.Location = new System.Drawing.Point(71, 279);
-            this.txt_FirstName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_FirstName.Location = new System.Drawing.Point(53, 227);
+            this.txt_FirstName.Margin = new System.Windows.Forms.Padding(2);
             this.txt_FirstName.Name = "txt_FirstName";
-            this.txt_FirstName.Size = new System.Drawing.Size(256, 22);
+            this.txt_FirstName.Size = new System.Drawing.Size(193, 20);
             this.txt_FirstName.TabIndex = 2;
             // 
             // txt_Title
             // 
-            this.txt_Title.Location = new System.Drawing.Point(71, 210);
-            this.txt_Title.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_Title.Location = new System.Drawing.Point(53, 171);
+            this.txt_Title.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Title.Name = "txt_Title";
-            this.txt_Title.Size = new System.Drawing.Size(115, 22);
+            this.txt_Title.Size = new System.Drawing.Size(87, 20);
             this.txt_Title.TabIndex = 1;
             // 
             // txt_GuestID
             // 
-            this.txt_GuestID.Location = new System.Drawing.Point(71, 150);
-            this.txt_GuestID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_GuestID.Location = new System.Drawing.Point(53, 122);
+            this.txt_GuestID.Margin = new System.Windows.Forms.Padding(2);
             this.txt_GuestID.Name = "txt_GuestID";
-            this.txt_GuestID.Size = new System.Drawing.Size(115, 22);
+            this.txt_GuestID.Size = new System.Drawing.Size(87, 20);
             this.txt_GuestID.TabIndex = 0;
             // 
             // dgv_GuestList
             // 
+            this.dgv_GuestList.BackgroundColor = System.Drawing.Color.White;
             this.dgv_GuestList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_GuestList.Location = new System.Drawing.Point(206, 69);
+            this.dgv_GuestList.Location = new System.Drawing.Point(154, 56);
+            this.dgv_GuestList.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_GuestList.Name = "dgv_GuestList";
             this.dgv_GuestList.RowHeadersWidth = 51;
             this.dgv_GuestList.RowTemplate.Height = 24;
-            this.dgv_GuestList.Size = new System.Drawing.Size(1137, 420);
+            this.dgv_GuestList.Size = new System.Drawing.Size(779, 549);
             this.dgv_GuestList.TabIndex = 14;
             // 
             // frm_GuestDetails
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1672, 834);
+            this.ClientSize = new System.Drawing.Size(1254, 678);
+            this.ControlBox = false;
             this.Controls.Add(this.pnl_GuestDetails2);
             this.Controls.Add(this.panelGuest);
             this.Controls.Add(this.pnl_Manager2);
             this.Controls.Add(this.pnl_GuestDetails);
             this.Controls.Add(this.dgv_GuestList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frm_GuestDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_GuestDetails";
+            this.Text = "Guest Details";
             this.pnl_GuestDetails.ResumeLayout(false);
             this.pnl_GuestDetails.PerformLayout();
             this.pnl_Manager2.ResumeLayout(false);
@@ -513,7 +490,6 @@ namespace BayViewBookings
         private System.Windows.Forms.Button btn_filter1;
         private System.Windows.Forms.TextBox txt_filter1;
         private System.Windows.Forms.Panel pnl_Manager2;
-        private System.Windows.Forms.Button btn_logout;
         private System.Windows.Forms.Button btn_exit;
         private System.Windows.Forms.Button btn_Rooms;
         private System.Windows.Forms.Button btn_Bookings;

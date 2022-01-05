@@ -17,14 +17,19 @@ namespace BayViewBookings
             InitializeComponent();
         }
 
-        private void txt_EmployeeID_Click(object sender, EventArgs e)
+        private void btn_NewTransact_Click(object sender, EventArgs e)
         {
-
+            pnl_Transaction.Visible = true;
         }
 
-        private void lbl_AmountDue_Click(object sender, EventArgs e)
+        private void btn_Cancel_Click(object sender, EventArgs e)
         {
+            pnl_Transaction.Visible = false;
+        }
 
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

@@ -41,8 +41,7 @@ namespace BayViewBookings
             this.txt_filter1 = new System.Windows.Forms.TextBox();
             this.lb_RoomDetails = new System.Windows.Forms.ListBox();
             this.pnl_Manager2 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_exit = new System.Windows.Forms.Button();
             this.btn_Rooms = new System.Windows.Forms.Button();
             this.btn_Bookings = new System.Windows.Forms.Button();
             this.btn_Guests = new System.Windows.Forms.Button();
@@ -179,8 +178,7 @@ namespace BayViewBookings
             // pnl_Manager2
             // 
             this.pnl_Manager2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pnl_Manager2.Controls.Add(this.button2);
-            this.pnl_Manager2.Controls.Add(this.button1);
+            this.pnl_Manager2.Controls.Add(this.btn_exit);
             this.pnl_Manager2.Controls.Add(this.btn_Rooms);
             this.pnl_Manager2.Controls.Add(this.btn_Bookings);
             this.pnl_Manager2.Controls.Add(this.btn_Guests);
@@ -188,40 +186,29 @@ namespace BayViewBookings
             this.pnl_Manager2.ForeColor = System.Drawing.Color.White;
             this.pnl_Manager2.Location = new System.Drawing.Point(0, 0);
             this.pnl_Manager2.Name = "pnl_Manager2";
-            this.pnl_Manager2.Size = new System.Drawing.Size(1240, 48);
+            this.pnl_Manager2.Size = new System.Drawing.Size(1247, 48);
             this.pnl_Manager2.TabIndex = 18;
             // 
-            // button2
+            // btn_exit
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(1115, 9);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 28);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Logout";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(1195, 9);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(33, 28);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "x";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_exit.ForeColor = System.Drawing.Color.White;
+            this.btn_exit.Location = new System.Drawing.Point(1195, 9);
+            this.btn_exit.Name = "btn_exit";
+            this.btn_exit.Size = new System.Drawing.Size(33, 28);
+            this.btn_exit.TabIndex = 6;
+            this.btn_exit.Text = "x";
+            this.btn_exit.UseVisualStyleBackColor = false;
+            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
             // btn_Rooms
             // 
-            this.btn_Rooms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_Rooms.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_Rooms.Enabled = false;
             this.btn_Rooms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Rooms.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Rooms.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Rooms.ForeColor = System.Drawing.Color.White;
             this.btn_Rooms.Location = new System.Drawing.Point(443, -3);
             this.btn_Rooms.Name = "btn_Rooms";
@@ -288,7 +275,7 @@ namespace BayViewBookings
             this.panel2.Controls.Add(this.txt_RoomType);
             this.panel2.Controls.Add(this.txt_RoomID);
             this.panel2.Location = new System.Drawing.Point(470, 81);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(297, 574);
             this.panel2.TabIndex = 19;
@@ -296,7 +283,7 @@ namespace BayViewBookings
             // btn_Cancel
             // 
             this.btn_Cancel.Location = new System.Drawing.Point(190, 505);
-            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(72, 53);
             this.btn_Cancel.TabIndex = 37;
@@ -306,7 +293,7 @@ namespace BayViewBookings
             // btn_Enter
             // 
             this.btn_Enter.Location = new System.Drawing.Point(39, 505);
-            this.btn_Enter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Enter.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Enter.Name = "btn_Enter";
             this.btn_Enter.Size = new System.Drawing.Size(72, 53);
             this.btn_Enter.TabIndex = 36;
@@ -386,7 +373,7 @@ namespace BayViewBookings
             // txt_RoomDescription
             // 
             this.txt_RoomDescription.Location = new System.Drawing.Point(52, 427);
-            this.txt_RoomDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_RoomDescription.Margin = new System.Windows.Forms.Padding(2);
             this.txt_RoomDescription.Multiline = true;
             this.txt_RoomDescription.Name = "txt_RoomDescription";
             this.txt_RoomDescription.Size = new System.Drawing.Size(210, 39);
@@ -395,7 +382,7 @@ namespace BayViewBookings
             // txt_Price
             // 
             this.txt_Price.Location = new System.Drawing.Point(52, 278);
-            this.txt_Price.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_Price.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Price.Name = "txt_Price";
             this.txt_Price.Size = new System.Drawing.Size(114, 20);
             this.txt_Price.TabIndex = 25;
@@ -403,7 +390,7 @@ namespace BayViewBookings
             // txt_Accessibility
             // 
             this.txt_Accessibility.Location = new System.Drawing.Point(52, 350);
-            this.txt_Accessibility.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_Accessibility.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Accessibility.Name = "txt_Accessibility";
             this.txt_Accessibility.Size = new System.Drawing.Size(114, 20);
             this.txt_Accessibility.TabIndex = 24;
@@ -411,7 +398,7 @@ namespace BayViewBookings
             // txt_RoomName
             // 
             this.txt_RoomName.Location = new System.Drawing.Point(52, 212);
-            this.txt_RoomName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_RoomName.Margin = new System.Windows.Forms.Padding(2);
             this.txt_RoomName.Name = "txt_RoomName";
             this.txt_RoomName.Size = new System.Drawing.Size(114, 20);
             this.txt_RoomName.TabIndex = 23;
@@ -419,7 +406,7 @@ namespace BayViewBookings
             // txt_RoomType
             // 
             this.txt_RoomType.Location = new System.Drawing.Point(52, 142);
-            this.txt_RoomType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_RoomType.Margin = new System.Windows.Forms.Padding(2);
             this.txt_RoomType.Name = "txt_RoomType";
             this.txt_RoomType.Size = new System.Drawing.Size(79, 20);
             this.txt_RoomType.TabIndex = 22;
@@ -427,7 +414,7 @@ namespace BayViewBookings
             // txt_RoomID
             // 
             this.txt_RoomID.Location = new System.Drawing.Point(52, 81);
-            this.txt_RoomID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_RoomID.Margin = new System.Windows.Forms.Padding(2);
             this.txt_RoomID.Name = "txt_RoomID";
             this.txt_RoomID.Size = new System.Drawing.Size(79, 20);
             this.txt_RoomID.TabIndex = 21;
@@ -470,8 +457,7 @@ namespace BayViewBookings
         private System.Windows.Forms.TextBox txt_filter1;
         private System.Windows.Forms.ListBox lb_RoomDetails;
         private System.Windows.Forms.Panel pnl_Manager2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_exit;
         private System.Windows.Forms.Button btn_Rooms;
         private System.Windows.Forms.Button btn_Bookings;
         private System.Windows.Forms.Button btn_Guests;
