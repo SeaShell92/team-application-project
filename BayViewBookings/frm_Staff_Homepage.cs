@@ -14,6 +14,7 @@ namespace BayViewBookings
     {
         DateTime timeOfDayGreeting = DateTime.Now;
         public string username { get; set; }
+
         public frm_Staff_Homepage()
         {
             InitializeComponent();
@@ -50,28 +51,32 @@ namespace BayViewBookings
 
         private void btn_Staff_Guests_Click(object sender, EventArgs e)
         {
-            frm_GuestDetails f2 = new frm_GuestDetails();
-            f2.ShowDialog(); // Shows Form2
-            this.Hide();
+            new frm_GuestDetails().ShowDialog(this); // Shows Guest Details form on top of original form
+            //original form is not hidden so we can go back to it but control is passed to new form
         }
 
         private void btn_Staff_Bookings_Click(object sender, EventArgs e)
-        {
-            frm_newBooking f2 = new frm_newBooking();
-            f2.ShowDialog(); // Shows Form2
-            this.Hide();
+        {            
+            new frm_newBooking().ShowDialog(this); // Shows New Booking form on top of original form
         }
 
         private void btn_Staff_Rooms_Click(object sender, EventArgs e)
         {
-            frm_RoomDetails f2 = new frm_RoomDetails();
-            f2.ShowDialog(); // Shows Form2
-            this.Hide();
+            new frm_RoomDetails().ShowDialog(); // Shows Room Details form on top of original form
         }
 
         private void btn_X_Click(object sender, EventArgs e)
         {
+            btn_exitStaff_Click(sender, e);
+        }
 
+        private void btn_exitStaff_Click(object sender, EventArgs e)
+        {
+            DialogResult dialog = dialog = MessageBox.Show("Do you really want to close the program?", "Exit", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }

@@ -104,6 +104,7 @@ namespace BayViewBookings
             this.btn_exitStaff.TabIndex = 0;
             this.btn_exitStaff.Text = "Exit";
             this.btn_exitStaff.UseVisualStyleBackColor = true;
+            this.btn_exitStaff.Click += new System.EventHandler(this.btn_exitStaff_Click);
             // 
             // pnl_staff
             // 
@@ -198,9 +199,9 @@ namespace BayViewBookings
             this.lbl_Welcome_Msg.ForeColor = System.Drawing.Color.White;
             this.lbl_Welcome_Msg.Location = new System.Drawing.Point(699, 9);
             this.lbl_Welcome_Msg.Name = "lbl_Welcome_Msg";
-            this.lbl_Welcome_Msg.Size = new System.Drawing.Size(278, 30);
+            this.lbl_Welcome_Msg.Size = new System.Drawing.Size(294, 30);
             this.lbl_Welcome_Msg.TabIndex = 0;
-            this.lbl_Welcome_Msg.Text = "Good Afternoon, Charlotte";
+            this.lbl_Welcome_Msg.Text = "#GREETING TIME#, #NAME#";
             // 
             // frm_Staff_Homepage
             // 
@@ -209,6 +210,7 @@ namespace BayViewBookings
             this.BackgroundImage = global::BayViewBookings.Properties.Resources.HEADER_1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1236, 677);
+            this.ControlBox = false;
             this.Controls.Add(this.pnl_staff);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;

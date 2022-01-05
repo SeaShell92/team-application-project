@@ -21,7 +21,6 @@ namespace BayViewBookings
         {
             InitializeComponent();
         }
-       // SQLiteConnection connectionstring;
         
         SQLiteConnection dbCon = new SQLiteConnection();
         SQLiteCommand dbcmd = new SQLiteCommand();
@@ -45,38 +44,19 @@ namespace BayViewBookings
             t1.Start();
             this.AcceptButton = btn_login; //this makes it so that when enter is pressed the login button will be executed
 
-            try
-            {
-                // Takes the current directory of the application and adds on the relative location of the database file.
-                const string details = @"Data Source = ..\..\Database\bookings.db";
-                dbCon.ConnectionString = details;
-                dbCon.Open();
-                //    MessageBox.Show("Connected");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-
             pnl_login.Location = new Point(
             this.ClientSize.Width / 2 - pnl_login.Size.Width / 2,
             this.ClientSize.Height / 2 - pnl_login.Size.Height / 2);
             pnl_login.Anchor = AnchorStyles.None;
-
-
 
         }
 
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-      
-            
-
             try
             {
-                using (var dbCon = new SQLiteConnection(@"Data Source = ..\..\Database\bookings.db"))
+                using (var dbCon = new SQLiteConnection(details))
                 {
                     dbCon.Open();
                     
@@ -104,7 +84,7 @@ namespace BayViewBookings
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Staff");
+                                    //MessageBox.Show("Staff");
 
                                     string username = lbl_firstname.Text;
                                     frm_Staff_Homepage frm3 = new frm_Staff_Homepage();
@@ -131,14 +111,15 @@ namespace BayViewBookings
         private void txt_username_TextChanged(object sender, EventArgs e)
         {
             lbl_managed_by.Text = "";
-            string Query = "Select * From Employee Where Username='" + txt_username.Text + "' ;";
+            string Query = "Select * From Employee Where Username=@Username";
             SQLiteConnection myConn = new SQLiteConnection(details);
             SQLiteCommand cmdDataBase = new SQLiteCommand(Query, myConn);
-            SQLiteDataReader dbreader;
+            cmdDataBase.Parameters.AddWithValue("@Username", txt_username.Text);
+
             try
             {
                 myConn.Open();
-                dbreader = cmdDataBase.ExecuteReader();
+                SQLiteDataReader dbreader = cmdDataBase.ExecuteReader();
 
                 while (dbreader.Read())
                 {
@@ -153,6 +134,17 @@ namespace BayViewBookings
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                myConn.Close();
+            }
+        }
+
+        private void btn_Quit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Really quit?", "Exit Program",
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                Environment.Exit(0);
             }
         }
     }

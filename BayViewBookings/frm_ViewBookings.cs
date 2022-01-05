@@ -27,10 +27,9 @@ namespace BayViewBookings
       
         private void btn_exit_Click(object sender, EventArgs e)
         {
-
-            //   new frm_newBooking().Show();
-            this.DialogResult = DialogResult.OK;
+            Close();
         }
+
         void fill_listbox() 
         {
             string Query = "Select * From Booking"; //sql code

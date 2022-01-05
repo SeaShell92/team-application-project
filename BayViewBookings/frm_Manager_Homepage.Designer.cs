@@ -57,7 +57,7 @@ namespace BayViewBookings
             this.pnl_Manager2.ForeColor = System.Drawing.Color.White;
             this.pnl_Manager2.Location = new System.Drawing.Point(0, 0);
             this.pnl_Manager2.Name = "pnl_Manager2";
-            this.pnl_Manager2.Size = new System.Drawing.Size(1236, 48);
+            this.pnl_Manager2.Size = new System.Drawing.Size(1241, 48);
             this.pnl_Manager2.TabIndex = 3;
             // 
             // btn_Logout
@@ -86,7 +86,7 @@ namespace BayViewBookings
             this.btn_X.TabIndex = 6;
             this.btn_X.Text = "x";
             this.btn_X.UseVisualStyleBackColor = false;
-            this.btn_X.Click += new System.EventHandler(this.button1_Click);
+            this.btn_X.Click += new System.EventHandler(this.btn_X_Click);
             // 
             // btn_Rooms
             // 
@@ -100,7 +100,7 @@ namespace BayViewBookings
             this.btn_Rooms.TabIndex = 3;
             this.btn_Rooms.Text = "Rooms";
             this.btn_Rooms.UseVisualStyleBackColor = false;
-            this.btn_Rooms.Click += new System.EventHandler(this.button8_Click);
+            this.btn_Rooms.Click += new System.EventHandler(this.btn_Rooms_Click);
             // 
             // btn_Bookings
             // 
@@ -114,7 +114,7 @@ namespace BayViewBookings
             this.btn_Bookings.TabIndex = 2;
             this.btn_Bookings.Text = "Bookings";
             this.btn_Bookings.UseVisualStyleBackColor = false;
-            this.btn_Bookings.Click += new System.EventHandler(this.button7_Click);
+            this.btn_Bookings.Click += new System.EventHandler(this.btn_Bookings_Click);
             // 
             // btn_Guests
             // 
@@ -128,7 +128,7 @@ namespace BayViewBookings
             this.btn_Guests.TabIndex = 1;
             this.btn_Guests.Text = "Guests";
             this.btn_Guests.UseVisualStyleBackColor = false;
-            this.btn_Guests.Click += new System.EventHandler(this.button6_Click);
+            this.btn_Guests.Click += new System.EventHandler(this.btn_Guests_Click);
             // 
             // lbl_Welcome_Msg
             // 
@@ -138,9 +138,9 @@ namespace BayViewBookings
             this.lbl_Welcome_Msg.ForeColor = System.Drawing.Color.White;
             this.lbl_Welcome_Msg.Location = new System.Drawing.Point(699, 9);
             this.lbl_Welcome_Msg.Name = "lbl_Welcome_Msg";
-            this.lbl_Welcome_Msg.Size = new System.Drawing.Size(238, 30);
+            this.lbl_Welcome_Msg.Size = new System.Drawing.Size(294, 30);
             this.lbl_Welcome_Msg.TabIndex = 0;
-            this.lbl_Welcome_Msg.Text = "Good Afternoon, Mark";
+            this.lbl_Welcome_Msg.Text = "#GREETING TIME#, #NAME#";
             // 
             // btn_Reports
             // 
@@ -154,7 +154,7 @@ namespace BayViewBookings
             this.btn_Reports.TabIndex = 5;
             this.btn_Reports.Text = "Reports";
             this.btn_Reports.UseVisualStyleBackColor = false;
-            this.btn_Reports.Click += new System.EventHandler(this.button10_Click);
+            this.btn_Reports.Click += new System.EventHandler(this.btn_Reports_Click);
             // 
             // btn_Staff
             // 
@@ -168,7 +168,7 @@ namespace BayViewBookings
             this.btn_Staff.TabIndex = 4;
             this.btn_Staff.Text = "Staff";
             this.btn_Staff.UseVisualStyleBackColor = false;
-            this.btn_Staff.Click += new System.EventHandler(this.button9_Click);
+            this.btn_Staff.Click += new System.EventHandler(this.btn_Staff_Click);
             // 
             // pnl_Manager
             // 

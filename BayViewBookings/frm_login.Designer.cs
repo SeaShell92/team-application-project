@@ -40,6 +40,7 @@ namespace BayViewBookings
             this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
             this.lbl_managed_by = new System.Windows.Forms.Label();
             this.lbl_firstname = new System.Windows.Forms.Label();
+            this.btn_Quit = new System.Windows.Forms.Button();
             this.pnl_login.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_logo)).BeginInit();
             this.SuspendLayout();
@@ -61,6 +62,7 @@ namespace BayViewBookings
             // pnl_login
             // 
             this.pnl_login.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_login.Controls.Add(this.btn_Quit);
             this.pnl_login.Controls.Add(this.btn_login);
             this.pnl_login.Controls.Add(this.lbl_password);
             this.pnl_login.Controls.Add(this.lbl_username);
@@ -167,6 +169,20 @@ namespace BayViewBookings
             this.lbl_firstname.Text = "label3";
             this.lbl_firstname.Visible = false;
             // 
+            // btn_Quit
+            // 
+            this.btn_Quit.BackColor = System.Drawing.Color.ForestGreen;
+            this.btn_Quit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Quit.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Quit.ForeColor = System.Drawing.Color.White;
+            this.btn_Quit.Location = new System.Drawing.Point(111, 454);
+            this.btn_Quit.Name = "btn_Quit";
+            this.btn_Quit.Size = new System.Drawing.Size(196, 35);
+            this.btn_Quit.TabIndex = 8;
+            this.btn_Quit.Text = "Quit";
+            this.btn_Quit.UseVisualStyleBackColor = false;
+            this.btn_Quit.Click += new System.EventHandler(this.btn_Quit_Click);
+            // 
             // frm_login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -175,6 +191,7 @@ namespace BayViewBookings
             this.BackgroundImage = global::BayViewBookings.Properties.Resources._12312;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1653, 932);
+            this.ControlBox = false;
             this.Controls.Add(this.lbl_firstname);
             this.Controls.Add(this.lbl_managed_by);
             this.Controls.Add(this.pnl_login);
@@ -205,6 +222,7 @@ namespace BayViewBookings
         private System.Data.Entity.Core.EntityClient.EntityCommand entityCommand1;
         private System.Windows.Forms.Label lbl_managed_by;
         private System.Windows.Forms.Label lbl_firstname;
+        private System.Windows.Forms.Button btn_Quit;
     }
 }
 
