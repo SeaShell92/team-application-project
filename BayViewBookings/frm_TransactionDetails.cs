@@ -31,5 +31,10 @@ namespace BayViewBookings
         {
             Close();
         }
+
+        private void btn_TransactExit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
