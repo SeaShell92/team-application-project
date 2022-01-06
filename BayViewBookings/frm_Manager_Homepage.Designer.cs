@@ -41,6 +41,9 @@ namespace BayViewBookings
             this.btn_Staff = new System.Windows.Forms.Button();
             this.pnl_Manager = new System.Windows.Forms.Panel();
             this.btn_exitmgr = new System.Windows.Forms.Button();
+            this.btn_Transactions = new System.Windows.Forms.Button();
+            this.btn_RoomAvail = new System.Windows.Forms.Button();
+            this.btn_viewBookings = new System.Windows.Forms.Button();
             this.pnl_Manager2.SuspendLayout();
             this.pnl_Manager.SuspendLayout();
             this.SuspendLayout();
@@ -98,7 +101,7 @@ namespace BayViewBookings
             this.btn_Rooms.Name = "btn_Rooms";
             this.btn_Rooms.Size = new System.Drawing.Size(150, 54);
             this.btn_Rooms.TabIndex = 3;
-            this.btn_Rooms.Text = "Rooms";
+            this.btn_Rooms.Text = "View Rooms";
             this.btn_Rooms.UseVisualStyleBackColor = false;
             this.btn_Rooms.Click += new System.EventHandler(this.btn_Rooms_Click);
             // 
@@ -112,7 +115,7 @@ namespace BayViewBookings
             this.btn_Bookings.Name = "btn_Bookings";
             this.btn_Bookings.Size = new System.Drawing.Size(150, 54);
             this.btn_Bookings.TabIndex = 2;
-            this.btn_Bookings.Text = "Bookings";
+            this.btn_Bookings.Text = "New Booking";
             this.btn_Bookings.UseVisualStyleBackColor = false;
             this.btn_Bookings.Click += new System.EventHandler(this.btn_Bookings_Click);
             // 
@@ -126,7 +129,7 @@ namespace BayViewBookings
             this.btn_Guests.Name = "btn_Guests";
             this.btn_Guests.Size = new System.Drawing.Size(150, 54);
             this.btn_Guests.TabIndex = 1;
-            this.btn_Guests.Text = "Guests";
+            this.btn_Guests.Text = "View Guests";
             this.btn_Guests.UseVisualStyleBackColor = false;
             this.btn_Guests.Click += new System.EventHandler(this.btn_Guests_Click);
             // 
@@ -173,6 +176,9 @@ namespace BayViewBookings
             // pnl_Manager
             // 
             this.pnl_Manager.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pnl_Manager.Controls.Add(this.btn_viewBookings);
+            this.pnl_Manager.Controls.Add(this.btn_RoomAvail);
+            this.pnl_Manager.Controls.Add(this.btn_Transactions);
             this.pnl_Manager.Controls.Add(this.btn_exitmgr);
             this.pnl_Manager.Controls.Add(this.btn_Staff);
             this.pnl_Manager.Controls.Add(this.btn_Reports);
@@ -195,6 +201,45 @@ namespace BayViewBookings
             this.btn_exitmgr.UseVisualStyleBackColor = false;
             this.btn_exitmgr.Click += new System.EventHandler(this.btn_exitmgr_Click);
             // 
+            // btn_Transactions
+            // 
+            this.btn_Transactions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_Transactions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Transactions.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Transactions.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Transactions.Location = new System.Drawing.Point(8, 113);
+            this.btn_Transactions.Name = "btn_Transactions";
+            this.btn_Transactions.Size = new System.Drawing.Size(155, 57);
+            this.btn_Transactions.TabIndex = 7;
+            this.btn_Transactions.Text = "Transactions";
+            this.btn_Transactions.UseVisualStyleBackColor = false;
+            // 
+            // btn_RoomAvail
+            // 
+            this.btn_RoomAvail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_RoomAvail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_RoomAvail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_RoomAvail.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_RoomAvail.Location = new System.Drawing.Point(8, 167);
+            this.btn_RoomAvail.Name = "btn_RoomAvail";
+            this.btn_RoomAvail.Size = new System.Drawing.Size(155, 57);
+            this.btn_RoomAvail.TabIndex = 8;
+            this.btn_RoomAvail.Text = "Room Availability";
+            this.btn_RoomAvail.UseVisualStyleBackColor = false;
+            // 
+            // btn_viewBookings
+            // 
+            this.btn_viewBookings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_viewBookings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_viewBookings.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_viewBookings.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_viewBookings.Location = new System.Drawing.Point(8, 218);
+            this.btn_viewBookings.Name = "btn_viewBookings";
+            this.btn_viewBookings.Size = new System.Drawing.Size(155, 57);
+            this.btn_viewBookings.TabIndex = 9;
+            this.btn_viewBookings.Text = "View Bookings";
+            this.btn_viewBookings.UseVisualStyleBackColor = false;
+            // 
             // frm_Manager_Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -208,7 +253,7 @@ namespace BayViewBookings
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "frm_Manager_Homepage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Manager Homepage";
+            this.Text = "Homepage | Manager";
             this.Load += new System.EventHandler(this.frm_Manager_Homepage_Load);
             this.pnl_Manager2.ResumeLayout(false);
             this.pnl_Manager2.PerformLayout();
@@ -230,5 +275,8 @@ namespace BayViewBookings
         private System.Windows.Forms.Panel pnl_Manager;
         private System.Windows.Forms.Button btn_exitmgr;
         public System.Windows.Forms.Label lbl_Welcome_Msg;
+        private System.Windows.Forms.Button btn_Transactions;
+        private System.Windows.Forms.Button btn_viewBookings;
+        private System.Windows.Forms.Button btn_RoomAvail;
     }
 }

@@ -46,7 +46,7 @@ namespace BayViewBookings
             this.btn_Bookings = new System.Windows.Forms.Button();
             this.btn_Guests = new System.Windows.Forms.Button();
             this.lbl_RoomDetails = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnl_RoomDetails = new System.Windows.Forms.Panel();
             this.btn_Cancel = new System.Windows.Forms.Button();
             this.btn_Enter = new System.Windows.Forms.Button();
             this.lbl_Room_Details = new System.Windows.Forms.Label();
@@ -62,10 +62,11 @@ namespace BayViewBookings
             this.txt_RoomName = new System.Windows.Forms.TextBox();
             this.txt_RoomType = new System.Windows.Forms.TextBox();
             this.txt_RoomID = new System.Windows.Forms.TextBox();
+            this.btn_AmendRoom = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.pnl_Manager2.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.pnl_RoomDetails.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -105,6 +106,7 @@ namespace BayViewBookings
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btn_AmendRoom);
             this.panel3.Controls.Add(this.btn_filter3);
             this.panel3.Controls.Add(this.txt_filter3);
             this.panel3.Controls.Add(this.btn_filter2);
@@ -257,28 +259,29 @@ namespace BayViewBookings
             this.lbl_RoomDetails.TabIndex = 0;
             this.lbl_RoomDetails.Text = "Room Details";
             // 
-            // panel2
+            // pnl_RoomDetails
             // 
-            this.panel2.Controls.Add(this.btn_Cancel);
-            this.panel2.Controls.Add(this.btn_Enter);
-            this.panel2.Controls.Add(this.lbl_Room_Details);
-            this.panel2.Controls.Add(this.lbl_RoomDescription);
-            this.panel2.Controls.Add(this.lbl_Accessibility);
-            this.panel2.Controls.Add(this.lbl_Price);
-            this.panel2.Controls.Add(this.lbl_RoomName);
-            this.panel2.Controls.Add(this.lbl_RoomType);
-            this.panel2.Controls.Add(this.lbl_RoomID);
-            this.panel2.Controls.Add(this.txt_RoomDescription);
-            this.panel2.Controls.Add(this.txt_Price);
-            this.panel2.Controls.Add(this.txt_Accessibility);
-            this.panel2.Controls.Add(this.txt_RoomName);
-            this.panel2.Controls.Add(this.txt_RoomType);
-            this.panel2.Controls.Add(this.txt_RoomID);
-            this.panel2.Location = new System.Drawing.Point(470, 81);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(297, 574);
-            this.panel2.TabIndex = 19;
+            this.pnl_RoomDetails.Controls.Add(this.btn_Cancel);
+            this.pnl_RoomDetails.Controls.Add(this.btn_Enter);
+            this.pnl_RoomDetails.Controls.Add(this.lbl_Room_Details);
+            this.pnl_RoomDetails.Controls.Add(this.lbl_RoomDescription);
+            this.pnl_RoomDetails.Controls.Add(this.lbl_Accessibility);
+            this.pnl_RoomDetails.Controls.Add(this.lbl_Price);
+            this.pnl_RoomDetails.Controls.Add(this.lbl_RoomName);
+            this.pnl_RoomDetails.Controls.Add(this.lbl_RoomType);
+            this.pnl_RoomDetails.Controls.Add(this.lbl_RoomID);
+            this.pnl_RoomDetails.Controls.Add(this.txt_RoomDescription);
+            this.pnl_RoomDetails.Controls.Add(this.txt_Price);
+            this.pnl_RoomDetails.Controls.Add(this.txt_Accessibility);
+            this.pnl_RoomDetails.Controls.Add(this.txt_RoomName);
+            this.pnl_RoomDetails.Controls.Add(this.txt_RoomType);
+            this.pnl_RoomDetails.Controls.Add(this.txt_RoomID);
+            this.pnl_RoomDetails.Location = new System.Drawing.Point(470, 81);
+            this.pnl_RoomDetails.Margin = new System.Windows.Forms.Padding(2);
+            this.pnl_RoomDetails.Name = "pnl_RoomDetails";
+            this.pnl_RoomDetails.Size = new System.Drawing.Size(297, 574);
+            this.pnl_RoomDetails.TabIndex = 19;
+            this.pnl_RoomDetails.Visible = false;
             // 
             // btn_Cancel
             // 
@@ -289,6 +292,7 @@ namespace BayViewBookings
             this.btn_Cancel.TabIndex = 37;
             this.btn_Cancel.Text = "Cancel";
             this.btn_Cancel.UseVisualStyleBackColor = true;
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
             // btn_Enter
             // 
@@ -419,12 +423,25 @@ namespace BayViewBookings
             this.txt_RoomID.Size = new System.Drawing.Size(79, 20);
             this.txt_RoomID.TabIndex = 21;
             // 
+            // btn_AmendRoom
+            // 
+            this.btn_AmendRoom.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_AmendRoom.Location = new System.Drawing.Point(56, 408);
+            this.btn_AmendRoom.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_AmendRoom.Name = "btn_AmendRoom";
+            this.btn_AmendRoom.Size = new System.Drawing.Size(94, 32);
+            this.btn_AmendRoom.TabIndex = 20;
+            this.btn_AmendRoom.Text = "Amend Room";
+            this.btn_AmendRoom.UseVisualStyleBackColor = true;
+            this.btn_AmendRoom.Visible = false;
+            this.btn_AmendRoom.Click += new System.EventHandler(this.btn_AmendRoom_Click);
+            // 
             // frm_RoomDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1243, 677);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.pnl_RoomDetails);
             this.Controls.Add(this.pnl_Manager2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.lb_RoomDetails);
@@ -433,13 +450,14 @@ namespace BayViewBookings
             this.Name = "frm_RoomDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_RoomDetails";
+            this.Load += new System.EventHandler(this.frm_RoomDetails_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.pnl_Manager2.ResumeLayout(false);
             this.pnl_Manager2.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.pnl_RoomDetails.ResumeLayout(false);
+            this.pnl_RoomDetails.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -462,7 +480,7 @@ namespace BayViewBookings
         private System.Windows.Forms.Button btn_Bookings;
         private System.Windows.Forms.Button btn_Guests;
         private System.Windows.Forms.Label lbl_RoomDetails;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnl_RoomDetails;
         private System.Windows.Forms.Label lbl_Room_Details;
         private System.Windows.Forms.Label lbl_RoomDescription;
         private System.Windows.Forms.Label lbl_Accessibility;
@@ -478,5 +496,6 @@ namespace BayViewBookings
         private System.Windows.Forms.TextBox txt_RoomID;
         private System.Windows.Forms.Button btn_Cancel;
         private System.Windows.Forms.Button btn_Enter;
+        private System.Windows.Forms.Button btn_AmendRoom;
     }
 }
