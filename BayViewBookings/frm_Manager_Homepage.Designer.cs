@@ -40,10 +40,10 @@ namespace BayViewBookings
             this.btn_Reports = new System.Windows.Forms.Button();
             this.btn_Staff = new System.Windows.Forms.Button();
             this.pnl_Manager = new System.Windows.Forms.Panel();
-            this.btn_exitmgr = new System.Windows.Forms.Button();
-            this.btn_Transactions = new System.Windows.Forms.Button();
-            this.btn_RoomAvail = new System.Windows.Forms.Button();
             this.btn_viewBookings = new System.Windows.Forms.Button();
+            this.btn_RoomAvail = new System.Windows.Forms.Button();
+            this.btn_Transactions = new System.Windows.Forms.Button();
+            this.btn_exitmgr = new System.Windows.Forms.Button();
             this.pnl_Manager2.SuspendLayout();
             this.pnl_Manager.SuspendLayout();
             this.SuspendLayout();
@@ -59,8 +59,9 @@ namespace BayViewBookings
             this.pnl_Manager2.Controls.Add(this.lbl_Welcome_Msg);
             this.pnl_Manager2.ForeColor = System.Drawing.Color.White;
             this.pnl_Manager2.Location = new System.Drawing.Point(0, 0);
+            this.pnl_Manager2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnl_Manager2.Name = "pnl_Manager2";
-            this.pnl_Manager2.Size = new System.Drawing.Size(1241, 48);
+            this.pnl_Manager2.Size = new System.Drawing.Size(1655, 59);
             this.pnl_Manager2.TabIndex = 3;
             // 
             // btn_Logout
@@ -69,9 +70,10 @@ namespace BayViewBookings
             this.btn_Logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Logout.ForeColor = System.Drawing.Color.White;
-            this.btn_Logout.Location = new System.Drawing.Point(1119, 3);
+            this.btn_Logout.Location = new System.Drawing.Point(1492, 4);
+            this.btn_Logout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_Logout.Name = "btn_Logout";
-            this.btn_Logout.Size = new System.Drawing.Size(75, 28);
+            this.btn_Logout.Size = new System.Drawing.Size(100, 34);
             this.btn_Logout.TabIndex = 7;
             this.btn_Logout.Text = "Logout";
             this.btn_Logout.UseVisualStyleBackColor = false;
@@ -83,9 +85,10 @@ namespace BayViewBookings
             this.btn_X.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_X.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_X.ForeColor = System.Drawing.Color.White;
-            this.btn_X.Location = new System.Drawing.Point(1200, 3);
+            this.btn_X.Location = new System.Drawing.Point(1600, 4);
+            this.btn_X.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_X.Name = "btn_X";
-            this.btn_X.Size = new System.Drawing.Size(33, 28);
+            this.btn_X.Size = new System.Drawing.Size(44, 34);
             this.btn_X.TabIndex = 6;
             this.btn_X.Text = "x";
             this.btn_X.UseVisualStyleBackColor = false;
@@ -97,9 +100,10 @@ namespace BayViewBookings
             this.btn_Rooms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Rooms.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Rooms.ForeColor = System.Drawing.Color.White;
-            this.btn_Rooms.Location = new System.Drawing.Point(443, -3);
+            this.btn_Rooms.Location = new System.Drawing.Point(591, -4);
+            this.btn_Rooms.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_Rooms.Name = "btn_Rooms";
-            this.btn_Rooms.Size = new System.Drawing.Size(150, 54);
+            this.btn_Rooms.Size = new System.Drawing.Size(200, 66);
             this.btn_Rooms.TabIndex = 3;
             this.btn_Rooms.Text = "View Rooms";
             this.btn_Rooms.UseVisualStyleBackColor = false;
@@ -111,9 +115,10 @@ namespace BayViewBookings
             this.btn_Bookings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Bookings.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Bookings.ForeColor = System.Drawing.Color.White;
-            this.btn_Bookings.Location = new System.Drawing.Point(296, -3);
+            this.btn_Bookings.Location = new System.Drawing.Point(395, -4);
+            this.btn_Bookings.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_Bookings.Name = "btn_Bookings";
-            this.btn_Bookings.Size = new System.Drawing.Size(150, 54);
+            this.btn_Bookings.Size = new System.Drawing.Size(200, 66);
             this.btn_Bookings.TabIndex = 2;
             this.btn_Bookings.Text = "New Booking";
             this.btn_Bookings.UseVisualStyleBackColor = false;
@@ -125,9 +130,10 @@ namespace BayViewBookings
             this.btn_Guests.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Guests.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Guests.ForeColor = System.Drawing.Color.White;
-            this.btn_Guests.Location = new System.Drawing.Point(149, -3);
+            this.btn_Guests.Location = new System.Drawing.Point(199, -4);
+            this.btn_Guests.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_Guests.Name = "btn_Guests";
-            this.btn_Guests.Size = new System.Drawing.Size(150, 54);
+            this.btn_Guests.Size = new System.Drawing.Size(200, 66);
             this.btn_Guests.TabIndex = 1;
             this.btn_Guests.Text = "View Guests";
             this.btn_Guests.UseVisualStyleBackColor = false;
@@ -139,9 +145,10 @@ namespace BayViewBookings
             this.lbl_Welcome_Msg.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Welcome_Msg.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Welcome_Msg.ForeColor = System.Drawing.Color.White;
-            this.lbl_Welcome_Msg.Location = new System.Drawing.Point(699, 9);
+            this.lbl_Welcome_Msg.Location = new System.Drawing.Point(932, 11);
+            this.lbl_Welcome_Msg.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Welcome_Msg.Name = "lbl_Welcome_Msg";
-            this.lbl_Welcome_Msg.Size = new System.Drawing.Size(294, 30);
+            this.lbl_Welcome_Msg.Size = new System.Drawing.Size(377, 37);
             this.lbl_Welcome_Msg.TabIndex = 0;
             this.lbl_Welcome_Msg.Text = "#GREETING TIME#, #NAME#";
             // 
@@ -151,9 +158,10 @@ namespace BayViewBookings
             this.btn_Reports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Reports.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Reports.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_Reports.Location = new System.Drawing.Point(8, 3);
+            this.btn_Reports.Location = new System.Drawing.Point(11, 4);
+            this.btn_Reports.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_Reports.Name = "btn_Reports";
-            this.btn_Reports.Size = new System.Drawing.Size(155, 57);
+            this.btn_Reports.Size = new System.Drawing.Size(207, 70);
             this.btn_Reports.TabIndex = 5;
             this.btn_Reports.Text = "Reports";
             this.btn_Reports.UseVisualStyleBackColor = false;
@@ -165,9 +173,10 @@ namespace BayViewBookings
             this.btn_Staff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Staff.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Staff.ForeColor = System.Drawing.Color.White;
-            this.btn_Staff.Location = new System.Drawing.Point(8, 57);
+            this.btn_Staff.Location = new System.Drawing.Point(11, 70);
+            this.btn_Staff.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_Staff.Name = "btn_Staff";
-            this.btn_Staff.Size = new System.Drawing.Size(155, 59);
+            this.btn_Staff.Size = new System.Drawing.Size(207, 73);
             this.btn_Staff.TabIndex = 4;
             this.btn_Staff.Text = "Staff";
             this.btn_Staff.UseVisualStyleBackColor = false;
@@ -182,50 +191,11 @@ namespace BayViewBookings
             this.pnl_Manager.Controls.Add(this.btn_exitmgr);
             this.pnl_Manager.Controls.Add(this.btn_Staff);
             this.pnl_Manager.Controls.Add(this.btn_Reports);
-            this.pnl_Manager.Location = new System.Drawing.Point(-9, 45);
+            this.pnl_Manager.Location = new System.Drawing.Point(-12, 55);
+            this.pnl_Manager.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnl_Manager.Name = "pnl_Manager";
-            this.pnl_Manager.Size = new System.Drawing.Size(160, 634);
+            this.pnl_Manager.Size = new System.Drawing.Size(213, 780);
             this.pnl_Manager.TabIndex = 12;
-            // 
-            // btn_exitmgr
-            // 
-            this.btn_exitmgr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_exitmgr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_exitmgr.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_exitmgr.ForeColor = System.Drawing.Color.White;
-            this.btn_exitmgr.Location = new System.Drawing.Point(3, 586);
-            this.btn_exitmgr.Name = "btn_exitmgr";
-            this.btn_exitmgr.Size = new System.Drawing.Size(157, 48);
-            this.btn_exitmgr.TabIndex = 6;
-            this.btn_exitmgr.Text = "Exit";
-            this.btn_exitmgr.UseVisualStyleBackColor = false;
-            this.btn_exitmgr.Click += new System.EventHandler(this.btn_exitmgr_Click);
-            // 
-            // btn_Transactions
-            // 
-            this.btn_Transactions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_Transactions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Transactions.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Transactions.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_Transactions.Location = new System.Drawing.Point(8, 113);
-            this.btn_Transactions.Name = "btn_Transactions";
-            this.btn_Transactions.Size = new System.Drawing.Size(155, 57);
-            this.btn_Transactions.TabIndex = 7;
-            this.btn_Transactions.Text = "Transactions";
-            this.btn_Transactions.UseVisualStyleBackColor = false;
-            // 
-            // btn_RoomAvail
-            // 
-            this.btn_RoomAvail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_RoomAvail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_RoomAvail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_RoomAvail.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_RoomAvail.Location = new System.Drawing.Point(8, 167);
-            this.btn_RoomAvail.Name = "btn_RoomAvail";
-            this.btn_RoomAvail.Size = new System.Drawing.Size(155, 57);
-            this.btn_RoomAvail.TabIndex = 8;
-            this.btn_RoomAvail.Text = "Room Availability";
-            this.btn_RoomAvail.UseVisualStyleBackColor = false;
             // 
             // btn_viewBookings
             // 
@@ -233,24 +203,72 @@ namespace BayViewBookings
             this.btn_viewBookings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_viewBookings.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_viewBookings.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_viewBookings.Location = new System.Drawing.Point(8, 218);
+            this.btn_viewBookings.Location = new System.Drawing.Point(11, 268);
+            this.btn_viewBookings.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btn_viewBookings.Name = "btn_viewBookings";
-            this.btn_viewBookings.Size = new System.Drawing.Size(155, 57);
+            this.btn_viewBookings.Size = new System.Drawing.Size(207, 70);
             this.btn_viewBookings.TabIndex = 9;
             this.btn_viewBookings.Text = "View Bookings";
             this.btn_viewBookings.UseVisualStyleBackColor = false;
+            this.btn_viewBookings.Click += new System.EventHandler(this.btn_viewBookings_Click);
+            // 
+            // btn_RoomAvail
+            // 
+            this.btn_RoomAvail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_RoomAvail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_RoomAvail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_RoomAvail.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_RoomAvail.Location = new System.Drawing.Point(11, 206);
+            this.btn_RoomAvail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_RoomAvail.Name = "btn_RoomAvail";
+            this.btn_RoomAvail.Size = new System.Drawing.Size(207, 70);
+            this.btn_RoomAvail.TabIndex = 8;
+            this.btn_RoomAvail.Text = "Room Availability";
+            this.btn_RoomAvail.UseVisualStyleBackColor = false;
+            this.btn_RoomAvail.Click += new System.EventHandler(this.btn_RoomAvail_Click);
+            // 
+            // btn_Transactions
+            // 
+            this.btn_Transactions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_Transactions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Transactions.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Transactions.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Transactions.Location = new System.Drawing.Point(11, 139);
+            this.btn_Transactions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Transactions.Name = "btn_Transactions";
+            this.btn_Transactions.Size = new System.Drawing.Size(207, 70);
+            this.btn_Transactions.TabIndex = 7;
+            this.btn_Transactions.Text = "Transactions";
+            this.btn_Transactions.UseVisualStyleBackColor = false;
+            this.btn_Transactions.Click += new System.EventHandler(this.btn_Transactions_Click);
+            // 
+            // btn_exitmgr
+            // 
+            this.btn_exitmgr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_exitmgr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_exitmgr.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_exitmgr.ForeColor = System.Drawing.Color.White;
+            this.btn_exitmgr.Location = new System.Drawing.Point(4, 721);
+            this.btn_exitmgr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_exitmgr.Name = "btn_exitmgr";
+            this.btn_exitmgr.Size = new System.Drawing.Size(209, 59);
+            this.btn_exitmgr.TabIndex = 6;
+            this.btn_exitmgr.Text = "Exit";
+            this.btn_exitmgr.UseVisualStyleBackColor = false;
+            this.btn_exitmgr.Click += new System.EventHandler(this.btn_exitmgr_Click);
             // 
             // frm_Manager_Homepage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1239, 677);
+            this.ClientSize = new System.Drawing.Size(1652, 833);
             this.ControlBox = false;
             this.Controls.Add(this.pnl_Manager);
             this.Controls.Add(this.pnl_Manager2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frm_Manager_Homepage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Homepage | Manager";
