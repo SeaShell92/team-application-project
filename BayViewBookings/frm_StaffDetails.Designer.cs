@@ -39,7 +39,6 @@ namespace BayViewBookings
             this.txt_filter2 = new System.Windows.Forms.TextBox();
             this.btn_filter1 = new System.Windows.Forms.Button();
             this.txt_filter1 = new System.Windows.Forms.TextBox();
-            this.lb_staffDetails = new System.Windows.Forms.ListBox();
             this.pnl_staff = new System.Windows.Forms.Panel();
             this.btn_logout = new System.Windows.Forms.Button();
             this.btn_exit = new System.Windows.Forms.Button();
@@ -68,10 +67,12 @@ namespace BayViewBookings
             this.txt_FirstName = new System.Windows.Forms.TextBox();
             this.txt_EmployeeID = new System.Windows.Forms.TextBox();
             this.btn_Amend = new System.Windows.Forms.Button();
+            this.dgv_Staff = new System.Windows.Forms.DataGridView();
             this.pnl_Staff2.SuspendLayout();
             this.pnl_filter.SuspendLayout();
             this.pnl_staff.SuspendLayout();
             this.panel_staff.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Staff)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_Staff2
@@ -183,16 +184,6 @@ namespace BayViewBookings
             this.txt_filter1.Name = "txt_filter1";
             this.txt_filter1.Size = new System.Drawing.Size(179, 22);
             this.txt_filter1.TabIndex = 0;
-            // 
-            // lb_staffDetails
-            // 
-            this.lb_staffDetails.FormattingEnabled = true;
-            this.lb_staffDetails.ItemHeight = 16;
-            this.lb_staffDetails.Location = new System.Drawing.Point(225, 82);
-            this.lb_staffDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.lb_staffDetails.Name = "lb_staffDetails";
-            this.lb_staffDetails.Size = new System.Drawing.Size(1148, 740);
-            this.lb_staffDetails.TabIndex = 14;
             // 
             // pnl_staff
             // 
@@ -504,6 +495,16 @@ namespace BayViewBookings
             this.btn_Amend.UseVisualStyleBackColor = true;
             this.btn_Amend.Click += new System.EventHandler(this.btn_Amend_Click);
             // 
+            // dgv_Staff
+            // 
+            this.dgv_Staff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Staff.Location = new System.Drawing.Point(315, 98);
+            this.dgv_Staff.Name = "dgv_Staff";
+            this.dgv_Staff.RowHeadersWidth = 51;
+            this.dgv_Staff.RowTemplate.Height = 24;
+            this.dgv_Staff.Size = new System.Drawing.Size(1041, 419);
+            this.dgv_Staff.TabIndex = 17;
+            // 
             // frm_StaffDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -512,8 +513,8 @@ namespace BayViewBookings
             this.Controls.Add(this.panel_staff);
             this.Controls.Add(this.pnl_staff);
             this.Controls.Add(this.pnl_filter);
-            this.Controls.Add(this.lb_staffDetails);
             this.Controls.Add(this.pnl_Staff2);
+            this.Controls.Add(this.dgv_Staff);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frm_StaffDetails";
@@ -527,6 +528,7 @@ namespace BayViewBookings
             this.pnl_staff.PerformLayout();
             this.panel_staff.ResumeLayout(false);
             this.panel_staff.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Staff)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -542,7 +544,6 @@ namespace BayViewBookings
         private System.Windows.Forms.TextBox txt_filter2;
         private System.Windows.Forms.Button btn_filter1;
         private System.Windows.Forms.TextBox txt_filter1;
-        private System.Windows.Forms.ListBox lb_staffDetails;
         private System.Windows.Forms.Panel pnl_staff;
         private System.Windows.Forms.Button btn_logout;
         private System.Windows.Forms.Button btn_exit;
@@ -571,5 +572,6 @@ namespace BayViewBookings
         private System.Windows.Forms.Button btn_CancelStaff;
         private System.Windows.Forms.Button btn_EnterStaff;
         private System.Windows.Forms.Button btn_Amend;
+        private System.Windows.Forms.DataGridView dgv_Staff;
     }
 }
