@@ -37,7 +37,6 @@ namespace BayViewBookings
             this.txt_filter2 = new System.Windows.Forms.TextBox();
             this.btn_filter1 = new System.Windows.Forms.Button();
             this.txt_filter1 = new System.Windows.Forms.TextBox();
-            this.lb_Transactions = new System.Windows.Forms.ListBox();
             this.pnl_transactions = new System.Windows.Forms.Panel();
             this.btn_TransactExit = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -65,10 +64,12 @@ namespace BayViewBookings
             this.txt_BookingID = new System.Windows.Forms.TextBox();
             this.txt_EmployeeID = new System.Windows.Forms.TextBox();
             this.txt_TransactionID = new System.Windows.Forms.TextBox();
+            this.dgv_TransDet = new System.Windows.Forms.DataGridView();
             this.pnl_filters.SuspendLayout();
             this.pnl_transactions.SuspendLayout();
             this.pnl_transactionsHeader.SuspendLayout();
             this.pnl_Transaction.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_TransDet)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_filters
@@ -81,7 +82,7 @@ namespace BayViewBookings
             this.pnl_filters.Controls.Add(this.btn_filter1);
             this.pnl_filters.Controls.Add(this.txt_filter1);
             this.pnl_filters.Location = new System.Drawing.Point(1383, 82);
-            this.pnl_filters.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnl_filters.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_filters.Name = "pnl_filters";
             this.pnl_filters.Size = new System.Drawing.Size(255, 577);
             this.pnl_filters.TabIndex = 12;
@@ -102,7 +103,7 @@ namespace BayViewBookings
             // 
             this.btn_filter3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_filter3.Location = new System.Drawing.Point(101, 289);
-            this.btn_filter3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_filter3.Margin = new System.Windows.Forms.Padding(4);
             this.btn_filter3.Name = "btn_filter3";
             this.btn_filter3.Size = new System.Drawing.Size(116, 28);
             this.btn_filter3.TabIndex = 5;
@@ -112,7 +113,7 @@ namespace BayViewBookings
             // txt_filter3
             // 
             this.txt_filter3.Location = new System.Drawing.Point(37, 257);
-            this.txt_filter3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_filter3.Margin = new System.Windows.Forms.Padding(4);
             this.txt_filter3.Name = "txt_filter3";
             this.txt_filter3.Size = new System.Drawing.Size(179, 22);
             this.txt_filter3.TabIndex = 4;
@@ -121,7 +122,7 @@ namespace BayViewBookings
             // 
             this.btn_filter2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_filter2.Location = new System.Drawing.Point(101, 186);
-            this.btn_filter2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_filter2.Margin = new System.Windows.Forms.Padding(4);
             this.btn_filter2.Name = "btn_filter2";
             this.btn_filter2.Size = new System.Drawing.Size(116, 28);
             this.btn_filter2.TabIndex = 3;
@@ -131,7 +132,7 @@ namespace BayViewBookings
             // txt_filter2
             // 
             this.txt_filter2.Location = new System.Drawing.Point(37, 154);
-            this.txt_filter2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_filter2.Margin = new System.Windows.Forms.Padding(4);
             this.txt_filter2.Name = "txt_filter2";
             this.txt_filter2.Size = new System.Drawing.Size(179, 22);
             this.txt_filter2.TabIndex = 2;
@@ -140,7 +141,7 @@ namespace BayViewBookings
             // 
             this.btn_filter1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_filter1.Location = new System.Drawing.Point(101, 86);
-            this.btn_filter1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_filter1.Margin = new System.Windows.Forms.Padding(4);
             this.btn_filter1.Name = "btn_filter1";
             this.btn_filter1.Size = new System.Drawing.Size(116, 28);
             this.btn_filter1.TabIndex = 1;
@@ -150,20 +151,10 @@ namespace BayViewBookings
             // txt_filter1
             // 
             this.txt_filter1.Location = new System.Drawing.Point(37, 54);
-            this.txt_filter1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_filter1.Margin = new System.Windows.Forms.Padding(4);
             this.txt_filter1.Name = "txt_filter1";
             this.txt_filter1.Size = new System.Drawing.Size(179, 22);
             this.txt_filter1.TabIndex = 0;
-            // 
-            // lb_Transactions
-            // 
-            this.lb_Transactions.FormattingEnabled = true;
-            this.lb_Transactions.ItemHeight = 16;
-            this.lb_Transactions.Location = new System.Drawing.Point(225, 82);
-            this.lb_Transactions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.lb_Transactions.Name = "lb_Transactions";
-            this.lb_Transactions.Size = new System.Drawing.Size(1148, 740);
-            this.lb_Transactions.TabIndex = 11;
             // 
             // pnl_transactions
             // 
@@ -171,7 +162,7 @@ namespace BayViewBookings
             this.pnl_transactions.Controls.Add(this.btn_TransactExit);
             this.pnl_transactions.Controls.Add(this.button5);
             this.pnl_transactions.Location = new System.Drawing.Point(-5, 57);
-            this.pnl_transactions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnl_transactions.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_transactions.Name = "pnl_transactions";
             this.pnl_transactions.Size = new System.Drawing.Size(205, 788);
             this.pnl_transactions.TabIndex = 12;
@@ -182,7 +173,7 @@ namespace BayViewBookings
             this.btn_TransactExit.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_TransactExit.ForeColor = System.Drawing.Color.White;
             this.btn_TransactExit.Location = new System.Drawing.Point(-4, 660);
-            this.btn_TransactExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_TransactExit.Margin = new System.Windows.Forms.Padding(4);
             this.btn_TransactExit.Name = "btn_TransactExit";
             this.btn_TransactExit.Size = new System.Drawing.Size(209, 124);
             this.btn_TransactExit.TabIndex = 7;
@@ -196,7 +187,7 @@ namespace BayViewBookings
             this.button5.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.Location = new System.Drawing.Point(4, 528);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(205, 124);
             this.button5.TabIndex = 6;
@@ -213,7 +204,7 @@ namespace BayViewBookings
             this.pnl_transactionsHeader.Controls.Add(this.lbl_Transactions);
             this.pnl_transactionsHeader.ForeColor = System.Drawing.Color.White;
             this.pnl_transactionsHeader.Location = new System.Drawing.Point(0, 0);
-            this.pnl_transactionsHeader.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnl_transactionsHeader.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_transactionsHeader.Name = "pnl_transactionsHeader";
             this.pnl_transactionsHeader.Size = new System.Drawing.Size(1656, 59);
             this.pnl_transactionsHeader.TabIndex = 8;
@@ -225,7 +216,7 @@ namespace BayViewBookings
             this.btn_exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_exit.ForeColor = System.Drawing.Color.White;
             this.btn_exit.Location = new System.Drawing.Point(1593, 11);
-            this.btn_exit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_exit.Margin = new System.Windows.Forms.Padding(4);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(44, 34);
             this.btn_exit.TabIndex = 6;
@@ -240,7 +231,7 @@ namespace BayViewBookings
             this.btn_Rooms.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Rooms.ForeColor = System.Drawing.Color.White;
             this.btn_Rooms.Location = new System.Drawing.Point(591, -4);
-            this.btn_Rooms.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Rooms.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Rooms.Name = "btn_Rooms";
             this.btn_Rooms.Size = new System.Drawing.Size(200, 66);
             this.btn_Rooms.TabIndex = 3;
@@ -254,7 +245,7 @@ namespace BayViewBookings
             this.btn_Bookings.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Bookings.ForeColor = System.Drawing.Color.White;
             this.btn_Bookings.Location = new System.Drawing.Point(395, -4);
-            this.btn_Bookings.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Bookings.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Bookings.Name = "btn_Bookings";
             this.btn_Bookings.Size = new System.Drawing.Size(200, 66);
             this.btn_Bookings.TabIndex = 2;
@@ -268,7 +259,7 @@ namespace BayViewBookings
             this.btn_Guests.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Guests.ForeColor = System.Drawing.Color.White;
             this.btn_Guests.Location = new System.Drawing.Point(199, -4);
-            this.btn_Guests.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Guests.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Guests.Name = "btn_Guests";
             this.btn_Guests.Size = new System.Drawing.Size(200, 66);
             this.btn_Guests.TabIndex = 1;
@@ -463,6 +454,16 @@ namespace BayViewBookings
             this.txt_TransactionID.Size = new System.Drawing.Size(115, 22);
             this.txt_TransactionID.TabIndex = 21;
             // 
+            // dgv_TransDet
+            // 
+            this.dgv_TransDet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_TransDet.Location = new System.Drawing.Point(218, 87);
+            this.dgv_TransDet.Name = "dgv_TransDet";
+            this.dgv_TransDet.RowHeadersWidth = 51;
+            this.dgv_TransDet.RowTemplate.Height = 24;
+            this.dgv_TransDet.Size = new System.Drawing.Size(1147, 468);
+            this.dgv_TransDet.TabIndex = 14;
+            // 
             // frm_TransactionDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -472,9 +473,9 @@ namespace BayViewBookings
             this.Controls.Add(this.pnl_transactionsHeader);
             this.Controls.Add(this.pnl_transactions);
             this.Controls.Add(this.pnl_filters);
-            this.Controls.Add(this.lb_Transactions);
+            this.Controls.Add(this.dgv_TransDet);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frm_TransactionDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_TransactionDetails";
@@ -485,6 +486,7 @@ namespace BayViewBookings
             this.pnl_transactionsHeader.PerformLayout();
             this.pnl_Transaction.ResumeLayout(false);
             this.pnl_Transaction.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_TransDet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -497,7 +499,6 @@ namespace BayViewBookings
         private System.Windows.Forms.TextBox txt_filter2;
         private System.Windows.Forms.Button btn_filter1;
         private System.Windows.Forms.TextBox txt_filter1;
-        private System.Windows.Forms.ListBox lb_Transactions;
         private System.Windows.Forms.Panel pnl_transactions;
         private System.Windows.Forms.Button btn_TransactExit;
         private System.Windows.Forms.Button button5;
@@ -526,5 +527,6 @@ namespace BayViewBookings
         private System.Windows.Forms.TextBox txt_PaymentMethod;
         private System.Windows.Forms.TextBox txt_PaymentDate;
         private System.Windows.Forms.Button btn_NewTransact;
+        private System.Windows.Forms.DataGridView dgv_TransDet;
     }
 }

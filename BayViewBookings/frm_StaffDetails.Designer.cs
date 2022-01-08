@@ -350,7 +350,7 @@ namespace BayViewBookings
             this.panel_staff.Controls.Add(this.txt_Lastname);
             this.panel_staff.Controls.Add(this.txt_FirstName);
             this.panel_staff.Controls.Add(this.txt_EmployeeID);
-            this.panel_staff.Location = new System.Drawing.Point(620, 92);
+            this.panel_staff.Location = new System.Drawing.Point(682, 92);
             this.panel_staff.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel_staff.Name = "panel_staff";
             this.panel_staff.Size = new System.Drawing.Size(396, 706);
@@ -555,7 +555,7 @@ namespace BayViewBookings
             this.panel_AddStaff.Controls.Add(this.label3);
             this.panel_AddStaff.Controls.Add(this.label2);
             this.panel_AddStaff.Controls.Add(this.label1);
-            this.panel_AddStaff.Location = new System.Drawing.Point(304, 92);
+            this.panel_AddStaff.Location = new System.Drawing.Point(470, 95);
             this.panel_AddStaff.Name = "panel_AddStaff";
             this.panel_AddStaff.Size = new System.Drawing.Size(362, 703);
             this.panel_AddStaff.TabIndex = 18;
