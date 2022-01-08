@@ -33,6 +33,8 @@ namespace BayViewBookings
             this.btn_exitstaff = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.pnl_filter = new System.Windows.Forms.Panel();
+            this.btn_AddStaff = new System.Windows.Forms.Button();
+            this.btn_Amend = new System.Windows.Forms.Button();
             this.btn_filter3 = new System.Windows.Forms.Button();
             this.txt_filter3 = new System.Windows.Forms.TextBox();
             this.btn_filter2 = new System.Windows.Forms.Button();
@@ -66,13 +68,31 @@ namespace BayViewBookings
             this.txt_Lastname = new System.Windows.Forms.TextBox();
             this.txt_FirstName = new System.Windows.Forms.TextBox();
             this.txt_EmployeeID = new System.Windows.Forms.TextBox();
-            this.btn_Amend = new System.Windows.Forms.Button();
             this.dgv_Staff = new System.Windows.Forms.DataGridView();
+            this.panel_AddStaff = new System.Windows.Forms.Panel();
+            this.btn_can = new System.Windows.Forms.Button();
+            this.btn_ent = new System.Windows.Forms.Button();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnl_Staff2.SuspendLayout();
             this.pnl_filter.SuspendLayout();
             this.pnl_staff.SuspendLayout();
             this.panel_staff.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Staff)).BeginInit();
+            this.panel_AddStaff.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_Staff2
@@ -81,7 +101,7 @@ namespace BayViewBookings
             this.pnl_Staff2.Controls.Add(this.btn_exitstaff);
             this.pnl_Staff2.Controls.Add(this.button5);
             this.pnl_Staff2.Location = new System.Drawing.Point(-5, 57);
-            this.pnl_Staff2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnl_Staff2.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_Staff2.Name = "pnl_Staff2";
             this.pnl_Staff2.Size = new System.Drawing.Size(205, 788);
             this.pnl_Staff2.TabIndex = 13;
@@ -92,7 +112,7 @@ namespace BayViewBookings
             this.btn_exitstaff.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_exitstaff.ForeColor = System.Drawing.Color.White;
             this.btn_exitstaff.Location = new System.Drawing.Point(-4, 660);
-            this.btn_exitstaff.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_exitstaff.Margin = new System.Windows.Forms.Padding(4);
             this.btn_exitstaff.Name = "btn_exitstaff";
             this.btn_exitstaff.Size = new System.Drawing.Size(209, 124);
             this.btn_exitstaff.TabIndex = 7;
@@ -106,7 +126,7 @@ namespace BayViewBookings
             this.button5.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.Location = new System.Drawing.Point(0, 528);
-            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button5.Margin = new System.Windows.Forms.Padding(4);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(205, 124);
             this.button5.TabIndex = 6;
@@ -115,6 +135,7 @@ namespace BayViewBookings
             // 
             // pnl_filter
             // 
+            this.pnl_filter.Controls.Add(this.btn_AddStaff);
             this.pnl_filter.Controls.Add(this.btn_Amend);
             this.pnl_filter.Controls.Add(this.btn_filter3);
             this.pnl_filter.Controls.Add(this.txt_filter3);
@@ -123,16 +144,36 @@ namespace BayViewBookings
             this.pnl_filter.Controls.Add(this.btn_filter1);
             this.pnl_filter.Controls.Add(this.txt_filter1);
             this.pnl_filter.Location = new System.Drawing.Point(1383, 81);
-            this.pnl_filter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnl_filter.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_filter.Name = "pnl_filter";
             this.pnl_filter.Size = new System.Drawing.Size(255, 577);
             this.pnl_filter.TabIndex = 15;
+            // 
+            // btn_AddStaff
+            // 
+            this.btn_AddStaff.Location = new System.Drawing.Point(71, 365);
+            this.btn_AddStaff.Name = "btn_AddStaff";
+            this.btn_AddStaff.Size = new System.Drawing.Size(99, 53);
+            this.btn_AddStaff.TabIndex = 7;
+            this.btn_AddStaff.Text = "Add Staff";
+            this.btn_AddStaff.UseVisualStyleBackColor = true;
+            this.btn_AddStaff.Click += new System.EventHandler(this.btn_AddStaff_Click);
+            // 
+            // btn_Amend
+            // 
+            this.btn_Amend.Location = new System.Drawing.Point(71, 424);
+            this.btn_Amend.Name = "btn_Amend";
+            this.btn_Amend.Size = new System.Drawing.Size(99, 60);
+            this.btn_Amend.TabIndex = 6;
+            this.btn_Amend.Text = "Amend Staff";
+            this.btn_Amend.UseVisualStyleBackColor = true;
+            this.btn_Amend.Click += new System.EventHandler(this.btn_Amend_Click);
             // 
             // btn_filter3
             // 
             this.btn_filter3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_filter3.Location = new System.Drawing.Point(101, 289);
-            this.btn_filter3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_filter3.Margin = new System.Windows.Forms.Padding(4);
             this.btn_filter3.Name = "btn_filter3";
             this.btn_filter3.Size = new System.Drawing.Size(116, 28);
             this.btn_filter3.TabIndex = 5;
@@ -142,7 +183,7 @@ namespace BayViewBookings
             // txt_filter3
             // 
             this.txt_filter3.Location = new System.Drawing.Point(37, 257);
-            this.txt_filter3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_filter3.Margin = new System.Windows.Forms.Padding(4);
             this.txt_filter3.Name = "txt_filter3";
             this.txt_filter3.Size = new System.Drawing.Size(179, 22);
             this.txt_filter3.TabIndex = 4;
@@ -151,7 +192,7 @@ namespace BayViewBookings
             // 
             this.btn_filter2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_filter2.Location = new System.Drawing.Point(101, 186);
-            this.btn_filter2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_filter2.Margin = new System.Windows.Forms.Padding(4);
             this.btn_filter2.Name = "btn_filter2";
             this.btn_filter2.Size = new System.Drawing.Size(116, 28);
             this.btn_filter2.TabIndex = 3;
@@ -161,7 +202,7 @@ namespace BayViewBookings
             // txt_filter2
             // 
             this.txt_filter2.Location = new System.Drawing.Point(37, 154);
-            this.txt_filter2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_filter2.Margin = new System.Windows.Forms.Padding(4);
             this.txt_filter2.Name = "txt_filter2";
             this.txt_filter2.Size = new System.Drawing.Size(179, 22);
             this.txt_filter2.TabIndex = 2;
@@ -170,7 +211,7 @@ namespace BayViewBookings
             // 
             this.btn_filter1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_filter1.Location = new System.Drawing.Point(101, 86);
-            this.btn_filter1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_filter1.Margin = new System.Windows.Forms.Padding(4);
             this.btn_filter1.Name = "btn_filter1";
             this.btn_filter1.Size = new System.Drawing.Size(116, 28);
             this.btn_filter1.TabIndex = 1;
@@ -180,7 +221,7 @@ namespace BayViewBookings
             // txt_filter1
             // 
             this.txt_filter1.Location = new System.Drawing.Point(37, 54);
-            this.txt_filter1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_filter1.Margin = new System.Windows.Forms.Padding(4);
             this.txt_filter1.Name = "txt_filter1";
             this.txt_filter1.Size = new System.Drawing.Size(179, 22);
             this.txt_filter1.TabIndex = 0;
@@ -196,7 +237,7 @@ namespace BayViewBookings
             this.pnl_staff.Controls.Add(this.lbl_staff);
             this.pnl_staff.ForeColor = System.Drawing.Color.White;
             this.pnl_staff.Location = new System.Drawing.Point(0, 0);
-            this.pnl_staff.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnl_staff.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_staff.Name = "pnl_staff";
             this.pnl_staff.Size = new System.Drawing.Size(1652, 59);
             this.pnl_staff.TabIndex = 6;
@@ -208,7 +249,7 @@ namespace BayViewBookings
             this.btn_logout.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_logout.ForeColor = System.Drawing.Color.White;
             this.btn_logout.Location = new System.Drawing.Point(1484, 11);
-            this.btn_logout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_logout.Margin = new System.Windows.Forms.Padding(4);
             this.btn_logout.Name = "btn_logout";
             this.btn_logout.Size = new System.Drawing.Size(100, 34);
             this.btn_logout.TabIndex = 7;
@@ -222,7 +263,7 @@ namespace BayViewBookings
             this.btn_exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_exit.ForeColor = System.Drawing.Color.White;
             this.btn_exit.Location = new System.Drawing.Point(1593, 11);
-            this.btn_exit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_exit.Margin = new System.Windows.Forms.Padding(4);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(44, 34);
             this.btn_exit.TabIndex = 6;
@@ -237,7 +278,7 @@ namespace BayViewBookings
             this.btn_Staff_Rooms.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Staff_Rooms.ForeColor = System.Drawing.Color.White;
             this.btn_Staff_Rooms.Location = new System.Drawing.Point(591, -4);
-            this.btn_Staff_Rooms.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Staff_Rooms.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Staff_Rooms.Name = "btn_Staff_Rooms";
             this.btn_Staff_Rooms.Size = new System.Drawing.Size(200, 66);
             this.btn_Staff_Rooms.TabIndex = 3;
@@ -252,7 +293,7 @@ namespace BayViewBookings
             this.btn_Staff_Bookings.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Staff_Bookings.ForeColor = System.Drawing.Color.White;
             this.btn_Staff_Bookings.Location = new System.Drawing.Point(395, -4);
-            this.btn_Staff_Bookings.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Staff_Bookings.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Staff_Bookings.Name = "btn_Staff_Bookings";
             this.btn_Staff_Bookings.Size = new System.Drawing.Size(200, 66);
             this.btn_Staff_Bookings.TabIndex = 2;
@@ -267,7 +308,7 @@ namespace BayViewBookings
             this.btn_Staff_Guests.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Staff_Guests.ForeColor = System.Drawing.Color.White;
             this.btn_Staff_Guests.Location = new System.Drawing.Point(199, -4);
-            this.btn_Staff_Guests.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_Staff_Guests.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Staff_Guests.Name = "btn_Staff_Guests";
             this.btn_Staff_Guests.Size = new System.Drawing.Size(200, 66);
             this.btn_Staff_Guests.TabIndex = 1;
@@ -485,16 +526,6 @@ namespace BayViewBookings
             this.txt_EmployeeID.Size = new System.Drawing.Size(115, 22);
             this.txt_EmployeeID.TabIndex = 21;
             // 
-            // btn_Amend
-            // 
-            this.btn_Amend.Location = new System.Drawing.Point(71, 459);
-            this.btn_Amend.Name = "btn_Amend";
-            this.btn_Amend.Size = new System.Drawing.Size(130, 62);
-            this.btn_Amend.TabIndex = 6;
-            this.btn_Amend.Text = "Amend Staff Details";
-            this.btn_Amend.UseVisualStyleBackColor = true;
-            this.btn_Amend.Click += new System.EventHandler(this.btn_Amend_Click);
-            // 
             // dgv_Staff
             // 
             this.dgv_Staff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -505,18 +536,185 @@ namespace BayViewBookings
             this.dgv_Staff.Size = new System.Drawing.Size(1041, 419);
             this.dgv_Staff.TabIndex = 17;
             // 
+            // panel_AddStaff
+            // 
+            this.panel_AddStaff.Controls.Add(this.btn_can);
+            this.panel_AddStaff.Controls.Add(this.btn_ent);
+            this.panel_AddStaff.Controls.Add(this.textBox7);
+            this.panel_AddStaff.Controls.Add(this.textBox6);
+            this.panel_AddStaff.Controls.Add(this.textBox5);
+            this.panel_AddStaff.Controls.Add(this.textBox4);
+            this.panel_AddStaff.Controls.Add(this.textBox3);
+            this.panel_AddStaff.Controls.Add(this.textBox2);
+            this.panel_AddStaff.Controls.Add(this.textBox1);
+            this.panel_AddStaff.Controls.Add(this.label8);
+            this.panel_AddStaff.Controls.Add(this.label7);
+            this.panel_AddStaff.Controls.Add(this.label6);
+            this.panel_AddStaff.Controls.Add(this.label5);
+            this.panel_AddStaff.Controls.Add(this.label4);
+            this.panel_AddStaff.Controls.Add(this.label3);
+            this.panel_AddStaff.Controls.Add(this.label2);
+            this.panel_AddStaff.Controls.Add(this.label1);
+            this.panel_AddStaff.Location = new System.Drawing.Point(304, 92);
+            this.panel_AddStaff.Name = "panel_AddStaff";
+            this.panel_AddStaff.Size = new System.Drawing.Size(362, 703);
+            this.panel_AddStaff.TabIndex = 18;
+            this.panel_AddStaff.Visible = false;
+            // 
+            // btn_can
+            // 
+            this.btn_can.Location = new System.Drawing.Point(198, 583);
+            this.btn_can.Name = "btn_can";
+            this.btn_can.Size = new System.Drawing.Size(103, 53);
+            this.btn_can.TabIndex = 16;
+            this.btn_can.Text = "Cancel";
+            this.btn_can.UseVisualStyleBackColor = true;
+            this.btn_can.Click += new System.EventHandler(this.btn_can_Click);
+            // 
+            // btn_ent
+            // 
+            this.btn_ent.Location = new System.Drawing.Point(52, 582);
+            this.btn_ent.Name = "btn_ent";
+            this.btn_ent.Size = new System.Drawing.Size(103, 53);
+            this.btn_ent.TabIndex = 15;
+            this.btn_ent.Text = "Enter";
+            this.btn_ent.UseVisualStyleBackColor = true;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(91, 511);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(166, 22);
+            this.textBox7.TabIndex = 14;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(91, 451);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(166, 22);
+            this.textBox6.TabIndex = 13;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(91, 386);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(100, 22);
+            this.textBox5.TabIndex = 12;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(91, 332);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(252, 22);
+            this.textBox4.TabIndex = 11;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(91, 256);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(146, 22);
+            this.textBox3.TabIndex = 10;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(91, 181);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(152, 22);
+            this.textBox2.TabIndex = 9;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(91, 106);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(115, 22);
+            this.textBox1.TabIndex = 8;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(88, 491);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(90, 17);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "Managed by:";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(88, 428);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(37, 17);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Role";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(88, 366);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(67, 17);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Postcode";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(88, 302);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(60, 17);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Address";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(88, 236);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(76, 17);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Last Name";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(88, 155);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(76, 17);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "First Name";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(88, 75);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(87, 17);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Employee ID";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(88, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Add Employee";
+            // 
             // frm_StaffDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1652, 843);
+            this.Controls.Add(this.panel_AddStaff);
             this.Controls.Add(this.panel_staff);
             this.Controls.Add(this.pnl_staff);
             this.Controls.Add(this.pnl_filter);
             this.Controls.Add(this.pnl_Staff2);
             this.Controls.Add(this.dgv_Staff);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frm_StaffDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_StaffDetails";
@@ -529,6 +727,8 @@ namespace BayViewBookings
             this.panel_staff.ResumeLayout(false);
             this.panel_staff.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Staff)).EndInit();
+            this.panel_AddStaff.ResumeLayout(false);
+            this.panel_AddStaff.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -573,5 +773,24 @@ namespace BayViewBookings
         private System.Windows.Forms.Button btn_EnterStaff;
         private System.Windows.Forms.Button btn_Amend;
         private System.Windows.Forms.DataGridView dgv_Staff;
+        private System.Windows.Forms.Button btn_AddStaff;
+        private System.Windows.Forms.Panel panel_AddStaff;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btn_can;
+        private System.Windows.Forms.Button btn_ent;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

@@ -90,5 +90,20 @@ namespace BayViewBookings
         {
             panel_staff.Hide();
         }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_AddStaff_Click(object sender, EventArgs e)
+        {
+            panel_AddStaff.Show();
+        }
+
+        private void btn_can_Click(object sender, EventArgs e)
+        {
+            panel_AddStaff.Hide();
+        }
     }
 }
