@@ -43,10 +43,9 @@ namespace BayViewBookings
 
         private void btn_Logout_Click(object sender, EventArgs e)
         {
-            this.Hide();
             var frm_login = new frm_login();
-            frm_login.Closed += (s, args) => this.Close();
             frm_login.Show();
+            this.Close();
         }
 
         private void btn_Staff_Guests_Click(object sender, EventArgs e)

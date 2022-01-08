@@ -56,7 +56,6 @@ namespace BayViewBookings
             {
                 btn_AmendRoom.Visible = false; 
             }
-            //there is a bug that if you log out from being a manager and back in as staff the button is visible.
         }
 
         private void btn_exitroomd_Click(object sender, EventArgs e)
