@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Data.OleDb;
 
 namespace BayViewBookings
 {
@@ -17,8 +18,34 @@ namespace BayViewBookings
         public frm_RoomDetails()
         {
             InitializeComponent();
-        }
+            fill_listbox();
 
+        }
+        const string details = @"Data Source = ..\..\Database\bookings.db";
+
+        void fill_listbox()
+        {
+            SQLiteConnection dbCon;
+            SQLiteDataAdapter dbAdapter;
+            DataTable dtGuest = new DataTable();
+
+            try
+            {
+                using (dbCon = new SQLiteConnection(details))
+                {
+                    string Query = "Select * From Room"; //sql code
+
+                    dbAdapter = new SQLiteDataAdapter(Query, dbCon);
+                    dbAdapter.Fill(dtGuest);
+
+                    dgv_RoomDetails.DataSource = dtGuest;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void frm_RoomDetails_Load(object sender, EventArgs e)
         {
             if (Application.OpenForms.OfType<frm_Manager_Homepage>().Any()) //if the manager home page form is open
