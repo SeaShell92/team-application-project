@@ -35,7 +35,6 @@ namespace BayViewBookings
             this.cldr_Booking = new System.Windows.Forms.MonthCalendar();
             this.lbl_GuestID = new System.Windows.Forms.Label();
             this.pnl_GuestDetails = new System.Windows.Forms.Panel();
-            this.lbl_time = new System.Windows.Forms.Label();
             this.txt_EmailAddress = new System.Windows.Forms.TextBox();
             this.lbl_EmailAddress = new System.Windows.Forms.Label();
             this.txt_Telephone = new System.Windows.Forms.TextBox();
@@ -64,9 +63,7 @@ namespace BayViewBookings
             this.lbl_Checkin = new System.Windows.Forms.Label();
             this.txt_EmployeeID = new System.Windows.Forms.TextBox();
             this.lbl_EmployeeID = new System.Windows.Forms.Label();
-            this.txt_BookingID = new System.Windows.Forms.TextBox();
             this.lbl_BookingDetails = new System.Windows.Forms.Label();
-            this.lbl_BookingID = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.btn_submit = new System.Windows.Forms.Button();
             this.btn_viewBookings = new System.Windows.Forms.Button();
@@ -77,6 +74,8 @@ namespace BayViewBookings
             this.btn_Bookings = new System.Windows.Forms.Button();
             this.btn_Guests = new System.Windows.Forms.Button();
             this.lbl_NewBooking = new System.Windows.Forms.Label();
+            this.lbl_BookingDate = new System.Windows.Forms.Label();
+            this.txt_BookingDate = new System.Windows.Forms.TextBox();
             this.pnl_NewBooking.SuspendLayout();
             this.pnl_GuestDetails.SuspendLayout();
             this.pnl_Booking.SuspendLayout();
@@ -117,6 +116,7 @@ namespace BayViewBookings
             this.btn_ClearBooking.TabIndex = 6;
             this.btn_ClearBooking.Text = "Reset Form";
             this.btn_ClearBooking.UseVisualStyleBackColor = true;
+            this.btn_ClearBooking.Click += new System.EventHandler(this.btn_ClearBooking_Click);
             // 
             // cldr_Booking
             // 
@@ -136,7 +136,6 @@ namespace BayViewBookings
             // 
             // pnl_GuestDetails
             // 
-            this.pnl_GuestDetails.Controls.Add(this.lbl_time);
             this.pnl_GuestDetails.Controls.Add(this.txt_EmailAddress);
             this.pnl_GuestDetails.Controls.Add(this.lbl_EmailAddress);
             this.pnl_GuestDetails.Controls.Add(this.txt_Telephone);
@@ -154,15 +153,6 @@ namespace BayViewBookings
             this.pnl_GuestDetails.Name = "pnl_GuestDetails";
             this.pnl_GuestDetails.Size = new System.Drawing.Size(1241, 208);
             this.pnl_GuestDetails.TabIndex = 8;
-            // 
-            // lbl_time
-            // 
-            this.lbl_time.AutoSize = true;
-            this.lbl_time.Location = new System.Drawing.Point(28, 21);
-            this.lbl_time.Name = "lbl_time";
-            this.lbl_time.Size = new System.Drawing.Size(35, 13);
-            this.lbl_time.TabIndex = 20;
-            this.lbl_time.Text = "label1";
             // 
             // txt_EmailAddress
             // 
@@ -253,6 +243,7 @@ namespace BayViewBookings
             // 
             this.txt_GuestsID.Location = new System.Drawing.Point(534, 92);
             this.txt_GuestsID.Name = "txt_GuestsID";
+            this.txt_GuestsID.ReadOnly = true;
             this.txt_GuestsID.Size = new System.Drawing.Size(55, 20);
             this.txt_GuestsID.TabIndex = 9;
             // 
@@ -268,6 +259,8 @@ namespace BayViewBookings
             // 
             // pnl_Booking
             // 
+            this.pnl_Booking.Controls.Add(this.txt_BookingDate);
+            this.pnl_Booking.Controls.Add(this.lbl_BookingDate);
             this.pnl_Booking.Controls.Add(this.rb_no);
             this.pnl_Booking.Controls.Add(this.rb_yes);
             this.pnl_Booking.Controls.Add(this.lbl_HasPaid);
@@ -284,9 +277,7 @@ namespace BayViewBookings
             this.pnl_Booking.Controls.Add(this.cldr_Booking);
             this.pnl_Booking.Controls.Add(this.txt_EmployeeID);
             this.pnl_Booking.Controls.Add(this.lbl_EmployeeID);
-            this.pnl_Booking.Controls.Add(this.txt_BookingID);
             this.pnl_Booking.Controls.Add(this.lbl_BookingDetails);
-            this.pnl_Booking.Controls.Add(this.lbl_BookingID);
             this.pnl_Booking.Location = new System.Drawing.Point(154, 287);
             this.pnl_Booking.Name = "pnl_Booking";
             this.pnl_Booking.Size = new System.Drawing.Size(1241, 370);
@@ -411,8 +402,9 @@ namespace BayViewBookings
             // 
             // txt_EmployeeID
             // 
-            this.txt_EmployeeID.Location = new System.Drawing.Point(393, 95);
+            this.txt_EmployeeID.Location = new System.Drawing.Point(431, 98);
             this.txt_EmployeeID.Name = "txt_EmployeeID";
+            this.txt_EmployeeID.ReadOnly = true;
             this.txt_EmployeeID.Size = new System.Drawing.Size(58, 20);
             this.txt_EmployeeID.TabIndex = 11;
             // 
@@ -420,19 +412,11 @@ namespace BayViewBookings
             // 
             this.lbl_EmployeeID.AutoSize = true;
             this.lbl_EmployeeID.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_EmployeeID.Location = new System.Drawing.Point(277, 94);
+            this.lbl_EmployeeID.Location = new System.Drawing.Point(315, 98);
             this.lbl_EmployeeID.Name = "lbl_EmployeeID";
             this.lbl_EmployeeID.Size = new System.Drawing.Size(110, 21);
             this.lbl_EmployeeID.TabIndex = 10;
             this.lbl_EmployeeID.Text = "Employee ID:";
-            // 
-            // txt_BookingID
-            // 
-            this.txt_BookingID.Location = new System.Drawing.Point(182, 94);
-            this.txt_BookingID.Name = "txt_BookingID";
-            this.txt_BookingID.ReadOnly = true;
-            this.txt_BookingID.Size = new System.Drawing.Size(58, 20);
-            this.txt_BookingID.TabIndex = 9;
             // 
             // lbl_BookingDetails
             // 
@@ -443,16 +427,6 @@ namespace BayViewBookings
             this.lbl_BookingDetails.Size = new System.Drawing.Size(192, 31);
             this.lbl_BookingDetails.TabIndex = 8;
             this.lbl_BookingDetails.Text = "Booking Details";
-            // 
-            // lbl_BookingID
-            // 
-            this.lbl_BookingID.AutoSize = true;
-            this.lbl_BookingID.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_BookingID.Location = new System.Drawing.Point(81, 94);
-            this.lbl_BookingID.Name = "lbl_BookingID";
-            this.lbl_BookingID.Size = new System.Drawing.Size(99, 21);
-            this.lbl_BookingID.TabIndex = 7;
-            this.lbl_BookingID.Text = "Booking ID:";
             // 
             // panel5
             // 
@@ -585,6 +559,24 @@ namespace BayViewBookings
             this.lbl_NewBooking.TabIndex = 0;
             this.lbl_NewBooking.Text = "New Booking";
             // 
+            // lbl_BookingDate
+            // 
+            this.lbl_BookingDate.AutoSize = true;
+            this.lbl_BookingDate.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_BookingDate.Location = new System.Drawing.Point(62, 96);
+            this.lbl_BookingDate.Name = "lbl_BookingDate";
+            this.lbl_BookingDate.Size = new System.Drawing.Size(118, 21);
+            this.lbl_BookingDate.TabIndex = 34;
+            this.lbl_BookingDate.Text = "Booking Date:";
+            // 
+            // txt_BookingDate
+            // 
+            this.txt_BookingDate.Location = new System.Drawing.Point(186, 98);
+            this.txt_BookingDate.Name = "txt_BookingDate";
+            this.txt_BookingDate.ReadOnly = true;
+            this.txt_BookingDate.Size = new System.Drawing.Size(106, 20);
+            this.txt_BookingDate.TabIndex = 35;
+            // 
             // frm_newBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -635,9 +627,7 @@ namespace BayViewBookings
         private System.Windows.Forms.Panel pnl_Booking;
         private System.Windows.Forms.TextBox txt_EmployeeID;
         private System.Windows.Forms.Label lbl_EmployeeID;
-        private System.Windows.Forms.TextBox txt_BookingID;
         private System.Windows.Forms.Label lbl_BookingDetails;
-        private System.Windows.Forms.Label lbl_BookingID;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btn_submit;
         private System.Windows.Forms.Button btn_viewBookings;
@@ -661,6 +651,7 @@ namespace BayViewBookings
         private System.Windows.Forms.Button btn_Bookings;
         private System.Windows.Forms.Button btn_Guests;
         private System.Windows.Forms.Label lbl_NewBooking;
-        private System.Windows.Forms.Label lbl_time;
+        private System.Windows.Forms.TextBox txt_BookingDate;
+        private System.Windows.Forms.Label lbl_BookingDate;
     }
 }

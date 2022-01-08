@@ -60,25 +60,20 @@ namespace BayViewBookings
                 {
                     dbCon.Open();
                     
-                    using (var dbcmd = new SQLiteCommand("SELECT Username, Password FROM Employee WHERE Username=@Username AND Password=@Password", dbCon))
+                    using (var dbcmd = new SQLiteCommand("SELECT Employee_ID, Username, Password FROM Employee WHERE Username=@Username AND Password=@Password", dbCon))
                     {
                         dbcmd.Parameters.AddWithValue("@Username", txt_username.Text);
                         dbcmd.Parameters.AddWithValue("@Password", txt_password.Text);
                         using (var reader = dbcmd.ExecuteReader())
                         {
-                            var count = 0;
-                            while (reader.Read())
-                            {
-                                count = count + 1;
-                            }
-                            if (count == 1)
+                            if (reader.Read())
                             {
                                 if(lbl_managed_by.Text == "Manager") //lbl_managed_by 1 takes the "managed_by" field from Employee table, and if its 1 then their managed by someone therefore staff, 0 will be inputed if their managers
                                 {
                                    
-                                    string username = lbl_firstname.Text;
                                     frm_Manager_Homepage frm2 = new frm_Manager_Homepage();
-                                    frm2.username = username;
+                                    frm2.FirstName = lbl_firstname.Text;
+                                    frm2.UserID = reader.GetInt64(0);
                                     frm2.Show();
                                     this.Hide();
                                 }
@@ -86,16 +81,17 @@ namespace BayViewBookings
                                 {
                                     //MessageBox.Show("Staff");
 
-                                    string username = lbl_firstname.Text;
                                     frm_Staff_Homepage frm3 = new frm_Staff_Homepage();
-                                    frm3.username = username;
+                                    frm3.FirstName = lbl_firstname.Text;
+                                    frm3.UserID = reader.GetInt64(0);
                                     frm3.Show();
                                     this.Hide();
                                 }
                             }
-                            else if (count == 0)
+                            else
                             {
                                 MessageBox.Show("Please recheck your details");
+                                txt_password.Text = null;
                             }
                         }
                     }

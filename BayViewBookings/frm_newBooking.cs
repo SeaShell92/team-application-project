@@ -20,11 +20,11 @@ namespace BayViewBookings
             InitializeComponent();
         }
 
+        public long UserID { get; set; }
+
         SQLiteConnection dbCon = new SQLiteConnection();
-        SQLiteCommand dbcmd = new SQLiteCommand();
         const string details = @"Data Source = ..\..\Database\bookings.db";
-        int Has_Paid = 0;
-        //string Has_Paid1 = "Yes";
+        string Has_Paid = "";
 
         private void btn_viewBookings_Click(object sender, EventArgs e)
         {
@@ -41,7 +41,8 @@ namespace BayViewBookings
         private void frm_newBooking_Load(object sender, EventArgs e)
         {
             DateTime now = DateTime.Now;
-            lbl_time.Text = now.ToString();
+            txt_BookingDate.Text = now.ToShortDateString();
+            txt_EmployeeID.Text = UserID.ToString();
         }
 
         private void btn_Guests_Click(object sender, EventArgs e)
@@ -60,30 +61,48 @@ namespace BayViewBookings
         {
             if (rb_yes.Checked)
             {
-                Has_Paid = 1;
+                Has_Paid = "Yes";
 
             }
             else if (rb_no.Checked)
             {
-                Has_Paid = 2;
+                Has_Paid = "No";
 
             }
             try
             {
+                long RowID;
+                dbCon.ConnectionString = details; //declares connection string
+
+                using (SQLiteCommand guestCmd = dbCon.CreateCommand())
+                {
+
+                    guestCmd.CommandText = @"Insert into Guest (Guest_Title, Guest_First_Name, Guest_Surname, Guest_Tel, Guest_Email) 
+                    Values (@GuestTitle, @GuestFirstName, @GuestSurname, @GuestTel, @GuestEmail)";
+                    guestCmd.Parameters.AddWithValue("GuestTitle", txt_Title.Text);
+                    guestCmd.Parameters.AddWithValue("GuestFirstName", txt_FirstName.Text);
+                    guestCmd.Parameters.AddWithValue("GuestSurname", txt_Surname.Text);
+                    guestCmd.Parameters.AddWithValue("GuestTel", txt_Telephone.Text);
+                    guestCmd.Parameters.AddWithValue("GuestEmail", txt_EmailAddress.Text);
+
+                    dbCon.Open();
+                    guestCmd.ExecuteNonQuery();
+                    RowID = dbCon.LastInsertRowId;
+
+                    dbCon.Close();
+
+                }
                 using (SQLiteCommand cmd = dbCon.CreateCommand())
                 {
                 
                     //allows users to add record
 
-
-                    dbCon.ConnectionString = details; //declares connection string
-
-                    cmd.CommandText = @"Insert into Booking(Booking_ID, Emplyee_ID, Guest_ID, Booking_Date, Check_In, Check_Out, No_Of_Nights, Total_Guests, Total_Breakfasts, Has_Paid) 
-                    Values (@Booking_ID, @Emplyee_ID, @Guest_ID, @Booking_Date, @Check_In, @Check_Out, @No_Of_Nights, @Total_Guests, @Total_Breakfasts, @Has_Paid)";
-                    cmd.Parameters.AddWithValue("Booking_ID", txt_BookingID.Text);
-                    cmd.Parameters.AddWithValue("Emplyee_ID", txt_EmployeeID.Text);
-                    cmd.Parameters.AddWithValue("Guest_ID", txt_GuestsID.Text);
-                    cmd.Parameters.AddWithValue("Booking_Date", lbl_time.Text);
+                    cmd.CommandText = @"Insert into Booking(Emplyee_ID, Guest_ID, Booking_Date, Check_In, Check_Out, No_Of_Nights, Total_Guests, Total_Breakfasts, Has_Paid) 
+                    Values (@Emplyee_ID, @Guest_ID, @Booking_Date, @Check_In, @Check_Out, @No_Of_Nights, @Total_Guests, @Total_Breakfasts, @Has_Paid)";
+                    //cmd.Parameters.AddWithValue("Booking_ID", txt_BookingID.Text);
+                    cmd.Parameters.AddWithValue("Emplyee_ID", UserID);
+                    cmd.Parameters.AddWithValue("Guest_ID", RowID);
+                    cmd.Parameters.AddWithValue("Booking_Date", txt_BookingDate.Text);
                     cmd.Parameters.AddWithValue("Check_In", txt_CheckIn.Text);
                     cmd.Parameters.AddWithValue("Check_Out", txt_CheckOut.Text);
                     cmd.Parameters.AddWithValue("No_Of_Nights", txt_NoOfNights.Text);
@@ -106,5 +125,31 @@ namespace BayViewBookings
             }
         }
 
+        private void clearAll(Control.ControlCollection controls)
+        {
+            foreach (Control control in controls)
+            {
+                if (control is TextBox)
+                {
+                    var textBox = (TextBox)control;
+
+                    textBox.Text = null;
+                }
+                if (control is RadioButton)
+                {
+                    var radioButton = (RadioButton)control;
+                    
+                    radioButton.Checked = false;
+                }
+            }
+        }
+
+        private void btn_ClearBooking_Click(object sender, EventArgs e)
+        {
+            // loop through all the controls on the form and if it is a text box, set it to be empty.
+            clearAll(pnl_Booking.Controls);
+            clearAll(pnl_GuestDetails.Controls);
+
+        }
     }
 }

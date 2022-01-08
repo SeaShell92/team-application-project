@@ -15,7 +15,9 @@ namespace BayViewBookings
     public partial class frm_Manager_Homepage : Form
     {
         DateTime timeOfDayGreeting = DateTime.Now;
-        public string username { get; set; }
+        public string FirstName { get; set; }
+
+        public long UserID { get; set; }
 
         public frm_Manager_Homepage()
         {
@@ -28,19 +30,19 @@ namespace BayViewBookings
 
             if (timeOfDayGreeting.Hour >= 5 && timeOfDayGreeting.Hour < 12)
             {
-                lbl_Welcome_Msg.Text = "Good morning, " + username + "!";
+                lbl_Welcome_Msg.Text = "Good morning, " + FirstName + "!";
             }
             else if (timeOfDayGreeting.Hour >= 12 && timeOfDayGreeting.Hour < 16)
             {
-                lbl_Welcome_Msg.Text = "Good Afternoon, " + username + "!";
+                lbl_Welcome_Msg.Text = "Good Afternoon, " + FirstName + "!";
             }
             else if (timeOfDayGreeting.Hour >= 16 && timeOfDayGreeting.Hour < 19)
             {
-                lbl_Welcome_Msg.Text = "Good Evening, " + username + "!";
+                lbl_Welcome_Msg.Text = "Good Evening, " + FirstName + "!";
             }
             else
             {
-                lbl_Welcome_Msg.Text = "Good Night, " + username + "!";
+                lbl_Welcome_Msg.Text = "Good Night, " + FirstName + "!";
             }
 
         }
@@ -53,7 +55,9 @@ namespace BayViewBookings
 
         private void btn_Bookings_Click(object sender, EventArgs e)
         {
-            new frm_newBooking().ShowDialog(this); // Shows New Booking form on top of original form
+            var BookingForm = new frm_newBooking();
+            BookingForm.UserID = UserID; // Sets the ID number of the user who is currently logged in
+            BookingForm.ShowDialog(this); // Shows New Booking form on top of original form
         }
 
         private void btn_Guests_Click(object sender, EventArgs e)
