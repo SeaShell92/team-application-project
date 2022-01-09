@@ -48,6 +48,7 @@ namespace BayViewBookings
             this.txt_GuestsID = new System.Windows.Forms.TextBox();
             this.lbl_GuestDetails = new System.Windows.Forms.Label();
             this.pnl_Booking = new System.Windows.Forms.Panel();
+            this.lbl_BookingDate = new System.Windows.Forms.Label();
             this.rb_no = new System.Windows.Forms.RadioButton();
             this.rb_yes = new System.Windows.Forms.RadioButton();
             this.lbl_HasPaid = new System.Windows.Forms.Label();
@@ -61,10 +62,9 @@ namespace BayViewBookings
             this.lbl_Checkout = new System.Windows.Forms.Label();
             this.txt_CheckIn = new System.Windows.Forms.TextBox();
             this.lbl_Checkin = new System.Windows.Forms.Label();
-            this.txt_EmployeeID = new System.Windows.Forms.TextBox();
             this.lbl_EmployeeID = new System.Windows.Forms.Label();
             this.lbl_BookingDetails = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.pnl_Divider = new System.Windows.Forms.Panel();
             this.btn_submit = new System.Windows.Forms.Button();
             this.btn_viewBookings = new System.Windows.Forms.Button();
             this.pnl_NewBookingHeader = new System.Windows.Forms.Panel();
@@ -74,12 +74,29 @@ namespace BayViewBookings
             this.btn_Bookings = new System.Windows.Forms.Button();
             this.btn_Guests = new System.Windows.Forms.Button();
             this.lbl_NewBooking = new System.Windows.Forms.Label();
-            this.lbl_BookingDate = new System.Windows.Forms.Label();
-            this.txt_BookingDate = new System.Windows.Forms.TextBox();
+            this.pnl_ExistingGuest = new System.Windows.Forms.Panel();
+            this.txt_SearchEmail = new System.Windows.Forms.TextBox();
+            this.lbl_SearchEmail = new System.Windows.Forms.Label();
+            this.txt_EGuestTel = new System.Windows.Forms.TextBox();
+            this.lbl_EGuestTel = new System.Windows.Forms.Label();
+            this.txt_EGuestSurname = new System.Windows.Forms.TextBox();
+            this.lbl_EGuestSurname = new System.Windows.Forms.Label();
+            this.txt_EGuestName = new System.Windows.Forms.TextBox();
+            this.lbl_EGuestName = new System.Windows.Forms.Label();
+            this.txt_EGuestTitle = new System.Windows.Forms.TextBox();
+            this.lbl_EGuestTitle = new System.Windows.Forms.Label();
+            this.txt_EGuestID = new System.Windows.Forms.TextBox();
+            this.lbl_ExistingGuest = new System.Windows.Forms.Label();
+            this.lbl_EGuestID = new System.Windows.Forms.Label();
+            this.btn_Search = new System.Windows.Forms.Button();
+            this.btn_AddNewGuest = new System.Windows.Forms.Button();
+            this.lbl_BookingText = new System.Windows.Forms.Label();
+            this.lbl_EmployeeIDTxt = new System.Windows.Forms.Label();
             this.pnl_NewBooking.SuspendLayout();
             this.pnl_GuestDetails.SuspendLayout();
             this.pnl_Booking.SuspendLayout();
             this.pnl_NewBookingHeader.SuspendLayout();
+            this.pnl_ExistingGuest.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_NewBooking
@@ -120,9 +137,12 @@ namespace BayViewBookings
             // 
             // cldr_Booking
             // 
-            this.cldr_Booking.Location = new System.Drawing.Point(54, 179);
+            this.cldr_Booking.CalendarDimensions = new System.Drawing.Size(2, 1);
+            this.cldr_Booking.Location = new System.Drawing.Point(14, 119);
+            this.cldr_Booking.MaxSelectionCount = 28;
             this.cldr_Booking.Name = "cldr_Booking";
             this.cldr_Booking.TabIndex = 6;
+            this.cldr_Booking.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.cldr_Booking_DateSelected);
             // 
             // lbl_GuestID
             // 
@@ -153,6 +173,7 @@ namespace BayViewBookings
             this.pnl_GuestDetails.Name = "pnl_GuestDetails";
             this.pnl_GuestDetails.Size = new System.Drawing.Size(1241, 208);
             this.pnl_GuestDetails.TabIndex = 8;
+            this.pnl_GuestDetails.Visible = false;
             // 
             // txt_EmailAddress
             // 
@@ -259,7 +280,8 @@ namespace BayViewBookings
             // 
             // pnl_Booking
             // 
-            this.pnl_Booking.Controls.Add(this.txt_BookingDate);
+            this.pnl_Booking.Controls.Add(this.lbl_EmployeeIDTxt);
+            this.pnl_Booking.Controls.Add(this.lbl_BookingText);
             this.pnl_Booking.Controls.Add(this.lbl_BookingDate);
             this.pnl_Booking.Controls.Add(this.rb_no);
             this.pnl_Booking.Controls.Add(this.rb_yes);
@@ -275,7 +297,6 @@ namespace BayViewBookings
             this.pnl_Booking.Controls.Add(this.txt_CheckIn);
             this.pnl_Booking.Controls.Add(this.lbl_Checkin);
             this.pnl_Booking.Controls.Add(this.cldr_Booking);
-            this.pnl_Booking.Controls.Add(this.txt_EmployeeID);
             this.pnl_Booking.Controls.Add(this.lbl_EmployeeID);
             this.pnl_Booking.Controls.Add(this.lbl_BookingDetails);
             this.pnl_Booking.Location = new System.Drawing.Point(154, 287);
@@ -283,10 +304,20 @@ namespace BayViewBookings
             this.pnl_Booking.Size = new System.Drawing.Size(1241, 370);
             this.pnl_Booking.TabIndex = 20;
             // 
+            // lbl_BookingDate
+            // 
+            this.lbl_BookingDate.AutoSize = true;
+            this.lbl_BookingDate.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_BookingDate.Location = new System.Drawing.Point(15, 20);
+            this.lbl_BookingDate.Name = "lbl_BookingDate";
+            this.lbl_BookingDate.Size = new System.Drawing.Size(118, 21);
+            this.lbl_BookingDate.TabIndex = 34;
+            this.lbl_BookingDate.Text = "Booking Date:";
+            // 
             // rb_no
             // 
             this.rb_no.AutoSize = true;
-            this.rb_no.Location = new System.Drawing.Point(1105, 151);
+            this.rb_no.Location = new System.Drawing.Point(327, 288);
             this.rb_no.Name = "rb_no";
             this.rb_no.Size = new System.Drawing.Size(39, 17);
             this.rb_no.TabIndex = 33;
@@ -297,7 +328,7 @@ namespace BayViewBookings
             // rb_yes
             // 
             this.rb_yes.AutoSize = true;
-            this.rb_yes.Location = new System.Drawing.Point(1056, 151);
+            this.rb_yes.Location = new System.Drawing.Point(278, 288);
             this.rb_yes.Name = "rb_yes";
             this.rb_yes.Size = new System.Drawing.Size(43, 17);
             this.rb_yes.TabIndex = 32;
@@ -309,7 +340,7 @@ namespace BayViewBookings
             // 
             this.lbl_HasPaid.AutoSize = true;
             this.lbl_HasPaid.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_HasPaid.Location = new System.Drawing.Point(964, 147);
+            this.lbl_HasPaid.Location = new System.Drawing.Point(191, 288);
             this.lbl_HasPaid.Name = "lbl_HasPaid";
             this.lbl_HasPaid.Size = new System.Drawing.Size(80, 21);
             this.lbl_HasPaid.TabIndex = 30;
@@ -317,16 +348,16 @@ namespace BayViewBookings
             // 
             // txt_TtlBreakfasts
             // 
-            this.txt_TtlBreakfasts.Location = new System.Drawing.Point(786, 147);
+            this.txt_TtlBreakfasts.Location = new System.Drawing.Point(143, 324);
             this.txt_TtlBreakfasts.Name = "txt_TtlBreakfasts";
-            this.txt_TtlBreakfasts.Size = new System.Drawing.Size(98, 20);
+            this.txt_TtlBreakfasts.Size = new System.Drawing.Size(46, 20);
             this.txt_TtlBreakfasts.TabIndex = 29;
             // 
             // lbl_TtlBreakfasts
             // 
             this.lbl_TtlBreakfasts.AutoSize = true;
             this.lbl_TtlBreakfasts.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TtlBreakfasts.Location = new System.Drawing.Point(645, 147);
+            this.lbl_TtlBreakfasts.Location = new System.Drawing.Point(10, 321);
             this.lbl_TtlBreakfasts.Name = "lbl_TtlBreakfasts";
             this.lbl_TtlBreakfasts.Size = new System.Drawing.Size(135, 21);
             this.lbl_TtlBreakfasts.TabIndex = 28;
@@ -334,16 +365,16 @@ namespace BayViewBookings
             // 
             // txt_TotalGuests
             // 
-            this.txt_TotalGuests.Location = new System.Drawing.Point(495, 147);
+            this.txt_TotalGuests.Location = new System.Drawing.Point(129, 291);
             this.txt_TotalGuests.Name = "txt_TotalGuests";
-            this.txt_TotalGuests.Size = new System.Drawing.Size(98, 20);
+            this.txt_TotalGuests.Size = new System.Drawing.Size(46, 20);
             this.txt_TotalGuests.TabIndex = 27;
             // 
             // lbl_TotalGuests
             // 
             this.lbl_TotalGuests.AutoSize = true;
             this.lbl_TotalGuests.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TotalGuests.Location = new System.Drawing.Point(381, 147);
+            this.lbl_TotalGuests.Location = new System.Drawing.Point(15, 290);
             this.lbl_TotalGuests.Name = "lbl_TotalGuests";
             this.lbl_TotalGuests.Size = new System.Drawing.Size(108, 21);
             this.lbl_TotalGuests.TabIndex = 26;
@@ -351,16 +382,17 @@ namespace BayViewBookings
             // 
             // txt_NoOfNights
             // 
-            this.txt_NoOfNights.Location = new System.Drawing.Point(1105, 95);
+            this.txt_NoOfNights.Location = new System.Drawing.Point(517, 92);
             this.txt_NoOfNights.Name = "txt_NoOfNights";
-            this.txt_NoOfNights.Size = new System.Drawing.Size(98, 20);
+            this.txt_NoOfNights.ReadOnly = true;
+            this.txt_NoOfNights.Size = new System.Drawing.Size(46, 20);
             this.txt_NoOfNights.TabIndex = 25;
             // 
             // lbl_NoOfNights
             // 
             this.lbl_NoOfNights.AutoSize = true;
             this.lbl_NoOfNights.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_NoOfNights.Location = new System.Drawing.Point(986, 95);
+            this.lbl_NoOfNights.Location = new System.Drawing.Point(398, 92);
             this.lbl_NoOfNights.Name = "lbl_NoOfNights";
             this.lbl_NoOfNights.Size = new System.Drawing.Size(113, 21);
             this.lbl_NoOfNights.TabIndex = 24;
@@ -368,8 +400,9 @@ namespace BayViewBookings
             // 
             // txt_CheckOut
             // 
-            this.txt_CheckOut.Location = new System.Drawing.Point(862, 95);
+            this.txt_CheckOut.Location = new System.Drawing.Point(294, 92);
             this.txt_CheckOut.Name = "txt_CheckOut";
+            this.txt_CheckOut.ReadOnly = true;
             this.txt_CheckOut.Size = new System.Drawing.Size(98, 20);
             this.txt_CheckOut.TabIndex = 23;
             // 
@@ -377,7 +410,7 @@ namespace BayViewBookings
             // 
             this.lbl_Checkout.AutoSize = true;
             this.lbl_Checkout.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Checkout.Location = new System.Drawing.Point(761, 95);
+            this.lbl_Checkout.Location = new System.Drawing.Point(199, 92);
             this.lbl_Checkout.Name = "lbl_Checkout";
             this.lbl_Checkout.Size = new System.Drawing.Size(95, 21);
             this.lbl_Checkout.TabIndex = 22;
@@ -385,8 +418,9 @@ namespace BayViewBookings
             // 
             // txt_CheckIn
             // 
-            this.txt_CheckIn.Location = new System.Drawing.Point(627, 96);
+            this.txt_CheckIn.Location = new System.Drawing.Point(96, 92);
             this.txt_CheckIn.Name = "txt_CheckIn";
+            this.txt_CheckIn.ReadOnly = true;
             this.txt_CheckIn.Size = new System.Drawing.Size(98, 20);
             this.txt_CheckIn.TabIndex = 21;
             // 
@@ -394,25 +428,17 @@ namespace BayViewBookings
             // 
             this.lbl_Checkin.AutoSize = true;
             this.lbl_Checkin.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Checkin.Location = new System.Drawing.Point(530, 95);
+            this.lbl_Checkin.Location = new System.Drawing.Point(15, 89);
             this.lbl_Checkin.Name = "lbl_Checkin";
             this.lbl_Checkin.Size = new System.Drawing.Size(81, 21);
             this.lbl_Checkin.TabIndex = 20;
             this.lbl_Checkin.Text = "Check In:";
             // 
-            // txt_EmployeeID
-            // 
-            this.txt_EmployeeID.Location = new System.Drawing.Point(431, 98);
-            this.txt_EmployeeID.Name = "txt_EmployeeID";
-            this.txt_EmployeeID.ReadOnly = true;
-            this.txt_EmployeeID.Size = new System.Drawing.Size(58, 20);
-            this.txt_EmployeeID.TabIndex = 11;
-            // 
             // lbl_EmployeeID
             // 
             this.lbl_EmployeeID.AutoSize = true;
             this.lbl_EmployeeID.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_EmployeeID.Location = new System.Drawing.Point(315, 98);
+            this.lbl_EmployeeID.Location = new System.Drawing.Point(15, 59);
             this.lbl_EmployeeID.Name = "lbl_EmployeeID";
             this.lbl_EmployeeID.Size = new System.Drawing.Size(110, 21);
             this.lbl_EmployeeID.TabIndex = 10;
@@ -422,23 +448,24 @@ namespace BayViewBookings
             // 
             this.lbl_BookingDetails.AutoSize = true;
             this.lbl_BookingDetails.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_BookingDetails.Location = new System.Drawing.Point(521, 20);
+            this.lbl_BookingDetails.Location = new System.Drawing.Point(524, 20);
             this.lbl_BookingDetails.Name = "lbl_BookingDetails";
             this.lbl_BookingDetails.Size = new System.Drawing.Size(192, 31);
             this.lbl_BookingDetails.TabIndex = 8;
             this.lbl_BookingDetails.Text = "Booking Details";
             // 
-            // panel5
+            // pnl_Divider
             // 
-            this.panel5.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.panel5.Location = new System.Drawing.Point(154, 271);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1241, 10);
-            this.panel5.TabIndex = 21;
+            this.pnl_Divider.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.pnl_Divider.Location = new System.Drawing.Point(154, 271);
+            this.pnl_Divider.Name = "pnl_Divider";
+            this.pnl_Divider.Size = new System.Drawing.Size(1241, 10);
+            this.pnl_Divider.TabIndex = 21;
             // 
             // btn_submit
             // 
             this.btn_submit.BackColor = System.Drawing.Color.White;
+            this.btn_submit.Enabled = false;
             this.btn_submit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_submit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_submit.ForeColor = System.Drawing.Color.Black;
@@ -559,36 +586,206 @@ namespace BayViewBookings
             this.lbl_NewBooking.TabIndex = 0;
             this.lbl_NewBooking.Text = "New Booking";
             // 
-            // lbl_BookingDate
+            // pnl_ExistingGuest
             // 
-            this.lbl_BookingDate.AutoSize = true;
-            this.lbl_BookingDate.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_BookingDate.Location = new System.Drawing.Point(62, 96);
-            this.lbl_BookingDate.Name = "lbl_BookingDate";
-            this.lbl_BookingDate.Size = new System.Drawing.Size(118, 21);
-            this.lbl_BookingDate.TabIndex = 34;
-            this.lbl_BookingDate.Text = "Booking Date:";
+            this.pnl_ExistingGuest.Controls.Add(this.btn_AddNewGuest);
+            this.pnl_ExistingGuest.Controls.Add(this.btn_Search);
+            this.pnl_ExistingGuest.Controls.Add(this.txt_SearchEmail);
+            this.pnl_ExistingGuest.Controls.Add(this.lbl_SearchEmail);
+            this.pnl_ExistingGuest.Controls.Add(this.txt_EGuestTel);
+            this.pnl_ExistingGuest.Controls.Add(this.lbl_EGuestTel);
+            this.pnl_ExistingGuest.Controls.Add(this.txt_EGuestSurname);
+            this.pnl_ExistingGuest.Controls.Add(this.lbl_EGuestSurname);
+            this.pnl_ExistingGuest.Controls.Add(this.txt_EGuestName);
+            this.pnl_ExistingGuest.Controls.Add(this.lbl_EGuestName);
+            this.pnl_ExistingGuest.Controls.Add(this.txt_EGuestTitle);
+            this.pnl_ExistingGuest.Controls.Add(this.lbl_EGuestTitle);
+            this.pnl_ExistingGuest.Controls.Add(this.txt_EGuestID);
+            this.pnl_ExistingGuest.Controls.Add(this.lbl_ExistingGuest);
+            this.pnl_ExistingGuest.Controls.Add(this.lbl_EGuestID);
+            this.pnl_ExistingGuest.Location = new System.Drawing.Point(154, 57);
+            this.pnl_ExistingGuest.Name = "pnl_ExistingGuest";
+            this.pnl_ExistingGuest.Size = new System.Drawing.Size(1241, 208);
+            this.pnl_ExistingGuest.TabIndex = 20;
             // 
-            // txt_BookingDate
+            // txt_SearchEmail
             // 
-            this.txt_BookingDate.Location = new System.Drawing.Point(186, 98);
-            this.txt_BookingDate.Name = "txt_BookingDate";
-            this.txt_BookingDate.ReadOnly = true;
-            this.txt_BookingDate.Size = new System.Drawing.Size(106, 20);
-            this.txt_BookingDate.TabIndex = 35;
+            this.txt_SearchEmail.Location = new System.Drawing.Point(572, 87);
+            this.txt_SearchEmail.Name = "txt_SearchEmail";
+            this.txt_SearchEmail.Size = new System.Drawing.Size(180, 20);
+            this.txt_SearchEmail.TabIndex = 19;
+            // 
+            // lbl_SearchEmail
+            // 
+            this.lbl_SearchEmail.AutoSize = true;
+            this.lbl_SearchEmail.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_SearchEmail.Location = new System.Drawing.Point(367, 87);
+            this.lbl_SearchEmail.Name = "lbl_SearchEmail";
+            this.lbl_SearchEmail.Size = new System.Drawing.Size(199, 21);
+            this.lbl_SearchEmail.TabIndex = 18;
+            this.lbl_SearchEmail.Text = "Search by Email Address:";
+            // 
+            // txt_EGuestTel
+            // 
+            this.txt_EGuestTel.Location = new System.Drawing.Point(1026, 144);
+            this.txt_EGuestTel.Name = "txt_EGuestTel";
+            this.txt_EGuestTel.ReadOnly = true;
+            this.txt_EGuestTel.Size = new System.Drawing.Size(136, 20);
+            this.txt_EGuestTel.TabIndex = 17;
+            // 
+            // lbl_EGuestTel
+            // 
+            this.lbl_EGuestTel.AutoSize = true;
+            this.lbl_EGuestTel.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_EGuestTel.Location = new System.Drawing.Point(925, 144);
+            this.lbl_EGuestTel.Name = "lbl_EGuestTel";
+            this.lbl_EGuestTel.Size = new System.Drawing.Size(94, 21);
+            this.lbl_EGuestTel.TabIndex = 16;
+            this.lbl_EGuestTel.Text = "Telephone:";
+            // 
+            // txt_EGuestSurname
+            // 
+            this.txt_EGuestSurname.Location = new System.Drawing.Point(778, 144);
+            this.txt_EGuestSurname.Name = "txt_EGuestSurname";
+            this.txt_EGuestSurname.ReadOnly = true;
+            this.txt_EGuestSurname.Size = new System.Drawing.Size(136, 20);
+            this.txt_EGuestSurname.TabIndex = 15;
+            // 
+            // lbl_EGuestSurname
+            // 
+            this.lbl_EGuestSurname.AutoSize = true;
+            this.lbl_EGuestSurname.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_EGuestSurname.Location = new System.Drawing.Point(679, 144);
+            this.lbl_EGuestSurname.Name = "lbl_EGuestSurname";
+            this.lbl_EGuestSurname.Size = new System.Drawing.Size(82, 21);
+            this.lbl_EGuestSurname.TabIndex = 14;
+            this.lbl_EGuestSurname.Text = "Surname:";
+            // 
+            // txt_EGuestName
+            // 
+            this.txt_EGuestName.Location = new System.Drawing.Point(509, 144);
+            this.txt_EGuestName.Name = "txt_EGuestName";
+            this.txt_EGuestName.ReadOnly = true;
+            this.txt_EGuestName.Size = new System.Drawing.Size(136, 20);
+            this.txt_EGuestName.TabIndex = 13;
+            // 
+            // lbl_EGuestName
+            // 
+            this.lbl_EGuestName.AutoSize = true;
+            this.lbl_EGuestName.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_EGuestName.Location = new System.Drawing.Point(395, 144);
+            this.lbl_EGuestName.Name = "lbl_EGuestName";
+            this.lbl_EGuestName.Size = new System.Drawing.Size(97, 21);
+            this.lbl_EGuestName.TabIndex = 12;
+            this.lbl_EGuestName.Text = "First Name:";
+            // 
+            // txt_EGuestTitle
+            // 
+            this.txt_EGuestTitle.Location = new System.Drawing.Point(292, 144);
+            this.txt_EGuestTitle.Name = "txt_EGuestTitle";
+            this.txt_EGuestTitle.ReadOnly = true;
+            this.txt_EGuestTitle.Size = new System.Drawing.Size(55, 20);
+            this.txt_EGuestTitle.TabIndex = 11;
+            // 
+            // lbl_EGuestTitle
+            // 
+            this.lbl_EGuestTitle.AutoSize = true;
+            this.lbl_EGuestTitle.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_EGuestTitle.Location = new System.Drawing.Point(240, 144);
+            this.lbl_EGuestTitle.Name = "lbl_EGuestTitle";
+            this.lbl_EGuestTitle.Size = new System.Drawing.Size(46, 21);
+            this.lbl_EGuestTitle.TabIndex = 10;
+            this.lbl_EGuestTitle.Text = "Title:";
+            // 
+            // txt_EGuestID
+            // 
+            this.txt_EGuestID.Location = new System.Drawing.Point(165, 144);
+            this.txt_EGuestID.Name = "txt_EGuestID";
+            this.txt_EGuestID.ReadOnly = true;
+            this.txt_EGuestID.Size = new System.Drawing.Size(55, 20);
+            this.txt_EGuestID.TabIndex = 9;
+            // 
+            // lbl_ExistingGuest
+            // 
+            this.lbl_ExistingGuest.AutoSize = true;
+            this.lbl_ExistingGuest.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ExistingGuest.Location = new System.Drawing.Point(491, 21);
+            this.lbl_ExistingGuest.Name = "lbl_ExistingGuest";
+            this.lbl_ExistingGuest.Size = new System.Drawing.Size(259, 31);
+            this.lbl_ExistingGuest.TabIndex = 8;
+            this.lbl_ExistingGuest.Text = "Existing Guest Details";
+            // 
+            // lbl_EGuestID
+            // 
+            this.lbl_EGuestID.AutoSize = true;
+            this.lbl_EGuestID.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_EGuestID.Location = new System.Drawing.Point(79, 144);
+            this.lbl_EGuestID.Name = "lbl_EGuestID";
+            this.lbl_EGuestID.Size = new System.Drawing.Size(80, 21);
+            this.lbl_EGuestID.TabIndex = 7;
+            this.lbl_EGuestID.Text = "Guest ID:";
+            // 
+            // btn_Search
+            // 
+            this.btn_Search.BackColor = System.Drawing.Color.White;
+            this.btn_Search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Search.ForeColor = System.Drawing.Color.Black;
+            this.btn_Search.Location = new System.Drawing.Point(774, 84);
+            this.btn_Search.Name = "btn_Search";
+            this.btn_Search.Size = new System.Drawing.Size(100, 26);
+            this.btn_Search.TabIndex = 25;
+            this.btn_Search.Text = "Search";
+            this.btn_Search.UseVisualStyleBackColor = false;
+            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
+            // 
+            // btn_AddNewGuest
+            // 
+            this.btn_AddNewGuest.BackColor = System.Drawing.Color.White;
+            this.btn_AddNewGuest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_AddNewGuest.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AddNewGuest.ForeColor = System.Drawing.Color.Black;
+            this.btn_AddNewGuest.Location = new System.Drawing.Point(1068, 16);
+            this.btn_AddNewGuest.Name = "btn_AddNewGuest";
+            this.btn_AddNewGuest.Size = new System.Drawing.Size(135, 36);
+            this.btn_AddNewGuest.TabIndex = 25;
+            this.btn_AddNewGuest.Text = "Add New Guest";
+            this.btn_AddNewGuest.UseVisualStyleBackColor = false;
+            this.btn_AddNewGuest.Click += new System.EventHandler(this.btn_AddNewGuest_Click);
+            // 
+            // lbl_BookingText
+            // 
+            this.lbl_BookingText.AutoSize = true;
+            this.lbl_BookingText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_BookingText.Location = new System.Drawing.Point(140, 24);
+            this.lbl_BookingText.Name = "lbl_BookingText";
+            this.lbl_BookingText.Size = new System.Drawing.Size(56, 16);
+            this.lbl_BookingText.TabIndex = 36;
+            this.lbl_BookingText.Text = "#today#";
+            // 
+            // lbl_EmployeeIDTxt
+            // 
+            this.lbl_EmployeeIDTxt.AutoSize = true;
+            this.lbl_EmployeeIDTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_EmployeeIDTxt.Location = new System.Drawing.Point(140, 63);
+            this.lbl_EmployeeIDTxt.Name = "lbl_EmployeeIDTxt";
+            this.lbl_EmployeeIDTxt.Size = new System.Drawing.Size(35, 16);
+            this.lbl_EmployeeIDTxt.TabIndex = 37;
+            this.lbl_EmployeeIDTxt.Text = "#ID#";
             // 
             // frm_newBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1402, 700);
+            this.Controls.Add(this.pnl_ExistingGuest);
             this.Controls.Add(this.pnl_NewBookingHeader);
             this.Controls.Add(this.btn_viewBookings);
             this.Controls.Add(this.btn_submit);
-            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.pnl_Divider);
             this.Controls.Add(this.pnl_Booking);
-            this.Controls.Add(this.pnl_GuestDetails);
             this.Controls.Add(this.pnl_NewBooking);
+            this.Controls.Add(this.pnl_GuestDetails);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "frm_newBooking";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -601,6 +798,8 @@ namespace BayViewBookings
             this.pnl_Booking.PerformLayout();
             this.pnl_NewBookingHeader.ResumeLayout(false);
             this.pnl_NewBookingHeader.PerformLayout();
+            this.pnl_ExistingGuest.ResumeLayout(false);
+            this.pnl_ExistingGuest.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -625,10 +824,9 @@ namespace BayViewBookings
         private System.Windows.Forms.TextBox txt_GuestsID;
         private System.Windows.Forms.Label lbl_GuestDetails;
         private System.Windows.Forms.Panel pnl_Booking;
-        private System.Windows.Forms.TextBox txt_EmployeeID;
         private System.Windows.Forms.Label lbl_EmployeeID;
         private System.Windows.Forms.Label lbl_BookingDetails;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel pnl_Divider;
         private System.Windows.Forms.Button btn_submit;
         private System.Windows.Forms.Button btn_viewBookings;
         private System.Windows.Forms.Label lbl_HasPaid;
@@ -651,7 +849,24 @@ namespace BayViewBookings
         private System.Windows.Forms.Button btn_Bookings;
         private System.Windows.Forms.Button btn_Guests;
         private System.Windows.Forms.Label lbl_NewBooking;
-        private System.Windows.Forms.TextBox txt_BookingDate;
         private System.Windows.Forms.Label lbl_BookingDate;
+        private System.Windows.Forms.Panel pnl_ExistingGuest;
+        private System.Windows.Forms.Button btn_AddNewGuest;
+        private System.Windows.Forms.Button btn_Search;
+        private System.Windows.Forms.TextBox txt_SearchEmail;
+        private System.Windows.Forms.Label lbl_SearchEmail;
+        private System.Windows.Forms.TextBox txt_EGuestTel;
+        private System.Windows.Forms.Label lbl_EGuestTel;
+        private System.Windows.Forms.TextBox txt_EGuestSurname;
+        private System.Windows.Forms.Label lbl_EGuestSurname;
+        private System.Windows.Forms.TextBox txt_EGuestName;
+        private System.Windows.Forms.Label lbl_EGuestName;
+        private System.Windows.Forms.TextBox txt_EGuestTitle;
+        private System.Windows.Forms.Label lbl_EGuestTitle;
+        private System.Windows.Forms.TextBox txt_EGuestID;
+        private System.Windows.Forms.Label lbl_ExistingGuest;
+        private System.Windows.Forms.Label lbl_EGuestID;
+        private System.Windows.Forms.Label lbl_EmployeeIDTxt;
+        private System.Windows.Forms.Label lbl_BookingText;
     }
 }
