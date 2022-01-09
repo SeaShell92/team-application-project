@@ -92,6 +92,15 @@ namespace BayViewBookings
             this.btn_AddNewGuest = new System.Windows.Forms.Button();
             this.lbl_BookingText = new System.Windows.Forms.Label();
             this.lbl_EmployeeIDTxt = new System.Windows.Forms.Label();
+            this.lbl_RoomType = new System.Windows.Forms.Label();
+            this.cb_RoomTypes = new System.Windows.Forms.ComboBox();
+            this.lbl_RoomWant = new System.Windows.Forms.Label();
+            this.cb_RoomWanted = new System.Windows.Forms.ComboBox();
+            this.lb_Rooms = new System.Windows.Forms.ListBox();
+            this.lbl_RoomSelected = new System.Windows.Forms.Label();
+            this.btn_SelectRoom = new System.Windows.Forms.Button();
+            this.btn_RemoveRoom = new System.Windows.Forms.Button();
+            this.checkBox_Disabled = new System.Windows.Forms.CheckBox();
             this.pnl_NewBooking.SuspendLayout();
             this.pnl_GuestDetails.SuspendLayout();
             this.pnl_Booking.SuspendLayout();
@@ -280,6 +289,15 @@ namespace BayViewBookings
             // 
             // pnl_Booking
             // 
+            this.pnl_Booking.Controls.Add(this.checkBox_Disabled);
+            this.pnl_Booking.Controls.Add(this.btn_RemoveRoom);
+            this.pnl_Booking.Controls.Add(this.btn_SelectRoom);
+            this.pnl_Booking.Controls.Add(this.lbl_RoomSelected);
+            this.pnl_Booking.Controls.Add(this.lb_Rooms);
+            this.pnl_Booking.Controls.Add(this.cb_RoomWanted);
+            this.pnl_Booking.Controls.Add(this.lbl_RoomWant);
+            this.pnl_Booking.Controls.Add(this.cb_RoomTypes);
+            this.pnl_Booking.Controls.Add(this.lbl_RoomType);
             this.pnl_Booking.Controls.Add(this.lbl_EmployeeIDTxt);
             this.pnl_Booking.Controls.Add(this.lbl_BookingText);
             this.pnl_Booking.Controls.Add(this.lbl_BookingDate);
@@ -465,7 +483,6 @@ namespace BayViewBookings
             // btn_submit
             // 
             this.btn_submit.BackColor = System.Drawing.Color.White;
-            this.btn_submit.Enabled = false;
             this.btn_submit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_submit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_submit.ForeColor = System.Drawing.Color.Black;
@@ -773,6 +790,93 @@ namespace BayViewBookings
             this.lbl_EmployeeIDTxt.TabIndex = 37;
             this.lbl_EmployeeIDTxt.Text = "#ID#";
             // 
+            // lbl_RoomType
+            // 
+            this.lbl_RoomType.AutoSize = true;
+            this.lbl_RoomType.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_RoomType.Location = new System.Drawing.Point(636, 119);
+            this.lbl_RoomType.Name = "lbl_RoomType";
+            this.lbl_RoomType.Size = new System.Drawing.Size(100, 21);
+            this.lbl_RoomType.TabIndex = 26;
+            this.lbl_RoomType.Text = "Room Type:";
+            // 
+            // cb_RoomTypes
+            // 
+            this.cb_RoomTypes.FormattingEnabled = true;
+            this.cb_RoomTypes.Location = new System.Drawing.Point(742, 119);
+            this.cb_RoomTypes.Name = "cb_RoomTypes";
+            this.cb_RoomTypes.Size = new System.Drawing.Size(121, 21);
+            this.cb_RoomTypes.TabIndex = 38;
+            this.cb_RoomTypes.SelectionChangeCommitted += new System.EventHandler(this.cb_RoomTypes_SelectionChangeCommitted);
+            // 
+            // lbl_RoomWant
+            // 
+            this.lbl_RoomWant.AutoSize = true;
+            this.lbl_RoomWant.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_RoomWant.Location = new System.Drawing.Point(636, 214);
+            this.lbl_RoomWant.Name = "lbl_RoomWant";
+            this.lbl_RoomWant.Size = new System.Drawing.Size(121, 21);
+            this.lbl_RoomWant.TabIndex = 39;
+            this.lbl_RoomWant.Text = "Desired Room:";
+            // 
+            // cb_RoomWanted
+            // 
+            this.cb_RoomWanted.FormattingEnabled = true;
+            this.cb_RoomWanted.Location = new System.Drawing.Point(763, 214);
+            this.cb_RoomWanted.Name = "cb_RoomWanted";
+            this.cb_RoomWanted.Size = new System.Drawing.Size(121, 21);
+            this.cb_RoomWanted.TabIndex = 40;
+            // 
+            // lb_Rooms
+            // 
+            this.lb_Rooms.FormattingEnabled = true;
+            this.lb_Rooms.Location = new System.Drawing.Point(1034, 92);
+            this.lb_Rooms.Name = "lb_Rooms";
+            this.lb_Rooms.Size = new System.Drawing.Size(120, 147);
+            this.lb_Rooms.TabIndex = 41;
+            // 
+            // lbl_RoomSelected
+            // 
+            this.lbl_RoomSelected.AutoSize = true;
+            this.lbl_RoomSelected.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_RoomSelected.Location = new System.Drawing.Point(883, 92);
+            this.lbl_RoomSelected.Name = "lbl_RoomSelected";
+            this.lbl_RoomSelected.Size = new System.Drawing.Size(145, 21);
+            this.lbl_RoomSelected.TabIndex = 42;
+            this.lbl_RoomSelected.Text = "Room(s) Selected:";
+            // 
+            // btn_SelectRoom
+            // 
+            this.btn_SelectRoom.Location = new System.Drawing.Point(904, 214);
+            this.btn_SelectRoom.Name = "btn_SelectRoom";
+            this.btn_SelectRoom.Size = new System.Drawing.Size(75, 23);
+            this.btn_SelectRoom.TabIndex = 43;
+            this.btn_SelectRoom.Text = "Add";
+            this.btn_SelectRoom.UseVisualStyleBackColor = true;
+            this.btn_SelectRoom.Click += new System.EventHandler(this.btn_SelectRoom_Click);
+            // 
+            // btn_RemoveRoom
+            // 
+            this.btn_RemoveRoom.Location = new System.Drawing.Point(1160, 92);
+            this.btn_RemoveRoom.Name = "btn_RemoveRoom";
+            this.btn_RemoveRoom.Size = new System.Drawing.Size(75, 23);
+            this.btn_RemoveRoom.TabIndex = 44;
+            this.btn_RemoveRoom.Text = "Remove";
+            this.btn_RemoveRoom.UseVisualStyleBackColor = true;
+            this.btn_RemoveRoom.Click += new System.EventHandler(this.btn_RemoveRoom_Click);
+            // 
+            // checkBox_Disabled
+            // 
+            this.checkBox_Disabled.AutoSize = true;
+            this.checkBox_Disabled.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox_Disabled.Location = new System.Drawing.Point(640, 86);
+            this.checkBox_Disabled.Name = "checkBox_Disabled";
+            this.checkBox_Disabled.Size = new System.Drawing.Size(215, 24);
+            this.checkBox_Disabled.TabIndex = 45;
+            this.checkBox_Disabled.Text = "Disabled Access Required";
+            this.checkBox_Disabled.UseVisualStyleBackColor = true;
+            this.checkBox_Disabled.CheckedChanged += new System.EventHandler(this.checkBox_Disabled_CheckedChanged);
+            // 
             // frm_newBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -868,5 +972,14 @@ namespace BayViewBookings
         private System.Windows.Forms.Label lbl_EGuestID;
         private System.Windows.Forms.Label lbl_EmployeeIDTxt;
         private System.Windows.Forms.Label lbl_BookingText;
+        private System.Windows.Forms.Button btn_RemoveRoom;
+        private System.Windows.Forms.Button btn_SelectRoom;
+        private System.Windows.Forms.Label lbl_RoomSelected;
+        private System.Windows.Forms.ListBox lb_Rooms;
+        private System.Windows.Forms.ComboBox cb_RoomWanted;
+        private System.Windows.Forms.Label lbl_RoomWant;
+        private System.Windows.Forms.ComboBox cb_RoomTypes;
+        private System.Windows.Forms.Label lbl_RoomType;
+        private System.Windows.Forms.CheckBox checkBox_Disabled;
     }
 }

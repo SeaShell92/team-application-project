@@ -25,6 +25,11 @@ namespace BayViewBookings
         SQLiteConnection dbCon = new SQLiteConnection();
         const string details = @"Data Source = ..\..\Database\bookings.db";
         string Has_Paid = "";
+        string sqlRoomType = @"SELECT Room_ID, Room_Type, Room_Name, Accessibility FROM Room GROUP BY Room_Type";
+        SQLiteDataAdapter daRoomType;
+        SQLiteDataAdapter daRooms;
+        DataTable dtRoomType = new DataTable();
+        DataTable dtRooms = new DataTable();
 
         private void btn_viewBookings_Click(object sender, EventArgs e)
         {
@@ -35,7 +40,12 @@ namespace BayViewBookings
 
         private void btn_exitbook_Click(object sender, EventArgs e)
         {
-            Close();
+            if (MessageBox.Show("Exit? You will lose all the data entered.", "Exit Form",
+                MessageBoxButtons.OKCancel, 
+                MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                Close();
+            }
         }
 
         private void frm_newBooking_Load(object sender, EventArgs e)
@@ -43,12 +53,37 @@ namespace BayViewBookings
             DateTime now = DateTime.Now;
             lbl_BookingText.Text = now.ToShortDateString();
             lbl_EmployeeIDTxt.Text = UserID.ToString();
+            lb_Rooms.DisplayMember = "value";
+            lb_Rooms.ValueMember = "key";
+
+            try
+            {
+                dbCon.ConnectionString = details;
+
+                daRoomType = new SQLiteDataAdapter(sqlRoomType, dbCon);
+                daRoomType.Fill(dtRoomType);
+
+                //bind data table to room type combobox
+                cb_RoomTypes.DataSource = dtRoomType;
+                cb_RoomTypes.DisplayMember = "Room_Type";
+                cb_RoomTypes.ValueMember = "Room_Type";
+                cb_RoomTypes.SelectedIndex = -1; //box is blank until user is ready to select a room type
+
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                dbCon.Close();
+            }
+
         }
 
         private void btn_Guests_Click(object sender, EventArgs e)
         {
             new frm_GuestDetails().Show();
             Close();
+            //bug: home page window pops up on top of this new form and the windows are not connected.
         }
 
         private void btn_Rooms_Click(object sender, EventArgs e)
@@ -59,6 +94,14 @@ namespace BayViewBookings
 
         private void btn_submit_Click(object sender, EventArgs e)
         {
+            var Errors = checkIsValid();
+
+            if (Errors.Count() > 0)
+            {
+                MessageBox.Show(String.Join(Environment.NewLine, Errors));
+                return;
+            }
+
             if (rb_yes.Checked)
             {
                 Has_Paid = "Yes";
@@ -72,14 +115,15 @@ namespace BayViewBookings
             try
             {
                 long RowID;
+                long BookingID;
                 dbCon.ConnectionString = details; //declares connection string
+
                 if (pnl_GuestDetails.Visible == true)
                 {
                     using (SQLiteCommand guestCmd = dbCon.CreateCommand())
                     {
-
                         guestCmd.CommandText = @"Insert into Guest (Guest_Title, Guest_First_Name, Guest_Surname, Guest_Tel, Guest_Email) 
-                    Values (@GuestTitle, @GuestFirstName, @GuestSurname, @GuestTel, @GuestEmail)";
+                        Values (@GuestTitle, @GuestFirstName, @GuestSurname, @GuestTel, @GuestEmail)";
                         guestCmd.Parameters.AddWithValue("GuestTitle", txt_Title.Text);
                         guestCmd.Parameters.AddWithValue("GuestFirstName", txt_FirstName.Text);
                         guestCmd.Parameters.AddWithValue("GuestSurname", txt_Surname.Text);
@@ -92,12 +136,12 @@ namespace BayViewBookings
                         RowID = dbCon.LastInsertRowId;
 
                         dbCon.Close();
-
                     }
                 }
                 else
                 {
                     //set the RowID to be the ID number of the existing guest
+                    //doesn't insert/amend (overwrite) any guest details
                     RowID = Int64.Parse(txt_EGuestID.Text);
                 }
 
@@ -108,7 +152,6 @@ namespace BayViewBookings
 
                     cmd.CommandText = @"Insert into Booking(Emplyee_ID, Guest_ID, Booking_Date, Check_In, Check_Out, No_Of_Nights, Total_Guests, Total_Breakfasts, Has_Paid) 
                     Values (@Emplyee_ID, @Guest_ID, @Booking_Date, @Check_In, @Check_Out, @No_Of_Nights, @Total_Guests, @Total_Breakfasts, @Has_Paid)";
-                    //cmd.Parameters.AddWithValue("Booking_ID", txt_BookingID.Text);
                     cmd.Parameters.AddWithValue("Emplyee_ID", UserID);
                     cmd.Parameters.AddWithValue("Guest_ID", RowID);
                     cmd.Parameters.AddWithValue("Booking_Date", lbl_BookingText.Text);
@@ -121,17 +164,32 @@ namespace BayViewBookings
                         
                     //adds the new record details
                     dbCon.Open();
-
-                    int recordsChanged = cmd.ExecuteNonQuery();
-                    MessageBox.Show(recordsChanged.ToString() + " Records Added"); //message to notify the user that they have added the records
+                    cmd.ExecuteNonQuery();
+                    BookingID = dbCon.LastInsertRowId;
                     dbCon.Close();
+                }
+
+                foreach (KeyValuePair<int, string> item in lb_Rooms.Items)
+                {
+                    using (SQLiteCommand roomCmd = dbCon.CreateCommand())
+                    {
+                        roomCmd.CommandText = @"Insert into RoomBooking (Room_ID, Booking_ID) Values (@Room_ID, @Booking_ID)";
+                        roomCmd.Parameters.AddWithValue("Room_ID", item.Key);
+                        roomCmd.Parameters.AddWithValue("Booking_ID", BookingID);
+
+                        dbCon.Open();
+                        int recordsChanged = roomCmd.ExecuteNonQuery();
+                        MessageBox.Show(recordsChanged.ToString() + " Booking Added"); //message to notify the user that they have added the records
+
+                        dbCon.Close();
+                    }
+
                 }
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
-                dbCon.Close();
             }
         }
 
@@ -172,7 +230,7 @@ namespace BayViewBookings
 
         private void cldr_Booking_DateSelected(object sender, DateRangeEventArgs e)
         {
-            //put the date froom the calendar in the check-in and check-out text box.
+            //put the date from the calendar in the check-in and check-out text boxes
             txt_CheckIn.Text = cldr_Booking.SelectionStart.ToShortDateString();
             txt_CheckOut.Text = cldr_Booking.SelectionEnd.ToShortDateString();
 
@@ -181,7 +239,7 @@ namespace BayViewBookings
 
         private void btn_AddNewGuest_Click(object sender, EventArgs e)
         {
-            btn_submit.Enabled = true;
+            //btn_submit.Enabled = true; 
             pnl_ExistingGuest.Visible = false;
             pnl_GuestDetails.Visible = true;
         }
@@ -208,7 +266,7 @@ namespace BayViewBookings
                         txt_EGuestSurname.Text = reader.GetString(3);
                         txt_EGuestTel.Text = reader.GetInt64(4).ToString();
 
-                        btn_submit.Enabled = true;
+                        //btn_submit.Enabled = true;
                     }
                     else
                     {
@@ -223,6 +281,99 @@ namespace BayViewBookings
                 MessageBox.Show("Error: " + ex.Message);
                 dbCon.Close();
             }
+        }
+
+        private void cb_RoomTypes_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            try
+            {
+                using(var dbCon = new SQLiteConnection(details))
+                {
+                    if (checkBox_Disabled.Checked)
+                    {
+                        string sqlRooms =
+                            @"Select Room_ID, Room_Name, Room_Description, Room_Name || ' - ' || Room_Description as RoomInfo from Room"
+                            + " WHERE Room_Type LIKE '" + cb_RoomTypes.SelectedValue + "'"
+                            + " AND Accessibility LIKE 'Disabled'";
+
+                        daRooms = new SQLiteDataAdapter(sqlRooms, dbCon);
+                        dtRooms.Clear();
+                        daRooms.Fill(dtRooms);
+
+                        cb_RoomWanted.DataSource = dtRooms;
+                        cb_RoomWanted.DisplayMember = "RoomInfo";
+                        cb_RoomWanted.ValueMember = "Room_ID";
+                    }
+                    else
+                    {
+                        string sqlRooms =
+                            @"Select Room_ID, Room_Name, Room_Description, Room_Name || ' - ' || Room_Description as RoomInfo from Room" 
+                            + " WHERE Room_Type LIKE '" + cb_RoomTypes.SelectedValue + "'"
+                            + " AND Accessibility NOT LIKE 'Disabled'";
+
+                        daRooms = new SQLiteDataAdapter(sqlRooms, dbCon);
+                        dtRooms.Clear();
+                        daRooms.Fill(dtRooms);
+
+                        cb_RoomWanted.DataSource = dtRooms;
+                        cb_RoomWanted.DisplayMember = "RoomInfo";
+                        cb_RoomWanted.ValueMember = "Room_ID";
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void checkBox_Disabled_CheckedChanged(object sender, EventArgs e)
+        {
+            cb_RoomTypes_SelectionChangeCommitted(sender, e);
+        }
+
+        private void btn_SelectRoom_Click(object sender, EventArgs e)
+        {
+            if(cb_RoomWanted.SelectedIndex > -1)
+            {
+                //fills the list box with the key value pair of the information from the combo box.
+                lb_Rooms.Items.Add(new KeyValuePair<int, string>(Int32.Parse(cb_RoomWanted.SelectedValue.ToString()), cb_RoomWanted.GetItemText(cb_RoomWanted.SelectedItem)));
+                //bug: user can add same room multiple times
+            }
+            else
+            {
+                MessageBox.Show("Please first select a room type and then choose a room to add.");
+            }
+
+        }
+
+        private void btn_RemoveRoom_Click(object sender, EventArgs e)
+        {
+            if(lb_Rooms.SelectedIndex > -1)
+            {
+                lb_Rooms.Items.RemoveAt(lb_Rooms.SelectedIndex);
+            }
+            else
+            {
+                MessageBox.Show("Please select a room to remove.");
+            }
+        }
+
+        private List<string> checkIsValid()
+        {
+            var Errors = new List<string>();
+            if(lb_Rooms.Items.Count < 1)
+            {
+                Errors.Add("Please choose at least one room before making a booking.");
+            }
+            if(txt_NoOfNights.TextLength < 1 || int.Parse(txt_NoOfNights.Text) < 1)
+            {
+                Errors.Add("Please select dates using the calendar provided before making a booking.");
+            }
+            //could add more validation error messages here.
+
+            return Errors;
         }
     }
 }
