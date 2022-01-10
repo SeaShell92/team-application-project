@@ -65,5 +65,20 @@ namespace BayViewBookings
         {
             Close();
         }
+
+        private void btn_Guests_Click(object sender, EventArgs e)
+        {
+            new frm_GuestDetails().ShowDialog(this);
+        }
+
+        private void btn_Bookings_Click(object sender, EventArgs e)
+        {
+            new frm_ViewBookings().ShowDialog(this);
+        }
+
+        private void btn_Rooms_Click(object sender, EventArgs e)
+        {
+            new frm_RoomAvailability().ShowDialog(this);
+        }
     }
 }
