@@ -968,7 +968,7 @@ namespace BayViewBookings
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frm_newBooking";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_newBooking";
+            this.Text = "newBooking";
             this.Load += new System.EventHandler(this.frm_newBooking_Load);
             this.pnl_NewBooking.ResumeLayout(false);
             this.pnl_GuestDetails.ResumeLayout(false);

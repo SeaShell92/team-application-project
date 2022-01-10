@@ -718,7 +718,7 @@ namespace BayViewBookings
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frm_StaffDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_StaffDetails";
+            this.Text = "StaffDetails";
             this.Load += new System.EventHandler(this.frm_StaffDetails_Load);
             this.pnl_Staff2.ResumeLayout(false);
             this.pnl_filter.ResumeLayout(false);

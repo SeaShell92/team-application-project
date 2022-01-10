@@ -482,7 +482,7 @@ namespace BayViewBookings
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frm_TransactionDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_TransactionDetails";
+            this.Text = "TransactionDetails";
             this.pnl_filters.ResumeLayout(false);
             this.pnl_filters.PerformLayout();
             this.pnl_transactions.ResumeLayout(false);
