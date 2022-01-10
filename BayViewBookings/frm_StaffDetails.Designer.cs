@@ -707,6 +707,7 @@ namespace BayViewBookings
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1652, 843);
+            this.ControlBox = false;
             this.Controls.Add(this.panel_AddStaff);
             this.Controls.Add(this.panel_staff);
             this.Controls.Add(this.pnl_staff);

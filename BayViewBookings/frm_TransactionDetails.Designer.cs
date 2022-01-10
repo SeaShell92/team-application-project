@@ -472,6 +472,7 @@ namespace BayViewBookings
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1648, 833);
+            this.ControlBox = false;
             this.Controls.Add(this.pnl_Transaction);
             this.Controls.Add(this.pnl_transactionsHeader);
             this.Controls.Add(this.pnl_transactions);
