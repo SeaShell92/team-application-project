@@ -164,8 +164,10 @@ namespace BayViewBookings
                         
                     //adds the new record details
                     dbCon.Open();
-                    cmd.ExecuteNonQuery();
+                    int recordsChanged = cmd.ExecuteNonQuery();
                     BookingID = dbCon.LastInsertRowId;
+                    MessageBox.Show(recordsChanged.ToString() + " Booking Added"); //message to notify the user that they have added the records
+
                     dbCon.Close();
                 }
 
@@ -178,8 +180,7 @@ namespace BayViewBookings
                         roomCmd.Parameters.AddWithValue("Booking_ID", BookingID);
 
                         dbCon.Open();
-                        int recordsChanged = roomCmd.ExecuteNonQuery();
-                        MessageBox.Show(recordsChanged.ToString() + " Booking Added"); //message to notify the user that they have added the records
+                        roomCmd.ExecuteNonQuery();
 
                         dbCon.Close();
                     }
@@ -193,6 +194,7 @@ namespace BayViewBookings
             }
         }
 
+        // Access the controls on the form and reset them independently to the form
         private void clearAll(Control.ControlCollection controls)
         {
             foreach (Control control in controls)
@@ -216,6 +218,18 @@ namespace BayViewBookings
                     calendar.SelectionStart = DateTime.Now;
                     calendar.SelectionEnd = DateTime.Now;
                 }
+                if (control is ComboBox)
+                {
+                    var comboBox = (ComboBox)control;
+
+                    comboBox.SelectedIndex = -1;
+                }
+                if (control is ListBox)
+                {
+                    var listBox = (ListBox)control;
+
+                    listBox.Items.Clear();
+                }
             }
         }
 
@@ -225,6 +239,12 @@ namespace BayViewBookings
             clearAll(pnl_Booking.Controls);
             clearAll(pnl_GuestDetails.Controls);
             clearAll(pnl_ExistingGuest.Controls);
+
+            if (pnl_ExistingGuest.Visible == false)
+            {
+                pnl_ExistingGuest.Visible = true;
+                pnl_GuestDetails.Visible = false;
+            }
 
         }
 
@@ -283,6 +303,7 @@ namespace BayViewBookings
             }
         }
 
+        //bug: user can double book a room.
         private void cb_RoomTypes_SelectionChangeCommitted(object sender, EventArgs e)
         {
             try
@@ -357,6 +378,18 @@ namespace BayViewBookings
             else
             {
                 MessageBox.Show("Please select a room to remove.");
+            }
+        }
+
+        private void btn_RemoveAll_Click(object sender, EventArgs e)
+        {
+            if (lb_Rooms.Items.Count >= 1)
+            {
+                lb_Rooms.Items.Clear();
+            }
+            else
+            {
+                MessageBox.Show("There are no rooms to remove.");
             }
         }
 
