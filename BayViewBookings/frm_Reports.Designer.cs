@@ -239,7 +239,7 @@ namespace BayViewBookings
             this.pnl_ReportsHeader.ForeColor = System.Drawing.Color.White;
             this.pnl_ReportsHeader.Location = new System.Drawing.Point(0, 0);
             this.pnl_ReportsHeader.Name = "pnl_ReportsHeader";
-            this.pnl_ReportsHeader.Size = new System.Drawing.Size(1237, 48);
+            this.pnl_ReportsHeader.Size = new System.Drawing.Size(1245, 48);
             this.pnl_ReportsHeader.TabIndex = 13;
             // 
             // btn_exit
@@ -248,7 +248,7 @@ namespace BayViewBookings
             this.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_exit.ForeColor = System.Drawing.Color.White;
-            this.btn_exit.Location = new System.Drawing.Point(1195, 9);
+            this.btn_exit.Location = new System.Drawing.Point(1194, 9);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(33, 28);
             this.btn_exit.TabIndex = 6;
@@ -314,7 +314,7 @@ namespace BayViewBookings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1236, 677);
+            this.ClientSize = new System.Drawing.Size(1239, 677);
             this.ControlBox = false;
             this.Controls.Add(this.pnl_ReportsHeader);
             this.Controls.Add(this.panel7);
