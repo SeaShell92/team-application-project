@@ -50,7 +50,7 @@ namespace BayViewBookings
             this.pnl_Booking = new System.Windows.Forms.Panel();
             this.cb_unavailable = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_RoomAlert = new System.Windows.Forms.Label();
             this.btn_RemoveAll = new System.Windows.Forms.Button();
             this.checkBox_Disabled = new System.Windows.Forms.CheckBox();
             this.btn_RemoveRoom = new System.Windows.Forms.Button();
@@ -295,7 +295,7 @@ namespace BayViewBookings
             // 
             this.pnl_Booking.Controls.Add(this.cb_unavailable);
             this.pnl_Booking.Controls.Add(this.label2);
-            this.pnl_Booking.Controls.Add(this.label1);
+            this.pnl_Booking.Controls.Add(this.lbl_RoomAlert);
             this.pnl_Booking.Controls.Add(this.btn_RemoveAll);
             this.pnl_Booking.Controls.Add(this.checkBox_Disabled);
             this.pnl_Booking.Controls.Add(this.btn_RemoveRoom);
@@ -329,10 +329,10 @@ namespace BayViewBookings
             this.pnl_Booking.Name = "pnl_Booking";
             this.pnl_Booking.Size = new System.Drawing.Size(1241, 370);
             this.pnl_Booking.TabIndex = 20;
-            this.pnl_Booking.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Booking_Paint);
             // 
             // cb_unavailable
             // 
+            this.cb_unavailable.Enabled = false;
             this.cb_unavailable.FormattingEnabled = true;
             this.cb_unavailable.Location = new System.Drawing.Point(742, 294);
             this.cb_unavailable.Name = "cb_unavailable";
@@ -349,16 +349,15 @@ namespace BayViewBookings
             this.label2.TabIndex = 48;
             this.label2.Text = "Unavailable Dates:";
             // 
-            // label1
+            // lbl_RoomAlert
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(691, 255);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 19);
-            this.label1.TabIndex = 47;
-            this.label1.Text = "Room not Available";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.lbl_RoomAlert.AutoSize = true;
+            this.lbl_RoomAlert.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_RoomAlert.Location = new System.Drawing.Point(618, 234);
+            this.lbl_RoomAlert.Name = "lbl_RoomAlert";
+            this.lbl_RoomAlert.Size = new System.Drawing.Size(258, 19);
+            this.lbl_RoomAlert.TabIndex = 47;
+            this.lbl_RoomAlert.Text = "Please select a room to check availability";
             // 
             // btn_RemoveAll
             // 
@@ -427,7 +426,6 @@ namespace BayViewBookings
             this.cb_RoomWanted.Name = "cb_RoomWanted";
             this.cb_RoomWanted.Size = new System.Drawing.Size(121, 21);
             this.cb_RoomWanted.TabIndex = 40;
-            this.cb_RoomWanted.SelectedIndexChanged += new System.EventHandler(this.cb_RoomWanted_SelectedIndexChanged);
             this.cb_RoomWanted.SelectionChangeCommitted += new System.EventHandler(this.cb_RoomWanted_SelectionChangeCommitted);
             // 
             // lbl_RoomWant
@@ -447,7 +445,6 @@ namespace BayViewBookings
             this.cb_RoomTypes.Name = "cb_RoomTypes";
             this.cb_RoomTypes.Size = new System.Drawing.Size(121, 21);
             this.cb_RoomTypes.TabIndex = 38;
-            this.cb_RoomTypes.SelectedIndexChanged += new System.EventHandler(this.cb_RoomTypes_SelectedIndexChanged);
             this.cb_RoomTypes.SelectionChangeCommitted += new System.EventHandler(this.cb_RoomTypes_SelectionChangeCommitted);
             // 
             // lbl_RoomType
@@ -782,7 +779,6 @@ namespace BayViewBookings
             this.pnl_ExistingGuest.Name = "pnl_ExistingGuest";
             this.pnl_ExistingGuest.Size = new System.Drawing.Size(1241, 208);
             this.pnl_ExistingGuest.TabIndex = 20;
-            this.pnl_ExistingGuest.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_ExistingGuest_Paint);
             // 
             // btn_AddNewGuest
             // 
@@ -1037,6 +1033,6 @@ namespace BayViewBookings
         private System.Windows.Forms.Button btn_RemoveAll;
         private System.Windows.Forms.ComboBox cb_unavailable;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_RoomAlert;
     }
 }
