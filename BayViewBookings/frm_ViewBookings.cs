@@ -76,5 +76,10 @@ namespace BayViewBookings
         {
             Close();
         }
+
+        private void frm_ViewBookings_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

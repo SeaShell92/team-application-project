@@ -28,8 +28,10 @@ namespace BayViewBookings
         string sqlRoomType = @"SELECT Room_ID, Room_Type, Room_Name, Accessibility FROM Room GROUP BY Room_Type";
         SQLiteDataAdapter daRoomType;
         SQLiteDataAdapter daRooms;
+        SQLiteDataAdapter daCheck;
         DataTable dtRoomType = new DataTable();
         DataTable dtRooms = new DataTable();
+        DataTable dtCheck = new DataTable();
 
         private void btn_viewBookings_Click(object sender, EventArgs e)
         {
@@ -407,6 +409,63 @@ namespace BayViewBookings
             //could add more validation error messages here.
 
             return Errors;
+        }
+
+        private void pnl_ExistingGuest_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cb_RoomWanted_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            try
+            {
+                using (var dbCon = new SQLiteConnection(details))
+                {
+
+                    string sqlCheck =
+                        @"Select RoomBooking.Booking_ID, Booking.Check_In, Booking.Check_Out, Booking.Check_In  || ' - ' ||  Booking.Check_Out as Dates from RoomBooking"
+                        + " INNER JOIN Booking on RoomBooking.Booking_ID = Booking.Booking_ID"
+                        + " WHERE RoomBooking.Room_ID = '" + cb_RoomWanted.SelectedValue + "'";
+                          //  + " AND Accessibility NOT LIKE 'Disabled'";
+
+                        daCheck = new SQLiteDataAdapter(sqlCheck, dbCon);
+                        dtCheck.Clear();
+                        daCheck.Fill(dtCheck);
+
+                        cb_unavailable.DataSource = dtCheck;
+                        cb_unavailable.DisplayMember = "Dates";
+                        cb_unavailable.ValueMember = "Booking_ID";
+                    
+                    
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+
+        }
+
+        private void pnl_Booking_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cb_RoomTypes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cb_RoomWanted_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

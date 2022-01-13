@@ -52,6 +52,7 @@ namespace BayViewBookings
             this.btn_Bookings = new System.Windows.Forms.Button();
             this.btn_Guests = new System.Windows.Forms.Button();
             this.lbl_Reports = new System.Windows.Forms.Label();
+            this.lbl_roomOccupancy = new System.Windows.Forms.Label();
             this.pnl_Reports2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -96,6 +97,7 @@ namespace BayViewBookings
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.lbl_roomOccupancy);
             this.panel3.Controls.Add(this.btn_view1);
             this.panel3.Controls.Add(this.txt_filter2);
             this.panel3.Controls.Add(this.txt_filter1);
@@ -129,7 +131,7 @@ namespace BayViewBookings
             // txt_filter1
             // 
             this.txt_filter1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_filter1.Location = new System.Drawing.Point(32, 17);
+            this.txt_filter1.Location = new System.Drawing.Point(32, 29);
             this.txt_filter1.Name = "txt_filter1";
             this.txt_filter1.Size = new System.Drawing.Size(200, 24);
             this.txt_filter1.TabIndex = 0;
@@ -310,6 +312,15 @@ namespace BayViewBookings
             this.lbl_Reports.TabIndex = 0;
             this.lbl_Reports.Text = "Reports";
             // 
+            // lbl_roomOccupancy
+            // 
+            this.lbl_roomOccupancy.AutoSize = true;
+            this.lbl_roomOccupancy.Location = new System.Drawing.Point(362, 58);
+            this.lbl_roomOccupancy.Name = "lbl_roomOccupancy";
+            this.lbl_roomOccupancy.Size = new System.Drawing.Size(124, 13);
+            this.lbl_roomOccupancy.TabIndex = 24;
+            this.lbl_roomOccupancy.Text = "Room Occupancy Rates";
+            // 
             // frm_Reports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -364,5 +375,6 @@ namespace BayViewBookings
         private System.Windows.Forms.Button btn_Bookings;
         private System.Windows.Forms.Button btn_Guests;
         private System.Windows.Forms.Label lbl_Reports;
+        private System.Windows.Forms.Label lbl_roomOccupancy;
     }
 }

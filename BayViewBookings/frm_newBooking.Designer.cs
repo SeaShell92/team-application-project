@@ -48,6 +48,10 @@ namespace BayViewBookings
             this.txt_GuestsID = new System.Windows.Forms.TextBox();
             this.lbl_GuestDetails = new System.Windows.Forms.Label();
             this.pnl_Booking = new System.Windows.Forms.Panel();
+            this.cb_unavailable = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btn_RemoveAll = new System.Windows.Forms.Button();
             this.checkBox_Disabled = new System.Windows.Forms.CheckBox();
             this.btn_RemoveRoom = new System.Windows.Forms.Button();
             this.btn_SelectRoom = new System.Windows.Forms.Button();
@@ -101,7 +105,6 @@ namespace BayViewBookings
             this.txt_EGuestID = new System.Windows.Forms.TextBox();
             this.lbl_ExistingGuest = new System.Windows.Forms.Label();
             this.lbl_EGuestID = new System.Windows.Forms.Label();
-            this.btn_RemoveAll = new System.Windows.Forms.Button();
             this.pnl_NewBooking.SuspendLayout();
             this.pnl_GuestDetails.SuspendLayout();
             this.pnl_Booking.SuspendLayout();
@@ -290,6 +293,9 @@ namespace BayViewBookings
             // 
             // pnl_Booking
             // 
+            this.pnl_Booking.Controls.Add(this.cb_unavailable);
+            this.pnl_Booking.Controls.Add(this.label2);
+            this.pnl_Booking.Controls.Add(this.label1);
             this.pnl_Booking.Controls.Add(this.btn_RemoveAll);
             this.pnl_Booking.Controls.Add(this.checkBox_Disabled);
             this.pnl_Booking.Controls.Add(this.btn_RemoveRoom);
@@ -323,6 +329,46 @@ namespace BayViewBookings
             this.pnl_Booking.Name = "pnl_Booking";
             this.pnl_Booking.Size = new System.Drawing.Size(1241, 370);
             this.pnl_Booking.TabIndex = 20;
+            this.pnl_Booking.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Booking_Paint);
+            // 
+            // cb_unavailable
+            // 
+            this.cb_unavailable.FormattingEnabled = true;
+            this.cb_unavailable.Location = new System.Drawing.Point(742, 294);
+            this.cb_unavailable.Name = "cb_unavailable";
+            this.cb_unavailable.Size = new System.Drawing.Size(172, 21);
+            this.cb_unavailable.TabIndex = 49;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(586, 294);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(150, 21);
+            this.label2.TabIndex = 48;
+            this.label2.Text = "Unavailable Dates:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(691, 255);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(128, 19);
+            this.label1.TabIndex = 47;
+            this.label1.Text = "Room not Available";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // btn_RemoveAll
+            // 
+            this.btn_RemoveAll.Location = new System.Drawing.Point(1160, 157);
+            this.btn_RemoveAll.Name = "btn_RemoveAll";
+            this.btn_RemoveAll.Size = new System.Drawing.Size(75, 40);
+            this.btn_RemoveAll.TabIndex = 46;
+            this.btn_RemoveAll.Text = "Remove All";
+            this.btn_RemoveAll.UseVisualStyleBackColor = true;
+            this.btn_RemoveAll.Click += new System.EventHandler(this.btn_RemoveAll_Click);
             // 
             // checkBox_Disabled
             // 
@@ -348,7 +394,7 @@ namespace BayViewBookings
             // 
             // btn_SelectRoom
             // 
-            this.btn_SelectRoom.Location = new System.Drawing.Point(904, 214);
+            this.btn_SelectRoom.Location = new System.Drawing.Point(887, 201);
             this.btn_SelectRoom.Name = "btn_SelectRoom";
             this.btn_SelectRoom.Size = new System.Drawing.Size(75, 23);
             this.btn_SelectRoom.TabIndex = 43;
@@ -377,16 +423,18 @@ namespace BayViewBookings
             // cb_RoomWanted
             // 
             this.cb_RoomWanted.FormattingEnabled = true;
-            this.cb_RoomWanted.Location = new System.Drawing.Point(763, 214);
+            this.cb_RoomWanted.Location = new System.Drawing.Point(742, 200);
             this.cb_RoomWanted.Name = "cb_RoomWanted";
             this.cb_RoomWanted.Size = new System.Drawing.Size(121, 21);
             this.cb_RoomWanted.TabIndex = 40;
+            this.cb_RoomWanted.SelectedIndexChanged += new System.EventHandler(this.cb_RoomWanted_SelectedIndexChanged);
+            this.cb_RoomWanted.SelectionChangeCommitted += new System.EventHandler(this.cb_RoomWanted_SelectionChangeCommitted);
             // 
             // lbl_RoomWant
             // 
             this.lbl_RoomWant.AutoSize = true;
             this.lbl_RoomWant.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_RoomWant.Location = new System.Drawing.Point(636, 214);
+            this.lbl_RoomWant.Location = new System.Drawing.Point(615, 200);
             this.lbl_RoomWant.Name = "lbl_RoomWant";
             this.lbl_RoomWant.Size = new System.Drawing.Size(121, 21);
             this.lbl_RoomWant.TabIndex = 39;
@@ -399,6 +447,7 @@ namespace BayViewBookings
             this.cb_RoomTypes.Name = "cb_RoomTypes";
             this.cb_RoomTypes.Size = new System.Drawing.Size(121, 21);
             this.cb_RoomTypes.TabIndex = 38;
+            this.cb_RoomTypes.SelectedIndexChanged += new System.EventHandler(this.cb_RoomTypes_SelectedIndexChanged);
             this.cb_RoomTypes.SelectionChangeCommitted += new System.EventHandler(this.cb_RoomTypes_SelectionChangeCommitted);
             // 
             // lbl_RoomType
@@ -733,6 +782,7 @@ namespace BayViewBookings
             this.pnl_ExistingGuest.Name = "pnl_ExistingGuest";
             this.pnl_ExistingGuest.Size = new System.Drawing.Size(1241, 208);
             this.pnl_ExistingGuest.TabIndex = 20;
+            this.pnl_ExistingGuest.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_ExistingGuest_Paint);
             // 
             // btn_AddNewGuest
             // 
@@ -879,16 +929,6 @@ namespace BayViewBookings
             this.lbl_EGuestID.TabIndex = 7;
             this.lbl_EGuestID.Text = "Guest ID:";
             // 
-            // btn_RemoveAll
-            // 
-            this.btn_RemoveAll.Location = new System.Drawing.Point(1160, 157);
-            this.btn_RemoveAll.Name = "btn_RemoveAll";
-            this.btn_RemoveAll.Size = new System.Drawing.Size(75, 40);
-            this.btn_RemoveAll.TabIndex = 46;
-            this.btn_RemoveAll.Text = "Remove All";
-            this.btn_RemoveAll.UseVisualStyleBackColor = true;
-            this.btn_RemoveAll.Click += new System.EventHandler(this.btn_RemoveAll_Click);
-            // 
             // frm_newBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -995,5 +1035,8 @@ namespace BayViewBookings
         private System.Windows.Forms.Label lbl_RoomType;
         private System.Windows.Forms.CheckBox checkBox_Disabled;
         private System.Windows.Forms.Button btn_RemoveAll;
+        private System.Windows.Forms.ComboBox cb_unavailable;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
