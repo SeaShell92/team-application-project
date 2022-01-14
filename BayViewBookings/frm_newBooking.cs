@@ -114,6 +114,7 @@ namespace BayViewBookings
                 Has_Paid = "No";
 
             }
+ 
             try
             {
                 long RowID;
@@ -192,7 +193,7 @@ namespace BayViewBookings
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error with submitting the booking: " + ex.Message);
             }
         }
 
@@ -248,6 +249,17 @@ namespace BayViewBookings
                 pnl_GuestDetails.Visible = false;
             }
 
+            lbl_RoomAlert.ForeColor = Color.Black;
+            lbl_RoomAlert.Text = "Please select a room to check availability";
+            cb_unavailable.Enabled = false;
+            btn_AddNewGuest.Enabled = true;
+
+            // clean up any connections left open
+            if (dbCon.State == System.Data.ConnectionState.Open)
+            {
+                dbCon.Close();
+            }
+
         }
 
         private void cldr_Booking_DateSelected(object sender, DateRangeEventArgs e)
@@ -261,7 +273,6 @@ namespace BayViewBookings
 
         private void btn_AddNewGuest_Click(object sender, EventArgs e)
         {
-            //btn_submit.Enabled = true; 
             pnl_ExistingGuest.Visible = false;
             pnl_GuestDetails.Visible = true;
         }
@@ -278,21 +289,23 @@ namespace BayViewBookings
 
                     dbCon.Open();
 
-                    var reader = findGuest.ExecuteReader();
-
-                    if (reader.Read())
+                    using (var reader = findGuest.ExecuteReader())
                     {
-                        txt_EGuestID.Text = reader.GetInt64(0).ToString();
-                        txt_EGuestTitle.Text = reader.GetString(1);
-                        txt_EGuestName.Text = reader.GetString(2);
-                        txt_EGuestSurname.Text = reader.GetString(3);
-                        txt_EGuestTel.Text = reader.GetInt64(4).ToString();
+                        if (reader.Read())
+                        {
+                            txt_EGuestID.Text = reader.GetInt64(0).ToString();
+                            txt_EGuestTitle.Text = reader.GetString(1);
+                            txt_EGuestName.Text = reader.GetString(2);
+                            txt_EGuestSurname.Text = reader.GetString(3);
+                            txt_EGuestTel.Text = reader.GetInt64(4).ToString();
 
-                        //btn_submit.Enabled = true;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Guest not found.  Please double check the email address or add a new guest.");
+                            btn_AddNewGuest.Enabled = false;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Guest not found.  Please double check the email address or add a new guest.");
+                            btn_AddNewGuest.Enabled = true;
+                        }
                     }
 
                     dbCon.Close();
@@ -300,12 +313,11 @@ namespace BayViewBookings
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error when searching for guest: " + ex.Message);
                 dbCon.Close();
             }
         }
 
-        //bug: user can double book a room.
         private void cb_RoomTypes_SelectionChangeCommitted(object sender, EventArgs e)
         {
             try
@@ -326,6 +338,7 @@ namespace BayViewBookings
                         cb_RoomWanted.DataSource = dtRooms;
                         cb_RoomWanted.DisplayMember = "RoomInfo";
                         cb_RoomWanted.ValueMember = "Room_ID";
+                        cb_RoomWanted.SelectedIndex = -1; // box is blank until user is ready to select a room
                     }
                     else
                     {
@@ -341,13 +354,14 @@ namespace BayViewBookings
                         cb_RoomWanted.DataSource = dtRooms;
                         cb_RoomWanted.DisplayMember = "RoomInfo";
                         cb_RoomWanted.ValueMember = "Room_ID";
+                        cb_RoomWanted.SelectedIndex = -1; // box is blank until user is ready to select a room
                     }
 
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error when fetching all rooms of that type: " + ex.Message);
             }
         }
 
@@ -358,11 +372,36 @@ namespace BayViewBookings
 
         private void btn_SelectRoom_Click(object sender, EventArgs e)
         {
-            if(cb_RoomWanted.SelectedIndex > -1)
+            if(cb_RoomWanted.SelectedIndex > -1) // the user has selected a room
             {
-                //fills the list box with the key value pair of the information from the combo box.
-                lb_Rooms.Items.Add(new KeyValuePair<int, string>(Int32.Parse(cb_RoomWanted.SelectedValue.ToString()), cb_RoomWanted.GetItemText(cb_RoomWanted.SelectedItem)));
-                //bug: user can add same room multiple times
+                bool inList = false; // nothing is in the list yet
+
+                if (lbl_RoomAlert.ForeColor == Color.Green) // the room is available to be booked
+                {
+                    foreach (KeyValuePair<int, string> item in lb_Rooms.Items) // check what rooms are already in the list box
+                    {
+                        if (item.Key == Int32.Parse(cb_RoomWanted.SelectedValue.ToString()))
+                        {
+                            inList = true;
+                        }
+                        else
+                        {
+                            inList = false;
+                        }
+                    }
+
+                    if (!inList) // the room is NOT already in the list of rooms to be booked
+                    {
+                        //fills the list box with the key value pair of the information from the combo box.
+                        lb_Rooms.Items.Add(new KeyValuePair<int, string>(Int32.Parse(cb_RoomWanted.SelectedValue.ToString()), cb_RoomWanted.GetItemText(cb_RoomWanted.SelectedItem)));
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Room not available to add."); // message only pops up if user ignores red message and tries to add.
+                }
+
             }
             else
             {
@@ -397,6 +436,7 @@ namespace BayViewBookings
 
         private List<string> checkIsValid()
         {
+            //a list of errors that could pop up if the user has not made a valid booking
             var Errors = new List<string>();
             if(lb_Rooms.Items.Count < 1)
             {
@@ -406,19 +446,28 @@ namespace BayViewBookings
             {
                 Errors.Add("Please select dates using the calendar provided before making a booking.");
             }
-            //could add more validation error messages here.
+            if(pnl_ExistingGuest.Visible == true && txt_EGuestID.TextLength < 1)
+            {
+                Errors.Add("Please search for an existing guest or add a new guest before submitting the booking.");
+            }
+            if(pnl_GuestDetails.Visible == true && txt_Title.TextLength < 1 && txt_FirstName.TextLength < 1 && txt_Surname.TextLength < 1)
+            {
+                Errors.Add("Please complete the guest details before submitting the booking.");
+            }
+            if (pnl_GuestDetails.Visible == true && txt_Telephone.TextLength < 1 && txt_EmailAddress.TextLength < 1)
+            {
+                Errors.Add("Please ensure the guest provides a telephone number and/or email address.");
+            }
+            if (txt_TotalGuests.TextLength < 1 || txt_TtlBreakfasts.TextLength < 1)
+            {
+                Errors.Add("Please complete the number of guests and/or breakfasts before submitting the booking.");
+            }
+            if (rb_yes.Checked == false && rb_no.Checked == false)
+            {
+                Errors.Add("Please indicate if the guest has paid for the booking.");
+            }
 
             return Errors;
-        }
-
-        private void pnl_ExistingGuest_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void cb_RoomWanted_SelectionChangeCommitted(object sender, EventArgs e)
@@ -427,44 +476,41 @@ namespace BayViewBookings
             {
                 using (var dbCon = new SQLiteConnection(details))
                 {
-
                     string sqlCheck =
                         @"Select RoomBooking.Booking_ID, Booking.Check_In, Booking.Check_Out, Booking.Check_In  || ' - ' ||  Booking.Check_Out as Dates from RoomBooking"
                         + " INNER JOIN Booking on RoomBooking.Booking_ID = Booking.Booking_ID"
-                        + " WHERE RoomBooking.Room_ID = '" + cb_RoomWanted.SelectedValue + "'";
-                          //  + " AND Accessibility NOT LIKE 'Disabled'";
+                        + " WHERE RoomBooking.Room_ID = '" + cb_RoomWanted.SelectedValue + "'"
+                        + " AND Check_Out >= '" + cldr_Booking.SelectionStart.ToString("yyyy-MM-dd") + "'"
+                        + " AND Check_In <= '" + cldr_Booking.SelectionEnd.ToString("yyyy-MM-dd") + "'";
 
-                        daCheck = new SQLiteDataAdapter(sqlCheck, dbCon);
-                        dtCheck.Clear();
-                        daCheck.Fill(dtCheck);
+                    daCheck = new SQLiteDataAdapter(sqlCheck, dbCon);
+                    dtCheck.Clear();
+                    daCheck.Fill(dtCheck);                    
 
+                    if (dtCheck.Rows.Count > 0)
+                    {
                         cb_unavailable.DataSource = dtCheck;
                         cb_unavailable.DisplayMember = "Dates";
                         cb_unavailable.ValueMember = "Booking_ID";
-                    
-                    
+                        cb_unavailable.Enabled = true;
+                        lbl_RoomAlert.Text = "Room NOT Available!";
+                        lbl_RoomAlert.ForeColor = Color.Red;
+                        
+                    }
+
+                    else
+                    {
+                        lbl_RoomAlert.Text = "Room Available!";
+                        lbl_RoomAlert.ForeColor = Color.Green;
+                        cb_unavailable.Enabled = false;
+                    }
 
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error checking the room availability: " + ex.Message);
             }
-
-        }
-
-        private void pnl_Booking_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void cb_RoomTypes_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cb_RoomWanted_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
         }
     }
