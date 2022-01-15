@@ -86,6 +86,7 @@ namespace BayViewBookings
             this.pnl_filters.Name = "pnl_filters";
             this.pnl_filters.Size = new System.Drawing.Size(191, 469);
             this.pnl_filters.TabIndex = 8;
+            this.pnl_filters.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_filters_Paint);
             // 
             // btn_filter3
             // 

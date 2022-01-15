@@ -26,5 +26,10 @@ namespace BayViewBookings
         {
             Close();
         }
+
+        private void frm_RoomAvailability_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

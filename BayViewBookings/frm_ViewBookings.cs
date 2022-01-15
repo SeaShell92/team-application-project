@@ -81,5 +81,10 @@ namespace BayViewBookings
         {
 
         }
+
+        private void pnl_filters_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
