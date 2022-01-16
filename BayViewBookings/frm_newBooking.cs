@@ -42,7 +42,7 @@ namespace BayViewBookings
 
         private void btn_exitbook_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Exit? You will lose all the data entered.", "Exit Form",
+            if (MessageBox.Show("Exit? Any data will be discarded", "Exit Form",
                 MessageBoxButtons.OKCancel, 
                 MessageBoxIcon.Question) == DialogResult.OK)
             {
@@ -125,20 +125,30 @@ namespace BayViewBookings
                 {
                     using (SQLiteCommand guestCmd = dbCon.CreateCommand())
                     {
-                        guestCmd.CommandText = @"Insert into Guest (Guest_Title, Guest_First_Name, Guest_Surname, Guest_Tel, Guest_Email) 
-                        Values (@GuestTitle, @GuestFirstName, @GuestSurname, @GuestTel, @GuestEmail)";
-                        guestCmd.Parameters.AddWithValue("GuestTitle", txt_Title.Text);
-                        guestCmd.Parameters.AddWithValue("GuestFirstName", txt_FirstName.Text);
-                        guestCmd.Parameters.AddWithValue("GuestSurname", txt_Surname.Text);
-                        guestCmd.Parameters.AddWithValue("GuestTel", txt_Telephone.Text);
-                        guestCmd.Parameters.AddWithValue("GuestEmail", txt_EmailAddress.Text);
+                        try
+                        {
+                            guestCmd.CommandText = @"Insert into Guest (Guest_Title, Guest_First_Name, Guest_Surname, Guest_Tel, Guest_Email) 
+                            Values (@GuestTitle, @GuestFirstName, @GuestSurname, @GuestTel, @GuestEmail)";
+                            guestCmd.Parameters.AddWithValue("GuestTitle", txt_Title.Text);
+                            guestCmd.Parameters.AddWithValue("GuestFirstName", txt_FirstName.Text);
+                            guestCmd.Parameters.AddWithValue("GuestSurname", txt_Surname.Text);
+                            guestCmd.Parameters.AddWithValue("GuestTel", txt_Telephone.Text);
+                            guestCmd.Parameters.AddWithValue("GuestEmail", txt_EmailAddress.Text);
 
-                        dbCon.Open();
-                        guestCmd.ExecuteNonQuery();
-                        //set the RowID to the the last record entered, which would be the newest guest.
-                        RowID = dbCon.LastInsertRowId;
+                            dbCon.Open();
+                            guestCmd.ExecuteNonQuery();
+                            //set the RowID to the the last record entered, which would be the newest guest.
+                            RowID = dbCon.LastInsertRowId;
 
-                        dbCon.Close();
+                            dbCon.Close();
+                        }
+                        catch
+                        {
+                            // email address field set to "unique" in database, so an error will occur if the email entered is not unique.
+                            MessageBox.Show("Guest email address already exists in database.  Please check the email entered or reset form and search for existing guest.");
+                            return;
+                        }
+
                     }
                 }
                 else
@@ -153,9 +163,9 @@ namespace BayViewBookings
                 
                     //allows users to add record
 
-                    cmd.CommandText = @"Insert into Booking(Emplyee_ID, Guest_ID, Booking_Date, Check_In, Check_Out, No_Of_Nights, Total_Guests, Total_Breakfasts, Has_Paid) 
-                    Values (@Emplyee_ID, @Guest_ID, @Booking_Date, @Check_In, @Check_Out, @No_Of_Nights, @Total_Guests, @Total_Breakfasts, @Has_Paid)";
-                    cmd.Parameters.AddWithValue("Emplyee_ID", UserID);
+                    cmd.CommandText = @"Insert into Booking(Employee_ID, Guest_ID, Booking_Date, Check_In, Check_Out, No_Of_Nights, Total_Guests, Total_Breakfasts, Has_Paid) 
+                    Values (@Employee_ID, @Guest_ID, @Booking_Date, @Check_In, @Check_Out, @No_Of_Nights, @Total_Guests, @Total_Breakfasts, @Has_Paid)";
+                    cmd.Parameters.AddWithValue("Employee_ID", UserID);
                     cmd.Parameters.AddWithValue("Guest_ID", RowID);
                     cmd.Parameters.AddWithValue("Booking_Date", lbl_BookingText.Text);
                     cmd.Parameters.AddWithValue("Check_In", cldr_Booking.SelectionStart.ToString("yyyy-MM-dd"));
@@ -167,9 +177,8 @@ namespace BayViewBookings
                         
                     //adds the new record details
                     dbCon.Open();
-                    int recordsChanged = cmd.ExecuteNonQuery();
+                    cmd.ExecuteNonQuery();
                     BookingID = dbCon.LastInsertRowId;
-                    MessageBox.Show(recordsChanged.ToString() + " Booking Added"); //message to notify the user that they have added the records
 
                     dbCon.Close();
                 }
@@ -190,6 +199,11 @@ namespace BayViewBookings
 
                 }
 
+                int roomCount = lb_Rooms.Items.Count;
+
+                MessageBox.Show("New booking with " + roomCount.ToString() + " rooms added."); //message to notify the user that they have added the records
+
+                btn_ClearBooking_Click(sender, e); //resets the form after the booking has been successfully submitted.
             }
             catch (Exception ex)
             {
