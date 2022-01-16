@@ -72,7 +72,7 @@ CREATE TABLE IF NOT EXISTS "Room" (
 	"Room_Description"	TEXT,
 	PRIMARY KEY("Room_ID" AUTOINCREMENT)
 );
-INSERT INTO "Employee" ("Employee_ID","First_Name","Last_Name","Email","Address","Postcode","Role","Managed_By","Username","Password") VALUES (1,'Mark','Jones','mark.jones81@outlook.com','35 Wilson Road, Cardiff','CF5 4LL','Manager','','jones_m1','manager'),
+INSERT INTO "Employee" ("Employee_ID","First_Name","Last_Name","Email","Address","Postcode","Role","Managed_By","Username","Password") VALUES (1,'Mark','Jones','mark.jones81@outlook.com','35 Wilson Road, Cardiff','CF5 4LL','Manager',NULL,'jones_m1','manager'),
  (2,'Charlotte','Walker','lotte_05@hotmail.co.uk','11 Ffordd Yr Afon, Cardiff','CF15 9TT','Receptionist',1,'walker_c1','staff');
 INSERT INTO "Room" ("Room_ID","Room_Type","Room_Name","Price","Accessibility","Room_Description") VALUES (1,'Single','1A',70,'N/A','1 Guest Only'),
  (2,'Single','1B',70,'N/A','1 Guest Only'),

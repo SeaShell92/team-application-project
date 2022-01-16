@@ -35,9 +35,9 @@ namespace BayViewBookings
 
         private void btn_viewBookings_Click(object sender, EventArgs e)
         {
-         
-            frm_ViewBookings f2 = new frm_ViewBookings();
-            f2.ShowDialog(this);
+            var ViewBookings = new frm_ViewBookings();
+            ViewBookings.UserID = UserID; // Sets the ID number of the user who is currently logged in
+            ViewBookings.ShowDialog(this); // Shows View Booking form on top of original form
         }
 
         private void btn_exitbook_Click(object sender, EventArgs e)
@@ -133,8 +133,16 @@ namespace BayViewBookings
                             guestCmd.Parameters.AddWithValue("GuestFirstName", txt_FirstName.Text);
                             guestCmd.Parameters.AddWithValue("GuestSurname", txt_Surname.Text);
                             guestCmd.Parameters.AddWithValue("GuestTel", txt_Telephone.Text);
-                            guestCmd.Parameters.AddWithValue("GuestEmail", txt_EmailAddress.Text);
-
+                            
+                            if(txt_EmailAddress.TextLength > 0)
+                            {
+                                guestCmd.Parameters.AddWithValue("GuestEmail", txt_EmailAddress.Text);
+                            }
+                            else
+                            {
+                                guestCmd.Parameters.AddWithValue("GuestEmail", null);
+                            }
+ 
                             dbCon.Open();
                             guestCmd.ExecuteNonQuery();
                             //set the RowID to the the last record entered, which would be the newest guest.

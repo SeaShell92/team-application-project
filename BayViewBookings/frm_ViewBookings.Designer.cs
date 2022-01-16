@@ -46,10 +46,19 @@ namespace BayViewBookings
             this.lbl_viewbookings = new System.Windows.Forms.Label();
             this.dgv_ViewBookings = new System.Windows.Forms.DataGridView();
             this.sqLiteCommand1 = new System.Data.SQLite.SQLiteCommand();
+            this.btn_cancelBooking = new System.Windows.Forms.Button();
+            this.pnl_cancelBooking = new System.Windows.Forms.Panel();
+            this.btn_cancelSubmit = new System.Windows.Forms.Button();
+            this.cb_confirm = new System.Windows.Forms.CheckBox();
+            this.txt_username = new System.Windows.Forms.TextBox();
+            this.lbl_auditMsg = new System.Windows.Forms.Label();
+            this.lbl_cancelConfirm = new System.Windows.Forms.Label();
+            this.btn_cancelBack = new System.Windows.Forms.Button();
             this.pnl_viewbookings.SuspendLayout();
             this.pnl_filters.SuspendLayout();
             this.pnl_viewbookingsheader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ViewBookings)).BeginInit();
+            this.pnl_cancelBooking.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_viewbookings
@@ -86,7 +95,6 @@ namespace BayViewBookings
             this.pnl_filters.Name = "pnl_filters";
             this.pnl_filters.Size = new System.Drawing.Size(191, 469);
             this.pnl_filters.TabIndex = 8;
-            this.pnl_filters.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_filters_Paint);
             // 
             // btn_filter3
             // 
@@ -223,12 +231,16 @@ namespace BayViewBookings
             // 
             // dgv_ViewBookings
             // 
+            this.dgv_ViewBookings.AllowUserToAddRows = false;
+            this.dgv_ViewBookings.AllowUserToDeleteRows = false;
             this.dgv_ViewBookings.AllowUserToOrderColumns = true;
             this.dgv_ViewBookings.BackgroundColor = System.Drawing.Color.White;
             this.dgv_ViewBookings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_ViewBookings.Location = new System.Drawing.Point(156, 54);
             this.dgv_ViewBookings.Name = "dgv_ViewBookings";
-            this.dgv_ViewBookings.RowHeadersWidth = 51;
+            this.dgv_ViewBookings.ReadOnly = true;
+            this.dgv_ViewBookings.RowHeadersWidth = 31;
+            this.dgv_ViewBookings.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_ViewBookings.Size = new System.Drawing.Size(875, 610);
             this.dgv_ViewBookings.TabIndex = 10;
             // 
@@ -236,12 +248,97 @@ namespace BayViewBookings
             // 
             this.sqLiteCommand1.CommandText = null;
             // 
+            // btn_cancelBooking
+            // 
+            this.btn_cancelBooking.BackColor = System.Drawing.Color.White;
+            this.btn_cancelBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cancelBooking.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cancelBooking.ForeColor = System.Drawing.Color.Black;
+            this.btn_cancelBooking.Location = new System.Drawing.Point(1065, 628);
+            this.btn_cancelBooking.Name = "btn_cancelBooking";
+            this.btn_cancelBooking.Size = new System.Drawing.Size(135, 36);
+            this.btn_cancelBooking.TabIndex = 24;
+            this.btn_cancelBooking.Text = "Cancel Booking";
+            this.btn_cancelBooking.UseVisualStyleBackColor = false;
+            this.btn_cancelBooking.Click += new System.EventHandler(this.btn_cancelBooking_Click);
+            // 
+            // pnl_cancelBooking
+            // 
+            this.pnl_cancelBooking.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_cancelBooking.Controls.Add(this.btn_cancelBack);
+            this.pnl_cancelBooking.Controls.Add(this.lbl_cancelConfirm);
+            this.pnl_cancelBooking.Controls.Add(this.lbl_auditMsg);
+            this.pnl_cancelBooking.Controls.Add(this.txt_username);
+            this.pnl_cancelBooking.Controls.Add(this.cb_confirm);
+            this.pnl_cancelBooking.Controls.Add(this.btn_cancelSubmit);
+            this.pnl_cancelBooking.Location = new System.Drawing.Point(481, 255);
+            this.pnl_cancelBooking.Name = "pnl_cancelBooking";
+            this.pnl_cancelBooking.Size = new System.Drawing.Size(275, 166);
+            this.pnl_cancelBooking.TabIndex = 25;
+            this.pnl_cancelBooking.Visible = false;
+            // 
+            // btn_cancelSubmit
+            // 
+            this.btn_cancelSubmit.Location = new System.Drawing.Point(45, 126);
+            this.btn_cancelSubmit.Name = "btn_cancelSubmit";
+            this.btn_cancelSubmit.Size = new System.Drawing.Size(75, 23);
+            this.btn_cancelSubmit.TabIndex = 0;
+            this.btn_cancelSubmit.Text = "Submit";
+            this.btn_cancelSubmit.UseVisualStyleBackColor = true;
+            this.btn_cancelSubmit.Click += new System.EventHandler(this.btn_cancelSubmit_Click);
+            // 
+            // cb_confirm
+            // 
+            this.cb_confirm.AutoSize = true;
+            this.cb_confirm.Location = new System.Drawing.Point(35, 103);
+            this.cb_confirm.Name = "cb_confirm";
+            this.cb_confirm.Size = new System.Drawing.Size(205, 17);
+            this.cb_confirm.TabIndex = 1;
+            this.cb_confirm.Text = "I confirm I want to cancel this booking";
+            this.cb_confirm.UseVisualStyleBackColor = true;
+            // 
+            // txt_username
+            // 
+            this.txt_username.Location = new System.Drawing.Point(73, 73);
+            this.txt_username.Name = "txt_username";
+            this.txt_username.Size = new System.Drawing.Size(128, 20);
+            this.txt_username.TabIndex = 2;
+            // 
+            // lbl_auditMsg
+            // 
+            this.lbl_auditMsg.Location = new System.Drawing.Point(14, 34);
+            this.lbl_auditMsg.Name = "lbl_auditMsg";
+            this.lbl_auditMsg.Size = new System.Drawing.Size(246, 26);
+            this.lbl_auditMsg.TabIndex = 3;
+            this.lbl_auditMsg.Text = "For audit purposes, please type your username in the box below:";
+            // 
+            // lbl_cancelConfirm
+            // 
+            this.lbl_cancelConfirm.AutoSize = true;
+            this.lbl_cancelConfirm.Location = new System.Drawing.Point(84, 12);
+            this.lbl_cancelConfirm.Name = "lbl_cancelConfirm";
+            this.lbl_cancelConfirm.Size = new System.Drawing.Size(107, 13);
+            this.lbl_cancelConfirm.TabIndex = 4;
+            this.lbl_cancelConfirm.Text = "Booking Cancellation";
+            // 
+            // btn_cancelBack
+            // 
+            this.btn_cancelBack.Location = new System.Drawing.Point(154, 126);
+            this.btn_cancelBack.Name = "btn_cancelBack";
+            this.btn_cancelBack.Size = new System.Drawing.Size(75, 23);
+            this.btn_cancelBack.TabIndex = 5;
+            this.btn_cancelBack.Text = "Back";
+            this.btn_cancelBack.UseVisualStyleBackColor = true;
+            this.btn_cancelBack.Click += new System.EventHandler(this.btn_cancelBack_Click);
+            // 
             // frm_ViewBookings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1236, 677);
             this.ControlBox = false;
+            this.Controls.Add(this.pnl_cancelBooking);
+            this.Controls.Add(this.btn_cancelBooking);
             this.Controls.Add(this.dgv_ViewBookings);
             this.Controls.Add(this.pnl_viewbookingsheader);
             this.Controls.Add(this.pnl_filters);
@@ -257,6 +354,8 @@ namespace BayViewBookings
             this.pnl_viewbookingsheader.ResumeLayout(false);
             this.pnl_viewbookingsheader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ViewBookings)).EndInit();
+            this.pnl_cancelBooking.ResumeLayout(false);
+            this.pnl_cancelBooking.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -279,5 +378,13 @@ namespace BayViewBookings
         private System.Windows.Forms.DataGridView dgv_ViewBookings;
         private System.Data.SQLite.SQLiteCommand sqLiteCommand1;
         private System.Windows.Forms.Button btn_exitViewBook;
+        private System.Windows.Forms.Button btn_cancelBooking;
+        private System.Windows.Forms.Panel pnl_cancelBooking;
+        private System.Windows.Forms.Label lbl_cancelConfirm;
+        private System.Windows.Forms.Label lbl_auditMsg;
+        private System.Windows.Forms.TextBox txt_username;
+        private System.Windows.Forms.CheckBox cb_confirm;
+        private System.Windows.Forms.Button btn_cancelSubmit;
+        private System.Windows.Forms.Button btn_cancelBack;
     }
 }

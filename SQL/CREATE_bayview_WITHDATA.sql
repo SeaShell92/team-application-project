@@ -85,7 +85,7 @@ INSERT INTO "RoomBooking" ("Room_ID","Booking_ID") VALUES (7,1),
  (12,4),
  (13,4),
  (11,4);
-INSERT INTO "Employee" ("Employee_ID","First_Name","Last_Name","Email","Address","Postcode","Role","Managed_By","Username","Password") VALUES (1,'Mark','Jones','mark.jones81@outlook.com','35 Wilson Road, Cardiff','CF5 4LL','Manager','','jones_m1','manager'),
+INSERT INTO "Employee" ("Employee_ID","First_Name","Last_Name","Email","Address","Postcode","Role","Managed_By","Username","Password") VALUES (1,'Mark','Jones','mark.jones81@outlook.com','35 Wilson Road, Cardiff','CF5 4LL','Manager',NULL,'jones_m1','manager'),
  (2,'Charlotte','Walker','lotte_05@hotmail.co.uk','11 Ffordd Yr Afon, Cardiff','CF15 9TT','Receptionist',1,'walker_c1','staff');
 INSERT INTO "Booking" ("Booking_ID","Employee_ID","Guest_ID","Booking_Date","Check_In","Check_Out","No_Of_Nights","Total_Guests","Total_Breakfasts","Has_Paid","Cancelled_By") VALUES (1,2,1,'16/01/2022','2022-01-21','2022-01-23',2,1,2,'No',NULL),
  (2,2,2,'16/01/2022','2022-01-28','2022-01-30',2,4,2,'No',NULL),

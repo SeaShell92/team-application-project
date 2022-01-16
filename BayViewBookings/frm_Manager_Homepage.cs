@@ -108,7 +108,9 @@ namespace BayViewBookings
 
         private void btn_viewBookings_Click(object sender, EventArgs e)
         {
-            new frm_ViewBookings().ShowDialog(this);
+            var ViewBookings = new frm_ViewBookings();
+            ViewBookings.UserID = UserID; // Sets the ID number of the user who is currently logged in
+            ViewBookings.ShowDialog(this); // Shows View Booking form on top of original form
         }
     }
 }
