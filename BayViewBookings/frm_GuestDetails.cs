@@ -80,5 +80,51 @@ namespace BayViewBookings
         {
             Close();
         }
+        
+        private void btn_Enter_Click(object sender, EventArgs e)
+
+        {
+            
+
+            string newTitle = txt_Title.Text;
+            string newFirstName = txt_FirstName.Text;
+            string newSurname = txt_Surname.Text;
+            string newTelephone = txt_Telephone.Text;
+            string newEmail = txt_Email.Text;
+
+           
+            
+
+            if (txt_Title.Text =="")
+
+            {
+                MessageBox.Show("Please write Guest Title.");
+            }
+            else if (txt_FirstName.Text =="")
+
+            {
+                MessageBox.Show("Please write Guest First Name.");
+            }
+            else if (txt_Surname.Text =="")
+
+            {
+                MessageBox.Show("Please write Guest Surname.");
+            }
+            else if (txt_Telephone.Text =="")
+
+            {
+                MessageBox.Show("Please write Guest Telephone Number.");
+            }
+            else if (txt_Email.Text =="")
+
+            {
+                MessageBox.Show("Please write Guest Email Address.");
+            }
+            else
+
+            {
+                string query = "Update Guest SET Guest_Title = '" + newTitle + "', Guest_First_Name = '" + newFirstName + "', Guest_Surname = '" + newSurname + "', Guest_Tel = '" + newTelephone + "', Guest_Email = '" + newEmail + "' where Guest_ID =  '" + txt_GuestID +"'" ;
+            }
+        }
     }
 }

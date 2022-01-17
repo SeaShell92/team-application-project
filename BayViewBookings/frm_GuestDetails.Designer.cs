@@ -89,7 +89,7 @@ namespace BayViewBookings
             // 
             this.btn_AmendGuest.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_AmendGuest.Location = new System.Drawing.Point(50, 336);
-            this.btn_AmendGuest.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_AmendGuest.Margin = new System.Windows.Forms.Padding(2);
             this.btn_AmendGuest.Name = "btn_AmendGuest";
             this.btn_AmendGuest.Size = new System.Drawing.Size(94, 32);
             this.btn_AmendGuest.TabIndex = 6;
@@ -297,7 +297,7 @@ namespace BayViewBookings
             this.panelGuest.Controls.Add(this.txt_Title);
             this.panelGuest.Controls.Add(this.txt_GuestID);
             this.panelGuest.Location = new System.Drawing.Point(443, 55);
-            this.panelGuest.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelGuest.Margin = new System.Windows.Forms.Padding(2);
             this.panelGuest.Name = "panelGuest";
             this.panelGuest.Size = new System.Drawing.Size(297, 574);
             this.panelGuest.TabIndex = 13;
@@ -316,7 +316,7 @@ namespace BayViewBookings
             // btn_Cancel
             // 
             this.btn_Cancel.Location = new System.Drawing.Point(180, 497);
-            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(72, 53);
             this.btn_Cancel.TabIndex = 19;
@@ -327,12 +327,13 @@ namespace BayViewBookings
             // btn_Enter
             // 
             this.btn_Enter.Location = new System.Drawing.Point(58, 497);
-            this.btn_Enter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Enter.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Enter.Name = "btn_Enter";
             this.btn_Enter.Size = new System.Drawing.Size(72, 53);
             this.btn_Enter.TabIndex = 18;
             this.btn_Enter.Text = "Enter";
             this.btn_Enter.UseVisualStyleBackColor = true;
+            this.btn_Enter.Click += new System.EventHandler(this.btn_Enter_Click);
             // 
             // EmailLabel
             // 
@@ -397,7 +398,7 @@ namespace BayViewBookings
             // txt_Email
             // 
             this.txt_Email.Location = new System.Drawing.Point(53, 399);
-            this.txt_Email.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_Email.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Email.Name = "txt_Email";
             this.txt_Email.Size = new System.Drawing.Size(193, 20);
             this.txt_Email.TabIndex = 5;
@@ -405,7 +406,7 @@ namespace BayViewBookings
             // txt_Surname
             // 
             this.txt_Surname.Location = new System.Drawing.Point(53, 280);
-            this.txt_Surname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_Surname.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Surname.Name = "txt_Surname";
             this.txt_Surname.Size = new System.Drawing.Size(193, 20);
             this.txt_Surname.TabIndex = 4;
@@ -413,7 +414,7 @@ namespace BayViewBookings
             // txt_Telephone
             // 
             this.txt_Telephone.Location = new System.Drawing.Point(53, 338);
-            this.txt_Telephone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_Telephone.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Telephone.Name = "txt_Telephone";
             this.txt_Telephone.Size = new System.Drawing.Size(193, 20);
             this.txt_Telephone.TabIndex = 3;
@@ -421,7 +422,7 @@ namespace BayViewBookings
             // txt_FirstName
             // 
             this.txt_FirstName.Location = new System.Drawing.Point(53, 227);
-            this.txt_FirstName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_FirstName.Margin = new System.Windows.Forms.Padding(2);
             this.txt_FirstName.Name = "txt_FirstName";
             this.txt_FirstName.Size = new System.Drawing.Size(193, 20);
             this.txt_FirstName.TabIndex = 2;
@@ -429,7 +430,7 @@ namespace BayViewBookings
             // txt_Title
             // 
             this.txt_Title.Location = new System.Drawing.Point(53, 171);
-            this.txt_Title.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_Title.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Title.Name = "txt_Title";
             this.txt_Title.Size = new System.Drawing.Size(87, 20);
             this.txt_Title.TabIndex = 1;
@@ -437,7 +438,7 @@ namespace BayViewBookings
             // txt_GuestID
             // 
             this.txt_GuestID.Location = new System.Drawing.Point(53, 122);
-            this.txt_GuestID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_GuestID.Margin = new System.Windows.Forms.Padding(2);
             this.txt_GuestID.Name = "txt_GuestID";
             this.txt_GuestID.Size = new System.Drawing.Size(87, 20);
             this.txt_GuestID.TabIndex = 0;
@@ -447,7 +448,7 @@ namespace BayViewBookings
             this.dgv_GuestList.BackgroundColor = System.Drawing.Color.White;
             this.dgv_GuestList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_GuestList.Location = new System.Drawing.Point(154, 56);
-            this.dgv_GuestList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgv_GuestList.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_GuestList.Name = "dgv_GuestList";
             this.dgv_GuestList.RowHeadersWidth = 51;
             this.dgv_GuestList.RowTemplate.Height = 24;
