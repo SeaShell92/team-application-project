@@ -123,7 +123,9 @@ namespace BayViewBookings
             else
 
             {
-                string query = "Update Guest SET Guest_Title = '" + newTitle + "', Guest_First_Name = '" + newFirstName + "', Guest_Surname = '" + newSurname + "', Guest_Tel = '" + newTelephone + "', Guest_Email = '" + newEmail + "' where Guest_ID =  '" + txt_GuestID +"'" ;
+                string query = "Update Guest SET Guest_Title = '" + newTitle + "', Guest_First_Name = '" + newFirstName + "', Guest_Surname = '" + newSurname + "', Guest_Tel = '" + newTelephone + "', Guest_Email = '" + newEmail + "' where Guest_ID =  '" + txt_GuestID.Text +"'" ;
+
+                MessageBox.Show(query);
             }
         }
     }
