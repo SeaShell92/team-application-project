@@ -31,7 +31,6 @@ namespace BayViewBookings
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_exitViewReport = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.btn_close = new System.Windows.Forms.Button();
             this.btn_print = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
@@ -68,7 +67,6 @@ namespace BayViewBookings
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel1.Controls.Add(this.btn_exitViewReport);
-            this.panel1.Controls.Add(this.button5);
             this.panel1.Location = new System.Drawing.Point(-4, 46);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(154, 640);
@@ -85,18 +83,6 @@ namespace BayViewBookings
             this.btn_exitViewReport.TabIndex = 7;
             this.btn_exitViewReport.Text = "Exit";
             this.btn_exitViewReport.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(0, 429);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(154, 101);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "button";
-            this.button5.UseVisualStyleBackColor = true;
             // 
             // btn_close
             // 
@@ -429,7 +415,6 @@ namespace BayViewBookings
         #endregion
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_exitViewReport;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button btn_close;
         private System.Windows.Forms.Button btn_print;
         private System.Windows.Forms.Button btn_save;

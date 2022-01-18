@@ -31,6 +31,7 @@ namespace BayViewBookings
         {
             this.lbl_login = new System.Windows.Forms.Label();
             this.pnl_login = new System.Windows.Forms.Panel();
+            this.btn_Quit = new System.Windows.Forms.Button();
             this.btn_login = new System.Windows.Forms.Button();
             this.lbl_password = new System.Windows.Forms.Label();
             this.lbl_username = new System.Windows.Forms.Label();
@@ -40,7 +41,6 @@ namespace BayViewBookings
             this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
             this.lbl_managed_by = new System.Windows.Forms.Label();
             this.lbl_firstname = new System.Windows.Forms.Label();
-            this.btn_Quit = new System.Windows.Forms.Button();
             this.pnl_login.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_logo)).BeginInit();
             this.SuspendLayout();
@@ -62,7 +62,6 @@ namespace BayViewBookings
             // pnl_login
             // 
             this.pnl_login.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnl_login.Controls.Add(this.btn_Quit);
             this.pnl_login.Controls.Add(this.btn_login);
             this.pnl_login.Controls.Add(this.lbl_password);
             this.pnl_login.Controls.Add(this.lbl_username);
@@ -75,13 +74,29 @@ namespace BayViewBookings
             this.pnl_login.Size = new System.Drawing.Size(410, 522);
             this.pnl_login.TabIndex = 1;
             // 
+            // btn_Quit
+            // 
+            this.btn_Quit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_Quit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Quit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Quit.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Quit.ForeColor = System.Drawing.Color.White;
+            this.btn_Quit.Location = new System.Drawing.Point(1612, 12);
+            this.btn_Quit.Name = "btn_Quit";
+            this.btn_Quit.Size = new System.Drawing.Size(29, 28);
+            this.btn_Quit.TabIndex = 8;
+            this.btn_Quit.Text = "X";
+            this.btn_Quit.UseVisualStyleBackColor = false;
+            this.btn_Quit.Click += new System.EventHandler(this.btn_Quit_Click);
+            // 
             // btn_login
             // 
             this.btn_login.BackColor = System.Drawing.Color.ForestGreen;
+            this.btn_login.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_login.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_login.ForeColor = System.Drawing.Color.White;
-            this.btn_login.Location = new System.Drawing.Point(111, 387);
+            this.btn_login.Location = new System.Drawing.Point(107, 409);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(196, 35);
             this.btn_login.TabIndex = 6;
@@ -169,20 +184,6 @@ namespace BayViewBookings
             this.lbl_firstname.Text = "label3";
             this.lbl_firstname.Visible = false;
             // 
-            // btn_Quit
-            // 
-            this.btn_Quit.BackColor = System.Drawing.Color.ForestGreen;
-            this.btn_Quit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Quit.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Quit.ForeColor = System.Drawing.Color.White;
-            this.btn_Quit.Location = new System.Drawing.Point(111, 454);
-            this.btn_Quit.Name = "btn_Quit";
-            this.btn_Quit.Size = new System.Drawing.Size(196, 35);
-            this.btn_Quit.TabIndex = 8;
-            this.btn_Quit.Text = "Quit";
-            this.btn_Quit.UseVisualStyleBackColor = false;
-            this.btn_Quit.Click += new System.EventHandler(this.btn_Quit_Click);
-            // 
             // frm_login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -192,6 +193,7 @@ namespace BayViewBookings
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1653, 932);
             this.ControlBox = false;
+            this.Controls.Add(this.btn_Quit);
             this.Controls.Add(this.lbl_firstname);
             this.Controls.Add(this.lbl_managed_by);
             this.Controls.Add(this.pnl_login);
