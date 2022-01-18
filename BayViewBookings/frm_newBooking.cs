@@ -535,5 +535,10 @@ namespace BayViewBookings
             }
 
         }
+
+        private void pnl_Booking_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

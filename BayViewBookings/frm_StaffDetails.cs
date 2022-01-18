@@ -100,5 +100,10 @@ namespace BayViewBookings
         {
             panel_AddStaff.Hide();
         }
+
+        private void btn_AddEnter_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

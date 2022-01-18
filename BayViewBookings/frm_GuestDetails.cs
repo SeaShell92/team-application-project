@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Data.OleDb;
-
+using System.Data.SQLite;
 
 namespace BayViewBookings
 {
@@ -23,6 +22,7 @@ namespace BayViewBookings
         }
 
         const string details = @"Data Source = ..\..\Database\bookings.db";
+        SQLiteConnection dbCon = new SQLiteConnection();
 
         void fill_listbox()
         {
@@ -123,9 +123,45 @@ namespace BayViewBookings
             else
 
             {
-                string query = "Update Guest SET Guest_Title = '" + newTitle + "', Guest_First_Name = '" + newFirstName + "', Guest_Surname = '" + newSurname + "', Guest_Tel = '" + newTelephone + "', Guest_Email = '" + newEmail + "' where Guest_ID =  '" + txt_GuestID.Text +"'" ;
+                try
+                {
 
-                MessageBox.Show(query);
+                    {
+                        using (SQLiteCommand guestCmd = dbCon.CreateCommand())
+                        {
+                            //updates records
+
+                            dbCon.ConnectionString = details;
+                            guestCmd.CommandText = @"Update Guest Set Guest_Title = @Guest_Title, Guest_First_Name = @Guest_First_Name, Guest_Surname = @Guest_Surname, Guest_Tel = @Guest_Tel, Guest_Email =@Guest_Email Where Guest_ID='" + txt_GuestID.Text + "'";
+
+                            guestCmd.Connection = dbCon;
+                            guestCmd.Parameters.Add(new SQLiteParameter("@Guest_Title", txt_Title.Text));
+                            guestCmd.Parameters.AddWithValue("@Guest_First_Name", txt_FirstName.Text);
+                            guestCmd.Parameters.AddWithValue("@Guest_Surname", txt_Surname.Text);
+                            guestCmd.Parameters.AddWithValue("@Guest_Tel", txt_Telephone.Text);
+                            guestCmd.Parameters.AddWithValue("@Guest_Email", txt_Email.Text);
+
+
+                            dbCon.Open();
+
+                            int recordsChanged = guestCmd.ExecuteNonQuery();
+                            MessageBox.Show(recordsChanged.ToString() + " Records Updated");
+                            dbCon.Close();
+
+
+
+                        }
+
+                    }
+
+
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error " + ex.Message);
+                }
             }
         }
     }
