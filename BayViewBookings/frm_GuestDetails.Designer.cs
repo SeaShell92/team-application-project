@@ -440,18 +440,24 @@ namespace BayViewBookings
             this.txt_GuestID.Location = new System.Drawing.Point(53, 122);
             this.txt_GuestID.Margin = new System.Windows.Forms.Padding(2);
             this.txt_GuestID.Name = "txt_GuestID";
-            this.txt_GuestID.Size = new System.Drawing.Size(87, 20);
+            this.txt_GuestID.ReadOnly = true;
+            this.txt_GuestID.Size = new System.Drawing.Size(34, 20);
             this.txt_GuestID.TabIndex = 0;
             // 
             // dgv_GuestList
             // 
+            this.dgv_GuestList.AllowUserToAddRows = false;
+            this.dgv_GuestList.AllowUserToDeleteRows = false;
+            this.dgv_GuestList.AllowUserToOrderColumns = true;
             this.dgv_GuestList.BackgroundColor = System.Drawing.Color.White;
             this.dgv_GuestList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_GuestList.Location = new System.Drawing.Point(154, 56);
             this.dgv_GuestList.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_GuestList.Name = "dgv_GuestList";
-            this.dgv_GuestList.RowHeadersWidth = 51;
+            this.dgv_GuestList.ReadOnly = true;
+            this.dgv_GuestList.RowHeadersWidth = 31;
             this.dgv_GuestList.RowTemplate.Height = 24;
+            this.dgv_GuestList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_GuestList.Size = new System.Drawing.Size(779, 549);
             this.dgv_GuestList.TabIndex = 14;
             // 

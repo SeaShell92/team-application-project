@@ -67,6 +67,20 @@ namespace BayViewBookings
 
         private void btn_AmendGuest_Click(object sender, EventArgs e)
         {
+            if (dgv_GuestList.SelectedRows.Count != 1)
+            {
+                MessageBox.Show("Please select a single Guest to amend.");
+                return;
+            }
+
+            // get the cells of the selected Guest and sets them to the appropriate text box.
+            txt_GuestID.Text = dgv_GuestList.SelectedRows[0].Cells["Guest_ID"].Value.ToString();
+            txt_Title.Text = dgv_GuestList.SelectedRows[0].Cells["Guest_Title"].Value.ToString();
+            txt_FirstName.Text = dgv_GuestList.SelectedRows[0].Cells["Guest_First_Name"].Value.ToString();
+            txt_Surname.Text = dgv_GuestList.SelectedRows[0].Cells["Guest_Surname"].Value.ToString();
+            txt_Telephone.Text = dgv_GuestList.SelectedRows[0].Cells["Guest_Tel"].Value.ToString();
+            txt_Email.Text = dgv_GuestList.SelectedRows[0].Cells["Guest_Email"].Value.ToString();
+
             panelGuest.Show();
            
         }
@@ -82,17 +96,14 @@ namespace BayViewBookings
         }
         
         private void btn_Enter_Click(object sender, EventArgs e)
-
         {
             
-
             string newTitle = txt_Title.Text;
             string newFirstName = txt_FirstName.Text;
             string newSurname = txt_Surname.Text;
             string newTelephone = txt_Telephone.Text;
-            string newEmail = txt_Email.Text;
-
-           
+            string newEmail = txt_Email.Text;                   
+            
             
 
             if (txt_Title.Text =="")
@@ -110,58 +121,60 @@ namespace BayViewBookings
             {
                 MessageBox.Show("Please write Guest Surname.");
             }
-            else if (txt_Telephone.Text =="")
-
-            {
-                MessageBox.Show("Please write Guest Telephone Number.");
-            }
-            else if (txt_Email.Text =="")
-
-            {
-                MessageBox.Show("Please write Guest Email Address.");
-            }
+            //else if (txt_Telephone.Text =="")
+            //
+            //{
+            //    MessageBox.Show("Please write Guest Telephone Number.");
+           // }
+            //else if (txt_Email.Text =="")
+            //
+           // {
+           //     MessageBox.Show("Please write Guest Email Address.");
+           // }
             else
 
             {
                 try
                 {
-
+                    using (SQLiteCommand guestCmd = dbCon.CreateCommand())
                     {
-                        using (SQLiteCommand guestCmd = dbCon.CreateCommand())
+                        //updates records
+
+                        dbCon.ConnectionString = details;
+                        guestCmd.CommandText = @"Update Guest Set Guest_Title = @Guest_Title, Guest_First_Name = @Guest_First_Name, Guest_Surname = @Guest_Surname, Guest_Tel = @Guest_Tel, Guest_Email = @Guest_Email Where Guest_ID='" + txt_GuestID.Text + "'";
+
+                        guestCmd.Connection = dbCon;
+                        guestCmd.Parameters.Add(new SQLiteParameter("@Guest_Title", txt_Title.Text));
+                        guestCmd.Parameters.AddWithValue("@Guest_First_Name", txt_FirstName.Text);
+                        guestCmd.Parameters.AddWithValue("@Guest_Surname", txt_Surname.Text);
+                        guestCmd.Parameters.AddWithValue("@Guest_Tel", txt_Telephone.Text);
+
+                        if (txt_Email.TextLength > 0)
                         {
-                            //updates records
-
-                            dbCon.ConnectionString = details;
-                            guestCmd.CommandText = @"Update Guest Set Guest_Title = @Guest_Title, Guest_First_Name = @Guest_First_Name, Guest_Surname = @Guest_Surname, Guest_Tel = @Guest_Tel, Guest_Email =@Guest_Email Where Guest_ID='" + txt_GuestID.Text + "'";
-
-                            guestCmd.Connection = dbCon;
-                            guestCmd.Parameters.Add(new SQLiteParameter("@Guest_Title", txt_Title.Text));
-                            guestCmd.Parameters.AddWithValue("@Guest_First_Name", txt_FirstName.Text);
-                            guestCmd.Parameters.AddWithValue("@Guest_Surname", txt_Surname.Text);
-                            guestCmd.Parameters.AddWithValue("@Guest_Tel", txt_Telephone.Text);
                             guestCmd.Parameters.AddWithValue("@Guest_Email", txt_Email.Text);
-
-
-                            dbCon.Open();
-
-                            int recordsChanged = guestCmd.ExecuteNonQuery();
-                            MessageBox.Show(recordsChanged.ToString() + " Records Updated");
-                            dbCon.Close();
-
-
-
+                        }
+                        else
+                        {
+                            guestCmd.Parameters.AddWithValue("@Guest_Email", null);
                         }
 
+                        dbCon.Open();
+
+                        int recordsChanged = guestCmd.ExecuteNonQuery();
+                        MessageBox.Show(recordsChanged.ToString() + " Records Updated");
+                        dbCon.Close();
+
                     }
-
-
-
 
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error " + ex.Message);
                 }
+
+                panelGuest.Hide();
+                fill_listbox();
+
             }
         }
     }
