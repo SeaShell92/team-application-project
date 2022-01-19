@@ -502,8 +502,9 @@ namespace BayViewBookings
                         @"Select RoomBooking.Booking_ID, Booking.Check_In, Booking.Check_Out, Booking.Check_In  || ' - ' ||  Booking.Check_Out as Dates from RoomBooking"
                         + " INNER JOIN Booking on RoomBooking.Booking_ID = Booking.Booking_ID"
                         + " WHERE RoomBooking.Room_ID = '" + cb_RoomWanted.SelectedValue + "'"
-                        + " AND Check_Out >= '" + cldr_Booking.SelectionStart.ToString("yyyy-MM-dd") + "'"
-                        + " AND Check_In <= '" + cldr_Booking.SelectionEnd.ToString("yyyy-MM-dd") + "'";
+                        + " AND Booking.Check_Out >= '" + cldr_Booking.SelectionStart.ToString("yyyy-MM-dd") + "'"
+                        + " AND Booking.Check_In <= '" + cldr_Booking.SelectionEnd.ToString("yyyy-MM-dd") + "'"
+                        + " AND Booking.Cancelled_By IS NULL";
 
                     daCheck = new SQLiteDataAdapter(sqlCheck, dbCon);
                     dtCheck.Clear();
