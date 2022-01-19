@@ -164,7 +164,7 @@ namespace BayViewBookings
             // 
             // btn_exit
             // 
-            this.btn_exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_exit.ForeColor = System.Drawing.Color.White;
@@ -172,7 +172,7 @@ namespace BayViewBookings
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(33, 28);
             this.btn_exit.TabIndex = 6;
-            this.btn_exit.Text = "x";
+            this.btn_exit.Text = "X";
             this.btn_exit.UseVisualStyleBackColor = false;
             this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 

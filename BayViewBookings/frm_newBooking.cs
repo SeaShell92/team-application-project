@@ -83,15 +83,15 @@ namespace BayViewBookings
 
         private void btn_Guests_Click(object sender, EventArgs e)
         {
-            new frm_GuestDetails().Show();
-            Close();
+            new frm_GuestDetails().Show(this);
+                                
             //bug: home page window pops up on top of this new form and the windows are not connected.
         }
 
         private void btn_Rooms_Click(object sender, EventArgs e)
         {
-            new frm_RoomDetails().Show();
-            Close();
+            new frm_RoomDetails().Show(this);
+        //    Close();
         }
 
         private void btn_submit_Click(object sender, EventArgs e)
@@ -540,6 +540,11 @@ namespace BayViewBookings
         private void pnl_Booking_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btn_Quit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

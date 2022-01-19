@@ -76,7 +76,7 @@ namespace BayViewBookings
         {
             cms_reports.Show(btn_Reports.PointToScreen(new Point(0, btn_Reports.Height - 5)));
 
-            //new frm_Reports().ShowDialog(this); // Shows Reports form on top of original form
+            
         }
 
         private void btn_exitmgr_Click(object sender, EventArgs e)
@@ -118,16 +118,19 @@ namespace BayViewBookings
 
         private void occupancyRatesReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            new frm_Reports().ShowDialog(this); // Shows Reports form on top of original form
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
+
             new frm_GuestDetails().ShowDialog(this); // Shows Guest Details form on top of original form
+            
         }
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
+
             new frm_RoomDetails().ShowDialog(); // Shows Room Details form on top of original form
             // Original form is not hidden so we can go back to it but control is passed to new form
         }

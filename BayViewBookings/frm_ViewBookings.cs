@@ -190,5 +190,10 @@ namespace BayViewBookings
             cb_confirm.Checked = false;
             pnl_cancelBooking.Hide();
         }
+
+        private void btn_Quit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

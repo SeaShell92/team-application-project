@@ -126,5 +126,28 @@ namespace BayViewBookings
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
+        private void btn_Guests_Click(object sender, EventArgs e)
+        {
+            new frm_GuestDetails().Show(this);
+           //    Close();
+        }
+
+        private void btn_Bookings_Click(object sender, EventArgs e)
+        {
+            new frm_newBooking().Show(this);
+           // Close();
+        }
+
+        private void btn_Rooms_Click(object sender, EventArgs e)
+        {
+            new frm_RoomDetails().Show(this);
+          //  Close();
+        }
+
+        private void btn_Quit_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     }

@@ -140,7 +140,7 @@ namespace BayViewBookings
             // 
             // btn_X
             // 
-            this.btn_X.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_X.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btn_X.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_X.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_X.ForeColor = System.Drawing.Color.White;
@@ -148,7 +148,7 @@ namespace BayViewBookings
             this.btn_X.Name = "btn_X";
             this.btn_X.Size = new System.Drawing.Size(33, 28);
             this.btn_X.TabIndex = 6;
-            this.btn_X.Text = "x";
+            this.btn_X.Text = "X";
             this.btn_X.UseVisualStyleBackColor = false;
             this.btn_X.Click += new System.EventHandler(this.btn_X_Click);
             // 

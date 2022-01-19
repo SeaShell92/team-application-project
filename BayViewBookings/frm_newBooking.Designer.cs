@@ -105,6 +105,7 @@ namespace BayViewBookings
             this.txt_EGuestID = new System.Windows.Forms.TextBox();
             this.lbl_ExistingGuest = new System.Windows.Forms.Label();
             this.lbl_EGuestID = new System.Windows.Forms.Label();
+            this.btn_Quit = new System.Windows.Forms.Button();
             this.pnl_NewBooking.SuspendLayout();
             this.pnl_GuestDetails.SuspendLayout();
             this.pnl_Booking.SuspendLayout();
@@ -140,7 +141,7 @@ namespace BayViewBookings
             this.btn_ClearBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ClearBooking.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ClearBooking.ForeColor = System.Drawing.Color.White;
-            this.btn_ClearBooking.Location = new System.Drawing.Point(-2, 455);
+            this.btn_ClearBooking.Location = new System.Drawing.Point(-2, 464);
             this.btn_ClearBooking.Name = "btn_ClearBooking";
             this.btn_ClearBooking.Size = new System.Drawing.Size(154, 101);
             this.btn_ClearBooking.TabIndex = 6;
@@ -667,6 +668,7 @@ namespace BayViewBookings
             // pnl_NewBookingHeader
             // 
             this.pnl_NewBookingHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pnl_NewBookingHeader.Controls.Add(this.btn_Quit);
             this.pnl_NewBookingHeader.Controls.Add(this.btn_logout);
             this.pnl_NewBookingHeader.Controls.Add(this.btn_exit);
             this.pnl_NewBookingHeader.Controls.Add(this.btn_Rooms);
@@ -926,6 +928,21 @@ namespace BayViewBookings
             this.lbl_EGuestID.TabIndex = 7;
             this.lbl_EGuestID.Text = "Guest ID:";
             // 
+            // btn_Quit
+            // 
+            this.btn_Quit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btn_Quit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Quit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Quit.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Quit.ForeColor = System.Drawing.Color.White;
+            this.btn_Quit.Location = new System.Drawing.Point(1365, 8);
+            this.btn_Quit.Name = "btn_Quit";
+            this.btn_Quit.Size = new System.Drawing.Size(29, 28);
+            this.btn_Quit.TabIndex = 26;
+            this.btn_Quit.Text = "X";
+            this.btn_Quit.UseVisualStyleBackColor = false;
+            this.btn_Quit.Click += new System.EventHandler(this.btn_Quit_Click);
+            // 
             // frm_newBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1035,5 +1052,6 @@ namespace BayViewBookings
         private System.Windows.Forms.ComboBox cb_unavailable;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbl_RoomAlert;
+        private System.Windows.Forms.Button btn_Quit;
     }
 }

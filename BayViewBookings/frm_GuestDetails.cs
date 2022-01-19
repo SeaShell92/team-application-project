@@ -55,14 +55,14 @@ namespace BayViewBookings
 
         private void btn_Bookings_Click(object sender, EventArgs e)
         {
-            new frm_newBooking().Show();
-            Close();
+            new frm_newBooking().Show(this);
+          //  Close();
         }
 
         private void btn_Rooms_Click(object sender, EventArgs e)
         {
-            new frm_RoomDetails().Show();
-            Close();
+            new frm_RoomDetails().Show(this);
+          //  Close();
         }
 
         private void btn_AmendGuest_Click(object sender, EventArgs e)

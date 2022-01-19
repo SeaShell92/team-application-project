@@ -35,7 +35,6 @@ namespace BayViewBookings
             this.btn_print = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
             this.pnl_Manager2 = new System.Windows.Forms.Panel();
-            this.btn_exit = new System.Windows.Forms.Button();
             this.btn_Rooms = new System.Windows.Forms.Button();
             this.btn_Bookings = new System.Windows.Forms.Button();
             this.btn_Guests = new System.Windows.Forms.Button();
@@ -55,6 +54,7 @@ namespace BayViewBookings
             this.pnl_kpirooms = new System.Windows.Forms.Panel();
             this.pnl_kpiunavaialble = new System.Windows.Forms.Panel();
             this.pnl_kpioccupancy = new System.Windows.Forms.Panel();
+            this.btn_Quit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.pnl_Manager2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -126,7 +126,7 @@ namespace BayViewBookings
             // pnl_Manager2
             // 
             this.pnl_Manager2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pnl_Manager2.Controls.Add(this.btn_exit);
+            this.pnl_Manager2.Controls.Add(this.btn_Quit);
             this.pnl_Manager2.Controls.Add(this.btn_Rooms);
             this.pnl_Manager2.Controls.Add(this.btn_Bookings);
             this.pnl_Manager2.Controls.Add(this.btn_Guests);
@@ -136,20 +136,6 @@ namespace BayViewBookings
             this.pnl_Manager2.Name = "pnl_Manager2";
             this.pnl_Manager2.Size = new System.Drawing.Size(1245, 48);
             this.pnl_Manager2.TabIndex = 27;
-            // 
-            // btn_exit
-            // 
-            this.btn_exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_exit.ForeColor = System.Drawing.Color.White;
-            this.btn_exit.Location = new System.Drawing.Point(1194, 9);
-            this.btn_exit.Name = "btn_exit";
-            this.btn_exit.Size = new System.Drawing.Size(33, 28);
-            this.btn_exit.TabIndex = 6;
-            this.btn_exit.Text = "x";
-            this.btn_exit.UseVisualStyleBackColor = false;
-            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
             // btn_Rooms
             // 
@@ -163,6 +149,7 @@ namespace BayViewBookings
             this.btn_Rooms.TabIndex = 3;
             this.btn_Rooms.Text = "Rooms";
             this.btn_Rooms.UseVisualStyleBackColor = false;
+            this.btn_Rooms.Click += new System.EventHandler(this.btn_Rooms_Click);
             // 
             // btn_Bookings
             // 
@@ -176,6 +163,7 @@ namespace BayViewBookings
             this.btn_Bookings.TabIndex = 2;
             this.btn_Bookings.Text = "Bookings";
             this.btn_Bookings.UseVisualStyleBackColor = false;
+            this.btn_Bookings.Click += new System.EventHandler(this.btn_Bookings_Click);
             // 
             // btn_Guests
             // 
@@ -189,6 +177,7 @@ namespace BayViewBookings
             this.btn_Guests.TabIndex = 1;
             this.btn_Guests.Text = "Guests";
             this.btn_Guests.UseVisualStyleBackColor = false;
+            this.btn_Guests.Click += new System.EventHandler(this.btn_Guests_Click);
             // 
             // lbl_Welcome_Msg
             // 
@@ -371,6 +360,20 @@ namespace BayViewBookings
             this.pnl_kpioccupancy.TabIndex = 42;
             this.pnl_kpioccupancy.Visible = false;
             // 
+            // btn_Quit
+            // 
+            this.btn_Quit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btn_Quit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Quit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Quit.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Quit.ForeColor = System.Drawing.Color.White;
+            this.btn_Quit.Location = new System.Drawing.Point(1198, 9);
+            this.btn_Quit.Name = "btn_Quit";
+            this.btn_Quit.Size = new System.Drawing.Size(29, 28);
+            this.btn_Quit.TabIndex = 43;
+            this.btn_Quit.Text = "X";
+            this.btn_Quit.UseVisualStyleBackColor = false;
+            // 
             // frm_ViewReports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -419,7 +422,6 @@ namespace BayViewBookings
         private System.Windows.Forms.Button btn_print;
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.Panel pnl_Manager2;
-        private System.Windows.Forms.Button btn_exit;
         private System.Windows.Forms.Button btn_Rooms;
         private System.Windows.Forms.Button btn_Bookings;
         private System.Windows.Forms.Button btn_Guests;
@@ -439,5 +441,6 @@ namespace BayViewBookings
         private System.Windows.Forms.Panel pnl_kpirooms;
         private System.Windows.Forms.Panel pnl_kpiunavaialble;
         private System.Windows.Forms.Panel pnl_kpioccupancy;
+        private System.Windows.Forms.Button btn_Quit;
     }
 }

@@ -105,5 +105,10 @@ namespace BayViewBookings
         {
 
         }
+
+        private void btn_Quit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

@@ -48,7 +48,13 @@ namespace BayViewBookings
         private void btn_view1_Click(object sender, EventArgs e)
         {
             new frm_ViewReports().ShowDialog(this);
+            Close();
 
+        }
+
+        private void btn_Quit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

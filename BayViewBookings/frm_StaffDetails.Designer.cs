@@ -41,7 +41,6 @@ namespace BayViewBookings
             this.btn_filter1 = new System.Windows.Forms.Button();
             this.txt_filter1 = new System.Windows.Forms.TextBox();
             this.pnl_staff = new System.Windows.Forms.Panel();
-            this.btn_exit = new System.Windows.Forms.Button();
             this.lbl_staff = new System.Windows.Forms.Label();
             this.panel_staff = new System.Windows.Forms.Panel();
             this.btn_CancelStaff = new System.Windows.Forms.Button();
@@ -82,6 +81,7 @@ namespace BayViewBookings
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_AddEmployee = new System.Windows.Forms.Label();
+            this.btn_Quit = new System.Windows.Forms.Button();
             this.pnl_Staff2.SuspendLayout();
             this.pnl_filter.SuspendLayout();
             this.pnl_staff.SuspendLayout();
@@ -203,27 +203,13 @@ namespace BayViewBookings
             // pnl_staff
             // 
             this.pnl_staff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pnl_staff.Controls.Add(this.btn_exit);
+            this.pnl_staff.Controls.Add(this.btn_Quit);
             this.pnl_staff.Controls.Add(this.lbl_staff);
             this.pnl_staff.ForeColor = System.Drawing.Color.White;
             this.pnl_staff.Location = new System.Drawing.Point(0, 0);
             this.pnl_staff.Name = "pnl_staff";
             this.pnl_staff.Size = new System.Drawing.Size(1239, 48);
             this.pnl_staff.TabIndex = 6;
-            // 
-            // btn_exit
-            // 
-            this.btn_exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_exit.ForeColor = System.Drawing.Color.White;
-            this.btn_exit.Location = new System.Drawing.Point(1195, 9);
-            this.btn_exit.Name = "btn_exit";
-            this.btn_exit.Size = new System.Drawing.Size(33, 28);
-            this.btn_exit.TabIndex = 6;
-            this.btn_exit.Text = "x";
-            this.btn_exit.UseVisualStyleBackColor = false;
-            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
             // lbl_staff
             // 
@@ -639,6 +625,21 @@ namespace BayViewBookings
             this.lbl_AddEmployee.TabIndex = 0;
             this.lbl_AddEmployee.Text = "Add Employee";
             // 
+            // btn_Quit
+            // 
+            this.btn_Quit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btn_Quit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Quit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Quit.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Quit.ForeColor = System.Drawing.Color.White;
+            this.btn_Quit.Location = new System.Drawing.Point(1198, 9);
+            this.btn_Quit.Name = "btn_Quit";
+            this.btn_Quit.Size = new System.Drawing.Size(29, 28);
+            this.btn_Quit.TabIndex = 9;
+            this.btn_Quit.Text = "X";
+            this.btn_Quit.UseVisualStyleBackColor = false;
+            this.btn_Quit.Click += new System.EventHandler(this.btn_Quit_Click);
+            // 
             // frm_StaffDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -681,7 +682,6 @@ namespace BayViewBookings
         private System.Windows.Forms.Button btn_filter1;
         private System.Windows.Forms.TextBox txt_filter1;
         private System.Windows.Forms.Panel pnl_staff;
-        private System.Windows.Forms.Button btn_exit;
         private System.Windows.Forms.Label lbl_staff;
         private System.Windows.Forms.Panel panel_staff;
         private System.Windows.Forms.Label lbl_ManagedBY;
@@ -724,5 +724,6 @@ namespace BayViewBookings
         private System.Windows.Forms.TextBox txt_AddLastName;
         private System.Windows.Forms.TextBox txt_AddFirstName;
         private System.Windows.Forms.TextBox txt_AddEmpID;
+        private System.Windows.Forms.Button btn_Quit;
     }
 }

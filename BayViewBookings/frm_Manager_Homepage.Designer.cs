@@ -34,9 +34,9 @@ namespace BayViewBookings
             this.pnl_Manager2 = new System.Windows.Forms.Panel();
             this.btn_X = new System.Windows.Forms.Button();
             this.btn_Rooms = new System.Windows.Forms.Button();
+            this.btn_Reports = new System.Windows.Forms.Button();
             this.btn_Bookings = new System.Windows.Forms.Button();
             this.btn_Guests = new System.Windows.Forms.Button();
-            this.btn_Reports = new System.Windows.Forms.Button();
             this.lbl_Welcome_Msg = new System.Windows.Forms.Label();
             this.btn_Staff = new System.Windows.Forms.Button();
             this.pnl_Manager = new System.Windows.Forms.Panel();
@@ -68,6 +68,7 @@ namespace BayViewBookings
             this.pnl_Manager2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.pnl_Manager2.Controls.Add(this.btn_X);
             this.pnl_Manager2.Controls.Add(this.btn_Rooms);
+            this.pnl_Manager2.Controls.Add(this.btn_Reports);
             this.pnl_Manager2.Controls.Add(this.btn_Bookings);
             this.pnl_Manager2.Controls.Add(this.btn_Guests);
             this.pnl_Manager2.Controls.Add(this.lbl_Welcome_Msg);
@@ -79,7 +80,7 @@ namespace BayViewBookings
             // 
             // btn_X
             // 
-            this.btn_X.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_X.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btn_X.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_X.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_X.ForeColor = System.Drawing.Color.White;
@@ -104,6 +105,20 @@ namespace BayViewBookings
             this.btn_Rooms.Text = "Rooms";
             this.btn_Rooms.UseVisualStyleBackColor = false;
             this.btn_Rooms.Click += new System.EventHandler(this.btn_Rooms_Click);
+            // 
+            // btn_Reports
+            // 
+            this.btn_Reports.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_Reports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Reports.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Reports.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btn_Reports.Location = new System.Drawing.Point(590, -4);
+            this.btn_Reports.Name = "btn_Reports";
+            this.btn_Reports.Size = new System.Drawing.Size(155, 57);
+            this.btn_Reports.TabIndex = 5;
+            this.btn_Reports.Text = "Reports";
+            this.btn_Reports.UseVisualStyleBackColor = false;
+            this.btn_Reports.Click += new System.EventHandler(this.btn_Reports_Click);
             // 
             // btn_Bookings
             // 
@@ -134,27 +149,13 @@ namespace BayViewBookings
             this.btn_Guests.UseVisualStyleBackColor = false;
             this.btn_Guests.Click += new System.EventHandler(this.btn_Guests_Click);
             // 
-            // btn_Reports
-            // 
-            this.btn_Reports.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_Reports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Reports.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Reports.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_Reports.Location = new System.Drawing.Point(7, 110);
-            this.btn_Reports.Name = "btn_Reports";
-            this.btn_Reports.Size = new System.Drawing.Size(155, 57);
-            this.btn_Reports.TabIndex = 5;
-            this.btn_Reports.Text = "Reports";
-            this.btn_Reports.UseVisualStyleBackColor = false;
-            this.btn_Reports.Click += new System.EventHandler(this.btn_Reports_Click);
-            // 
             // lbl_Welcome_Msg
             // 
             this.lbl_Welcome_Msg.AutoSize = true;
             this.lbl_Welcome_Msg.BackColor = System.Drawing.Color.Transparent;
             this.lbl_Welcome_Msg.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Welcome_Msg.ForeColor = System.Drawing.Color.White;
-            this.lbl_Welcome_Msg.Location = new System.Drawing.Point(652, 6);
+            this.lbl_Welcome_Msg.Location = new System.Drawing.Point(778, 9);
             this.lbl_Welcome_Msg.Name = "lbl_Welcome_Msg";
             this.lbl_Welcome_Msg.Size = new System.Drawing.Size(294, 30);
             this.lbl_Welcome_Msg.TabIndex = 0;
@@ -179,7 +180,6 @@ namespace BayViewBookings
             this.pnl_Manager.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.pnl_Manager.Controls.Add(this.btn_Transactions);
             this.pnl_Manager.Controls.Add(this.btn_Staff);
-            this.pnl_Manager.Controls.Add(this.btn_Reports);
             this.pnl_Manager.Location = new System.Drawing.Point(-9, 45);
             this.pnl_Manager.Name = "pnl_Manager";
             this.pnl_Manager.Size = new System.Drawing.Size(160, 634);
