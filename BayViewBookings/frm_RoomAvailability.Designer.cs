@@ -38,7 +38,6 @@ namespace BayViewBookings
             this.filter_1 = new System.Windows.Forms.TextBox();
             this.pnl_RoomAvailability2 = new System.Windows.Forms.Panel();
             this.btn_RoomAvailExit = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.pnl_RoomAvailability = new System.Windows.Forms.Panel();
             this.btn_exit = new System.Windows.Forms.Button();
             this.btn_Bookings = new System.Windows.Forms.Button();
@@ -118,7 +117,6 @@ namespace BayViewBookings
             // 
             this.pnl_RoomAvailability2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.pnl_RoomAvailability2.Controls.Add(this.btn_RoomAvailExit);
-            this.pnl_RoomAvailability2.Controls.Add(this.button5);
             this.pnl_RoomAvailability2.Location = new System.Drawing.Point(-4, 46);
             this.pnl_RoomAvailability2.Name = "pnl_RoomAvailability2";
             this.pnl_RoomAvailability2.Size = new System.Drawing.Size(154, 640);
@@ -136,18 +134,6 @@ namespace BayViewBookings
             this.btn_RoomAvailExit.Text = "Exit";
             this.btn_RoomAvailExit.UseVisualStyleBackColor = true;
             this.btn_RoomAvailExit.Click += new System.EventHandler(this.btn_RoomAvailExit_Click);
-            // 
-            // button5
-            // 
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(0, 429);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(154, 101);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "button";
-            this.button5.UseVisualStyleBackColor = true;
             // 
             // pnl_RoomAvailability
             // 
@@ -202,6 +188,7 @@ namespace BayViewBookings
             // 
             // dgv_RoomAvail
             // 
+            this.dgv_RoomAvail.BackgroundColor = System.Drawing.Color.White;
             this.dgv_RoomAvail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_RoomAvail.Location = new System.Drawing.Point(172, 67);
             this.dgv_RoomAvail.Margin = new System.Windows.Forms.Padding(2);
@@ -246,7 +233,6 @@ namespace BayViewBookings
         private System.Windows.Forms.TextBox filter_1;
         private System.Windows.Forms.Panel pnl_RoomAvailability2;
         private System.Windows.Forms.Button btn_RoomAvailExit;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel pnl_RoomAvailability;
         private System.Windows.Forms.Button btn_exit;
         private System.Windows.Forms.Button btn_Bookings;

@@ -48,12 +48,12 @@ namespace BayViewBookings
             this.sqLiteCommand1 = new System.Data.SQLite.SQLiteCommand();
             this.btn_cancelBooking = new System.Windows.Forms.Button();
             this.pnl_cancelBooking = new System.Windows.Forms.Panel();
-            this.btn_cancelSubmit = new System.Windows.Forms.Button();
-            this.cb_confirm = new System.Windows.Forms.CheckBox();
-            this.txt_username = new System.Windows.Forms.TextBox();
-            this.lbl_auditMsg = new System.Windows.Forms.Label();
-            this.lbl_cancelConfirm = new System.Windows.Forms.Label();
             this.btn_cancelBack = new System.Windows.Forms.Button();
+            this.lbl_cancelConfirm = new System.Windows.Forms.Label();
+            this.lbl_auditMsg = new System.Windows.Forms.Label();
+            this.txt_username = new System.Windows.Forms.TextBox();
+            this.cb_confirm = new System.Windows.Forms.CheckBox();
+            this.btn_cancelSubmit = new System.Windows.Forms.Button();
             this.pnl_viewbookings.SuspendLayout();
             this.pnl_filters.SuspendLayout();
             this.pnl_viewbookingsheader.SuspendLayout();
@@ -277,15 +277,39 @@ namespace BayViewBookings
             this.pnl_cancelBooking.TabIndex = 25;
             this.pnl_cancelBooking.Visible = false;
             // 
-            // btn_cancelSubmit
+            // btn_cancelBack
             // 
-            this.btn_cancelSubmit.Location = new System.Drawing.Point(45, 126);
-            this.btn_cancelSubmit.Name = "btn_cancelSubmit";
-            this.btn_cancelSubmit.Size = new System.Drawing.Size(75, 23);
-            this.btn_cancelSubmit.TabIndex = 0;
-            this.btn_cancelSubmit.Text = "Submit";
-            this.btn_cancelSubmit.UseVisualStyleBackColor = true;
-            this.btn_cancelSubmit.Click += new System.EventHandler(this.btn_cancelSubmit_Click);
+            this.btn_cancelBack.Location = new System.Drawing.Point(154, 126);
+            this.btn_cancelBack.Name = "btn_cancelBack";
+            this.btn_cancelBack.Size = new System.Drawing.Size(75, 23);
+            this.btn_cancelBack.TabIndex = 5;
+            this.btn_cancelBack.Text = "Back";
+            this.btn_cancelBack.UseVisualStyleBackColor = true;
+            this.btn_cancelBack.Click += new System.EventHandler(this.btn_cancelBack_Click);
+            // 
+            // lbl_cancelConfirm
+            // 
+            this.lbl_cancelConfirm.AutoSize = true;
+            this.lbl_cancelConfirm.Location = new System.Drawing.Point(84, 12);
+            this.lbl_cancelConfirm.Name = "lbl_cancelConfirm";
+            this.lbl_cancelConfirm.Size = new System.Drawing.Size(107, 13);
+            this.lbl_cancelConfirm.TabIndex = 4;
+            this.lbl_cancelConfirm.Text = "Booking Cancellation";
+            // 
+            // lbl_auditMsg
+            // 
+            this.lbl_auditMsg.Location = new System.Drawing.Point(14, 34);
+            this.lbl_auditMsg.Name = "lbl_auditMsg";
+            this.lbl_auditMsg.Size = new System.Drawing.Size(246, 26);
+            this.lbl_auditMsg.TabIndex = 3;
+            this.lbl_auditMsg.Text = "For audit purposes, please type your username in the box below:";
+            // 
+            // txt_username
+            // 
+            this.txt_username.Location = new System.Drawing.Point(73, 73);
+            this.txt_username.Name = "txt_username";
+            this.txt_username.Size = new System.Drawing.Size(128, 20);
+            this.txt_username.TabIndex = 2;
             // 
             // cb_confirm
             // 
@@ -297,39 +321,15 @@ namespace BayViewBookings
             this.cb_confirm.Text = "I confirm I want to cancel this booking";
             this.cb_confirm.UseVisualStyleBackColor = true;
             // 
-            // txt_username
+            // btn_cancelSubmit
             // 
-            this.txt_username.Location = new System.Drawing.Point(73, 73);
-            this.txt_username.Name = "txt_username";
-            this.txt_username.Size = new System.Drawing.Size(128, 20);
-            this.txt_username.TabIndex = 2;
-            // 
-            // lbl_auditMsg
-            // 
-            this.lbl_auditMsg.Location = new System.Drawing.Point(14, 34);
-            this.lbl_auditMsg.Name = "lbl_auditMsg";
-            this.lbl_auditMsg.Size = new System.Drawing.Size(246, 26);
-            this.lbl_auditMsg.TabIndex = 3;
-            this.lbl_auditMsg.Text = "For audit purposes, please type your username in the box below:";
-            // 
-            // lbl_cancelConfirm
-            // 
-            this.lbl_cancelConfirm.AutoSize = true;
-            this.lbl_cancelConfirm.Location = new System.Drawing.Point(84, 12);
-            this.lbl_cancelConfirm.Name = "lbl_cancelConfirm";
-            this.lbl_cancelConfirm.Size = new System.Drawing.Size(107, 13);
-            this.lbl_cancelConfirm.TabIndex = 4;
-            this.lbl_cancelConfirm.Text = "Booking Cancellation";
-            // 
-            // btn_cancelBack
-            // 
-            this.btn_cancelBack.Location = new System.Drawing.Point(154, 126);
-            this.btn_cancelBack.Name = "btn_cancelBack";
-            this.btn_cancelBack.Size = new System.Drawing.Size(75, 23);
-            this.btn_cancelBack.TabIndex = 5;
-            this.btn_cancelBack.Text = "Back";
-            this.btn_cancelBack.UseVisualStyleBackColor = true;
-            this.btn_cancelBack.Click += new System.EventHandler(this.btn_cancelBack_Click);
+            this.btn_cancelSubmit.Location = new System.Drawing.Point(45, 126);
+            this.btn_cancelSubmit.Name = "btn_cancelSubmit";
+            this.btn_cancelSubmit.Size = new System.Drawing.Size(75, 23);
+            this.btn_cancelSubmit.TabIndex = 0;
+            this.btn_cancelSubmit.Text = "Submit";
+            this.btn_cancelSubmit.UseVisualStyleBackColor = true;
+            this.btn_cancelSubmit.Click += new System.EventHandler(this.btn_cancelSubmit_Click);
             // 
             // frm_ViewBookings
             // 

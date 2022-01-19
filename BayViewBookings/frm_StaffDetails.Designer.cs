@@ -31,7 +31,6 @@ namespace BayViewBookings
         {
             this.pnl_Staff2 = new System.Windows.Forms.Panel();
             this.btn_exitstaff = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.pnl_filter = new System.Windows.Forms.Panel();
             this.btn_AddStaff = new System.Windows.Forms.Button();
             this.btn_Amend = new System.Windows.Forms.Button();
@@ -43,9 +42,6 @@ namespace BayViewBookings
             this.txt_filter1 = new System.Windows.Forms.TextBox();
             this.pnl_staff = new System.Windows.Forms.Panel();
             this.btn_exit = new System.Windows.Forms.Button();
-            this.btn_Staff_Rooms = new System.Windows.Forms.Button();
-            this.btn_Staff_Bookings = new System.Windows.Forms.Button();
-            this.btn_Staff_Guests = new System.Windows.Forms.Button();
             this.lbl_staff = new System.Windows.Forms.Label();
             this.panel_staff = new System.Windows.Forms.Panel();
             this.btn_CancelStaff = new System.Windows.Forms.Button();
@@ -98,7 +94,6 @@ namespace BayViewBookings
             // 
             this.pnl_Staff2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.pnl_Staff2.Controls.Add(this.btn_exitstaff);
-            this.pnl_Staff2.Controls.Add(this.button5);
             this.pnl_Staff2.Location = new System.Drawing.Point(-4, 46);
             this.pnl_Staff2.Name = "pnl_Staff2";
             this.pnl_Staff2.Size = new System.Drawing.Size(154, 640);
@@ -116,18 +111,6 @@ namespace BayViewBookings
             this.btn_exitstaff.Text = "Exit";
             this.btn_exitstaff.UseVisualStyleBackColor = true;
             this.btn_exitstaff.Click += new System.EventHandler(this.btn_exitstaff_Click);
-            // 
-            // button5
-            // 
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(0, 429);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(154, 101);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "button";
-            this.button5.UseVisualStyleBackColor = true;
             // 
             // pnl_filter
             // 
@@ -221,9 +204,6 @@ namespace BayViewBookings
             // 
             this.pnl_staff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.pnl_staff.Controls.Add(this.btn_exit);
-            this.pnl_staff.Controls.Add(this.btn_Staff_Rooms);
-            this.pnl_staff.Controls.Add(this.btn_Staff_Bookings);
-            this.pnl_staff.Controls.Add(this.btn_Staff_Guests);
             this.pnl_staff.Controls.Add(this.lbl_staff);
             this.pnl_staff.ForeColor = System.Drawing.Color.White;
             this.pnl_staff.Location = new System.Drawing.Point(0, 0);
@@ -245,55 +225,13 @@ namespace BayViewBookings
             this.btn_exit.UseVisualStyleBackColor = false;
             this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
-            // btn_Staff_Rooms
-            // 
-            this.btn_Staff_Rooms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_Staff_Rooms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Staff_Rooms.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Staff_Rooms.ForeColor = System.Drawing.Color.White;
-            this.btn_Staff_Rooms.Location = new System.Drawing.Point(443, -3);
-            this.btn_Staff_Rooms.Name = "btn_Staff_Rooms";
-            this.btn_Staff_Rooms.Size = new System.Drawing.Size(150, 54);
-            this.btn_Staff_Rooms.TabIndex = 3;
-            this.btn_Staff_Rooms.Text = "Rooms";
-            this.btn_Staff_Rooms.UseVisualStyleBackColor = false;
-            this.btn_Staff_Rooms.Click += new System.EventHandler(this.btn_Staff_Rooms_Click);
-            // 
-            // btn_Staff_Bookings
-            // 
-            this.btn_Staff_Bookings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_Staff_Bookings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Staff_Bookings.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Staff_Bookings.ForeColor = System.Drawing.Color.White;
-            this.btn_Staff_Bookings.Location = new System.Drawing.Point(296, -3);
-            this.btn_Staff_Bookings.Name = "btn_Staff_Bookings";
-            this.btn_Staff_Bookings.Size = new System.Drawing.Size(150, 54);
-            this.btn_Staff_Bookings.TabIndex = 2;
-            this.btn_Staff_Bookings.Text = "Bookings";
-            this.btn_Staff_Bookings.UseVisualStyleBackColor = false;
-            this.btn_Staff_Bookings.Click += new System.EventHandler(this.btn_Staff_Bookings_Click);
-            // 
-            // btn_Staff_Guests
-            // 
-            this.btn_Staff_Guests.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_Staff_Guests.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Staff_Guests.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Staff_Guests.ForeColor = System.Drawing.Color.White;
-            this.btn_Staff_Guests.Location = new System.Drawing.Point(149, -3);
-            this.btn_Staff_Guests.Name = "btn_Staff_Guests";
-            this.btn_Staff_Guests.Size = new System.Drawing.Size(150, 54);
-            this.btn_Staff_Guests.TabIndex = 1;
-            this.btn_Staff_Guests.Text = "Guests";
-            this.btn_Staff_Guests.UseVisualStyleBackColor = false;
-            this.btn_Staff_Guests.Click += new System.EventHandler(this.btn_Staff_Guests_Click);
-            // 
             // lbl_staff
             // 
             this.lbl_staff.AutoSize = true;
             this.lbl_staff.BackColor = System.Drawing.Color.Transparent;
             this.lbl_staff.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_staff.ForeColor = System.Drawing.Color.White;
-            this.lbl_staff.Location = new System.Drawing.Point(812, 9);
+            this.lbl_staff.Location = new System.Drawing.Point(554, 9);
             this.lbl_staff.Name = "lbl_staff";
             this.lbl_staff.Size = new System.Drawing.Size(131, 30);
             this.lbl_staff.TabIndex = 0;
@@ -320,7 +258,7 @@ namespace BayViewBookings
             this.panel_staff.Controls.Add(this.txt_Lastname);
             this.panel_staff.Controls.Add(this.txt_FirstName);
             this.panel_staff.Controls.Add(this.txt_EmployeeID);
-            this.panel_staff.Location = new System.Drawing.Point(512, 75);
+            this.panel_staff.Location = new System.Drawing.Point(581, 74);
             this.panel_staff.Margin = new System.Windows.Forms.Padding(2);
             this.panel_staff.Name = "panel_staff";
             this.panel_staff.Size = new System.Drawing.Size(297, 574);
@@ -501,6 +439,7 @@ namespace BayViewBookings
             this.txt_EmployeeID.Location = new System.Drawing.Point(51, 86);
             this.txt_EmployeeID.Margin = new System.Windows.Forms.Padding(2);
             this.txt_EmployeeID.Name = "txt_EmployeeID";
+            this.txt_EmployeeID.ReadOnly = true;
             this.txt_EmployeeID.Size = new System.Drawing.Size(87, 20);
             this.txt_EmployeeID.TabIndex = 21;
             // 
@@ -534,10 +473,10 @@ namespace BayViewBookings
             this.panel_AddStaff.Controls.Add(this.label3);
             this.panel_AddStaff.Controls.Add(this.label2);
             this.panel_AddStaff.Controls.Add(this.lbl_AddEmployee);
-            this.panel_AddStaff.Location = new System.Drawing.Point(352, 77);
+            this.panel_AddStaff.Location = new System.Drawing.Point(354, 74);
             this.panel_AddStaff.Margin = new System.Windows.Forms.Padding(2);
             this.panel_AddStaff.Name = "panel_AddStaff";
-            this.panel_AddStaff.Size = new System.Drawing.Size(272, 571);
+            this.panel_AddStaff.Size = new System.Drawing.Size(272, 574);
             this.panel_AddStaff.TabIndex = 18;
             this.panel_AddStaff.Visible = false;
             // 
@@ -734,7 +673,6 @@ namespace BayViewBookings
         #endregion
         private System.Windows.Forms.Panel pnl_Staff2;
         private System.Windows.Forms.Button btn_exitstaff;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel pnl_filter;
         private System.Windows.Forms.Button btn_filter3;
         private System.Windows.Forms.TextBox txt_filter3;
@@ -786,8 +724,5 @@ namespace BayViewBookings
         private System.Windows.Forms.TextBox txt_AddLastName;
         private System.Windows.Forms.TextBox txt_AddFirstName;
         private System.Windows.Forms.TextBox txt_AddEmpID;
-        private System.Windows.Forms.Button btn_Staff_Rooms;
-        private System.Windows.Forms.Button btn_Staff_Bookings;
-        private System.Windows.Forms.Button btn_Staff_Guests;
     }
 }

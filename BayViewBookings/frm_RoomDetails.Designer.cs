@@ -30,7 +30,6 @@ namespace BayViewBookings
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
             this.btn_exitroomd = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btn_AmendRoom = new System.Windows.Forms.Button();
@@ -73,24 +72,11 @@ namespace BayViewBookings
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.btn_exitroomd);
             this.panel1.Location = new System.Drawing.Point(-4, 46);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(154, 640);
             this.panel1.TabIndex = 14;
-            // 
-            // button4
-            // 
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(-3, 429);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(157, 101);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "button";
-            this.button4.UseVisualStyleBackColor = true;
             // 
             // btn_exitroomd
             // 
@@ -123,7 +109,7 @@ namespace BayViewBookings
             // 
             this.btn_AmendRoom.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_AmendRoom.Location = new System.Drawing.Point(56, 408);
-            this.btn_AmendRoom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_AmendRoom.Margin = new System.Windows.Forms.Padding(2);
             this.btn_AmendRoom.Name = "btn_AmendRoom";
             this.btn_AmendRoom.Size = new System.Drawing.Size(94, 32);
             this.btn_AmendRoom.TabIndex = 20;
@@ -283,7 +269,7 @@ namespace BayViewBookings
             this.pnl_RoomDetails.Controls.Add(this.txt_RoomType);
             this.pnl_RoomDetails.Controls.Add(this.txt_RoomID);
             this.pnl_RoomDetails.Location = new System.Drawing.Point(470, 81);
-            this.pnl_RoomDetails.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnl_RoomDetails.Margin = new System.Windows.Forms.Padding(2);
             this.pnl_RoomDetails.Name = "pnl_RoomDetails";
             this.pnl_RoomDetails.Size = new System.Drawing.Size(297, 574);
             this.pnl_RoomDetails.TabIndex = 19;
@@ -292,7 +278,7 @@ namespace BayViewBookings
             // btn_Cancel
             // 
             this.btn_Cancel.Location = new System.Drawing.Point(190, 505);
-            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Cancel.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(72, 53);
             this.btn_Cancel.TabIndex = 37;
@@ -303,7 +289,7 @@ namespace BayViewBookings
             // btn_Enter
             // 
             this.btn_Enter.Location = new System.Drawing.Point(39, 505);
-            this.btn_Enter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Enter.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Enter.Name = "btn_Enter";
             this.btn_Enter.Size = new System.Drawing.Size(72, 53);
             this.btn_Enter.TabIndex = 36;
@@ -383,7 +369,7 @@ namespace BayViewBookings
             // txt_RoomDescription
             // 
             this.txt_RoomDescription.Location = new System.Drawing.Point(52, 427);
-            this.txt_RoomDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_RoomDescription.Margin = new System.Windows.Forms.Padding(2);
             this.txt_RoomDescription.Multiline = true;
             this.txt_RoomDescription.Name = "txt_RoomDescription";
             this.txt_RoomDescription.Size = new System.Drawing.Size(210, 39);
@@ -392,7 +378,7 @@ namespace BayViewBookings
             // txt_Price
             // 
             this.txt_Price.Location = new System.Drawing.Point(52, 278);
-            this.txt_Price.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_Price.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Price.Name = "txt_Price";
             this.txt_Price.Size = new System.Drawing.Size(114, 20);
             this.txt_Price.TabIndex = 25;
@@ -400,7 +386,7 @@ namespace BayViewBookings
             // txt_Accessibility
             // 
             this.txt_Accessibility.Location = new System.Drawing.Point(52, 350);
-            this.txt_Accessibility.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_Accessibility.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Accessibility.Name = "txt_Accessibility";
             this.txt_Accessibility.Size = new System.Drawing.Size(114, 20);
             this.txt_Accessibility.TabIndex = 24;
@@ -408,7 +394,7 @@ namespace BayViewBookings
             // txt_RoomName
             // 
             this.txt_RoomName.Location = new System.Drawing.Point(52, 212);
-            this.txt_RoomName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_RoomName.Margin = new System.Windows.Forms.Padding(2);
             this.txt_RoomName.Name = "txt_RoomName";
             this.txt_RoomName.Size = new System.Drawing.Size(114, 20);
             this.txt_RoomName.TabIndex = 23;
@@ -416,7 +402,7 @@ namespace BayViewBookings
             // txt_RoomType
             // 
             this.txt_RoomType.Location = new System.Drawing.Point(52, 142);
-            this.txt_RoomType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_RoomType.Margin = new System.Windows.Forms.Padding(2);
             this.txt_RoomType.Name = "txt_RoomType";
             this.txt_RoomType.Size = new System.Drawing.Size(79, 20);
             this.txt_RoomType.TabIndex = 22;
@@ -424,16 +410,17 @@ namespace BayViewBookings
             // txt_RoomID
             // 
             this.txt_RoomID.Location = new System.Drawing.Point(52, 81);
-            this.txt_RoomID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_RoomID.Margin = new System.Windows.Forms.Padding(2);
             this.txt_RoomID.Name = "txt_RoomID";
             this.txt_RoomID.Size = new System.Drawing.Size(79, 20);
             this.txt_RoomID.TabIndex = 21;
             // 
             // dgv_RoomDetails
             // 
+            this.dgv_RoomDetails.BackgroundColor = System.Drawing.Color.White;
             this.dgv_RoomDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_RoomDetails.Location = new System.Drawing.Point(183, 79);
-            this.dgv_RoomDetails.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgv_RoomDetails.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_RoomDetails.Name = "dgv_RoomDetails";
             this.dgv_RoomDetails.RowHeadersWidth = 51;
             this.dgv_RoomDetails.RowTemplate.Height = 24;
@@ -470,7 +457,6 @@ namespace BayViewBookings
 
         #endregion
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btn_exitroomd;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btn_filter3;
