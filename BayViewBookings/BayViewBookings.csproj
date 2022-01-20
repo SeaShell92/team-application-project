@@ -108,6 +108,12 @@
     <Compile Include="frm_RoomDetails.Designer.cs">
       <DependentUpon>frm_RoomDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_SalesReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_SalesReport.Designer.cs">
+      <DependentUpon>frm_SalesReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_SplashScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_RoomDetails.resx">
       <DependentUpon>frm_RoomDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_SalesReport.resx">
+      <DependentUpon>frm_SalesReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_SplashScreen.resx">
       <DependentUpon>frm_SplashScreen.cs</DependentUpon>

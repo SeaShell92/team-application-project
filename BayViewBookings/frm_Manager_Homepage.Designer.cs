@@ -54,6 +54,8 @@ namespace BayViewBookings
             this.cms_exit = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
+            this.roomOccupancyRatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salesReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_Manager2.SuspendLayout();
             this.pnl_Manager.SuspendLayout();
             this.cms_reports.SuspendLayout();
@@ -204,16 +206,18 @@ namespace BayViewBookings
             // 
             this.cms_reports.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cms_reports.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.occupancyRatesReportToolStripMenuItem});
+            this.occupancyRatesReportToolStripMenuItem,
+            this.roomOccupancyRatesToolStripMenuItem,
+            this.salesReportToolStripMenuItem});
             this.cms_reports.Name = "contextMenuStrip1";
-            this.cms_reports.Size = new System.Drawing.Size(181, 48);
+            this.cms_reports.Size = new System.Drawing.Size(201, 92);
             // 
             // occupancyRatesReportToolStripMenuItem
             // 
             this.occupancyRatesReportToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.occupancyRatesReportToolStripMenuItem.Name = "occupancyRatesReportToolStripMenuItem";
-            this.occupancyRatesReportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.occupancyRatesReportToolStripMenuItem.Text = "Occupancy Rates";
+            this.occupancyRatesReportToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.occupancyRatesReportToolStripMenuItem.Text = "All Reports";
             this.occupancyRatesReportToolStripMenuItem.Click += new System.EventHandler(this.occupancyRatesReportToolStripMenuItem_Click);
             // 
             // cms_guests
@@ -307,6 +311,22 @@ namespace BayViewBookings
             this.toolStripMenuItem6.Text = "Exit";
             this.toolStripMenuItem6.Click += new System.EventHandler(this.toolStripMenuItem6_Click);
             // 
+            // roomOccupancyRatesToolStripMenuItem
+            // 
+            this.roomOccupancyRatesToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.roomOccupancyRatesToolStripMenuItem.Name = "roomOccupancyRatesToolStripMenuItem";
+            this.roomOccupancyRatesToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.roomOccupancyRatesToolStripMenuItem.Text = "Room Occupancy Rates";
+            this.roomOccupancyRatesToolStripMenuItem.Click += new System.EventHandler(this.roomOccupancyRatesToolStripMenuItem_Click);
+            // 
+            // salesReportToolStripMenuItem
+            // 
+            this.salesReportToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.salesReportToolStripMenuItem.Name = "salesReportToolStripMenuItem";
+            this.salesReportToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.salesReportToolStripMenuItem.Text = "Sales Report";
+            this.salesReportToolStripMenuItem.Click += new System.EventHandler(this.salesReportToolStripMenuItem_Click);
+            // 
             // frm_Manager_Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -359,5 +379,7 @@ namespace BayViewBookings
         private System.Windows.Forms.ContextMenuStrip cms_exit;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
+        private System.Windows.Forms.ToolStripMenuItem roomOccupancyRatesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salesReportToolStripMenuItem;
     }
 }

@@ -154,5 +154,10 @@ namespace BayViewBookings
         {
             Close();
         }
+
+        private void btn_exitViewReport_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
     }

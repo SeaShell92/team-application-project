@@ -170,5 +170,15 @@ namespace BayViewBookings
         {
             btn_exitmgr_Click(sender, e);
         }
+
+        private void roomOccupancyRatesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frm_ViewReports().ShowDialog(this); // Shows Reports form on top of original form
+        }
+
+        private void salesReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frm_SalesReport().ShowDialog(this); // Shows Reports form on top of original form
+        }
     }
 }
