@@ -32,6 +32,7 @@ namespace BayViewBookings
             this.pnl_Reports2 = new System.Windows.Forms.Panel();
             this.btn_exitreports = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lbl_roomOccupancy = new System.Windows.Forms.Label();
             this.btn_view1 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btn_view2 = new System.Windows.Forms.Button();
@@ -44,12 +45,8 @@ namespace BayViewBookings
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.pnl_ReportsHeader = new System.Windows.Forms.Panel();
-            this.btn_Rooms = new System.Windows.Forms.Button();
-            this.btn_Bookings = new System.Windows.Forms.Button();
-            this.btn_Guests = new System.Windows.Forms.Button();
-            this.lbl_Reports = new System.Windows.Forms.Label();
-            this.lbl_roomOccupancy = new System.Windows.Forms.Label();
             this.btn_Quit = new System.Windows.Forms.Button();
+            this.lbl_Reports = new System.Windows.Forms.Label();
             this.pnl_Reports2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -87,6 +84,16 @@ namespace BayViewBookings
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(895, 126);
             this.panel3.TabIndex = 18;
+            // 
+            // lbl_roomOccupancy
+            // 
+            this.lbl_roomOccupancy.AutoSize = true;
+            this.lbl_roomOccupancy.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_roomOccupancy.Location = new System.Drawing.Point(70, 50);
+            this.lbl_roomOccupancy.Name = "lbl_roomOccupancy";
+            this.lbl_roomOccupancy.Size = new System.Drawing.Size(215, 24);
+            this.lbl_roomOccupancy.TabIndex = 24;
+            this.lbl_roomOccupancy.Text = "Room Occupancy Rates";
             // 
             // btn_view1
             // 
@@ -200,79 +207,12 @@ namespace BayViewBookings
             // 
             this.pnl_ReportsHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.pnl_ReportsHeader.Controls.Add(this.btn_Quit);
-            this.pnl_ReportsHeader.Controls.Add(this.btn_Rooms);
-            this.pnl_ReportsHeader.Controls.Add(this.btn_Bookings);
-            this.pnl_ReportsHeader.Controls.Add(this.btn_Guests);
             this.pnl_ReportsHeader.Controls.Add(this.lbl_Reports);
             this.pnl_ReportsHeader.ForeColor = System.Drawing.Color.White;
             this.pnl_ReportsHeader.Location = new System.Drawing.Point(0, 0);
             this.pnl_ReportsHeader.Name = "pnl_ReportsHeader";
             this.pnl_ReportsHeader.Size = new System.Drawing.Size(1245, 48);
             this.pnl_ReportsHeader.TabIndex = 13;
-            // 
-            // btn_Rooms
-            // 
-            this.btn_Rooms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_Rooms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Rooms.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Rooms.ForeColor = System.Drawing.Color.White;
-            this.btn_Rooms.Location = new System.Drawing.Point(443, -3);
-            this.btn_Rooms.Name = "btn_Rooms";
-            this.btn_Rooms.Size = new System.Drawing.Size(150, 54);
-            this.btn_Rooms.TabIndex = 3;
-            this.btn_Rooms.Text = "Rooms";
-            this.btn_Rooms.UseVisualStyleBackColor = false;
-            this.btn_Rooms.Click += new System.EventHandler(this.btn_Rooms_Click);
-            // 
-            // btn_Bookings
-            // 
-            this.btn_Bookings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_Bookings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Bookings.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Bookings.ForeColor = System.Drawing.Color.White;
-            this.btn_Bookings.Location = new System.Drawing.Point(296, -3);
-            this.btn_Bookings.Name = "btn_Bookings";
-            this.btn_Bookings.Size = new System.Drawing.Size(150, 54);
-            this.btn_Bookings.TabIndex = 2;
-            this.btn_Bookings.Text = "Bookings";
-            this.btn_Bookings.UseVisualStyleBackColor = false;
-            this.btn_Bookings.Click += new System.EventHandler(this.btn_Bookings_Click);
-            // 
-            // btn_Guests
-            // 
-            this.btn_Guests.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_Guests.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Guests.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Guests.ForeColor = System.Drawing.Color.White;
-            this.btn_Guests.Location = new System.Drawing.Point(149, -3);
-            this.btn_Guests.Name = "btn_Guests";
-            this.btn_Guests.Size = new System.Drawing.Size(150, 54);
-            this.btn_Guests.TabIndex = 1;
-            this.btn_Guests.Text = "Guests";
-            this.btn_Guests.UseVisualStyleBackColor = false;
-            this.btn_Guests.Click += new System.EventHandler(this.btn_Guests_Click);
-            // 
-            // lbl_Reports
-            // 
-            this.lbl_Reports.AutoSize = true;
-            this.lbl_Reports.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_Reports.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Reports.ForeColor = System.Drawing.Color.White;
-            this.lbl_Reports.Location = new System.Drawing.Point(812, 9);
-            this.lbl_Reports.Name = "lbl_Reports";
-            this.lbl_Reports.Size = new System.Drawing.Size(89, 30);
-            this.lbl_Reports.TabIndex = 0;
-            this.lbl_Reports.Text = "Reports";
-            // 
-            // lbl_roomOccupancy
-            // 
-            this.lbl_roomOccupancy.AutoSize = true;
-            this.lbl_roomOccupancy.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_roomOccupancy.Location = new System.Drawing.Point(70, 50);
-            this.lbl_roomOccupancy.Name = "lbl_roomOccupancy";
-            this.lbl_roomOccupancy.Size = new System.Drawing.Size(215, 24);
-            this.lbl_roomOccupancy.TabIndex = 24;
-            this.lbl_roomOccupancy.Text = "Room Occupancy Rates";
             // 
             // btn_Quit
             // 
@@ -288,6 +228,18 @@ namespace BayViewBookings
             this.btn_Quit.Text = "X";
             this.btn_Quit.UseVisualStyleBackColor = false;
             this.btn_Quit.Click += new System.EventHandler(this.btn_Quit_Click);
+            // 
+            // lbl_Reports
+            // 
+            this.lbl_Reports.AutoSize = true;
+            this.lbl_Reports.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_Reports.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Reports.ForeColor = System.Drawing.Color.White;
+            this.lbl_Reports.Location = new System.Drawing.Point(575, 9);
+            this.lbl_Reports.Name = "lbl_Reports";
+            this.lbl_Reports.Size = new System.Drawing.Size(89, 30);
+            this.lbl_Reports.TabIndex = 0;
+            this.lbl_Reports.Text = "Reports";
             // 
             // frm_Reports
             // 
@@ -335,9 +287,6 @@ namespace BayViewBookings
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel pnl_ReportsHeader;
-        private System.Windows.Forms.Button btn_Rooms;
-        private System.Windows.Forms.Button btn_Bookings;
-        private System.Windows.Forms.Button btn_Guests;
         private System.Windows.Forms.Label lbl_Reports;
         private System.Windows.Forms.Label lbl_roomOccupancy;
         private System.Windows.Forms.Button btn_Quit;

@@ -39,9 +39,7 @@ namespace BayViewBookings
             this.btn_filter1 = new System.Windows.Forms.Button();
             this.txt_filter1 = new System.Windows.Forms.TextBox();
             this.pnl_viewbookingsheader = new System.Windows.Forms.Panel();
-            this.btn_rooms = new System.Windows.Forms.Button();
-            this.btn_Transactions = new System.Windows.Forms.Button();
-            this.btn_guests = new System.Windows.Forms.Button();
+            this.btn_Quit = new System.Windows.Forms.Button();
             this.lbl_viewbookings = new System.Windows.Forms.Label();
             this.dgv_ViewBookings = new System.Windows.Forms.DataGridView();
             this.sqLiteCommand1 = new System.Data.SQLite.SQLiteCommand();
@@ -53,7 +51,6 @@ namespace BayViewBookings
             this.txt_username = new System.Windows.Forms.TextBox();
             this.cb_confirm = new System.Windows.Forms.CheckBox();
             this.btn_cancelSubmit = new System.Windows.Forms.Button();
-            this.btn_Quit = new System.Windows.Forms.Button();
             this.pnl_viewbookings.SuspendLayout();
             this.pnl_filters.SuspendLayout();
             this.pnl_viewbookingsheader.SuspendLayout();
@@ -151,9 +148,6 @@ namespace BayViewBookings
             // 
             this.pnl_viewbookingsheader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.pnl_viewbookingsheader.Controls.Add(this.btn_Quit);
-            this.pnl_viewbookingsheader.Controls.Add(this.btn_rooms);
-            this.pnl_viewbookingsheader.Controls.Add(this.btn_Transactions);
-            this.pnl_viewbookingsheader.Controls.Add(this.btn_guests);
             this.pnl_viewbookingsheader.Controls.Add(this.lbl_viewbookings);
             this.pnl_viewbookingsheader.ForeColor = System.Drawing.Color.White;
             this.pnl_viewbookingsheader.Location = new System.Drawing.Point(0, 0);
@@ -161,47 +155,20 @@ namespace BayViewBookings
             this.pnl_viewbookingsheader.Size = new System.Drawing.Size(1241, 48);
             this.pnl_viewbookingsheader.TabIndex = 9;
             // 
-            // btn_rooms
+            // btn_Quit
             // 
-            this.btn_rooms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_rooms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_rooms.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_rooms.ForeColor = System.Drawing.Color.White;
-            this.btn_rooms.Location = new System.Drawing.Point(443, -3);
-            this.btn_rooms.Name = "btn_rooms";
-            this.btn_rooms.Size = new System.Drawing.Size(150, 54);
-            this.btn_rooms.TabIndex = 3;
-            this.btn_rooms.Text = "Rooms";
-            this.btn_rooms.UseVisualStyleBackColor = false;
-            this.btn_rooms.Click += new System.EventHandler(this.btn_rooms_Click);
-            // 
-            // btn_Transactions
-            // 
-            this.btn_Transactions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_Transactions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Transactions.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Transactions.ForeColor = System.Drawing.Color.White;
-            this.btn_Transactions.Location = new System.Drawing.Point(296, -3);
-            this.btn_Transactions.Name = "btn_Transactions";
-            this.btn_Transactions.Size = new System.Drawing.Size(150, 54);
-            this.btn_Transactions.TabIndex = 2;
-            this.btn_Transactions.Text = "Transactions";
-            this.btn_Transactions.UseVisualStyleBackColor = false;
-            this.btn_Transactions.Click += new System.EventHandler(this.btn_Transactions_Click);
-            // 
-            // btn_guests
-            // 
-            this.btn_guests.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_guests.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_guests.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_guests.ForeColor = System.Drawing.Color.White;
-            this.btn_guests.Location = new System.Drawing.Point(149, -3);
-            this.btn_guests.Name = "btn_guests";
-            this.btn_guests.Size = new System.Drawing.Size(150, 54);
-            this.btn_guests.TabIndex = 1;
-            this.btn_guests.Text = "Guests";
-            this.btn_guests.UseVisualStyleBackColor = false;
-            this.btn_guests.Click += new System.EventHandler(this.btn_guests_Click);
+            this.btn_Quit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btn_Quit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Quit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Quit.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Quit.ForeColor = System.Drawing.Color.White;
+            this.btn_Quit.Location = new System.Drawing.Point(1195, 10);
+            this.btn_Quit.Name = "btn_Quit";
+            this.btn_Quit.Size = new System.Drawing.Size(29, 28);
+            this.btn_Quit.TabIndex = 9;
+            this.btn_Quit.Text = "X";
+            this.btn_Quit.UseVisualStyleBackColor = false;
+            this.btn_Quit.Click += new System.EventHandler(this.btn_Quit_Click);
             // 
             // lbl_viewbookings
             // 
@@ -209,7 +176,7 @@ namespace BayViewBookings
             this.lbl_viewbookings.BackColor = System.Drawing.Color.Transparent;
             this.lbl_viewbookings.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_viewbookings.ForeColor = System.Drawing.Color.White;
-            this.lbl_viewbookings.Location = new System.Drawing.Point(812, 9);
+            this.lbl_viewbookings.Location = new System.Drawing.Point(552, 10);
             this.lbl_viewbookings.Name = "lbl_viewbookings";
             this.lbl_viewbookings.Size = new System.Drawing.Size(159, 30);
             this.lbl_viewbookings.TabIndex = 0;
@@ -317,21 +284,6 @@ namespace BayViewBookings
             this.btn_cancelSubmit.UseVisualStyleBackColor = true;
             this.btn_cancelSubmit.Click += new System.EventHandler(this.btn_cancelSubmit_Click);
             // 
-            // btn_Quit
-            // 
-            this.btn_Quit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btn_Quit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Quit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Quit.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Quit.ForeColor = System.Drawing.Color.White;
-            this.btn_Quit.Location = new System.Drawing.Point(1195, 10);
-            this.btn_Quit.Name = "btn_Quit";
-            this.btn_Quit.Size = new System.Drawing.Size(29, 28);
-            this.btn_Quit.TabIndex = 9;
-            this.btn_Quit.Text = "X";
-            this.btn_Quit.UseVisualStyleBackColor = false;
-            this.btn_Quit.Click += new System.EventHandler(this.btn_Quit_Click);
-            // 
             // frm_ViewBookings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -371,9 +323,6 @@ namespace BayViewBookings
         private System.Windows.Forms.Button btn_filter1;
         private System.Windows.Forms.TextBox txt_filter1;
         private System.Windows.Forms.Panel pnl_viewbookingsheader;
-        private System.Windows.Forms.Button btn_rooms;
-        private System.Windows.Forms.Button btn_Transactions;
-        private System.Windows.Forms.Button btn_guests;
         private System.Windows.Forms.Label lbl_viewbookings;
         private System.Windows.Forms.DataGridView dgv_ViewBookings;
         private System.Data.SQLite.SQLiteCommand sqLiteCommand1;

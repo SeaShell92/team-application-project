@@ -81,6 +81,7 @@ namespace BayViewBookings
             // btn_X
             // 
             this.btn_X.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btn_X.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_X.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_X.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_X.ForeColor = System.Drawing.Color.White;
@@ -205,13 +206,13 @@ namespace BayViewBookings
             this.cms_reports.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.occupancyRatesReportToolStripMenuItem});
             this.cms_reports.Name = "contextMenuStrip1";
-            this.cms_reports.Size = new System.Drawing.Size(166, 26);
+            this.cms_reports.Size = new System.Drawing.Size(181, 48);
             // 
             // occupancyRatesReportToolStripMenuItem
             // 
             this.occupancyRatesReportToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.occupancyRatesReportToolStripMenuItem.Name = "occupancyRatesReportToolStripMenuItem";
-            this.occupancyRatesReportToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.occupancyRatesReportToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.occupancyRatesReportToolStripMenuItem.Text = "Occupancy Rates";
             this.occupancyRatesReportToolStripMenuItem.Click += new System.EventHandler(this.occupancyRatesReportToolStripMenuItem_Click);
             // 
