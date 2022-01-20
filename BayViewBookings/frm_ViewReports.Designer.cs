@@ -52,6 +52,7 @@ namespace BayViewBookings
             this.pnl_kpirooms = new System.Windows.Forms.Panel();
             this.pnl_kpiunavaialble = new System.Windows.Forms.Panel();
             this.pnl_kpioccupancy = new System.Windows.Forms.Panel();
+            this.saveFileDialogTest = new System.Windows.Forms.SaveFileDialog();
             this.panel1.SuspendLayout();
             this.pnl_Manager2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -120,6 +121,7 @@ namespace BayViewBookings
             this.btn_save.TabIndex = 26;
             this.btn_save.Text = "Save Report";
             this.btn_save.UseVisualStyleBackColor = false;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // pnl_Manager2
             // 
@@ -393,5 +395,6 @@ namespace BayViewBookings
         private System.Windows.Forms.Panel pnl_kpiunavaialble;
         private System.Windows.Forms.Panel pnl_kpioccupancy;
         private System.Windows.Forms.Button btn_Quit;
+        private System.Windows.Forms.SaveFileDialog saveFileDialogTest;
     }
 }

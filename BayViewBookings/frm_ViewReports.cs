@@ -159,5 +159,47 @@ namespace BayViewBookings
         {
             Close();
         }
+
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+            saveFileDialogTest.Title = "Save Report";
+            saveFileDialogTest.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            saveFileDialogTest.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+            saveFileDialogTest.FilterIndex = 1;
+            saveFileDialogTest.FileName = "";
+            if (saveFileDialogTest.ShowDialog() != DialogResult.Cancel)  // if they do not click the cancel button
+            {
+                MessageBox.Show("File Saved!");  //temporary solution, could add real "save" logic here 
+
+                StreamWriter write = new StreamWriter(File.Create(saveFileDialogTest.FileName));
+
+                string str = "";
+                int row = dataGridView1.Rows.Count;
+                int cell = dataGridView1.Rows[1].Cells.Count;
+                for (int i = 0; i < row; i++)
+                {
+                    for (int j = 0; j < cell; j++)
+                    {
+                        if (dataGridView1.Rows[i].Cells[j].Value == null)
+                        {
+                            //return directly
+                            //return;
+                            //or set a value for the empty data
+                            dataGridView1.Rows[i].Cells[j].Value = "";
+                        }
+                        str += dataGridView1.Rows[i].Cells[j].Value.ToString() + ",";
+                    }
+                }
+                write.WriteLine(str);
+
+                write.Close();
+                write.Dispose();
+            }
+
+
+
+        }
+        }
+
     }
-    }
+    

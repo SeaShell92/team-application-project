@@ -49,6 +49,10 @@ namespace BayViewBookings
             this.pnl_kpioccupancy = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.lbl_occupancyrates = new System.Windows.Forms.Label();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.btn_save = new System.Windows.Forms.Button();
+            this.btn_close = new System.Windows.Forms.Button();
+            this.btn_print = new System.Windows.Forms.Button();
             this.pnl_Manager2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -284,12 +288,54 @@ namespace BayViewBookings
             this.lbl_occupancyrates.Text = "7.40%";
             this.lbl_occupancyrates.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btn_save
+            // 
+            this.btn_save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_save.ForeColor = System.Drawing.Color.Black;
+            this.btn_save.Location = new System.Drawing.Point(756, 633);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(135, 36);
+            this.btn_save.TabIndex = 48;
+            this.btn_save.Text = "Save Report";
+            this.btn_save.UseVisualStyleBackColor = false;
+            // 
+            // btn_close
+            // 
+            this.btn_close.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_close.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_close.ForeColor = System.Drawing.Color.Black;
+            this.btn_close.Location = new System.Drawing.Point(897, 633);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(135, 36);
+            this.btn_close.TabIndex = 47;
+            this.btn_close.Text = "Discard Report";
+            this.btn_close.UseVisualStyleBackColor = false;
+            // 
+            // btn_print
+            // 
+            this.btn_print.BackColor = System.Drawing.Color.White;
+            this.btn_print.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_print.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_print.ForeColor = System.Drawing.Color.Black;
+            this.btn_print.Location = new System.Drawing.Point(1038, 633);
+            this.btn_print.Name = "btn_print";
+            this.btn_print.Size = new System.Drawing.Size(135, 36);
+            this.btn_print.TabIndex = 46;
+            this.btn_print.Text = "Print Report";
+            this.btn_print.UseVisualStyleBackColor = false;
+            // 
             // frm_SalesReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1243, 681);
+            this.Controls.Add(this.btn_save);
+            this.Controls.Add(this.btn_close);
+            this.Controls.Add(this.btn_print);
             this.Controls.Add(this.pnl_kpiincome);
             this.Controls.Add(this.pnl_daterange);
             this.Controls.Add(this.pnl_kpioccupancy);
@@ -342,5 +388,9 @@ namespace BayViewBookings
         private System.Windows.Forms.Panel pnl_kpioccupancy;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbl_occupancyrates;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Button btn_save;
+        private System.Windows.Forms.Button btn_close;
+        private System.Windows.Forms.Button btn_print;
     }
 }
