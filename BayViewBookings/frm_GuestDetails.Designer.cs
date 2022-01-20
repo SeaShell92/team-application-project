@@ -233,6 +233,7 @@ namespace BayViewBookings
             // 
             // panelGuest
             // 
+            this.panelGuest.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelGuest.Controls.Add(this.lbl_Make_Amendments);
             this.panelGuest.Controls.Add(this.btn_Cancel);
             this.panelGuest.Controls.Add(this.btn_Enter);
