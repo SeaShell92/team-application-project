@@ -43,9 +43,9 @@ namespace BayViewBookings
             this.pnl_kpiincome = new System.Windows.Forms.Panel();
             this.lbl_incometext = new System.Windows.Forms.Label();
             this.lbl_income = new System.Windows.Forms.Label();
-            this.pnl_kpiunavaialble = new System.Windows.Forms.Panel();
+            this.pnl_daterange = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.lbl_available_rooms = new System.Windows.Forms.Label();
+            this.lbl_daterange = new System.Windows.Forms.Label();
             this.pnl_kpioccupancy = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.lbl_occupancyrates = new System.Windows.Forms.Label();
@@ -53,7 +53,7 @@ namespace BayViewBookings
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.pnl_kpiincome.SuspendLayout();
-            this.pnl_kpiunavaialble.SuspendLayout();
+            this.pnl_daterange.SuspendLayout();
             this.pnl_kpioccupancy.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -213,41 +213,41 @@ namespace BayViewBookings
             this.lbl_income.Text = "10";
             this.lbl_income.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pnl_kpiunavaialble
+            // pnl_daterange
             // 
-            this.pnl_kpiunavaialble.BackColor = System.Drawing.Color.White;
-            this.pnl_kpiunavaialble.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnl_kpiunavaialble.Controls.Add(this.label3);
-            this.pnl_kpiunavaialble.Controls.Add(this.lbl_available_rooms);
-            this.pnl_kpiunavaialble.Location = new System.Drawing.Point(998, 281);
-            this.pnl_kpiunavaialble.Name = "pnl_kpiunavaialble";
-            this.pnl_kpiunavaialble.Size = new System.Drawing.Size(190, 143);
-            this.pnl_kpiunavaialble.TabIndex = 44;
-            this.pnl_kpiunavaialble.Visible = false;
+            this.pnl_daterange.BackColor = System.Drawing.Color.White;
+            this.pnl_daterange.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_daterange.Controls.Add(this.label3);
+            this.pnl_daterange.Controls.Add(this.lbl_daterange);
+            this.pnl_daterange.Location = new System.Drawing.Point(998, 281);
+            this.pnl_daterange.Name = "pnl_daterange";
+            this.pnl_daterange.Size = new System.Drawing.Size(190, 143);
+            this.pnl_daterange.TabIndex = 44;
+            this.pnl_daterange.Visible = false;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(20, 91);
+            this.label3.Location = new System.Drawing.Point(73, 87);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(155, 21);
+            this.label3.Size = new System.Drawing.Size(46, 21);
             this.label3.TabIndex = 39;
-            this.label3.Text = "Unavailable Rooms";
+            this.label3.Text = "Days";
             // 
-            // lbl_available_rooms
+            // lbl_daterange
             // 
-            this.lbl_available_rooms.AutoSize = true;
-            this.lbl_available_rooms.BackColor = System.Drawing.Color.White;
-            this.lbl_available_rooms.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_available_rooms.ForeColor = System.Drawing.Color.DarkCyan;
-            this.lbl_available_rooms.Location = new System.Drawing.Point(82, 36);
-            this.lbl_available_rooms.Name = "lbl_available_rooms";
-            this.lbl_available_rooms.Size = new System.Drawing.Size(28, 31);
-            this.lbl_available_rooms.TabIndex = 28;
-            this.lbl_available_rooms.Text = "2";
-            this.lbl_available_rooms.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_daterange.AutoSize = true;
+            this.lbl_daterange.BackColor = System.Drawing.Color.White;
+            this.lbl_daterange.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_daterange.ForeColor = System.Drawing.Color.DarkCyan;
+            this.lbl_daterange.Location = new System.Drawing.Point(82, 36);
+            this.lbl_daterange.Name = "lbl_daterange";
+            this.lbl_daterange.Size = new System.Drawing.Size(28, 31);
+            this.lbl_daterange.TabIndex = 28;
+            this.lbl_daterange.Text = "2";
+            this.lbl_daterange.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnl_kpioccupancy
             // 
@@ -291,7 +291,7 @@ namespace BayViewBookings
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1243, 681);
             this.Controls.Add(this.pnl_kpiincome);
-            this.Controls.Add(this.pnl_kpiunavaialble);
+            this.Controls.Add(this.pnl_daterange);
             this.Controls.Add(this.pnl_kpioccupancy);
             this.Controls.Add(this.lbl_checkOut);
             this.Controls.Add(this.lbl_checkIn);
@@ -311,8 +311,8 @@ namespace BayViewBookings
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.pnl_kpiincome.ResumeLayout(false);
             this.pnl_kpiincome.PerformLayout();
-            this.pnl_kpiunavaialble.ResumeLayout(false);
-            this.pnl_kpiunavaialble.PerformLayout();
+            this.pnl_daterange.ResumeLayout(false);
+            this.pnl_daterange.PerformLayout();
             this.pnl_kpioccupancy.ResumeLayout(false);
             this.pnl_kpioccupancy.PerformLayout();
             this.ResumeLayout(false);
@@ -336,9 +336,9 @@ namespace BayViewBookings
         private System.Windows.Forms.Panel pnl_kpiincome;
         private System.Windows.Forms.Label lbl_incometext;
         private System.Windows.Forms.Label lbl_income;
-        private System.Windows.Forms.Panel pnl_kpiunavaialble;
+        private System.Windows.Forms.Panel pnl_daterange;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lbl_available_rooms;
+        private System.Windows.Forms.Label lbl_daterange;
         private System.Windows.Forms.Panel pnl_kpioccupancy;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbl_occupancyrates;

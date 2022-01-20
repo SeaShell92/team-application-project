@@ -82,30 +82,44 @@ namespace BayViewBookings
                     int total = dataGridView1.Rows.Cast<DataGridViewRow>()
                 .Sum(t => Convert.ToInt32(t.Cells[9].Value));
                     lbl_income.Text = "£" + total.ToString();
-                     //  dataGridView1.DisplayMember = "Dates";
-                   //  dataGridView1.ValueMember = "Booking_ID";
+                    //  dataGridView1.DisplayMember = "Dates";
+                    //  dataGridView1.ValueMember = "Booking_ID";
 
 
                     Decimal occupancyrates = numRows / numberofrows * 100;
                     Decimal DEBITAMT = Convert.ToDecimal(string.Format("{0:0.00}", occupancyrates));
-                 //   lbl_occupancyrates.Text = DEBITAMT.ToString() + "%";
-                //    if (occupancyrates >= 70)
-                //    {
-                 //       lbl_occupancyrates.ForeColor = Color.Green;
-                 //   }
-                //    else
+                    //   lbl_occupancyrates.Text = DEBITAMT.ToString() + "%";
+                    DateTime date1 = Convert.ToDateTime(txt_checkIn.Text);
+                    DateTime date2 = Convert.ToDateTime(txt_checkOut.Text);
+                    TimeSpan ts = date2 - date1;
+                    lbl_daterange.Text = ts.Days.ToString();
+                  //  int number = Convert.ToInt32(label1.Text);
+                  //  if (number >= 1 && total >= 1000)
                //     {
-                //        lbl_occupancyrates.ForeColor = Color.Red;
-                //    }
+               //         label1.ForeColor = Color.Green;
+              //      }
+              //      else if (number > 20 && total >= 10000)
+              //      {
+              //          label1.ForeColor = Color.Green;
+              //      }
+                    //        if (occupancyrates >= 70)
+                    //     {
+                    //         lbl_occupancyrates.ForeColor = Color.Green;
+                    //     }
+                    //     else
+                    //      {
+                    //         lbl_occupancyrates.ForeColor = Color.Red;
+                    //      }
                     pnl_kpiincome.Visible = true;
-                  //  pnl_kpirooms.Visible = true;
-                  //  pnl_kpiunavaialble.Visible = true;
+                    pnl_daterange.Visible = true;
+                    //  pnl_kpiunavaialble.Visible = true;
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+       
         }
 
         private void btn_Quit_Click(object sender, EventArgs e)
