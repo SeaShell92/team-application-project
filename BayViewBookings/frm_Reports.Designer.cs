@@ -35,21 +35,16 @@ namespace BayViewBookings
             this.lbl_roomOccupancy = new System.Windows.Forms.Label();
             this.btn_view1 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.btn_view2 = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.btn_view3 = new System.Windows.Forms.Button();
-            this.txt_filter6 = new System.Windows.Forms.TextBox();
-            this.txt_filter5 = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.pnl_ReportsHeader = new System.Windows.Forms.Panel();
             this.btn_Quit = new System.Windows.Forms.Button();
             this.lbl_Reports = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.pnl_Reports2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.pnl_ReportsHeader.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -117,6 +112,16 @@ namespace BayViewBookings
             this.panel4.Size = new System.Drawing.Size(895, 126);
             this.panel4.TabIndex = 24;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(70, 57);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(117, 24);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Sales Report";
+            // 
             // btn_view2
             // 
             this.btn_view2.BackColor = System.Drawing.Color.White;
@@ -130,45 +135,6 @@ namespace BayViewBookings
             this.btn_view2.Text = "View Report";
             this.btn_view2.UseVisualStyleBackColor = false;
             this.btn_view2.Click += new System.EventHandler(this.btn_view2_Click);
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.btn_view3);
-            this.panel5.Controls.Add(this.txt_filter6);
-            this.panel5.Controls.Add(this.txt_filter5);
-            this.panel5.Location = new System.Drawing.Point(250, 494);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(895, 130);
-            this.panel5.TabIndex = 24;
-            // 
-            // btn_view3
-            // 
-            this.btn_view3.BackColor = System.Drawing.Color.White;
-            this.btn_view3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_view3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_view3.ForeColor = System.Drawing.Color.Black;
-            this.btn_view3.Location = new System.Drawing.Point(704, 47);
-            this.btn_view3.Name = "btn_view3";
-            this.btn_view3.Size = new System.Drawing.Size(135, 36);
-            this.btn_view3.TabIndex = 23;
-            this.btn_view3.Text = "View Report";
-            this.btn_view3.UseVisualStyleBackColor = false;
-            // 
-            // txt_filter6
-            // 
-            this.txt_filter6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_filter6.Location = new System.Drawing.Point(32, 87);
-            this.txt_filter6.Name = "txt_filter6";
-            this.txt_filter6.Size = new System.Drawing.Size(200, 24);
-            this.txt_filter6.TabIndex = 1;
-            // 
-            // txt_filter5
-            // 
-            this.txt_filter5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_filter5.Location = new System.Drawing.Point(32, 19);
-            this.txt_filter5.Name = "txt_filter5";
-            this.txt_filter5.Size = new System.Drawing.Size(200, 24);
-            this.txt_filter5.TabIndex = 0;
             // 
             // panel6
             // 
@@ -224,16 +190,6 @@ namespace BayViewBookings
             this.lbl_Reports.TabIndex = 0;
             this.lbl_Reports.Text = "Reports";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(70, 57);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 24);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "Sales Report";
-            // 
             // frm_Reports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -243,7 +199,6 @@ namespace BayViewBookings
             this.Controls.Add(this.pnl_ReportsHeader);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
-            this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.pnl_Reports2);
@@ -257,8 +212,6 @@ namespace BayViewBookings
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.pnl_ReportsHeader.ResumeLayout(false);
             this.pnl_ReportsHeader.PerformLayout();
             this.ResumeLayout(false);
@@ -272,10 +225,6 @@ namespace BayViewBookings
         private System.Windows.Forms.Button btn_view1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btn_view2;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button btn_view3;
-        private System.Windows.Forms.TextBox txt_filter6;
-        private System.Windows.Forms.TextBox txt_filter5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel pnl_ReportsHeader;

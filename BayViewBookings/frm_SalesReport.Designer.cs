@@ -301,6 +301,7 @@ namespace BayViewBookings
             this.btn_save.TabIndex = 48;
             this.btn_save.Text = "Save Report";
             this.btn_save.UseVisualStyleBackColor = false;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // btn_close
             // 
@@ -334,6 +335,7 @@ namespace BayViewBookings
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1243, 681);
+            this.ControlBox = false;
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.btn_print);
@@ -348,9 +350,10 @@ namespace BayViewBookings
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.pnl_Manager2);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "frm_SalesReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_SalesReport";
+            this.Text = "Sales Report";
             this.Load += new System.EventHandler(this.frm_SalesReport_Load);
             this.pnl_Manager2.ResumeLayout(false);
             this.pnl_Manager2.PerformLayout();
