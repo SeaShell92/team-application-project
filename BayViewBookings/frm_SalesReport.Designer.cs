@@ -110,6 +110,7 @@ namespace BayViewBookings
             this.btn_exitViewReport.TabIndex = 7;
             this.btn_exitViewReport.Text = "Exit";
             this.btn_exitViewReport.UseVisualStyleBackColor = true;
+            this.btn_exitViewReport.Click += new System.EventHandler(this.btn_exitViewReport_Click);
             // 
             // panel1
             // 
