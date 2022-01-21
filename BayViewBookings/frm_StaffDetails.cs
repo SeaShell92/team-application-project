@@ -28,7 +28,7 @@ namespace BayViewBookings
         {
             SQLiteConnection dbCon;
             SQLiteDataAdapter dbAdapter;
-            DataTable dtGuest = new DataTable();
+            DataTable dtStaff = new DataTable();
 
             try
             {
@@ -37,9 +37,9 @@ namespace BayViewBookings
                     string Query = "Select * From Employee"; //sql code
 
                     dbAdapter = new SQLiteDataAdapter(Query, dbCon);
-                    dbAdapter.Fill(dtGuest);
+                    dbAdapter.Fill(dtStaff);
 
-                    dgv_Staff.DataSource = dtGuest;
+                    dgv_Staff.DataSource = dtStaff;
                 }
             }
             catch (Exception ex)
@@ -48,36 +48,8 @@ namespace BayViewBookings
             }
         }
 
-        private void frm_StaffDetails_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_exit_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private void btn_exitstaff_Click(object sender, EventArgs e)
         {
-            Close();
-        }
-
-        private void btn_Staff_Guests_Click(object sender, EventArgs e)
-        {
-            new frm_GuestDetails().Show();
-            Close();
-        }
-
-        private void btn_Staff_Bookings_Click(object sender, EventArgs e)
-        {
-            new frm_newBooking().Show();
-            Close();
-        }
-
-        private void btn_Staff_Rooms_Click(object sender, EventArgs e)
-        {
-            new frm_RoomDetails().Show();
             Close();
         }
 
@@ -99,11 +71,6 @@ namespace BayViewBookings
         private void btn_can_Click(object sender, EventArgs e)
         {
             panel_AddStaff.Hide();
-        }
-
-        private void btn_AddEnter_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btn_Quit_Click(object sender, EventArgs e)

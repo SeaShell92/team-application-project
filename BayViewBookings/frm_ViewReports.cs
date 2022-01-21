@@ -19,69 +19,44 @@ namespace BayViewBookings
         {
             InitializeComponent();
         }
-        public long UserID { get; set; }
+
         SQLiteDataAdapter daRoomsCheck;
         DataTable dtdaRoomsCheck = new DataTable();
-        SQLiteConnection dbCon = new SQLiteConnection();
         const string details = @"Data Source = ..\..\Database\bookings.db";
         Decimal numberofrows;
-        private void btn_exit_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
 
         private void frm_ViewReports_Load(object sender, EventArgs e)
         {
             dataGridView1.DefaultCellStyle.Font = new Font("Microsoft YaHei UI, 9.75pt", 10.5F, GraphicsUnit.Pixel);
 
-
-                
-
-
-
-
-
             try //gathers the total amount of rooms
-                  {
-                     SQLiteConnection conn = new SQLiteConnection(details);
-                     SQLiteCommand cmd = new SQLiteCommand("select * from Room");
-                      SQLiteDataAdapter ap = new SQLiteDataAdapter(cmd.CommandText, conn);
-                      DataSet ds = new DataSet();
+            {
+                SQLiteConnection conn = new SQLiteConnection(details);
+                SQLiteCommand cmd = new SQLiteCommand("select * from Room");
+                SQLiteDataAdapter ap = new SQLiteDataAdapter(cmd.CommandText, conn);
+                DataSet ds = new DataSet();
 
-                     conn.Open();
-                     ap.Fill(ds);
+                conn.Open();
+                ap.Fill(ds);
 
                 numberofrows = ds.Tables[0].Rows.Count;
-                      lbl_totalrooms.Text = numberofrows.ToString();    
-                conn.Close(); 
-                 }
-
-               catch (Exception ex)
-               {
-                   MessageBox.Show("Error: " + ex.Message);
+                lbl_totalrooms.Text = numberofrows.ToString();
+                conn.Close();
             }
 
-           
-
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
 
         }
 
-        private void lb_ViewReports_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_search_Click(object sender, EventArgs e)
         {
             try
             {
                 DataSet ds = new DataSet();
-                
+
                 using (var dbCon = new SQLiteConnection(details))
                 {
 
@@ -96,16 +71,16 @@ namespace BayViewBookings
                     daRoomsCheck = new SQLiteDataAdapter(sqlCheck, dbCon);
                     dtdaRoomsCheck.Clear();
                     daRoomsCheck.Fill(dtdaRoomsCheck);
-                 
+
                     dataGridView1.DataSource = dtdaRoomsCheck;
                     int numRows = dataGridView1.Rows.Count - 1;
 
                     lbl_available_rooms.Text = numRows.ToString();
-                    //   dataGridView1.DisplayMember = "Dates";
+                    // dataGridView1.DisplayMember = "Dates";
                     // dataGridView1.ValueMember = "Booking_ID";
 
 
-                    Decimal occupancyrates = numRows / numberofrows* 100;
+                    Decimal occupancyrates = numRows / numberofrows * 100;
                     Decimal DEBITAMT = Convert.ToDecimal(string.Format("{0:0.00}", occupancyrates));
                     lbl_occupancyrates.Text = DEBITAMT.ToString() + "%";
                     if (occupancyrates >= 70)
@@ -127,29 +102,6 @@ namespace BayViewBookings
             }
         }
 
-        private void btn_Guests_Click(object sender, EventArgs e)
-        {
-            new frm_GuestDetails().Show(this);
-           //    Close();
-        }
-
-        private void btn_Bookings_Click(object sender, EventArgs e)
-        {
-            new frm_newBooking().Show(this);
-           // Close();
-        }
-
-        private void btn_Rooms_Click(object sender, EventArgs e)
-        {
-            new frm_RoomDetails().Show(this);
-          //  Close();
-        }
-
-        private void btn_Quit_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_Quit_Click_1(object sender, EventArgs e)
         {
             Close();
@@ -169,37 +121,39 @@ namespace BayViewBookings
             saveFileDialogTest.FileName = "";
             if (saveFileDialogTest.ShowDialog() != DialogResult.Cancel)  // if they do not click the cancel button
             {
-                MessageBox.Show("File Saved!");  //temporary solution, could add real "save" logic here 
-
-                StreamWriter write = new StreamWriter(File.Create(saveFileDialogTest.FileName));
-
-                string str = "";
-                int row = dataGridView1.Rows.Count;
-                int cell = dataGridView1.Rows[1].Cells.Count;
-                for (int i = 0; i < row; i++)
+                try
                 {
-                    for (int j = 0; j < cell; j++)
-                    {
-                        if (dataGridView1.Rows[i].Cells[j].Value == null)
-                        {
-                            //return directly
-                            //return;
-                            //or set a value for the empty data
-                            dataGridView1.Rows[i].Cells[j].Value = "";
-                        }
-                        str += dataGridView1.Rows[i].Cells[j].Value.ToString() + ",";
-                    }
-                }
-                write.WriteLine(str);
+                    StreamWriter write = new StreamWriter(File.Create(saveFileDialogTest.FileName));
 
-                write.Close();
-                write.Dispose();
+                    string str = "";
+                    int row = dataGridView1.Rows.Count;
+                    int cell = dataGridView1.Rows[1].Cells.Count;
+                    for (int i = 0; i < row; i++)
+                    {
+                        for (int j = 0; j < cell; j++)
+                        {
+                            if (dataGridView1.Rows[i].Cells[j].Value == null)
+                            {
+                                //or set a value for the empty data
+                                dataGridView1.Rows[i].Cells[j].Value = "";
+                            }
+                            str += dataGridView1.Rows[i].Cells[j].Value.ToString() + ",";
+                        }
+                    }
+                    write.WriteLine(str);
+
+                    write.Close();
+                    write.Dispose();
+
+                    MessageBox.Show("File Saved");
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Error saving file: " + ex.Message);
+                }
+                
             }
 
-
-
         }
-        }
-
     }
-    
+}    

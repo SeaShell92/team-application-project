@@ -27,7 +27,7 @@ namespace BayViewBookings
         {
             SQLiteConnection dbCon;
             SQLiteDataAdapter dbAdapter;
-            DataTable dtGuest = new DataTable();
+            DataTable dtRoom = new DataTable();
 
             try
             {
@@ -36,9 +36,9 @@ namespace BayViewBookings
                     string Query = "Select * From Room"; //sql code
 
                     dbAdapter = new SQLiteDataAdapter(Query, dbCon);
-                    dbAdapter.Fill(dtGuest);
+                    dbAdapter.Fill(dtRoom);
 
-                    dgv_RoomDetails.DataSource = dtGuest;
+                    dgv_RoomDetails.DataSource = dtRoom;
                 }
             }
             catch (Exception ex)
@@ -46,6 +46,7 @@ namespace BayViewBookings
                 MessageBox.Show(ex.Message);
             }
         }
+
         private void frm_RoomDetails_Load(object sender, EventArgs e)
         {
             if (Application.OpenForms.OfType<frm_Manager_Homepage>().Any()) //if the manager home page form is open
@@ -63,17 +64,6 @@ namespace BayViewBookings
             Close();
         }
 
-        private void btn_Guests_Click(object sender, EventArgs e)
-        {
-            new frm_GuestDetails().Show(this);
-          //  Close();
-        }
-
-        private void btn_Bookings_Click(object sender, EventArgs e)
-        {
-         new frm_newBooking().Show(this);
-        }
-
         private void btn_exit_Click(object sender, EventArgs e)
         {
             Close();
@@ -88,7 +78,6 @@ namespace BayViewBookings
         {
             pnl_RoomDetails.Visible = false;
         }
-
 
     }
 }

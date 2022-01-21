@@ -182,7 +182,6 @@ namespace BayViewBookings
             this.txt_checkIn.Name = "txt_checkIn";
             this.txt_checkIn.Size = new System.Drawing.Size(138, 29);
             this.txt_checkIn.TabIndex = 29;
-            this.txt_checkIn.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // txt_checkOut
             // 
@@ -212,7 +211,7 @@ namespace BayViewBookings
             this.btn_search.TabIndex = 32;
             this.btn_search.Text = "Search";
             this.btn_search.UseVisualStyleBackColor = false;
-            this.btn_search.Click += new System.EventHandler(this.button1_Click);
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // lbl_totalrooms
             // 

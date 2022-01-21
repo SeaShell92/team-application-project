@@ -12,20 +12,18 @@ namespace BayViewBookings
 {
     public partial class frm_Staff_Homepage : Form
     {
-        DateTime timeOfDayGreeting = DateTime.Now;
-
-        public string FirstName { get; set; }
-
-        public long UserID { get; set; }
-
         public frm_Staff_Homepage()
         {
             InitializeComponent();
         }
 
+        DateTime timeOfDayGreeting = DateTime.Now;
+        public string FirstName { get; set; }
+        public long UserID { get; set; }
+
         private void frm_Staff_Homepage_Load(object sender, EventArgs e)
         {
-
+            // changes the greeting displayed depending on the system time and the name of the user who logged in  
             if (timeOfDayGreeting.Hour >= 5 && timeOfDayGreeting.Hour < 12)
             {
                 lbl_Welcome_Msg.Text = "Good morning, " + FirstName + "!";
@@ -60,7 +58,7 @@ namespace BayViewBookings
         private void btn_Staff_Bookings_Click(object sender, EventArgs e)
         {
             var BookingForm = new frm_newBooking();
-            BookingForm.UserID = UserID;
+            BookingForm.UserID = UserID; // Sets the ID number of the user who is currently logged in
             BookingForm.ShowDialog(this); // Shows New Booking form on top of original form
         }
 
@@ -71,6 +69,7 @@ namespace BayViewBookings
 
         private void btn_X_Click(object sender, EventArgs e)
         {
+            // both exit butons behave the same way
             btn_exitStaff_Click(sender, e);
         }
 

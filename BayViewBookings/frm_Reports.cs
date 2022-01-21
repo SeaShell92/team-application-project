@@ -17,31 +17,8 @@ namespace BayViewBookings
             InitializeComponent();
         }
 
-        private void btn_exit_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private void btn_exitreports_Click(object sender, EventArgs e)
         {
-            Close();
-        }
-
-        private void btn_Guests_Click(object sender, EventArgs e)
-        {
-            new frm_GuestDetails().Show();
-            Close();
-        }
-
-        private void btn_Bookings_Click(object sender, EventArgs e)
-        {
-            new frm_newBooking().Show();
-            Close();
-        }
-
-        private void btn_Rooms_Click(object sender, EventArgs e)
-        {
-            new frm_RoomDetails().Show();
             Close();
         }
 
@@ -63,9 +40,5 @@ namespace BayViewBookings
             Close();
         }
 
-        private void frm_Reports_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

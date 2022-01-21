@@ -50,6 +50,12 @@ namespace BayViewBookings
             }
         }
 
+        private void btn_Quit_Click(object sender, EventArgs e)
+        {
+            // the two exit butons behave in the same way.
+            btn_exitbook_Click(sender, e);
+        }
+
         private void frm_newBooking_Load(object sender, EventArgs e)
         {
             DateTime now = DateTime.Now;
@@ -81,32 +87,20 @@ namespace BayViewBookings
 
         }
 
-        private void btn_Guests_Click(object sender, EventArgs e)
-        {
-            new frm_GuestDetails().Show(this);
-                                
-            //bug: home page window pops up on top of this new form and the windows are not connected.
-        }
-
-        private void btn_Rooms_Click(object sender, EventArgs e)
-        {
-            new frm_RoomDetails().Show(this);
-        //    Close();
-        }
-
         private void btn_submit_Click(object sender, EventArgs e)
         {
             var Errors = checkIsValid();
 
+            // if the form does not pass all the valid data checks
             if (Errors.Count() > 0)
             {
                 MessageBox.Show(String.Join(Environment.NewLine, Errors));
-                return;
+                return; // don't continue with the event until the errors have been resolved
             }
 
             if (rb_yes.Checked)
             {
-                Has_Paid = "Yes";
+                Has_Paid = "Yes"; // convert radio button options to valid data for the database.
 
             }
             else if (rb_no.Checked)
@@ -119,9 +113,9 @@ namespace BayViewBookings
             {
                 long RowID;
                 long BookingID;
-                dbCon.ConnectionString = details; //declares connection string
+                dbCon.ConnectionString = details; // declares connection string
 
-                if (pnl_GuestDetails.Visible == true)
+                if (pnl_GuestDetails.Visible == true) // if they add a new guest
                 {
                     using (SQLiteCommand guestCmd = dbCon.CreateCommand())
                     {
@@ -133,7 +127,7 @@ namespace BayViewBookings
                             guestCmd.Parameters.AddWithValue("GuestFirstName", txt_FirstName.Text);
                             guestCmd.Parameters.AddWithValue("GuestSurname", txt_Surname.Text);
                             guestCmd.Parameters.AddWithValue("GuestTel", txt_Telephone.Text);
-                            
+                            // if the guest does not want to provide an email address
                             if(txt_EmailAddress.TextLength > 0)
                             {
                                 guestCmd.Parameters.AddWithValue("GuestEmail", txt_EmailAddress.Text);
@@ -153,23 +147,24 @@ namespace BayViewBookings
                         catch
                         {
                             // email address field set to "unique" in database, so an error will occur if the email entered is not unique.
+                            // null values are considered unique by SQLite
                             MessageBox.Show("Guest email address already exists in database.  Please check the email entered or reset form and search for existing guest.");
                             return;
                         }
 
                     }
                 }
-                else
+                else // if they are using an existing guest
                 {
-                    //set the RowID to be the ID number of the existing guest
-                    //doesn't insert/amend (overwrite) any guest details
+                    // set the RowID to be the ID number of the existing guest
+                    // doesn't insert/amend (overwrite) any guest details
                     RowID = Int64.Parse(txt_EGuestID.Text);
                 }
 
                 using (SQLiteCommand cmd = dbCon.CreateCommand())
                 {
                 
-                    //allows users to add record
+                    // allows users to add booking record
 
                     cmd.CommandText = @"Insert into Booking(Employee_ID, Guest_ID, Booking_Date, Check_In, Check_Out, No_Of_Nights, Total_Guests, Total_Breakfasts, Has_Paid) 
                     Values (@Employee_ID, @Guest_ID, @Booking_Date, @Check_In, @Check_Out, @No_Of_Nights, @Total_Guests, @Total_Breakfasts, @Has_Paid)";
@@ -183,14 +178,14 @@ namespace BayViewBookings
                     cmd.Parameters.AddWithValue("Total_Breakfasts", txt_TtlBreakfasts.Text);
                     cmd.Parameters.AddWithValue("Has_Paid", Has_Paid);
                         
-                    //adds the new record details
+                    // adds the new record details
                     dbCon.Open();
                     cmd.ExecuteNonQuery();
                     BookingID = dbCon.LastInsertRowId;
 
                     dbCon.Close();
                 }
-
+                // matches each room ID to the Booking ID and inserts them into the RoomBooking table to link the records.
                 foreach (KeyValuePair<int, string> item in lb_Rooms.Items)
                 {
                     using (SQLiteCommand roomCmd = dbCon.CreateCommand())
@@ -209,9 +204,9 @@ namespace BayViewBookings
 
                 int roomCount = lb_Rooms.Items.Count;
 
-                MessageBox.Show("New booking with " + roomCount.ToString() + " rooms added."); //message to notify the user that they have added the records
+                MessageBox.Show("New booking with " + roomCount.ToString() + " rooms added."); // message to notify the user that they have added the records
 
-                btn_ClearBooking_Click(sender, e); //resets the form after the booking has been successfully submitted.
+                btn_ClearBooking_Click(sender, e); // resets the form after the booking has been successfully submitted.
             }
             catch (Exception ex)
             {
@@ -295,6 +290,7 @@ namespace BayViewBookings
 
         private void btn_AddNewGuest_Click(object sender, EventArgs e)
         {
+            // update the UI to add a new guest
             pnl_ExistingGuest.Visible = false;
             pnl_GuestDetails.Visible = true;
         }
@@ -303,7 +299,7 @@ namespace BayViewBookings
         {
             try
             {
-                dbCon.ConnectionString = details; //declares connection string
+                dbCon.ConnectionString = details; 
                 using (SQLiteCommand findGuest = dbCon.CreateCommand())
                 {
                     findGuest.CommandText = @"SELECT * FROM Guest WHERE Guest_Email = @Email";
@@ -313,14 +309,16 @@ namespace BayViewBookings
 
                     using (var reader = findGuest.ExecuteReader())
                     {
-                        if (reader.Read())
+                        if (reader.Read()) // if there is something to read, there is a match
                         {
+                            // fill the text boxes with the details from the database
                             txt_EGuestID.Text = reader.GetInt64(0).ToString();
                             txt_EGuestTitle.Text = reader.GetString(1);
                             txt_EGuestName.Text = reader.GetString(2);
                             txt_EGuestSurname.Text = reader.GetString(3);
                             txt_EGuestTel.Text = reader.GetInt64(4).ToString();
 
+                            // don't allow the user to add a new guest if an existing guest has been found
                             btn_AddNewGuest.Enabled = false;
                         }
                         else
@@ -346,7 +344,7 @@ namespace BayViewBookings
             {
                 using(var dbCon = new SQLiteConnection(details))
                 {
-                    if (checkBox_Disabled.Checked)
+                    if (checkBox_Disabled.Checked) // if the guest requires disabled access
                     {
                         string sqlRooms =
                             @"Select Room_ID, Room_Name, Room_Description, Room_Name || ' - ' || Room_Description as RoomInfo from Room"
@@ -362,7 +360,7 @@ namespace BayViewBookings
                         cb_RoomWanted.ValueMember = "Room_ID";
                         cb_RoomWanted.SelectedIndex = -1; // box is blank until user is ready to select a room
                     }
-                    else
+                    else // disabled access rooms are excluded from the options
                     {
                         string sqlRooms =
                             @"Select Room_ID, Room_Name, Room_Description, Room_Name || ' - ' || Room_Description as RoomInfo from Room" 
@@ -389,6 +387,7 @@ namespace BayViewBookings
 
         private void checkBox_Disabled_CheckedChanged(object sender, EventArgs e)
         {
+            // refreshes the box with the different options as the box is checked or unchecked
             cb_RoomTypes_SelectionChangeCommitted(sender, e);
         }
 
@@ -414,7 +413,7 @@ namespace BayViewBookings
 
                     if (!inList) // the room is NOT already in the list of rooms to be booked
                     {
-                        //fills the list box with the key value pair of the information from the combo box.
+                        // fills the list box with the key value pair of the information from the combo box.
                         lb_Rooms.Items.Add(new KeyValuePair<int, string>(Int32.Parse(cb_RoomWanted.SelectedValue.ToString()), cb_RoomWanted.GetItemText(cb_RoomWanted.SelectedItem)));
 
                     }
@@ -425,7 +424,7 @@ namespace BayViewBookings
                 }
 
             }
-            else
+            else // user had not selected a room before pressing the button
             {
                 MessageBox.Show("Please first select a room type and then choose a room to add.");
             }
@@ -458,7 +457,7 @@ namespace BayViewBookings
 
         private List<string> checkIsValid()
         {
-            //a list of errors that could pop up if the user has not made a valid booking
+            // a list of errors that could pop up if the user has not made a valid booking
             var Errors = new List<string>();
             if(lb_Rooms.Items.Count < 1)
             {
@@ -496,6 +495,7 @@ namespace BayViewBookings
         {
             try
             {
+                // check if the room the guest wants is available to be booked
                 using (var dbCon = new SQLiteConnection(details))
                 {
                     string sqlCheck =
@@ -537,14 +537,5 @@ namespace BayViewBookings
 
         }
 
-        private void pnl_Booking_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btn_Quit_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
     }
 }

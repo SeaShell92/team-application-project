@@ -300,7 +300,6 @@ namespace BayViewBookings
             this.Name = "frm_ViewBookings";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View Bookings";
-            this.Load += new System.EventHandler(this.frm_ViewBookings_Load);
             this.pnl_viewbookings.ResumeLayout(false);
             this.pnl_filters.ResumeLayout(false);
             this.pnl_filters.PerformLayout();

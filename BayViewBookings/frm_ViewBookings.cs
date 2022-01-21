@@ -15,14 +15,13 @@ namespace BayViewBookings
 {
     public partial class frm_ViewBookings : Form
     {
-        public long UserID { get; set; }
-
         public frm_ViewBookings()
         {
             InitializeComponent();
             fill_listbox();
         }
 
+        public long UserID { get; set; }
         SQLiteConnection dbCon = new SQLiteConnection();
         const string details = @"Data Source = ..\..\Database\bookings.db";
         int bookingId;
@@ -51,41 +50,10 @@ namespace BayViewBookings
            }
         }
 
-        private void btn_exit_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void btn_guests_Click(object sender, EventArgs e)
-        {
-            new frm_GuestDetails().Show(this);
-            //Close();
-            // Keep the view bookings form open and have a series of nested forms
-            // This allows the user to go back to the original new booking form
-        }
-
-        private void btn_rooms_Click(object sender, EventArgs e)
-        {
-            new frm_RoomDetails().Show(this);
-            //Close();
-        }
-
-        private void btn_Transactions_Click(object sender, EventArgs e)
-        {
-            new frm_TransactionDetails().Show(this);
-            //Close();
-        }
-
         private void btn_exitViewBook_Click(object sender, EventArgs e)
         {
             Close();
         }
-
-        private void frm_ViewBookings_Load(object sender, EventArgs e)
-        {
-
-        }
-
 
         private void btn_cancelBooking_Click(object sender, EventArgs e)
         {
@@ -140,9 +108,11 @@ namespace BayViewBookings
                 MessageBox.Show("Error with cancellation: " + ex.Message);
                 return;
             }
+
             txt_username.Clear();
             cb_confirm.Checked = false;
             pnl_cancelBooking.Hide();
+            // close the confirmation box and update the details in the data grid view
             fill_listbox();
         }
 
@@ -186,6 +156,8 @@ namespace BayViewBookings
 
         private void btn_cancelBack_Click(object sender, EventArgs e)
         {
+            // if the user starts to fill in their details and then backs out of the cancellation
+            // ensure the box starts blank next time they want to make a cancellation
             txt_username.Clear();
             cb_confirm.Checked = false;
             pnl_cancelBooking.Hide();

@@ -206,7 +206,6 @@ namespace BayViewBookings
             this.Name = "frm_Reports";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reports";
-            this.Load += new System.EventHandler(this.frm_Reports_Load);
             this.pnl_Reports2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();

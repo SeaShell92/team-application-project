@@ -14,25 +14,25 @@ namespace BayViewBookings
 {
     public partial class frm_login : Form
     {
-       // public string username { get; set; }
-
-        Timer t1 = new Timer();
         public frm_login()
         {
             InitializeComponent();
         }
-        
-        SQLiteConnection dbCon = new SQLiteConnection();
-        SQLiteCommand dbcmd = new SQLiteCommand();
+
+        Timer t1 = new Timer();
+        // these variables had been set but not used
+        //SQLiteConnection dbCon = new SQLiteConnection();
+        //SQLiteCommand dbcmd = new SQLiteCommand();
         const string details = @"Data Source = ..\..\Database\bookings.db";
 
         void fadeIn(object sender, EventArgs e)
         {
             if (Opacity >= 1)
-                t1.Stop();   //this stops the timer if the form is completely displayed
+                t1.Stop();   // this stops the timer if the form is completely displayed
             else
                 Opacity += 0.03;
         }
+
         private void LoginForm_Load(object sender, EventArgs e)
         {
             lbl_managed_by.Text = null;
@@ -42,7 +42,7 @@ namespace BayViewBookings
             t1.Interval = 10;  
             t1.Tick += new EventHandler(fadeIn); 
             t1.Start();
-            this.AcceptButton = btn_login; //this makes it so that when enter is pressed the login button will be executed
+            this.AcceptButton = btn_login; // this makes it so that when enter is pressed the login button will be executed
 
             pnl_login.Location = new Point(
             this.ClientSize.Width / 2 - pnl_login.Size.Width / 2,
@@ -50,7 +50,6 @@ namespace BayViewBookings
             pnl_login.Anchor = AnchorStyles.None;
 
         }
-
 
         private void btn_login_Click(object sender, EventArgs e)
         {
@@ -66,9 +65,10 @@ namespace BayViewBookings
                         dbcmd.Parameters.AddWithValue("@Password", txt_password.Text);
                         using (var reader = dbcmd.ExecuteReader())
                         {
-                            if (reader.Read())
+                            if (reader.Read()) // if there are any results to read from the database
                             {
-                                if(lbl_managed_by.Text == "Manager") //lbl_managed_by 1 takes the "managed_by" field from Employee table, and if its 1 then their managed by someone therefore staff, 0 will be inputed if their managers
+                                // if the label is set to "Manager" then they are a manager, otherwise a staff member has logged in.
+                                if (lbl_managed_by.Text == "Manager") 
                                 {
                                    
                                     frm_Manager_Homepage frm2 = new frm_Manager_Homepage();
@@ -79,7 +79,8 @@ namespace BayViewBookings
                                 }
                                 else
                                 {
-                                    //MessageBox.Show("Staff");
+                                    // this was only required for testing purposes
+                                    //MessageBox.Show("Staff"); 
 
                                     frm_Staff_Homepage frm3 = new frm_Staff_Homepage();
                                     frm3.FirstName = lbl_firstname.Text;
@@ -88,7 +89,7 @@ namespace BayViewBookings
                                     this.Hide();
                                 }
                             }
-                            else
+                            else // the details don't match and the password box is reset for the user to try again.
                             {
                                 MessageBox.Show("Please recheck your details");
                                 txt_password.Text = null;
@@ -107,6 +108,7 @@ namespace BayViewBookings
         private void txt_username_TextChanged(object sender, EventArgs e)
         {
             lbl_managed_by.Text = "";
+            // get all the details of the employee that matches the username entered
             string Query = "Select * From Employee Where Username=@Username";
             SQLiteConnection myConn = new SQLiteConnection(details);
             SQLiteCommand cmdDataBase = new SQLiteCommand(Query, myConn);
@@ -122,8 +124,8 @@ namespace BayViewBookings
 
                     string role = dbreader.GetString(6);
                     string firstName = dbreader.GetString(1);
-                    lbl_managed_by.Text = role; //gets role to depend on username and whether staff/manager login
-                    lbl_firstname.Text = firstName;
+                    lbl_managed_by.Text = role; // gets role to depend on username and whether staff/manager login
+                    lbl_firstname.Text = firstName; // also stores their actual name
 
                 }
             }
@@ -138,7 +140,7 @@ namespace BayViewBookings
         {
             if (MessageBox.Show("Really quit?", "Exit Program",
                 MessageBoxButtons.OKCancel,
-                MessageBoxIcon.Question) == DialogResult.OK)
+                MessageBoxIcon.Question) == DialogResult.OK) // pops up a message and if the user clicks OK the program closes
             {
                 Environment.Exit(0);
             }

@@ -327,7 +327,6 @@ namespace BayViewBookings
             this.pnl_Booking.Name = "pnl_Booking";
             this.pnl_Booking.Size = new System.Drawing.Size(1241, 370);
             this.pnl_Booking.TabIndex = 20;
-            this.pnl_Booking.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Booking_Paint);
             // 
             // cb_unavailable
             // 

@@ -17,19 +17,9 @@ namespace BayViewBookings
             InitializeComponent();
         }
 
-        private void btn_exit_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private void btn_RoomAvailExit_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void frm_RoomAvailability_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btn_Quit_Click(object sender, EventArgs e)

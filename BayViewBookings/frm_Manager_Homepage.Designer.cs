@@ -42,20 +42,20 @@ namespace BayViewBookings
             this.pnl_Manager = new System.Windows.Forms.Panel();
             this.btn_Transactions = new System.Windows.Forms.Button();
             this.cms_reports = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.occupancyRatesReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cms_guests = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.cms_rooms = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.roomAvailabilityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cms_bookings = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
-            this.cms_exit = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
+            this.allReportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.roomOccupancyRatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salesReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cms_guests = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.viewGueststoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cms_rooms = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.viewRoomstoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.roomAvailabilityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cms_bookings = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.newBookingtoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewBookingstoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cms_exit = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.logouttoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exittoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_Manager2.SuspendLayout();
             this.pnl_Manager.SuspendLayout();
             this.cms_reports.SuspendLayout();
@@ -136,7 +136,6 @@ namespace BayViewBookings
             this.btn_Bookings.Text = "Bookings";
             this.btn_Bookings.UseVisualStyleBackColor = false;
             this.btn_Bookings.Click += new System.EventHandler(this.btn_Bookings_Click);
-            this.btn_Bookings.MouseHover += new System.EventHandler(this.btn_Bookings_MouseHover);
             // 
             // btn_Guests
             // 
@@ -206,110 +205,19 @@ namespace BayViewBookings
             // 
             this.cms_reports.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cms_reports.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.occupancyRatesReportToolStripMenuItem,
+            this.allReportsToolStripMenuItem,
             this.roomOccupancyRatesToolStripMenuItem,
             this.salesReportToolStripMenuItem});
             this.cms_reports.Name = "contextMenuStrip1";
             this.cms_reports.Size = new System.Drawing.Size(201, 92);
             // 
-            // occupancyRatesReportToolStripMenuItem
+            // allReportsToolStripMenuItem
             // 
-            this.occupancyRatesReportToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.occupancyRatesReportToolStripMenuItem.Name = "occupancyRatesReportToolStripMenuItem";
-            this.occupancyRatesReportToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.occupancyRatesReportToolStripMenuItem.Text = "All Reports";
-            this.occupancyRatesReportToolStripMenuItem.Click += new System.EventHandler(this.occupancyRatesReportToolStripMenuItem_Click);
-            // 
-            // cms_guests
-            // 
-            this.cms_guests.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cms_guests.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1});
-            this.cms_guests.Name = "contextMenuStrip1";
-            this.cms_guests.Size = new System.Drawing.Size(138, 26);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.ForeColor = System.Drawing.Color.White;
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(137, 22);
-            this.toolStripMenuItem1.Text = "View Guests";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
-            // 
-            // cms_rooms
-            // 
-            this.cms_rooms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cms_rooms.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem2,
-            this.roomAvailabilityToolStripMenuItem});
-            this.cms_rooms.Name = "contextMenuStrip1";
-            this.cms_rooms.Size = new System.Drawing.Size(168, 48);
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.ForeColor = System.Drawing.Color.White;
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(167, 22);
-            this.toolStripMenuItem2.Text = "View Rooms";
-            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
-            // 
-            // roomAvailabilityToolStripMenuItem
-            // 
-            this.roomAvailabilityToolStripMenuItem.ForeColor = System.Drawing.Color.White;
-            this.roomAvailabilityToolStripMenuItem.Name = "roomAvailabilityToolStripMenuItem";
-            this.roomAvailabilityToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
-            this.roomAvailabilityToolStripMenuItem.Text = "Room Availability";
-            this.roomAvailabilityToolStripMenuItem.Click += new System.EventHandler(this.roomAvailabilityToolStripMenuItem_Click);
-            // 
-            // cms_bookings
-            // 
-            this.cms_bookings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cms_bookings.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem3,
-            this.toolStripMenuItem4});
-            this.cms_bookings.Name = "contextMenuStrip1";
-            this.cms_bookings.Size = new System.Drawing.Size(152, 48);
-            // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.ForeColor = System.Drawing.Color.White;
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(151, 22);
-            this.toolStripMenuItem3.Text = "New Booking";
-            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
-            // 
-            // toolStripMenuItem4
-            // 
-            this.toolStripMenuItem4.ForeColor = System.Drawing.Color.White;
-            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(151, 22);
-            this.toolStripMenuItem4.Text = "View Bookings";
-            this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
-            // 
-            // cms_exit
-            // 
-            this.cms_exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cms_exit.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem5,
-            this.toolStripMenuItem6});
-            this.cms_exit.Name = "contextMenuStrip1";
-            this.cms_exit.Size = new System.Drawing.Size(113, 48);
-            // 
-            // toolStripMenuItem5
-            // 
-            this.toolStripMenuItem5.ForeColor = System.Drawing.Color.White;
-            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            this.toolStripMenuItem5.Size = new System.Drawing.Size(112, 22);
-            this.toolStripMenuItem5.Text = "Logout";
-            this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
-            // 
-            // toolStripMenuItem6
-            // 
-            this.toolStripMenuItem6.ForeColor = System.Drawing.Color.White;
-            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(112, 22);
-            this.toolStripMenuItem6.Text = "Exit";
-            this.toolStripMenuItem6.Click += new System.EventHandler(this.toolStripMenuItem6_Click);
+            this.allReportsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.allReportsToolStripMenuItem.Name = "allReportsToolStripMenuItem";
+            this.allReportsToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.allReportsToolStripMenuItem.Text = "All Reports";
+            this.allReportsToolStripMenuItem.Click += new System.EventHandler(this.allReportsToolStripMenuItem_Click);
             // 
             // roomOccupancyRatesToolStripMenuItem
             // 
@@ -326,6 +234,97 @@ namespace BayViewBookings
             this.salesReportToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.salesReportToolStripMenuItem.Text = "Sales Report";
             this.salesReportToolStripMenuItem.Click += new System.EventHandler(this.salesReportToolStripMenuItem_Click);
+            // 
+            // cms_guests
+            // 
+            this.cms_guests.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cms_guests.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewGueststoolStripMenuItem});
+            this.cms_guests.Name = "contextMenuStrip1";
+            this.cms_guests.Size = new System.Drawing.Size(138, 26);
+            // 
+            // viewGueststoolStripMenuItem
+            // 
+            this.viewGueststoolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.viewGueststoolStripMenuItem.Name = "viewGueststoolStripMenuItem";
+            this.viewGueststoolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.viewGueststoolStripMenuItem.Text = "View Guests";
+            this.viewGueststoolStripMenuItem.Click += new System.EventHandler(this.viewGueststoolStripMenuItem_Click);
+            // 
+            // cms_rooms
+            // 
+            this.cms_rooms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cms_rooms.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewRoomstoolStripMenuItem,
+            this.roomAvailabilityToolStripMenuItem});
+            this.cms_rooms.Name = "contextMenuStrip1";
+            this.cms_rooms.Size = new System.Drawing.Size(168, 48);
+            // 
+            // viewRoomstoolStripMenuItem
+            // 
+            this.viewRoomstoolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.viewRoomstoolStripMenuItem.Name = "viewRoomstoolStripMenuItem";
+            this.viewRoomstoolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.viewRoomstoolStripMenuItem.Text = "View Rooms";
+            this.viewRoomstoolStripMenuItem.Click += new System.EventHandler(this.viewRoomstoolStripMenuItem_Click);
+            // 
+            // roomAvailabilityToolStripMenuItem
+            // 
+            this.roomAvailabilityToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.roomAvailabilityToolStripMenuItem.Name = "roomAvailabilityToolStripMenuItem";
+            this.roomAvailabilityToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.roomAvailabilityToolStripMenuItem.Text = "Room Availability";
+            this.roomAvailabilityToolStripMenuItem.Click += new System.EventHandler(this.roomAvailabilityToolStripMenuItem_Click);
+            // 
+            // cms_bookings
+            // 
+            this.cms_bookings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cms_bookings.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newBookingtoolStripMenuItem,
+            this.viewBookingstoolStripMenuItem});
+            this.cms_bookings.Name = "contextMenuStrip1";
+            this.cms_bookings.Size = new System.Drawing.Size(152, 48);
+            // 
+            // newBookingtoolStripMenuItem
+            // 
+            this.newBookingtoolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.newBookingtoolStripMenuItem.Name = "newBookingtoolStripMenuItem";
+            this.newBookingtoolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.newBookingtoolStripMenuItem.Text = "New Booking";
+            this.newBookingtoolStripMenuItem.Click += new System.EventHandler(this.newBookingtoolStripMenuItem_Click);
+            // 
+            // viewBookingstoolStripMenuItem
+            // 
+            this.viewBookingstoolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.viewBookingstoolStripMenuItem.Name = "viewBookingstoolStripMenuItem";
+            this.viewBookingstoolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.viewBookingstoolStripMenuItem.Text = "View Bookings";
+            this.viewBookingstoolStripMenuItem.Click += new System.EventHandler(this.viewBookingstoolStripMenuItem_Click);
+            // 
+            // cms_exit
+            // 
+            this.cms_exit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cms_exit.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.logouttoolStripMenuItem,
+            this.exittoolStripMenuItem});
+            this.cms_exit.Name = "contextMenuStrip1";
+            this.cms_exit.Size = new System.Drawing.Size(113, 48);
+            // 
+            // logouttoolStripMenuItem
+            // 
+            this.logouttoolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.logouttoolStripMenuItem.Name = "logouttoolStripMenuItem";
+            this.logouttoolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.logouttoolStripMenuItem.Text = "Logout";
+            this.logouttoolStripMenuItem.Click += new System.EventHandler(this.logouttoolStripMenuItem_Click);
+            // 
+            // exittoolStripMenuItem
+            // 
+            this.exittoolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.exittoolStripMenuItem.Name = "exittoolStripMenuItem";
+            this.exittoolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.exittoolStripMenuItem.Text = "Exit";
+            this.exittoolStripMenuItem.Click += new System.EventHandler(this.exittoolStripMenuItem_Click);
             // 
             // frm_Manager_Homepage
             // 
@@ -367,18 +366,18 @@ namespace BayViewBookings
         public System.Windows.Forms.Label lbl_Welcome_Msg;
         private System.Windows.Forms.Button btn_Transactions;
         private System.Windows.Forms.ContextMenuStrip cms_reports;
-        private System.Windows.Forms.ToolStripMenuItem occupancyRatesReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem allReportsToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip cms_guests;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem viewGueststoolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip cms_rooms;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem viewRoomstoolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem roomAvailabilityToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip cms_bookings;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem newBookingtoolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewBookingstoolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip cms_exit;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
+        private System.Windows.Forms.ToolStripMenuItem logouttoolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exittoolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem roomOccupancyRatesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salesReportToolStripMenuItem;
     }

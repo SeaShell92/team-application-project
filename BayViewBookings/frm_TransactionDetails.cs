@@ -23,11 +23,11 @@ namespace BayViewBookings
 
         const string details = @"Data Source = ..\..\Database\bookings.db";
 
-        void fill_listbox()
+        void fill_listbox() // populates data grid view even if the database table has no data
         {
             SQLiteConnection dbCon;
             SQLiteDataAdapter dbAdapter;
-            DataTable dtGuest = new DataTable();
+            DataTable dtTranx = new DataTable();
 
             try
             {
@@ -36,9 +36,9 @@ namespace BayViewBookings
                     string Query = "Select * From Transactions"; //sql code
 
                     dbAdapter = new SQLiteDataAdapter(Query, dbCon);
-                    dbAdapter.Fill(dtGuest);
+                    dbAdapter.Fill(dtTranx);
 
-                    dgv_TransDet.DataSource = dtGuest;
+                    dgv_TransDet.DataSource = dtTranx;
                 }
             }
             catch (Exception ex)
@@ -66,19 +66,5 @@ namespace BayViewBookings
             Close();
         }
 
-        private void btn_Guests_Click(object sender, EventArgs e)
-        {
-            new frm_GuestDetails().ShowDialog(this);
-        }
-
-        private void btn_Bookings_Click(object sender, EventArgs e)
-        {
-            new frm_ViewBookings().ShowDialog(this);
-        }
-
-        private void btn_Rooms_Click(object sender, EventArgs e)
-        {
-            new frm_RoomAvailability().ShowDialog(this);
-        }
     }
 }

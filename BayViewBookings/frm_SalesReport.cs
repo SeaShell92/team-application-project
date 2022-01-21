@@ -20,14 +20,12 @@ namespace BayViewBookings
         {
             InitializeComponent();
         }
-        public long UserID { get; set; }
+
         SQLiteDataAdapter daRoomsCheck;
         DataTable dtdaRoomsCheck = new DataTable();
-        SQLiteConnection dbCon = new SQLiteConnection();
         const string details = @"Data Source = ..\..\Database\bookings.db";
         Decimal numberofrows;
       
-        
         private void frm_SalesReport_Load(object sender, EventArgs e)
         {
 
@@ -50,9 +48,6 @@ namespace BayViewBookings
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
-
-
-
 
         }
 
@@ -93,23 +88,7 @@ namespace BayViewBookings
                     DateTime date2 = Convert.ToDateTime(txt_checkOut.Text);
                     TimeSpan ts = date2 - date1;
                     lbl_daterange.Text = ts.Days.ToString();
-                  //  int number = Convert.ToInt32(label1.Text);
-                  //  if (number >= 1 && total >= 1000)
-               //     {
-               //         label1.ForeColor = Color.Green;
-              //      }
-              //      else if (number > 20 && total >= 10000)
-              //      {
-              //          label1.ForeColor = Color.Green;
-              //      }
-                    //        if (occupancyrates >= 70)
-                    //     {
-                    //         lbl_occupancyrates.ForeColor = Color.Green;
-                    //     }
-                    //     else
-                    //      {
-                    //         lbl_occupancyrates.ForeColor = Color.Red;
-                    //      }
+
                     pnl_kpiincome.Visible = true;
                     pnl_daterange.Visible = true;
                     //  pnl_kpiunavaialble.Visible = true;
@@ -130,6 +109,48 @@ namespace BayViewBookings
         private void btn_exitViewReport_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+            saveFileDialog1.Title = "Save Report";
+            saveFileDialog1.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            saveFileDialog1.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+            saveFileDialog1.FilterIndex = 1;
+            saveFileDialog1.FileName = "";
+            if (saveFileDialog1.ShowDialog() != DialogResult.Cancel)  // if they do not click the cancel button
+            {
+                try
+                {
+                    StreamWriter write = new StreamWriter(File.Create(saveFileDialog1.FileName));
+
+                    string str = "";
+                    int row = dataGridView1.Rows.Count;
+                    int cell = dataGridView1.Rows[1].Cells.Count;
+                    for (int i = 0; i < row; i++)
+                    {
+                        for (int j = 0; j < cell; j++)
+                        {
+                            if (dataGridView1.Rows[i].Cells[j].Value == null)
+                            {
+                                // set a value for the empty data
+                                dataGridView1.Rows[i].Cells[j].Value = "";
+                            }
+                            str += dataGridView1.Rows[i].Cells[j].Value.ToString() + ",";
+                        }
+                    }
+                    write.WriteLine(str);
+
+                    write.Close();
+                    write.Dispose();
+
+                    MessageBox.Show("File Saved");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error saving file: " + ex.Message);
+                }
+            }
         }
     }
 }

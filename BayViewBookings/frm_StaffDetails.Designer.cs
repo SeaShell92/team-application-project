@@ -41,6 +41,7 @@ namespace BayViewBookings
             this.btn_filter1 = new System.Windows.Forms.Button();
             this.txt_filter1 = new System.Windows.Forms.TextBox();
             this.pnl_staff = new System.Windows.Forms.Panel();
+            this.btn_Quit = new System.Windows.Forms.Button();
             this.lbl_staff = new System.Windows.Forms.Label();
             this.panel_staff = new System.Windows.Forms.Panel();
             this.btn_CancelStaff = new System.Windows.Forms.Button();
@@ -81,7 +82,6 @@ namespace BayViewBookings
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_AddEmployee = new System.Windows.Forms.Label();
-            this.btn_Quit = new System.Windows.Forms.Button();
             this.pnl_Staff2.SuspendLayout();
             this.pnl_filter.SuspendLayout();
             this.pnl_staff.SuspendLayout();
@@ -210,6 +210,21 @@ namespace BayViewBookings
             this.pnl_staff.Name = "pnl_staff";
             this.pnl_staff.Size = new System.Drawing.Size(1239, 48);
             this.pnl_staff.TabIndex = 6;
+            // 
+            // btn_Quit
+            // 
+            this.btn_Quit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btn_Quit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Quit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Quit.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Quit.ForeColor = System.Drawing.Color.White;
+            this.btn_Quit.Location = new System.Drawing.Point(1198, 9);
+            this.btn_Quit.Name = "btn_Quit";
+            this.btn_Quit.Size = new System.Drawing.Size(29, 28);
+            this.btn_Quit.TabIndex = 9;
+            this.btn_Quit.Text = "X";
+            this.btn_Quit.UseVisualStyleBackColor = false;
+            this.btn_Quit.Click += new System.EventHandler(this.btn_Quit_Click);
             // 
             // lbl_staff
             // 
@@ -486,7 +501,6 @@ namespace BayViewBookings
             this.btn_AddEnter.TabIndex = 15;
             this.btn_AddEnter.Text = "Enter";
             this.btn_AddEnter.UseVisualStyleBackColor = true;
-            this.btn_AddEnter.Click += new System.EventHandler(this.btn_AddEnter_Click);
             // 
             // txt_AddManagedBy
             // 
@@ -625,21 +639,6 @@ namespace BayViewBookings
             this.lbl_AddEmployee.TabIndex = 0;
             this.lbl_AddEmployee.Text = "Add Employee";
             // 
-            // btn_Quit
-            // 
-            this.btn_Quit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btn_Quit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Quit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Quit.Font = new System.Drawing.Font("Microsoft YaHei UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Quit.ForeColor = System.Drawing.Color.White;
-            this.btn_Quit.Location = new System.Drawing.Point(1198, 9);
-            this.btn_Quit.Name = "btn_Quit";
-            this.btn_Quit.Size = new System.Drawing.Size(29, 28);
-            this.btn_Quit.TabIndex = 9;
-            this.btn_Quit.Text = "X";
-            this.btn_Quit.UseVisualStyleBackColor = false;
-            this.btn_Quit.Click += new System.EventHandler(this.btn_Quit_Click);
-            // 
             // frm_StaffDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -656,7 +655,6 @@ namespace BayViewBookings
             this.Name = "frm_StaffDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Staff Details";
-            this.Load += new System.EventHandler(this.frm_StaffDetails_Load);
             this.pnl_Staff2.ResumeLayout(false);
             this.pnl_filter.ResumeLayout(false);
             this.pnl_filter.PerformLayout();

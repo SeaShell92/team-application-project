@@ -53,18 +53,6 @@ namespace BayViewBookings
             Close();
         }
 
-        private void btn_Bookings_Click(object sender, EventArgs e)
-        {
-            new frm_newBooking().Show(this);
-          //  Close();
-        }
-
-        private void btn_Rooms_Click(object sender, EventArgs e)
-        {
-            new frm_RoomDetails().Show(this);
-          //  Close();
-        }
-
         private void btn_AmendGuest_Click(object sender, EventArgs e)
         {
             if (dgv_GuestList.SelectedRows.Count != 1)
@@ -97,14 +85,12 @@ namespace BayViewBookings
         
         private void btn_Enter_Click(object sender, EventArgs e)
         {
-            
-            string newTitle = txt_Title.Text;
-            string newFirstName = txt_FirstName.Text;
-            string newSurname = txt_Surname.Text;
-            string newTelephone = txt_Telephone.Text;
-            string newEmail = txt_Email.Text;                   
-            
-            
+            // string were set but then we decided not to use them
+            //string newTitle = txt_Title.Text;
+            //string newFirstName = txt_FirstName.Text;
+            //string newSurname = txt_Surname.Text;
+            //string newTelephone = txt_Telephone.Text;
+            //string newEmail = txt_Email.Text;                   
 
             if (txt_Title.Text =="")
 
@@ -121,6 +107,7 @@ namespace BayViewBookings
             {
                 MessageBox.Show("Please write Guest Surname.");
             }
+            // as both of these are optional when adding a guest to the database, there is no need to keep prompting the user.
             //else if (txt_Telephone.Text =="")
             //
             //{
@@ -138,7 +125,7 @@ namespace BayViewBookings
                 {
                     using (SQLiteCommand guestCmd = dbCon.CreateCommand())
                     {
-                        //updates records
+                        // updates record
 
                         dbCon.ConnectionString = details;
                         guestCmd.CommandText = @"Update Guest Set Guest_Title = @Guest_Title, Guest_First_Name = @Guest_First_Name, Guest_Surname = @Guest_Surname, Guest_Tel = @Guest_Tel, Guest_Email = @Guest_Email Where Guest_ID='" + txt_GuestID.Text + "'";
@@ -149,13 +136,14 @@ namespace BayViewBookings
                         guestCmd.Parameters.AddWithValue("@Guest_Surname", txt_Surname.Text);
                         guestCmd.Parameters.AddWithValue("@Guest_Tel", txt_Telephone.Text);
 
+                        // if the guest does not have an email address to amend
                         if (txt_Email.TextLength > 0)
                         {
                             guestCmd.Parameters.AddWithValue("@Guest_Email", txt_Email.Text);
                         }
                         else
                         {
-                            guestCmd.Parameters.AddWithValue("@Guest_Email", null);
+                            guestCmd.Parameters.AddWithValue("@Guest_Email", null); // store a null value in the database
                         }
 
                         dbCon.Open();
@@ -173,7 +161,7 @@ namespace BayViewBookings
                 }
 
                 panelGuest.Hide();
-                fill_listbox();
+                fill_listbox(); // refresh the list of guests to show amended details.
 
             }
         }
